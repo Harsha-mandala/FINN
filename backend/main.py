@@ -56,7 +56,7 @@ app.include_router(chat.router)
 
 @app.get("/health")
 async def health():
-    return {"status": "ok", "service": "FINN API"}
+    return {"status": "ok", "service": "FINN API", "cors_origins": ALLOWED_ORIGINS}
 
 
 @app.get("/")
