@@ -24,4 +24,4 @@ anthropic==0.28.0
 # Utilities
 tqdm==4.66.4
 tenacity==8.3.0
-hashlib2==1.0.0
+curl_cffi>=0.7.0
