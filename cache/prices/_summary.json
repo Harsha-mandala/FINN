@@ -1,0 +1,233 @@
+{
+  "generated_at": "2026-10-31T11:32:42.957715",
+  "tickers": {
+    "RELIANCE.NS": {
+      "ticker": "RELIANCE.NS",
+      "fetched_at": "2026-10-31T11:32:28.165872",
+      "latest_date": "2026-10-30",
+      "latest_close": 1164.9000244140625,
+      "prev_close": 1167.4000244140625,
+      "price_change_pct": -0.21,
+      "volume_latest": 14753650,
+      "volume_20d_avg": 15184654.0,
+      "volume_ratio": 0.97
+    },
+    "HDFCBANK.NS": {
+      "ticker": "HDFCBANK.NS",
+      "fetched_at": "2026-10-31T11:32:28.753064",
+      "latest_date": "2026-10-30",
+      "latest_close": 692.7999877929688,
+      "prev_close": 683.2999877929688,
+      "price_change_pct": 1.39,
+      "volume_latest": 21296902,
+      "volume_20d_avg": 31762207.0,
+      "volume_ratio": 0.67
+    },
+    "INFY.NS": {
+      "ticker": "INFY.NS",
+      "fetched_at": "2026-10-31T11:32:29.329362",
+      "latest_date": "2026-10-30",
+      "latest_close": 1185.0,
+      "prev_close": 1146.5,
+      "price_change_pct": 3.36,
+      "volume_latest": 13030713,
+      "volume_20d_avg": 16853446.0,
+      "volume_ratio": 0.77
+    },
+    "TCS.NS": {
+      "ticker": "TCS.NS",
+      "fetched_at": "2026-10-31T11:32:29.912426",
+      "latest_date": "2026-10-30",
+      "latest_close": 2502.60009765625,
+      "prev_close": 2478.0,
+      "price_change_pct": 0.99,
+      "volume_latest": 3016983,
+      "volume_20d_avg": 6008350.0,
+      "volume_ratio": 0.5
+    },
+    "ICICIBANK.NS": {
+      "ticker": "ICICIBANK.NS",
+      "fetched_at": "2026-10-31T11:32:30.561061",
+      "latest_date": "2026-10-30",
+      "latest_close": 1398.0,
+      "prev_close": 1386.5999755859375,
+      "price_change_pct": 0.82,
+      "volume_latest": 10523907,
+      "volume_20d_avg": 12745297.0,
+      "volume_ratio": 0.83
+    },
+    "SUNPHARMA.NS": {
+      "ticker": "SUNPHARMA.NS",
+      "fetched_at": "2026-10-31T11:32:31.202768",
+      "latest_date": "2026-10-30",
+      "latest_close": 1777.699951171875,
+      "prev_close": 1761.0,
+      "price_change_pct": 0.95,
+      "volume_latest": 5130218,
+      "volume_20d_avg": 1497590.0,
+      "volume_ratio": 3.43
+    },
+    "TRENT.NS": {
+      "ticker": "TRENT.NS",
+      "fetched_at": "2026-10-31T11:32:31.772192",
+      "latest_date": "2026-10-30",
+      "latest_close": 3017.300048828125,
+      "prev_close": 2861.699951171875,
+      "price_change_pct": 5.44,
+      "volume_latest": 4431514,
+      "volume_20d_avg": 1146758.0,
+      "volume_ratio": 3.86
+    },
+    "POLYCAB.NS": {
+      "ticker": "POLYCAB.NS",
+      "fetched_at": "2026-10-31T11:32:32.301981",
+      "latest_date": "2026-10-30",
+      "latest_close": NaN,
+      "prev_close": 7745.0,
+      "price_change_pct": NaN,
+      "volume_latest": 346328,
+      "volume_20d_avg": 461971.0,
+      "volume_ratio": 0.75
+    },
+    "DIXON.NS": {
+      "ticker": "DIXON.NS",
+      "fetched_at": "2026-10-31T11:32:32.899941",
+      "latest_date": "2026-10-30",
+      "latest_close": 11000.0,
+      "prev_close": 11488.0,
+      "price_change_pct": -4.25,
+      "volume_latest": 521838,
+      "volume_20d_avg": 261752.0,
+      "volume_ratio": 1.99
+    },
+    "HBLPOWER.NS": {
+      "ticker": "HBLPOWER.NS",
+      "error": "fetch_failed"
+    },
+    "KALYANKJIL.NS": {
+      "ticker": "KALYANKJIL.NS",
+      "fetched_at": "2026-10-31T11:32:35.169140",
+      "latest_date": "2026-10-30",
+      "latest_close": NaN,
+      "prev_close": 515.0,
+      "price_change_pct": NaN,
+      "volume_latest": 2976076,
+      "volume_20d_avg": 6522759.0,
+      "volume_ratio": 0.46
+    },
+    "CAMS.NS": {
+      "ticker": "CAMS.NS",
+      "fetched_at": "2026-10-31T11:32:35.716106",
+      "latest_date": "2026-10-30",
+      "latest_close": 653.5999755859375,
+      "prev_close": 696.9500122070312,
+      "price_change_pct": -6.22,
+      "volume_latest": 7075584,
+      "volume_20d_avg": 1128265.0,
+      "volume_ratio": 6.27
+    },
+    "LALPATHLAB.NS": {
+      "ticker": "LALPATHLAB.NS",
+      "fetched_at": "2026-10-31T11:32:36.265632",
+      "latest_date": "2026-10-30",
+      "latest_close": NaN,
+      "prev_close": 1911.699951171875,
+      "price_change_pct": NaN,
+      "volume_latest": 282549,
+      "volume_20d_avg": 267930.0,
+      "volume_ratio": 1.05
+    },
+    "ASTRAL.NS": {
+      "ticker": "ASTRAL.NS",
+      "fetched_at": "2026-10-31T11:32:36.826653",
+      "latest_date": "2026-10-30",
+      "latest_close": 1341.9000244140625,
+      "prev_close": 1365.4000244140625,
+      "price_change_pct": -1.72,
+      "volume_latest": 300895,
+      "volume_20d_avg": 379501.0,
+      "volume_ratio": 0.79
+    },
+    "ZOMATO.NS": {
+      "ticker": "ZOMATO.NS",
+      "error": "fetch_failed"
+    },
+    "IRCTC.NS": {
+      "ticker": "IRCTC.NS",
+      "fetched_at": "2026-10-31T11:32:39.645145",
+      "latest_date": "2026-10-30",
+      "latest_close": 436.20001220703125,
+      "prev_close": 444.04998779296875,
+      "price_change_pct": -1.77,
+      "volume_latest": 542565,
+      "volume_20d_avg": 862864.0,
+      "volume_ratio": 0.63
+    },
+    "CDSL.NS": {
+      "ticker": "CDSL.NS",
+      "fetched_at": "2026-10-31T11:32:40.204814",
+      "latest_date": "2026-10-30",
+      "latest_close": 1263.0,
+      "prev_close": 1282.0,
+      "price_change_pct": -1.48,
+      "volume_latest": 887384,
+      "volume_20d_avg": 884265.0,
+      "volume_ratio": 1.0
+    },
+    "IDEAFORGE.NS": {
+      "ticker": "IDEAFORGE.NS",
+      "fetched_at": "2026-10-31T11:32:40.735114",
+      "latest_date": "2026-10-30",
+      "latest_close": 628.5,
+      "prev_close": 676.4000244140625,
+      "price_change_pct": -7.08,
+      "volume_latest": 550704,
+      "volume_20d_avg": 286924.0,
+      "volume_ratio": 1.92
+    },
+    "PERSISTENT.NS": {
+      "ticker": "PERSISTENT.NS",
+      "fetched_at": "2026-10-31T11:32:41.275493",
+      "latest_date": "2026-10-30",
+      "latest_close": 6048.0,
+      "prev_close": 5880.0,
+      "price_change_pct": 2.86,
+      "volume_latest": 1108361,
+      "volume_20d_avg": 768925.0,
+      "volume_ratio": 1.44
+    },
+    "DMART.NS": {
+      "ticker": "DMART.NS",
+      "fetched_at": "2026-10-31T11:32:41.854398",
+      "latest_date": "2026-10-30",
+      "latest_close": 3199.0,
+      "prev_close": 3175.0,
+      "price_change_pct": 0.76,
+      "volume_latest": 317302,
+      "volume_20d_avg": 856934.0,
+      "volume_ratio": 0.37
+    },
+    "BAJFINANCE.NS": {
+      "ticker": "BAJFINANCE.NS",
+      "fetched_at": "2026-10-31T11:32:42.403920",
+      "latest_date": "2026-10-30",
+      "latest_close": 939.0999755859375,
+      "prev_close": 938.9000244140625,
+      "price_change_pct": 0.02,
+      "volume_latest": 9334765,
+      "volume_20d_avg": 8215073.0,
+      "volume_ratio": 1.14
+    },
+    "MOTHERSON.NS": {
+      "ticker": "MOTHERSON.NS",
+      "fetched_at": "2026-10-31T11:32:42.955912",
+      "latest_date": "2026-10-30",
+      "latest_close": 156.5,
+      "prev_close": 160.0,
+      "price_change_pct": -2.19,
+      "volume_latest": 8986273,
+      "volume_20d_avg": 11007059.0,
+      "volume_ratio": 0.82
+    }
+  }
+}

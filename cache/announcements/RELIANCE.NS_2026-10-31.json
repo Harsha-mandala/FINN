@@ -1,0 +1,206 @@
+{
+  "ticker": "RELIANCE.NS",
+  "fetched_at": "2026-10-31T14:25:30.871458",
+  "days_back": 30,
+  "count": 18,
+  "announcements": [
+    {
+      "source": "BSE",
+      "scrip_code": "500325",
+      "headline": "Announcement under Regulation 30 (LODR)-Investor Presentation",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Investor Presentation",
+      "date": "2026-10-30T19:48:21",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/0dc8ebe7-5e2d-4946-85ee-1e536c461a71.pdf",
+      "news_id": "009ca8ed-52dc-481d-92f1-291961ea16e0",
+      "ticker": "RELIANCE.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500325",
+      "headline": "Announcement under Regulation 30 (LODR)-Press Release / Media Release",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Press Release / Media Release",
+      "date": "2026-10-30T19:46:01",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/aacc5fc7-25e5-4901-b682-d9911fe1d21b.pdf",
+      "news_id": "b8e02617-92c5-4f96-918b-15d92b0d6d51",
+      "ticker": "RELIANCE.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500325",
+      "headline": "Unaudited Financial Results (Consolidated And Standalone) For The Quarter And Half Year Ended September 30, 2026.",
+      "category_raw": "Result",
+      "subcategory_raw": "Financial Results",
+      "date": "2026-10-30T19:42:49",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/880087f6-7ecc-40a9-8cac-de48d4616b25.pdf",
+      "news_id": "3d90a81b-52f2-427a-b1f7-27f545cf1ca5",
+      "ticker": "RELIANCE.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500325",
+      "headline": "Board Meeting Outcome for Board Meeting Outcome For Unaudited Financial Results (Consolidated And Standalone) For The Quarter And Half Year Ended September 30, 2026 And Issuance Non-Convertible Debentures.",
+      "category_raw": "Board Meeting",
+      "subcategory_raw": "Outcome of Board Meeting",
+      "date": "2026-10-30T19:38:02",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/9d4cb3ed-a184-4662-91fc-f4112ce354b7.pdf",
+      "news_id": "927accc7-0fc2-4b9e-936e-1b94594cf77c",
+      "ticker": "RELIANCE.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500325",
+      "headline": "Disclosure Under Regulation 30 Of The Securities And Exchange Board Of India (Listing Obligations And Disclosure Requirements) Regulations, 2015 - Voluntary Strike Off Of Hamleys (Franchising) Limited.",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-29T08:55:13",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/bc9fc5d1-9c04-4a88-b807-79d27dd63697.pdf",
+      "news_id": "313ccc61-deae-4673-a050-3a78c4290c8f",
+      "ticker": "RELIANCE.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500325",
+      "headline": "Listing Of Equity Shares Of Jio Platforms Limited",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-27T22:11:23",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/70bfc361-3c9a-45d0-8240-e1b544debd01.pdf",
+      "news_id": "c737601e-dff8-49ed-8959-263b42e68df0",
+      "ticker": "RELIANCE.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500325",
+      "headline": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Analyst / Investor Meet",
+      "date": "2026-10-27T19:15:23",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/abf880ad-357c-4ff9-b6d7-83c1dcf59cba.pdf",
+      "news_id": "e70ee0c0-22ad-4428-a23a-2da1f60f735f",
+      "ticker": "RELIANCE.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500325",
+      "headline": "Board Meeting Intimation for Considering And Approving The Standalone And Consolidated Unaudited Financial Results For The Quarter And Half Year Ended September 30, 2026 And Raising Of Funds By Way Of Issuance Of Debentures",
+      "category_raw": "Board Meeting",
+      "subcategory_raw": "Board Meeting",
+      "date": "2026-10-27T19:06:46",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/5670a3e4-4e3c-489d-9160-455cb124704f.pdf",
+      "news_id": "d8dc0c7b-ad03-42fb-a6cb-c907e219a6d7",
+      "ticker": "RELIANCE.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500325",
+      "headline": "Initial Public Offer Of Jio Platforms Limited - Update",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-24T21:47:58",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/0056a3dc-6357-48ff-a037-f1b206624331.pdf",
+      "news_id": "16ea0782-d143-468b-901a-3f244a3373ce",
+      "ticker": "RELIANCE.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500325",
+      "headline": "Media Statement",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-21T22:42:31",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/3667a6e5-6d63-45c2-b94e-d09043e401b4.pdf",
+      "news_id": "bf30a59b-8e78-4017-bcfc-867b22b7b601",
+      "ticker": "RELIANCE.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500325",
+      "headline": "Announcement under Regulation 30 (LODR)-Credit Rating",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Credit Rating",
+      "date": "2026-10-21T20:44:48",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/77e3ec52-056d-4103-8388-14b48756f70d.pdf",
+      "news_id": "e3ce80df-6eed-4b99-9262-5e8463ceb38f",
+      "ticker": "RELIANCE.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500325",
+      "headline": "Newspaper Clipping - Proposed Initial Public Offer Of Jio Platforms Limited -Reservation For Eligible RIL Shareholders",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-17T19:32:41",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/1d40c0e3-3bbd-4d47-8085-cae3973ee547.pdf",
+      "news_id": "667b68b3-614a-43f3-a754-af0d1e768b70",
+      "ticker": "RELIANCE.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500325",
+      "headline": "Newspaper Clippings - Proposed Initial Public Offer Of Jio Platforms Limited - Reservation For Eligible RIL Shareholders",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-16T20:58:10",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/36a51bd7-b43c-414a-8984-3139d2d4723e.pdf",
+      "news_id": "63fd2e6f-818f-402a-b4cc-ba1e898d6d81",
+      "ticker": "RELIANCE.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500325",
+      "headline": "Newspaper Clippings - Special Window For Transfer And Dematerialisation (Demat) Of Physical Shares",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-15T18:06:34",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/77033afd-c77b-43c9-9593-18094bbd1322.pdf",
+      "news_id": "73ed1635-1d86-46cd-8cf6-3bcc6ad2caf0",
+      "ticker": "RELIANCE.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500325",
+      "headline": "Proposed Initial Public Offer Of Jio Platforms Limited",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-14T20:12:37",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/cc57bd43-7392-405d-b507-f1a83de93453.pdf",
+      "news_id": "8f0e4798-3443-4095-82a1-4d6b0029483f",
+      "ticker": "RELIANCE.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500325",
+      "headline": "Proposed Initial Public Offer Of Jio Platforms Limited - Filing Of The Red Herring Prospectus",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-14T18:35:09",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/9f9c9b25-75e8-45ba-83a4-e230e7657f54.pdf",
+      "news_id": "fa7c81b8-d6f0-424d-9f8e-f40b710d9f8a",
+      "ticker": "RELIANCE.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500325",
+      "headline": "Disclosure Under Regulation 30 Of The Securities And Exchange Board Of India (Listing Obligations And Disclosure Requirements) Regulations, 2015.",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-07T22:36:04",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/4b5ff2a4-5718-45a6-8618-fe8453263a25.pdf",
+      "news_id": "164dfef3-3c91-4246-906a-ed5ba40e98a6",
+      "ticker": "RELIANCE.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500325",
+      "headline": "Announcement under Regulation 30 (LODR)-Allotment",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Allotment of Equity Shares",
+      "date": "2026-10-01T15:00:05",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/13487d78-7814-439c-898d-f8d21bb398d5.pdf",
+      "news_id": "6339f6f2-c8ee-4409-bb52-113c1e8e96fb",
+      "ticker": "RELIANCE.NS"
+    }
+  ]
+}

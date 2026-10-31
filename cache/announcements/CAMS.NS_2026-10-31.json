@@ -1,0 +1,162 @@
+{
+  "ticker": "CAMS.NS",
+  "fetched_at": "2026-10-31T14:25:49.568017",
+  "days_back": 30,
+  "count": 14,
+  "announcements": [
+    {
+      "source": "BSE",
+      "scrip_code": "543232",
+      "headline": "Announcement under Regulation 30 (LODR)-Newspaper Publication",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Newspaper Publication",
+      "date": "2026-10-30T17:44:30",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/a0247502-3e94-478f-b828-fb9b6e805ea9.pdf",
+      "news_id": "f9593018-8ac9-4474-84da-c5df9439a565",
+      "ticker": "CAMS.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "543232",
+      "headline": "Announcement under Regulation 30 (LODR)-Investor Presentation",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Investor Presentation",
+      "date": "2026-10-29T20:04:42",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/ae29c181-f576-49a7-ada1-5e1da3832ae0.pdf",
+      "news_id": "93448591-0524-4626-8f4f-7f1ca2799b6a",
+      "ticker": "CAMS.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "543232",
+      "headline": "Announcement under Regulation 30 (LODR)-Press Release / Media Release",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Press Release / Media Release",
+      "date": "2026-10-29T19:57:27",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/e21b2cd9-5b96-4367-bddb-4749e8628ea6.pdf",
+      "news_id": "4481d995-982c-48c7-b541-f3c1d28c2bae",
+      "ticker": "CAMS.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "543232",
+      "headline": "Corporate Action - Fixes Record Date For Interim Dividend",
+      "category_raw": "Corp. Action",
+      "subcategory_raw": "Record Date",
+      "date": "2026-10-29T17:51:53",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/ba9341cd-6a0f-4fe4-84c1-eef9587bbf72.pdf",
+      "news_id": "87f5310a-038e-497e-9e21-3499c6ad3a6f",
+      "ticker": "CAMS.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "543232",
+      "headline": "Corporate Action-Board approves Dividend",
+      "category_raw": "Corp. Action",
+      "subcategory_raw": "Dividend",
+      "date": "2026-10-29T17:50:20",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/dd742cda-e9d2-4c75-ab8d-3266fa9c13a1.pdf",
+      "news_id": "8a082813-c237-4e8e-b6c7-ad721e483c27",
+      "ticker": "CAMS.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "543232",
+      "headline": "Unaudited Financial Results For The Quarter And Half Year Ended September 30, 2026",
+      "category_raw": "Result",
+      "subcategory_raw": "Financial Results",
+      "date": "2026-10-29T17:41:16",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/171f774c-b53f-49d0-9aa7-d7dd92c5943c.pdf",
+      "news_id": "122ce105-97bb-4c31-8eb0-608b244105ea",
+      "ticker": "CAMS.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "543232",
+      "headline": "Board Meeting Outcome for Outcome Of Board Meeting Held On 29Th October 2026",
+      "category_raw": "Board Meeting",
+      "subcategory_raw": "Outcome of Board Meeting",
+      "date": "2026-10-29T17:25:57",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/754fb311-bcd6-4789-9cad-9e98d7cf62cf.pdf",
+      "news_id": "ad66a47d-cb77-4488-b0d6-947a82ffd724",
+      "ticker": "CAMS.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "543232",
+      "headline": "Announcement under Regulation 30 (LODR)-Allotment of ESOP / ESPS",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Allotment of ESOP / ESPS",
+      "date": "2026-10-27T14:40:02",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/02f479a8-84da-40f5-baa1-cea90b098130.pdf",
+      "news_id": "bff105b4-1533-40d0-9ee7-7c9bc20cc760",
+      "ticker": "CAMS.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "543232",
+      "headline": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Analyst / Investor Meet",
+      "date": "2026-10-22T16:11:50",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/1c4897c2-efcd-49e4-8dfa-2f9fe775d7c8.pdf",
+      "news_id": "facb550d-3a3b-4f5d-a8bd-80fc154818ae",
+      "ticker": "CAMS.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "543232",
+      "headline": "Announcement under Regulation 30 (LODR)-Press Release / Media Release",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Press Release / Media Release",
+      "date": "2026-10-14T13:35:53",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/24c6ff71-6044-410f-8715-d9fdd4fb03c4.pdf",
+      "news_id": "17fe974d-2a5a-43c9-ae0f-d5b23a13752e",
+      "ticker": "CAMS.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "543232",
+      "headline": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Analyst / Investor Meet",
+      "date": "2026-10-13T14:26:01",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/83d06bdd-f856-4892-b5b3-8c9ce63170d5.pdf",
+      "news_id": "da1aaaed-5037-4ac5-9912-62ab134f9d11",
+      "ticker": "CAMS.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "543232",
+      "headline": "Compliances-Certificate under Reg. 74 (5) of SEBI (DP) Regulations, 2018",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Certificate under Reg. 74 (5) of SEBI (DP) Regulations, 2018",
+      "date": "2026-10-08T09:33:23",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/edb5e601-5bc5-4399-a0ae-1c74382e1e29.pdf",
+      "news_id": "6d6992e3-bbf1-4581-85e8-5a92fa6f4e6e",
+      "ticker": "CAMS.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "543232",
+      "headline": "Announcement under Regulation 30 (LODR)-Allotment of ESOP / ESPS",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Allotment of ESOP / ESPS",
+      "date": "2026-10-01T18:11:45",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/1c67ab2e-8a28-4289-86b0-a8f293cd0dc2.pdf",
+      "news_id": "0e025c73-b5f0-4f4a-9c6c-925b1fc955d1",
+      "ticker": "CAMS.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "543232",
+      "headline": "Disclosures under Reg. 29(2) of SEBI (SAST) Regulations, 2011",
+      "category_raw": "Insider Trading / SAST",
+      "subcategory_raw": "Disclosures under Reg. 29(2) of SEBI (SAST) Regulations, 2011",
+      "date": null,
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/F4CF33D0_4A7E_458E_A386_4E1DA14D1810_085811.pdf",
+      "news_id": "f4cf33d0-4a7e-458e-a386-4e1da14d1810",
+      "ticker": "CAMS.NS"
+    }
+  ]
+}

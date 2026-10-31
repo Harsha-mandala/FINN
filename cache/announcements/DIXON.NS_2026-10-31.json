@@ -1,0 +1,140 @@
+{
+  "ticker": "DIXON.NS",
+  "fetched_at": "2026-10-31T14:25:44.642572",
+  "days_back": 30,
+  "count": 12,
+  "announcements": [
+    {
+      "source": "BSE",
+      "scrip_code": "540699",
+      "headline": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Analyst / Investor Meet",
+      "date": "2026-10-30T20:32:54",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/082ec2fb-f975-4058-aadb-d27d3e69a02d.pdf",
+      "news_id": "491a2b6d-04d1-46b9-a9d6-cbb68f0d0120",
+      "ticker": "DIXON.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "540699",
+      "headline": "Results For The Quarter And Half Year Ended 30Th September, 2026",
+      "category_raw": "Result",
+      "subcategory_raw": "Financial Results",
+      "date": "2026-10-30T16:19:51",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/d7b8fffb-7a5f-4efa-9241-482c5d765f1d.pdf",
+      "news_id": "096f1e5a-3667-42a5-b4e2-ba8272ee52fc",
+      "ticker": "DIXON.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "540699",
+      "headline": "Announcement under Regulation 30 (LODR)-Change in Management",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Change in Management",
+      "date": "2026-10-30T16:09:12",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/53529778-f611-4f21-b789-0bc1bf52e7e5.pdf",
+      "news_id": "573832b2-d25c-4a3e-a3b4-46c15e9b0178",
+      "ticker": "DIXON.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "540699",
+      "headline": "Board Meeting Outcome for Outcome Of Board Meeting Held On 30Th October, 2026",
+      "category_raw": "Board Meeting",
+      "subcategory_raw": "Outcome of Board Meeting",
+      "date": "2026-10-30T16:06:06",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/f4cee6de-593c-4f4c-a0b0-368c8d0aa43e.pdf",
+      "news_id": "6019615a-1a68-4f5d-ad22-8e5830dceb28",
+      "ticker": "DIXON.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "540699",
+      "headline": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Analyst / Investor Meet",
+      "date": "2026-10-23T18:10:44",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/4260af0d-9e97-44f0-a19a-04b0b0ddb4e5.pdf",
+      "news_id": "618d8e5c-8cf3-417f-b2e0-e5bf9310235c",
+      "ticker": "DIXON.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "540699",
+      "headline": "Board Meeting Intimation for Inter-Alia, Consideration And Approval Of Un-Audited Financial Results (Standalone & Consolidated) Of The Company For The Quarter And Half Year Ended 30Th September, 2026",
+      "category_raw": "Board Meeting",
+      "subcategory_raw": "Board Meeting",
+      "date": "2026-10-23T18:04:14",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/4ac4537e-4a64-4682-a4c5-5255ba8895cf.pdf",
+      "news_id": "7b023dbb-c6c3-4850-a772-82e5a94a13e4",
+      "ticker": "DIXON.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "540699",
+      "headline": "Announcement Under Regulation 30 Of SEBI LODR- Giving Of Guarantees Or Indemnity Or Becoming A Surety For Any Third Party",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-21T18:40:52",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/243de729-cff5-4203-a58d-cb59adb578b5.pdf",
+      "news_id": "aac2d04d-73a4-41a5-a754-134bc50fa2d4",
+      "ticker": "DIXON.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "540699",
+      "headline": "Announcement Under Regulation 30 Of SEBI LODR- ESG Rating By Crisil ESG Ratings & Analytics Ltd",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-14T18:25:28",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/9f64aac8-d0af-437a-ad7d-bfda96989bc9.pdf",
+      "news_id": "b04397d4-c23b-4d3c-8d03-f1b4f5aad25a",
+      "ticker": "DIXON.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "540699",
+      "headline": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Analyst / Investor Meet",
+      "date": "2026-10-10T13:40:18",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/ec84453f-825b-440c-8a80-cd201962e97c.pdf",
+      "news_id": "b192af02-c07c-4b05-90ca-53f7e7134f94",
+      "ticker": "DIXON.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "540699",
+      "headline": "Compliances-Certificate under Reg. 74 (5) of SEBI (DP) Regulations, 2018",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Certificate under Reg. 74 (5) of SEBI (DP) Regulations, 2018",
+      "date": "2026-10-09T18:23:47",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/5d399e99-69ab-40ce-8a3a-19348cac1432.pdf",
+      "news_id": "d22a29f5-7905-400d-bf32-aac650eaa1b6",
+      "ticker": "DIXON.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "540699",
+      "headline": "Announcement under Regulation 30 (LODR)-Memorandum of Understanding /Agreements",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Memorandum of Understanding /Agreements",
+      "date": "2026-10-07T15:01:47",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/287f464c-c823-4fe5-b997-c493ec819216.pdf",
+      "news_id": "2899f2e8-f4f5-47bd-acea-b95340f55986",
+      "ticker": "DIXON.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "540699",
+      "headline": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Analyst / Investor Meet",
+      "date": "2026-10-01T15:57:41",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/8f44a9b9-4d58-445d-8bd0-10306982373a.pdf",
+      "news_id": "43bc3624-6348-4795-9af8-a7af169c577b",
+      "ticker": "DIXON.NS"
+    }
+  ]
+}

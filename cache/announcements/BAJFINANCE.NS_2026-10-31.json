@@ -1,0 +1,261 @@
+{
+  "ticker": "BAJFINANCE.NS",
+  "fetched_at": "2026-10-31T14:26:05.008505",
+  "days_back": 30,
+  "count": 23,
+  "announcements": [
+    {
+      "source": "BSE",
+      "scrip_code": "500034",
+      "headline": "Announcement under Regulation 30 (LODR)-Allotment",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Allotment of Equity Shares",
+      "date": "2026-10-30T14:49:27",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/20d73044-2322-4d46-883f-67bff54a3b50.pdf",
+      "news_id": "130eee3b-b8b6-49c6-9a19-7b867a942435",
+      "ticker": "BAJFINANCE.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500034",
+      "headline": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Analyst / Investor Meet",
+      "date": "2026-10-26T19:33:10",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/bd352f0e-ac9c-4c6d-94cd-6b50802c665b.pdf",
+      "news_id": "4c4478a2-f1b2-4f86-a5a2-e999fb27a12a",
+      "ticker": "BAJFINANCE.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500034",
+      "headline": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Analyst / Investor Meet",
+      "date": "2026-10-23T14:45:33",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/7873abcb-7f97-487d-a474-028b0a26feea.pdf",
+      "news_id": "3edbe0c3-f3ed-4804-92a8-a4bc45e22fb6",
+      "ticker": "BAJFINANCE.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500034",
+      "headline": "Announcement under Regulation 30 (LODR)-Allotment",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Allotment of Equity Shares",
+      "date": "2026-10-21T12:22:21",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/5bb76cad-5a8c-42c8-8aa3-6d81edf31bf6.pdf",
+      "news_id": "45a6d9d4-9a06-4b97-ab17-780a8d0cf7d4",
+      "ticker": "BAJFINANCE.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500034",
+      "headline": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Analyst / Investor Meet",
+      "date": "2026-10-19T21:05:09",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/adefbbb0-caa9-46a5-91aa-41c5359a7271.pdf",
+      "news_id": "38bd2591-6085-4377-8935-62a6fffdd756",
+      "ticker": "BAJFINANCE.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500034",
+      "headline": "Announcement under Regulation 30 (LODR)-Change in Management",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Change in Management",
+      "date": "2026-10-19T18:18:41",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/eb4bfa8c-5285-4b6f-86c3-852bf82c8015.pdf",
+      "news_id": "9817a9b7-6de3-4bfa-8e80-ac4cf87d1d6a",
+      "ticker": "BAJFINANCE.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500034",
+      "headline": "Announcement under Regulation 30 (LODR)-Issue of Securities",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Issue of Securities",
+      "date": "2026-10-19T18:03:33",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/fda5e9e1-3aa9-4ccc-837a-d45817ef7360.pdf",
+      "news_id": "913014a6-a273-4cfc-8a62-a2fccb69a061",
+      "ticker": "BAJFINANCE.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500034",
+      "headline": "Unaudited Standalone And Consolidated Financial Results For The Quarter And Half Year Ended 30 September 2026",
+      "category_raw": "Result",
+      "subcategory_raw": "Financial Results",
+      "date": "2026-10-19T17:39:55",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/229c460f-9cda-4732-972f-847519b40426.pdf",
+      "news_id": "35bf242b-58db-4820-9ded-2d759a71d9f8",
+      "ticker": "BAJFINANCE.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500034",
+      "headline": "Announcement under Regulation 30 (LODR)-Investor Presentation",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Investor Presentation",
+      "date": "2026-10-19T17:27:30",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/e7c0f169-e396-4a7d-a57d-b1f7c47f6290.pdf",
+      "news_id": "c862464b-817a-43bb-b588-6fc0f0f78eb5",
+      "ticker": "BAJFINANCE.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500034",
+      "headline": "Board Meeting Outcome for Outcome Of Board Meeting Held On 19 October 2026",
+      "category_raw": "Board Meeting",
+      "subcategory_raw": "Outcome of Board Meeting",
+      "date": "2026-10-19T17:19:35",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/0477f65f-4dea-40cf-a6bf-67088c43b679.pdf",
+      "news_id": "bef4c126-a01e-4636-9c8b-e50fc1a82879",
+      "ticker": "BAJFINANCE.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500034",
+      "headline": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Analyst / Investor Meet",
+      "date": "2026-10-16T16:12:35",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/b93f01a0-573d-4aaa-9d02-929ffa10c5ce.pdf",
+      "news_id": "5043cd2c-5f3e-44fb-bd46-9a1ec5e35d0b",
+      "ticker": "BAJFINANCE.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500034",
+      "headline": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Analyst / Investor Meet",
+      "date": "2026-10-16T16:07:54",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/c15837a7-6d43-4f62-9e8c-d6700c138a70.pdf",
+      "news_id": "545db3fb-3a29-4083-8357-bece4653cb77",
+      "ticker": "BAJFINANCE.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500034",
+      "headline": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Analyst / Investor Meet",
+      "date": "2026-10-16T16:06:37",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/fc936909-2b70-497f-8330-629acc3fb6b3.pdf",
+      "news_id": "f10171fc-5d3d-4905-823a-a6ba1d682a1d",
+      "ticker": "BAJFINANCE.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500034",
+      "headline": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Analyst / Investor Meet",
+      "date": "2026-10-13T11:47:18",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/2b45cbcd-a093-4983-817e-7bd6ab6c059c.pdf",
+      "news_id": "ea84d51e-b0fc-4b7e-aea0-0b7e5c24bb2c",
+      "ticker": "BAJFINANCE.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500034",
+      "headline": "Announcement under Regulation 30 (LODR)-Newspaper Publication",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Newspaper Publication",
+      "date": "2026-10-10T17:14:51",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/1a30011c-5162-424c-969f-7932fc6c434e.pdf",
+      "news_id": "b5d8ff66-b8aa-4fe5-8758-66e0d06f89ca",
+      "ticker": "BAJFINANCE.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500034",
+      "headline": "Notice Of The Extraordinary General Meeting Under Regulation 30 Of SEBI (Listing Obligations And Disclosure Requirements) Regulations, 2015.",
+      "category_raw": "AGM/EGM",
+      "subcategory_raw": "EGM",
+      "date": "2026-10-09T22:43:37",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/b73749ee-b99f-4e1c-bcb8-3503bbed193a.pdf",
+      "news_id": "1d865404-5093-4169-91ac-51d32dda6dd9",
+      "ticker": "BAJFINANCE.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500034",
+      "headline": "Announcement under Regulation 30 (LODR)-Allotment",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Allotment of Equity Shares",
+      "date": "2026-10-09T12:08:09",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/d19f2dd1-edd0-42c7-aebe-680558175811.pdf",
+      "news_id": "c03c55d5-8d77-4fdf-8fa8-5417407524a4",
+      "ticker": "BAJFINANCE.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500034",
+      "headline": "Compliances-Certificate under Reg. 74 (5) of SEBI (DP) Regulations, 2018",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Certificate under Reg. 74 (5) of SEBI (DP) Regulations, 2018",
+      "date": "2026-10-07T18:46:35",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/f1fa351e-1b5e-45b4-8adc-488ab056aeb6.pdf",
+      "news_id": "70fcba2b-7ca8-4dce-8bc1-b80fd0e3d9d6",
+      "ticker": "BAJFINANCE.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500034",
+      "headline": "Board Meeting Intimation for Considering And Approving Unaudited Standalone And Consolidated Financial Results For The Quarter And Half Year Ended 30 September 2026",
+      "category_raw": "Board Meeting",
+      "subcategory_raw": "Board Meeting",
+      "date": "2026-10-05T18:42:28",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/7befbd0b-8d13-47e1-bf9f-3f91b13538c2.pdf",
+      "news_id": "8053132b-873b-4c42-a225-b6332f0f8dd6",
+      "ticker": "BAJFINANCE.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500034",
+      "headline": "Information Under Regulation 30 Of SEBI (Listing Obligations And Disclosure Requirements) Regulation, 2015 R/W Schedule A Of Regulation 8 Of SEBI (Prohibition Of Insider Trading) Regulations, 2015",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-03T10:57:16",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/211b489c-1633-4c21-9141-73d4672004a4.pdf",
+      "news_id": "12313689-7d57-4c50-9dba-f54e45049aec",
+      "ticker": "BAJFINANCE.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500034",
+      "headline": "Announcement under Regulation 30 (LODR)-Qualified Institutional Placement",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Qualified Institutional Placement",
+      "date": "2026-10-01T23:30:47",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/011617d6-a18d-4fd3-a414-4b681bf37224.pdf",
+      "news_id": "b665c797-4a14-4ca7-90df-bc94c93ddb2b",
+      "ticker": "BAJFINANCE.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500034",
+      "headline": "Announcement under Regulation 30 (LODR)-Preferential Issue",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Preferential Issue",
+      "date": "2026-10-01T23:27:15",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/50fbec1c-9852-4043-9020-d9df179271d5.pdf",
+      "news_id": "52d08a9e-3ae5-42ae-8581-1992e98c3b89",
+      "ticker": "BAJFINANCE.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500034",
+      "headline": "Board Meeting Outcome for Capital Raise Through QIP And Preferential Issue",
+      "category_raw": "Board Meeting",
+      "subcategory_raw": "Outcome of Board Meeting",
+      "date": "2026-10-01T23:10:45",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/8a657d02-934b-47e9-ad14-128578cc57ff.pdf",
+      "news_id": "860141ba-6a41-47fe-b3b7-85ea7ce6091a",
+      "ticker": "BAJFINANCE.NS"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "ticker": "CDSL.NS",
+  "fetched_at": "2026-10-31T14:25:58.167545",
+  "days_back": 30,
+  "count": 3,
+  "announcements": [
+    {
+      "source": "BSE",
+      "scrip_code": "540704",
+      "headline": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Analyst / Investor Meet",
+      "date": "2026-10-29T12:59:38",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/0944b818-e69c-42aa-ae5c-0f4c48e4803c.pdf",
+      "news_id": "d038944c-50ae-4737-8476-6e351cc29f32",
+      "ticker": "CDSL.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "540704",
+      "headline": "Board Meeting Intimation for Approving Unaudited Financial Results For The Quarter And Half Year Ended 30Th  September 2026.",
+      "category_raw": "Board Meeting",
+      "subcategory_raw": "Board Meeting",
+      "date": "2026-10-29T12:53:48",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/1faa6d35-a3b2-444a-aacb-532ec1d6d83b.pdf",
+      "news_id": "091d87fb-e458-43e6-be32-19fff011119d",
+      "ticker": "CDSL.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "540704",
+      "headline": "Company Update For The Quarter And Half Year Ended September 30, 2026",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-07T16:45:31",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/697cd656-1852-4827-bf29-b3101360fa68.pdf",
+      "news_id": "8a3b2955-3e07-4f78-b32c-a2516250fd60",
+      "ticker": "CDSL.NS"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "ticker": "KALYANKJIL.NS",
+  "fetched_at": "2026-10-31T14:25:47.897469",
+  "days_back": 30,
+  "count": 5,
+  "announcements": [
+    {
+      "source": "BSE",
+      "scrip_code": "543278",
+      "headline": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Analyst / Investor Meet",
+      "date": "2026-10-26T16:05:40",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/c696e217-e96d-4d03-88e4-61ba2002e3f4.pdf",
+      "news_id": "f577bbde-0fa3-44c1-aa11-8fcc648b9620",
+      "ticker": "KALYANKJIL.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "543278",
+      "headline": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Analyst / Investor Meet",
+      "date": "2026-10-23T16:19:35",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/48c05486-f549-4681-b749-780d7a12e9a9.pdf",
+      "news_id": "e64e678d-93ae-4f6b-8ef2-766fe4cfc271",
+      "ticker": "KALYANKJIL.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "543278",
+      "headline": "Board Meeting Intimation for The Quarter And Half Year Ended September 30, 2026",
+      "category_raw": "Board Meeting",
+      "subcategory_raw": "Board Meeting",
+      "date": "2026-10-22T11:38:40",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/caa391dd-6df4-43b6-9643-aa15caa84018.pdf",
+      "news_id": "a38e4bb2-c3b6-44a2-b54b-660dd72fd8f3",
+      "ticker": "KALYANKJIL.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "543278",
+      "headline": "Compliances-Certificate under Reg. 74 (5) of SEBI (DP) Regulations, 2018",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Certificate under Reg. 74 (5) of SEBI (DP) Regulations, 2018",
+      "date": "2026-10-07T15:24:38",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/cf2d5eac-78ac-4d3c-b5e3-df5225ec1585.pdf",
+      "news_id": "0fedf752-4ba5-4730-8aaa-81fcf945e5c6",
+      "ticker": "KALYANKJIL.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "543278",
+      "headline": "Quarterly Update - Q2 FY 2026-27",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-07T07:47:25",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/43b1b5d9-c275-4673-87fd-9ad6955815e9.pdf",
+      "news_id": "26c86396-4aa8-4cb8-9919-2719a5996557",
+      "ticker": "KALYANKJIL.NS"
+    }
+  ]
+}

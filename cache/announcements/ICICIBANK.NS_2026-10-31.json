@@ -1,0 +1,217 @@
+{
+  "ticker": "ICICIBANK.NS",
+  "fetched_at": "2026-10-31T14:25:37.955995",
+  "days_back": 30,
+  "count": 19,
+  "announcements": [
+    {
+      "source": "BSE",
+      "scrip_code": "532174",
+      "headline": "Announcement under Regulation 30 (LODR)-Allotment of ESOP / ESPS",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Allotment of ESOP / ESPS",
+      "date": "2026-10-30T10:09:52",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/9b79dc4a-becb-419c-a4cd-a077b89b9d76.pdf",
+      "news_id": "d019b02a-5929-4a40-84b6-d05fb8273b90",
+      "ticker": "ICICIBANK.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "532174",
+      "headline": "Announcement under Regulation 30 (LODR)-Allotment of ESOP / ESPS",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Allotment of ESOP / ESPS",
+      "date": "2026-10-27T10:26:10",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/c6e8627c-e5c3-43ef-929c-707b24b1cf4d.pdf",
+      "news_id": "e9e47b47-0288-41b5-976d-e7c339f0bbe6",
+      "ticker": "ICICIBANK.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "532174",
+      "headline": "Announcement under Regulation 30 (LODR)-Credit Rating",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Credit Rating",
+      "date": "2026-10-24T13:38:34",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/94d9e62f-952d-4046-8379-bbdd1761f3ab.pdf",
+      "news_id": "090d44c9-ed1b-4374-b984-fed3831e72ad",
+      "ticker": "ICICIBANK.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "532174",
+      "headline": "Transcripts Of The Call With Media And Of Earnings Call With\r\nAnalysts And Investors\r\n",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-23T18:02:46",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/b0db888f-4420-4c21-9c36-9a91bdf5865e.pdf",
+      "news_id": "217ee68f-868b-4216-9304-675440632ce7",
+      "ticker": "ICICIBANK.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "532174",
+      "headline": "Announcement under Regulation 30 (LODR)-Allotment of ESOP / ESPS",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Allotment of ESOP / ESPS",
+      "date": "2026-10-22T16:42:25",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/74fe2093-fb65-447c-b37a-4c94e860f509.pdf",
+      "news_id": "87767350-8c39-4a5c-8549-29bb431a0d0d",
+      "ticker": "ICICIBANK.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "532174",
+      "headline": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Analyst / Investor Meet",
+      "date": "2026-10-17T20:52:29",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/265811af-e787-4d51-8313-c62c515ae838.pdf",
+      "news_id": "28f9e367-22e9-456e-8377-3fdf1d4226f0",
+      "ticker": "ICICIBANK.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "532174",
+      "headline": "Announcement under Regulation 30 (LODR)-Investor Presentation",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Investor Presentation",
+      "date": "2026-10-17T16:53:49",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/b831cebf-9ddc-48a6-861f-1879e07a86fc.pdf",
+      "news_id": "c04ba836-7b62-471c-9914-e0cd15be7e37",
+      "ticker": "ICICIBANK.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "532174",
+      "headline": "Board Meeting Outcome for Outcome Of Board Meeting Held On October 17, 2026",
+      "category_raw": "Board Meeting",
+      "subcategory_raw": "Outcome of Board Meeting",
+      "date": "2026-10-17T15:34:40",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/ce99bcac-180c-4c6b-9eb7-89690a4bb498.pdf",
+      "news_id": "00c6c092-d2f0-45bd-a878-2da08a512b41",
+      "ticker": "ICICIBANK.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "532174",
+      "headline": "Unaudited Financial Results (Standalone And Consolidated) For The Quarter And Six Months Ended September 30, 2026",
+      "category_raw": "Result",
+      "subcategory_raw": "Financial Results",
+      "date": "2026-10-17T15:26:33",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/cbd56dbf-e0e2-444e-9793-b261a8e0e05e.pdf",
+      "news_id": "2871e7ba-96fe-41f0-bc84-79215ff8893e",
+      "ticker": "ICICIBANK.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "532174",
+      "headline": "Announcement under Regulation 30 (LODR)-Allotment of ESOP / ESPS",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Allotment of ESOP / ESPS",
+      "date": "2026-10-15T14:18:26",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/a45e4737-ef8d-4eab-b353-0a40628db311.pdf",
+      "news_id": "47096e96-af36-4ba8-b2bf-f752f5835b2b",
+      "ticker": "ICICIBANK.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "532174",
+      "headline": "Announcement under Regulation 30 (LODR)-Allotment of ESOP / ESPS",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Allotment of ESOP / ESPS",
+      "date": "2026-10-13T09:59:36",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/6beea671-3c68-497d-bf08-db47c42a8c89.pdf",
+      "news_id": "94132a1c-8e5a-440c-b1ed-b426b30457fc",
+      "ticker": "ICICIBANK.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "532174",
+      "headline": "Call With Media On Financial Results For The Quarter And Six Months Ended September 30, 2026",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-12T17:51:39",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/771bee58-f784-482f-b1bd-e19e499d866f.pdf",
+      "news_id": "294e4bd4-5d5b-4bd7-8a05-e9beb4d4c4f3",
+      "ticker": "ICICIBANK.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "532174",
+      "headline": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Analyst / Investor Meet",
+      "date": "2026-10-12T17:44:04",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/3e200240-e8eb-4bbd-bd1c-34bf22f4f30d.pdf",
+      "news_id": "0312d927-b933-4d9b-800d-bd849a113225",
+      "ticker": "ICICIBANK.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "532174",
+      "headline": "Announcement under Regulation 30 (LODR)-Allotment of ESOP / ESPS",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Allotment of ESOP / ESPS",
+      "date": "2026-10-08T17:43:31",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/4249f114-8bcd-481a-80f6-b3a624a47201.pdf",
+      "news_id": "d1f08902-2a1a-4986-b569-b82b7c6e4794",
+      "ticker": "ICICIBANK.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "532174",
+      "headline": "Compliances-Certificate under Reg. 74 (5) of SEBI (DP) Regulations, 2018",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Certificate under Reg. 74 (5) of SEBI (DP) Regulations, 2018",
+      "date": "2026-10-08T17:17:47",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/edbd0638-6a35-44c2-bcc9-463195a230ed.pdf",
+      "news_id": "9476f508-ace7-41e4-af68-f21311c26eac",
+      "ticker": "ICICIBANK.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "532174",
+      "headline": "Announcement under Regulation 30 (LODR)-Allotment of ESOP / ESPS",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Allotment of ESOP / ESPS",
+      "date": "2026-10-06T10:19:34",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/2ec3ff58-cc3c-43af-8249-08fad5a5df60.pdf",
+      "news_id": "03df9e4d-9e0a-42f4-a8ae-927136bc56ad",
+      "ticker": "ICICIBANK.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "532174",
+      "headline": "Disclosure Under Regulation 30 Of The SEBI (Listing Obligations And Disclosure Requirements) Regulations, 2015",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-02T17:41:03",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/f47d9cac-3fad-413b-91cf-11178fa9fe29.pdf",
+      "news_id": "452905ce-2e22-42f1-99ea-11bb81c317ca",
+      "ticker": "ICICIBANK.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "532174",
+      "headline": "Disclosure Under Regulation 30 Of The SEBI (Listing Obligations\r\nAnd Disclosure Requirements) Regulations, 2015",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-01T17:02:22",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/2f33a7a0-e67a-4f17-a615-afc0732e2fcb.pdf",
+      "news_id": "e50cc83e-01f4-45ee-b73d-caec263377a1",
+      "ticker": "ICICIBANK.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "532174",
+      "headline": "Newspaper Advertisement - Special Window For Transfer And Dematerialisation Of Physical Securities",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-01T13:52:21",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/8fa2623c-b325-4851-bb82-41d2e821a983.pdf",
+      "news_id": "9fafc058-2ba5-4883-9b1e-bf0c863c4b94",
+      "ticker": "ICICIBANK.NS"
+    }
+  ]
+}

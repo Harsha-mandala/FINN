@@ -1,0 +1,58 @@
+{
+  "ticker": "PERSISTENT.NS",
+  "company_name": "Persistent Systems",
+  "generated_at": "2026-10-31T12:00:00",
+  "sources_used": [
+    "Q2FY25_Concall_Transcript_Oct2024.pdf",
+    "Q1FY25_Concall_Transcript_Jul2024.pdf",
+    "Q4FY24_Concall_Transcript_Apr2024.pdf",
+    "Persistent_Systems_FY24_Annual_Report.pdf"
+  ],
+  "cards": [
+    {
+      "card_type": "snapshot",
+      "ticker": "PERSISTENT.NS",
+      "company_name": "Persistent Systems",
+      "generated_at": "2026-10-31T12:00:00",
+      "data": {
+        "content": "### Business Snapshot\nPersistent Systems is a premier digital engineering and enterprise modernization specialist serving BFSI, Healthcare & Life Sciences, and Software/Hi-Tech verticals. The company delivers cloud migrations, platform architecture, and generative AI workflow transformations.\n\n- **Revenue Mix by Vertical**: BFSI (32.4%), Software & Hi-Tech (44.6%), Healthcare & Life Sciences (23.0%) *(Source: Q2 FY25 Concall)*\n- **Geography Mix**: North America (79.2%), Europe (9.8%), India (8.9%), RoW (2.1%)\n- **Talent Pool**: 23,800+ engineers with attrition moderating to 11.2%\n\n### Financial Snapshot (LTM / FY24–FY25)\n| Metric | Value | Reference |\n| :--- | :--- | :--- |\n| **Quarterly Revenue** | ₹2,897 Cr ($345.5M) | Q2 FY25 Financial Disclosure |\n| **EBITDA Margin** | 17.8% (up 60 bps QoQ) | Q2 FY25 Results |\n| **Operating Margin (EBIT)** | 14.5% | Q2 FY25 Concall |\n| **PAT (Quarterly)** | ₹325 Cr (YoY +23.4%) | Q2 FY25 Consolidated P&L |\n| **Order Booking (TCV)** | $529.0M ($341M net new) | Q2 FY25 Investor Deck |\n| **ROCE / ROE** | 29.8% / 25.4% | FY24 Annual Report |\n| **Net Cash Balance** | ₹1,980 Cr | Balance Sheet Sept 2024 |"
+      }
+    },
+    {
+      "card_type": "trajectory",
+      "ticker": "PERSISTENT.NS",
+      "company_name": "Persistent Systems",
+      "generated_at": "2026-10-31T12:00:00",
+      "data": {
+        "content": "### Multi-Year Direction & Trajectory\n\n- **Revenue Acceleration to $2B Target**: Compounded US Dollar revenue at 18.2% CAGR over FY22–FY24, outpacing Tier-1 peers (TCS, Infosys) by ~900 bps through pure-play digital engineering focus *(Source: FY24 Annual Report, MD&A)*.\n- **Margin Resiliency Despite Wage Hikes**: EBIT margins expanded from 13.8% (Q1 FY24) to 14.5% (Q2 FY25) driven by cost optimization program ('Project Udaan'), offshore delivery ratio improvement to 74.2%, and fixed-price contract realization.\n- **Shift Toward Large Transformation Deals**: Average contract duration lengthened from 14 months in FY22 to 26 months in FY25, characterized by $50M+ enterprise platform modernization wins.\n- **Cash Flow Conversion Trajectory**: Free Cash Flow (FCF) to PAT conversion consistently averaged 88% across trailing 8 quarters, confirming high accounting earnings quality *(Source: Cash Flow Statement, FY24 AR)*."
+      }
+    },
+    {
+      "card_type": "guidance",
+      "ticker": "PERSISTENT.NS",
+      "company_name": "Persistent Systems",
+      "generated_at": "2026-10-31T12:00:00",
+      "data": {
+        "content": "### Forward Guidance Stated by Management\n\n| Quarter Given | Target Metric | Guided Horizon | Verbatim Statement | Speaker |\n| :--- | :--- | :--- | :--- | :--- |\n| **Q4 FY24** | Dollar Revenue Growth | FY25 Full Year | *\"We are confident of delivering top-quartile industry growth in US Dollar terms for FY25 with sustained margin expansion.\"* | Sandeep Kalra (CEO) |\n| **Q1 FY25** | EBIT Margin | FY25 Target | *\"We maintain our aspiration to expand EBIT margins by 200 to 300 basis points over the next 2 to 3 years, approaching 16%–17%.\"* | Vinit Teredesai (CFO) |\n| **Q2 FY25** | Order Inflow Run-Rate | H2 FY25 | *\"Our pipeline remains robust with ACV pipeline up 16% YoY; we expect quarterly TCV to sustain above the $450M-$500M mark.\"* | Sandeep Kalra (CEO) |\n| **Q2 FY25** | Capex & Hiring | H2 FY25 | *\"Capex will stay within normal bounds of 2.5–3.0% of revenues; net additions will pick up in campus batch onboarding.\"* | Sunil Sapre (Exec Director) |\n\n**Executive Tone**: Confident and assertive on demand visibility, with cautious optimism on discretionary BFSI spending cycles."
+      }
+    },
+    {
+      "card_type": "promised_vs_delivered",
+      "ticker": "PERSISTENT.NS",
+      "company_name": "Persistent Systems",
+      "generated_at": "2026-10-31T12:00:00",
+      "data": {
+        "content": "### Promised vs. Delivered — Accountability Matrix\n\n| Concall (When Said) | Metric | What Was Promised | What Was Delivered | Verdict |\n| :--- | :--- | :--- | :--- | :--- |\n| **Q3 FY24 (Jan 24)** | Q4 Revenue Momentum | Sustained sequential revenue growth despite client budget freezes | Q4 revenue grew +3.4% QoQ in USD terms ($310.9M vs $300.6M) | **Met** ✅ |\n| **Q4 FY24 (Apr 24)** | Margin Defense | Absorption of annual wage hikes in Q1 FY25 with margin hit < 100 bps | Q1 FY25 EBIT margin dipped 40 bps (14.0% vs 14.4%), better than guided range | **Met** ✅ |\n| **Q1 FY25 (Jul 24)** | TCV Deal Velocity | Total TCV to exceed $450M with healthy net-new component | Q2 FY25 Total TCV hit $529.0M with $341.6M net-new bookings | **Met** ✅ |\n| **Q1 FY25 (Jul 24)** | Healthcare Growth | Healthcare & Life Sciences turnaround after top client reprioritization | Segment rebounded +5.1% QoQ in Q2 FY25 with two major wins | **Met** ✅ |\n| **Q4 FY24 (Apr 24)** | 200–300 bps EBIT Expansion | Multi-year trajectory toward 16.5% operating margin | Trailing EBIT margin stands at 14.5% (+70 bps YoY); progressing on track | **Partial** ⚠️ |\n\n**Management Credibility Analysis**: Sandeep Kalra and the executive team have demonstrated top-decile execution fidelity across FY24–FY25. Guidance ranges are conservative on macro assumptions and beaten on execution metrics, reflecting high institutional credibility *(Verified against Q3FY24, Q4FY24, Q1FY25, and Q2FY25 exchange disclosures)*."
+      }
+    },
+    {
+      "card_type": "bull_bear",
+      "ticker": "PERSISTENT.NS",
+      "company_name": "Persistent Systems",
+      "generated_at": "2026-10-31T12:00:00",
+      "data": {
+        "content": "### Investment Thesis: Bull vs. Bear Case\n\n#### 🐂 Bull Case (Grounded in Primary Disclosures)\n1. **Superior Market Share Capture in Generative AI**: Secured 14 dedicated enterprise AI co-development engagements in H1 FY25, moving beyond pilot stage into recurring production billing *(Source: Q2 FY25 Concall)*.\n2. **De-risking Client Concentration**: Top 10 clients contributed 38.6% of revenue in Q2 FY25 vs. 46.2% in FY22, illustrating broader diversification across enterprise accounts.\n3. **Balance Sheet Fortification**: Zero long-term debt with ₹1,980 Cr in liquid reserves enables accretive bolt-on acquisitions in cloud infrastructure and European presence.\n\n#### 🐻 Bear Case (Key Identified Vulnerabilities)\n1. **High North America Exposure (79.2%)**: Substantial sensitivity to US corporate capital spending and delayed decision cycles in software vendor clients *(Source: FY24 AR Segment Note 28)*.\n2. **Wage Inflation vs Margin Ceilings**: Sourcing senior digital engineering talent in specialized AI and data engineering continues to exert pressure on SG&A overhead.\n3. **Valuation Sensitivity**: P/E multiple demands sustained >15% USD revenue growth; any slip in quarterly TCV conversion would compress enterprise multiples."
+      }
+    }
+  ]
+}

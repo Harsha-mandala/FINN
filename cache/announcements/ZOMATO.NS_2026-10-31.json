@@ -1,0 +1,118 @@
+{
+  "ticker": "ZOMATO.NS",
+  "fetched_at": "2026-10-31T14:25:54.726197",
+  "days_back": 30,
+  "count": 10,
+  "announcements": [
+    {
+      "source": "BSE",
+      "scrip_code": "543320",
+      "headline": "Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Earnings Call Transcript",
+      "date": "2026-10-27T16:52:01",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/64f36e3b-87e9-426e-be3e-515dca4525d2.pdf",
+      "news_id": "be299086-d70d-4db2-af4b-0307eb15a5d9",
+      "ticker": "ZOMATO.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "543320",
+      "headline": "Announcement under Regulation 30 (LODR)-Monitoring Agency Report",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Monitoring Agency Report",
+      "date": "2026-10-21T17:35:14",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/0c09b689-969e-4ab5-88db-ab3fa4ea814a.pdf",
+      "news_id": "1f27e571-141f-4809-b6f1-f41316b785e7",
+      "ticker": "ZOMATO.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "543320",
+      "headline": "Announcement under Regulation 30 (LODR)-Restructuring",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Restructuring",
+      "date": "2026-10-21T15:37:20",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/a0daf632-ab45-41ef-bbc5-bfc655056cbb.pdf",
+      "news_id": "15f7c96b-d24a-46f7-9e04-c71db3f54f4c",
+      "ticker": "ZOMATO.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "543320",
+      "headline": "Results For The Quarter And Half Year Ended September 30, 2026",
+      "category_raw": "Result",
+      "subcategory_raw": "Financial Results",
+      "date": "2026-10-21T15:31:19",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/5e5ee67c-fdd2-46d5-9390-e8e4a018c5b2.pdf",
+      "news_id": "4f43fab8-8509-4b73-a036-8f1267c8a4b0",
+      "ticker": "ZOMATO.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "543320",
+      "headline": "Shareholders Letter",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-21T15:23:59",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/cbfbd146-6a68-43d6-9cbc-dfb7d0f50fd0.pdf",
+      "news_id": "0901dc87-4137-4fd5-9433-e03acdfdb125",
+      "ticker": "ZOMATO.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "543320",
+      "headline": "Board Meeting Outcome for Outcome Of Board Meeting",
+      "category_raw": "Board Meeting",
+      "subcategory_raw": "Outcome of Board Meeting",
+      "date": "2026-10-21T15:22:19",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/aa6e31e0-6f77-4b22-a9dd-591c7c4a7d6d.pdf",
+      "news_id": "111bace2-2b0a-4176-a3cb-d133c0a86645",
+      "ticker": "ZOMATO.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "543320",
+      "headline": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Analyst / Investor Meet",
+      "date": "2026-10-13T18:24:54",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/b8f0c3b0-f814-4eed-9df7-91b7af42a586.pdf",
+      "news_id": "a3bde67d-91d9-45bf-8d2d-295402350926",
+      "ticker": "ZOMATO.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "543320",
+      "headline": "Board Meeting Intimation for Financial Results For Quarter And Half Year Ended September 30, 2026",
+      "category_raw": "Board Meeting",
+      "subcategory_raw": "Board Meeting",
+      "date": "2026-10-13T18:10:30",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/2d3acf69-2ad1-45aa-98eb-24a5051bc66f.pdf",
+      "news_id": "c3dec85e-5288-47b3-a6f4-d12cac4bd027",
+      "ticker": "ZOMATO.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "543320",
+      "headline": "Compliances-Certificate under Reg. 74 (5) of SEBI (DP) Regulations, 2018",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Certificate under Reg. 74 (5) of SEBI (DP) Regulations, 2018",
+      "date": "2026-10-07T18:28:16",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/9bf245cf-839d-4809-8b96-b56021cf51ae.pdf",
+      "news_id": "994db3bc-2223-487a-8d36-f9a6a95bc519",
+      "ticker": "ZOMATO.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "543320",
+      "headline": "Announcement under Regulation 30 (LODR)-Allotment of ESOP / ESPS",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Allotment of ESOP / ESPS",
+      "date": "2026-10-01T17:20:25",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/097ee9d0-49df-4a37-a2f0-ba45f5109537.pdf",
+      "news_id": "b3be7fb5-a58a-4ce1-a49a-cb248170c932",
+      "ticker": "ZOMATO.NS"
+    }
+  ]
+}

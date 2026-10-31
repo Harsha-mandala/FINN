@@ -1,0 +1,30 @@
+{
+  "ticker": "ASTRAL.NS",
+  "fetched_at": "2026-10-31T14:25:53.056542",
+  "days_back": 30,
+  "count": 2,
+  "announcements": [
+    {
+      "source": "BSE",
+      "scrip_code": "532830",
+      "headline": "Board Meeting Intimation for To Consider And Approve The Unaudited Financial Results (Standalone And Consolidated) Of The Company For The Second Quarter And Half Year Ended 30Th September, 2026 And Declaration Of Interim Dividend For The Financial Year 2026-27, If Any;",
+      "category_raw": "Board Meeting",
+      "subcategory_raw": "Board Meeting",
+      "date": "2026-10-29T18:20:23",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/1f1205bc-a6f9-4dc6-85af-eed6f74e9dc5.pdf",
+      "news_id": "46c8b4db-5927-475f-9cb6-e4222ef054f2",
+      "ticker": "ASTRAL.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "532830",
+      "headline": "Compliances-Certificate under Reg. 74 (5) of SEBI (DP) Regulations, 2018",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Certificate under Reg. 74 (5) of SEBI (DP) Regulations, 2018",
+      "date": "2026-10-12T12:37:54",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/6a62a756-a3d5-4aa1-8cdd-69092e0d54ba.pdf",
+      "news_id": "842bb95d-f9f8-4f3d-9070-d3d4b31a7c64",
+      "ticker": "ASTRAL.NS"
+    }
+  ]
+}
