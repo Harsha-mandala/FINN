@@ -56,7 +56,28 @@ app.include_router(chat.router)
 
 @app.get("/health")
 async def health():
-    return {"status": "ok", "service": "FINN API", "cors_origins": ALLOWED_ORIGINS}
+    import os
+    gemini_key_detected = bool(
+        os.getenv("GEMINI_API_KEY")
+        or os.getenv("GOOGLE_API_KEY")
+        or os.getenv("GOOGLE_GENAI_API_KEY")
+    )
+    detected_var = None
+    if os.getenv("GEMINI_API_KEY"):
+        detected_var = "GEMINI_API_KEY"
+    elif os.getenv("GOOGLE_API_KEY"):
+        detected_var = "GOOGLE_API_KEY"
+    elif os.getenv("GOOGLE_GENAI_API_KEY"):
+        detected_var = "GOOGLE_GENAI_API_KEY"
+
+    return {
+        "status": "ok",
+        "service": "FINN API",
+        "version": "1.2.0",
+        "has_gemini_key": gemini_key_detected,
+        "gemini_env_var": detected_var,
+        "cors_origins": ALLOWED_ORIGINS,
+    }
 
 
 @app.get("/")

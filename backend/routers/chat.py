@@ -16,7 +16,7 @@ from datetime import datetime
 from typing import Optional
 
 from fastapi import APIRouter, HTTPException
-from backend.config import ANTHROPIC_API_KEY, GEMINI_API_KEY, RESEARCH_CACHE
+from backend.config import ANTHROPIC_API_KEY, GEMINI_API_KEY, RESEARCH_CACHE, get_gemini_key
 from backend.models.schemas import ChatRequest, ChatResponse
 
 router = APIRouter(prefix="/chat", tags=["chat"])
@@ -62,36 +62,68 @@ def load_ticker_context(ticker: str) -> str:
 
 def call_gemini_api(system_prompt: str, user_prompt: str, api_key: str) -> str:
     """
-    Call Gemini 1.5 Flash using either google-genai or google-generativeai SDK.
+    Call Gemini using:
+    1. google-genai SDK
+    2. google-generativeai SDK
+    3. Direct HTTPS REST API (guaranteed fallback using standard library urllib)
     """
     full_prompt = f"{system_prompt}\n\nUser Question: {user_prompt}"
+    models_to_try = ["gemini-1.5-flash", "gemini-2.0-flash", "gemini-1.5-pro", "gemini-pro"]
 
-    # Try 1: google-genai SDK
+    # Method 1: New official google-genai SDK
     try:
         from google import genai
         client = genai.Client(api_key=api_key)
-        res = client.models.generate_content(
-            model="gemini-1.5-flash",
-            contents=full_prompt,
-        )
-        if res and res.text:
-            return res.text
+        for m in models_to_try[:2]:
+            try:
+                res = client.models.generate_content(model=m, contents=full_prompt)
+                if res and res.text:
+                    return res.text
+            except Exception:
+                continue
     except Exception as e_new:
-        print(f"google-genai call failed ({e_new}); falling back to google.generativeai...")
+        print(f"google-genai call failed ({e_new}); trying legacy...")
 
-    # Try 2: legacy google.generativeai SDK
+    # Method 2: Legacy google.generativeai SDK
     try:
         import google.generativeai as legacy_genai
         legacy_genai.configure(api_key=api_key)
-        model = legacy_genai.GenerativeModel("gemini-1.5-flash")
-        res = model.generate_content(full_prompt)
-        if res and res.text:
-            return res.text
+        for m in ["gemini-1.5-flash", "gemini-1.5-pro"]:
+            try:
+                model = legacy_genai.GenerativeModel(m)
+                res = model.generate_content(full_prompt)
+                if res and res.text:
+                    return res.text
+            except Exception:
+                continue
     except Exception as e_legacy:
         print(f"google.generativeai call failed: {e_legacy}")
-        raise RuntimeError(f"Gemini API error: {e_legacy}")
 
-    return "No text returned from Gemini."
+    # Method 3: Direct REST API via urllib (standard library, zero dependencies)
+    try:
+        import urllib.request
+        for m in ["gemini-1.5-flash", "gemini-2.0-flash", "gemini-1.5-pro"]:
+            url = f"https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent?key={api_key}"
+            payload = json.dumps({
+                "contents": [{"parts": [{"text": full_prompt}]}]
+            }).encode("utf-8")
+            req = urllib.request.Request(url, data=payload, headers={"Content-Type": "application/json"})
+            try:
+                with urllib.request.urlopen(req, timeout=25) as resp:
+                    resp_data = json.loads(resp.read().decode("utf-8"))
+                    candidates = resp_data.get("candidates", [])
+                    if candidates:
+                        parts = candidates[0].get("content", {}).get("parts", [])
+                        if parts and "text" in parts[0]:
+                            return parts[0]["text"]
+            except Exception as e_req:
+                print(f"Direct REST model {m} failed: {e_req}")
+                continue
+    except Exception as e_rest:
+        print(f"Direct REST call to Gemini failed: {e_rest}")
+        raise RuntimeError(f"Gemini API error: {e_rest}")
+
+    raise RuntimeError("All Gemini endpoints and SDKs failed. Please check your API key validity.")
 
 
 @router.post("")
@@ -111,7 +143,7 @@ async def chat(request: ChatRequest):
             break
 
     # Resolve API keys dynamically from environment
-    gemini_key = os.getenv("GEMINI_API_KEY") or GEMINI_API_KEY
+    gemini_key = get_gemini_key()
     anthropic_key = os.getenv("ANTHROPIC_API_KEY") or ANTHROPIC_API_KEY
 
     # 1. Prioritize Gemini if key is present
