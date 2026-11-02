@@ -1,475 +1,692 @@
 """
-FINN — Research Agent Service
+FINN — Research Agent Service (Gemini-only)
+============================================
 Two-stage pipeline for Pull (on-demand research):
-  Stage 1: Extraction (Gemini Flash, cached by file hash)
-  Stage 2: Analysis (Claude Sonnet, cached by ticker + version)
 
-Produces 5 research cards:
-  1. Snapshot (business + financial)
-  2. Trajectory
-  3. Guidance
-  4. Promised vs. Delivered ← HERO
-  5. Bull vs. Bear
+  Stage 1 (GEMINI_CHEAP_MODEL, cached by document hash):
+    Extracts structured JSON from each document:
+    - concall  → guidance items {metric, direction, value, horizon, verbatim_quote, page}
+    - annual report → segment mix, 3-5yr financials, key ratios
+
+  Stage 2 (GEMINI_MODEL, ONE call per ticker, returns all cards):
+    Takes ONLY Stage 1 JSON (not raw PDFs) and produces all 5 research cards
+    as a single structured JSON object.
+
+Output schema: 5 cards with structured data and provenance.
+If the pipeline cannot produce a card, returns {"status":"insufficient_data","missing":[...]}.
+Never uses template content, yfinance snapshots, or model memory for facts.
 """
 
+import hashlib
 import json
-import os
-import sys
+import logging
 from datetime import datetime
 from pathlib import Path
 from typing import Optional
 
-from backend.config import DOCUMENTS_CACHE, RESEARCH_CACHE, GEMINI_API_KEY, ANTHROPIC_API_KEY
+from backend.config import DOCUMENTS_CACHE, RESEARCH_CACHE
 
-# ── Analysis prompts (Claude — reasoning stage) ───────────────────────────────
+logger = logging.getLogger(__name__)
 
-SNAPSHOT_PROMPT = """
-You are a financial analyst. Using ONLY the extracted data provided below (from primary sources: annual reports and concall transcripts), write a concise company snapshot.
 
-Company: {ticker}
-Extracted data from documents:
-{extractions}
+# ── Stage 1 prompts ───────────────────────────────────────────────────────────
 
-Write two sections:
-1. **Business Snapshot** (3-4 sentences): What does the company do, what are its key segments and revenue mix, what market position does it have?
-2. **Financial Snapshot** (key metrics in a clean table): Revenue, EBITDA margin, PAT, ROCE/ROE, Debt/Equity — latest available figures.
+_CONCALL_EXTRACT_SYSTEM = """
+You are extracting structured data from an Indian company earnings-call (concall) transcript.
+Return ONLY valid JSON — no prose, no markdown.
+"""
+
+_CONCALL_EXTRACT_PROMPT = """
+Extract guidance items from this earnings-call transcript.
+
+For each distinct forward-looking management statement, output one object:
+{
+  "metric": "Revenue / EBITDA margin / NIM / GNPA / etc.",
+  "direction": "grow|maintain|reduce|target|other",
+  "value": "specific number/range if stated, else null",
+  "unit": "% / Cr / x / bps / other",
+  "horizon": "FY25 / H2 FY25 / 12 months / etc.",
+  "verbatim_quote": "exact substring from the transcript",
+  "speaker": "Name, Title (if available)",
+  "confidence": "explicit if a specific number was given, implied if directional only"
+}
 
 Rules:
-- ONLY use data from the extractions provided. Do not use outside knowledge.
-- If a metric is not in the extractions, say "Not available in source documents"
-- Be concise and specific. No filler.
-- Cite which document each key fact comes from (e.g., "FY24 Annual Report")
+- verbatim_quote must be an exact substring of the source text — copy-paste, do not paraphrase.
+- Include only forward-looking statements. Exclude historical fact statements.
+- Return a JSON array: [{"metric": ..., ...}, ...]
+- If no guidance items found, return [].
+
+Transcript (may be truncated):
+{transcript}
 """
 
-TRAJECTORY_PROMPT = """
-You are a financial analyst. Using ONLY the extracted data provided, describe the multi-year trajectory of this company.
-
-Company: {ticker}
-Extracted data:
-{extractions}
-
-Write a **Trajectory** section covering:
-1. Revenue trend (growing? CAGR? what's driving it?)
-2. Margin trend (expanding or compressing? why?)
-3. PAT trend
-4. Any structural changes in the business
-
-Format as 4-6 concise bullet points. Each point should cite the source period (e.g., "FY22–FY24").
-ONLY use data from the provided extractions. Say "Not found" if data is missing.
+_AR_EXTRACT_SYSTEM = """
+You are extracting structured financial data from an Indian company annual report.
+Return ONLY valid JSON — no prose, no markdown.
 """
 
-GUIDANCE_PROMPT = """
-You are a financial analyst. Using ONLY the guidance items extracted from concall transcripts, summarise management's forward guidance.
+_AR_EXTRACT_PROMPT = """
+Extract the following from this annual report text:
 
-Company: {ticker}
-Guidance items extracted from last 4 concalls:
-{guidance_items}
+1. segment_mix: list of {{segment, revenue_cr, revenue_pct, period}} — most recent year
+2. financials: list of {{year, metric, value, unit}} — cover Revenue, EBITDA, PAT, EBITDA_margin, ROE, ROCE, D_E, CFO, Capex, Working_capital_days for each year available (up to 5 years)
+3. key_ratios: latest values for ROE, ROCE, D/E, current ratio, interest coverage
+4. contingent_liabilities: any material items disclosed (text description, amount if given)
+5. business_segments: brief description of each segment (1-2 sentences)
 
-Create a **Guidance** table with columns: Metric | Guided Value | Timeframe | Quarter Given | Source Quote
-
-Then write 2-3 sentences on the overall tone: Is management bullish, cautious, or hedging?
-
-ONLY use what is in the provided guidance items. Do not fill gaps with assumptions.
-"""
-
-PROMISED_VS_DELIVERED_PROMPT = """
-You are a financial analyst performing a rigorous accountability analysis.
-
-Company: {ticker}
-Management guidance from past concalls:
-{guidance_items}
-
-Actual financial results delivered:
-{results_data}
-
-Create a **Promised vs. Delivered** table with columns:
-| Concall (When Said) | Metric | What Was Promised | What Was Delivered | Verdict |
-
-Verdict options: Met ✅ | Missed ❌ | Partial ⚠️ | Pending ⏳ | Ambiguous ❓
+Return JSON:
+{{
+  "segment_mix": [...],
+  "financials": [...],
+  "key_ratios": {{...}},
+  "contingent_liabilities": [...],
+  "business_segments": [...]
+}}
 
 Rules:
-- Match each guidance item to actual results from subsequent quarters
-- If delivery data is not available, mark as "Pending"
-- Be specific: cite the exact guidance quote and the exact delivered number
-- If you cannot verify delivery from the provided data, say "Data not available" — do NOT guess
-- This analysis must be grounded in primary source data only
+- Only include data that appears explicitly in the text. Set null for anything absent.
+- Use INR crore as the unit for monetary values (convert if needed, note conversion).
+- If this is a bank/NBFC, include NIM, GNPA, NNPA, ROA, CAR instead of D/E and capex.
 
-After the table, write 2-3 sentences: What does this pattern tell us about management's credibility?
+Annual report text (may be truncated to key sections):
+{ar_text}
 """
 
-BULL_BEAR_PROMPT = """
-You are a financial analyst. Using ONLY the provided extractions (annual reports + concall transcripts), build a balanced investment case.
 
+# ── Stage 2 prompt ────────────────────────────────────────────────────────────
+
+_STAGE2_SYSTEM = """
+You are a rigorous financial analyst. You will produce structured research cards from primary-source data only.
+You must NOT use any knowledge about this company beyond what is provided in the input JSON below.
+If a fact is not in the input, say so explicitly — do not fill gaps.
+Return ONLY valid JSON exactly matching the schema described.
+"""
+
+_STAGE2_PROMPT = """
 Company: {ticker}
-Extracted data:
-{extractions}
+Is Bank/NBFC: {is_financial}
 
-Write two tight sections:
-**Bull Case** (3-4 bullet points): The strongest reasons to be optimistic, grounded in the data.
-**Bear Case** (3-4 bullet points): The most serious risks and concerns, grounded in the data.
+Primary-source extracted data (from annual reports and concall transcripts):
+{extractions_json}
 
-Rules:
-- Only use facts from the extractions — no outside knowledge or opinion
-- Each bullet must reference its source (e.g., "FY24 AR", "Q2 FY25 concall")
-- Be specific, not generic (avoid "competition risk" without specifics)
-- Balanced and honest — this is analysis, not marketing
+Produce all 5 research cards in a single JSON object with this exact structure:
+
+{{
+  "snapshot": {{
+    "business_summary": "3-4 sentences: what the company does, segments, market position",
+    "segments": [
+      {{"name": "segment name", "revenue_share_pct": 40.0, "period": "FY24", "note": ""}}
+    ],
+    "key_metrics": [
+      {{"name": "Revenue", "value": 12345.6, "unit": "Cr", "period": "FY24", "source_ref": "FY24 Annual Report"}}
+    ]
+  }},
+  "trajectory": [
+    {{"metric": "Revenue", "series": [{{"period": "FY22", "value": 1000.0}}, ...], "takeaway": "...", "source_ref": "FY24 Annual Report"}}
+  ],
+  "guidance": [
+    {{
+      "metric": "EBITDA margin",
+      "guided_value": "18-20%",
+      "horizon": "FY26",
+      "verbatim_quote": "exact quote from concall",
+      "source_doc": "Q2 FY25 Concall",
+      "speaker": "CFO Name"
+    }}
+  ],
+  "promised_vs_delivered": [
+    {{
+      "quarter": "Q2 FY25",
+      "metric": "Revenue growth",
+      "guided_quote": "exact quote from past concall",
+      "source_doc": "Q1 FY25 Concall",
+      "actual_value": 12345.6,
+      "actual_period": "Q2 FY25",
+      "delta_computed": "+8.3%",
+      "verdict": "met"
+    }}
+  ],
+  "bull_bear": {{
+    "bull": [
+      {{"argument": "...", "source_ref": "FY24 Annual Report, p12"}}
+    ],
+    "bear": [
+      {{"argument": "...", "source_ref": "Q2 FY25 Concall"}}
+    ]
+  }}
+}}
+
+Strict rules:
+1. snapshot.business_summary: only facts in the extraction. No memory.
+2. key_metrics: only explicitly stated numbers. null for missing.
+3. trajectory.series: only years where data is in the extraction. Minimum 2 points or omit the metric.
+4. guidance: only items with verbatim_quote present in extraction.
+5. promised_vs_delivered:
+   - Only rows where BOTH guided_quote (from a past concall) AND actual_value (from a later filing) are present in the extraction.
+   - verdict must be one of: "met" | "partial" | "missed" | "pending" | "insufficient_data"
+   - "pending": guidance horizon is still in the future.
+   - "insufficient_data": either the guided value or actual value is missing — DO NOT guess.
+   - delta_computed: if both sides are numeric, compute the % delta. Otherwise null.
+   - No verdict may be emitted when actual_value is null.
+6. bull_bear: each point must cite source_ref from the extraction. No generic claims.
+7. If you have fewer than 2 concall extractions available, set promised_vs_delivered = [] and add "limited_data": true to the root.
+8. For banks/NBFCs: replace D/E and capex framing with NIM, GNPA, ROA, CAR where available.
+
+Respond with ONLY the JSON object described. No prose before or after.
 """
 
 
-def load_extractions(ticker: str) -> dict:
+# ── Document loading ───────────────────────────────────────────────────────────
+
+def _file_hash(path: Path) -> str:
+    h = hashlib.sha256()
+    h.update(path.read_bytes())
+    return h.hexdigest()[:16]
+
+
+def _load_pdf_text(pdf_path: Path, max_chars: int = 80000) -> str:
+    """Extract text from a PDF using pdfplumber."""
+    try:
+        import pdfplumber
+        text_parts = []
+        with pdfplumber.open(pdf_path) as pdf:
+            for page in pdf.pages:
+                t = page.extract_text()
+                if t:
+                    text_parts.append(t)
+                if sum(len(p) for p in text_parts) > max_chars:
+                    break
+        return "\n".join(text_parts)[:max_chars]
+    except Exception as e:
+        logger.error("[RESEARCHER] pdfplumber failed on %s: %s", pdf_path.name, e)
+        return ""
+
+
+_AR_SECTION_KEYWORDS = [
+    "management discussion", "md&a", "segment",
+    "revenue", "ebitda", "profit after tax", "pat",
+    "cash flow", "capital expenditure", "debt", "equity",
+    "contingent liabilities", "related party",
+]
+
+
+def _select_ar_pages(pdf_path: Path, max_chars: int = 60000) -> str:
     """
-    Load all cached extractions for a ticker.
-    Returns dict with 'guidance', 'segments', 'results'.
+    For annual reports, select only financially relevant pages
+    (MD&A, segment info, financial statements, cash-flow, contingent liabilities).
+    Falls back to first max_chars of full text.
     """
+    try:
+        import pdfplumber
+        selected: list[str] = []
+        total = 0
+        with pdfplumber.open(pdf_path) as pdf:
+            for page in pdf.pages:
+                t = page.extract_text() or ""
+                low = t.lower()
+                if any(kw in low for kw in _AR_SECTION_KEYWORDS):
+                    selected.append(t)
+                    total += len(t)
+                    if total > max_chars:
+                        break
+        return "\n".join(selected)[:max_chars] if selected else _load_pdf_text(pdf_path, max_chars)
+    except Exception as e:
+        logger.warning("[RESEARCHER] AR page selection failed: %s", e)
+        return _load_pdf_text(pdf_path, max_chars)
+
+
+# ── Stage 1: Per-document extraction (cheap model, cached) ────────────────────
+
+def _stage1_concall(doc_path: Path, ticker: str) -> dict:
+    """
+    Extract guidance items from a concall transcript PDF.
+    Cached by file hash.
+    """
+    from backend.llm import gemini_generate_json, LLMError
+
+    h = _file_hash(doc_path)
     cache_dir = RESEARCH_CACHE / ticker
-    if not cache_dir.exists():
-        return {}
+    cache_dir.mkdir(parents=True, exist_ok=True)
+    cache_file = cache_dir / f"concall_{h}_guidance.json"
 
-    result = {
-        "guidance_items": [],
-        "segment_data": [],
-        "results_data": [],
-        "raw_texts": [],
+    if cache_file.exists():
+        try:
+            data = json.loads(cache_file.read_text(encoding="utf-8"))
+            logger.info("[RESEARCHER] Stage1 cache hit: %s", cache_file.name)
+            return data
+        except Exception:
+            pass
+
+    text = _load_pdf_text(doc_path, max_chars=60000)
+    if not text:
+        result = {"status": "empty_text", "doc": doc_path.name, "guidance_items": []}
+        cache_file.write_text(json.dumps(result), encoding="utf-8")
+        return result
+
+    prompt = _CONCALL_EXTRACT_PROMPT.format(transcript=text[:55000])
+
+    try:
+        items = gemini_generate_json(
+            prompt=prompt,
+            task="cheap",
+            system=_CONCALL_EXTRACT_SYSTEM,
+            temperature=0.0,
+            max_tokens=4096,
+        )
+        if not isinstance(items, list):
+            items = []
+
+        # Validate verbatim quotes (drop items whose quote isn't in the source)
+        validated = []
+        for item in items:
+            quote = item.get("verbatim_quote", "")
+            if quote and quote in text:
+                validated.append(item)
+            elif quote:
+                logger.debug("[RESEARCHER] Dropped guidance item — quote not found in source: %s", quote[:60])
+
+        result = {
+            "status": "ok",
+            "doc": doc_path.name,
+            "doc_type": "concall",
+            "file_hash": h,
+            "extracted_at": datetime.now().isoformat(),
+            "guidance_items": validated,
+        }
+        cache_file.write_text(json.dumps(result, indent=2), encoding="utf-8")
+        logger.info("[RESEARCHER] Stage1 concall: %d validated guidance items from %s", len(validated), doc_path.name)
+        return result
+
+    except LLMError as e:
+        logger.error("[RESEARCHER] Stage1 concall LLM error (%s): %s", e.kind, e)
+        result = {"status": f"llm_{e.kind}", "doc": doc_path.name, "guidance_items": []}
+        cache_file.write_text(json.dumps(result), encoding="utf-8")
+        return result
+    except Exception as e:
+        logger.error("[RESEARCHER] Stage1 concall unexpected error: %s", e)
+        return {"status": "error", "doc": doc_path.name, "guidance_items": []}
+
+
+def _stage1_annual_report(doc_path: Path, ticker: str) -> dict:
+    """
+    Extract structured financials from an annual report PDF.
+    Cached by file hash.
+    """
+    from backend.llm import gemini_generate_json, LLMError
+
+    h = _file_hash(doc_path)
+    cache_dir = RESEARCH_CACHE / ticker
+    cache_dir.mkdir(parents=True, exist_ok=True)
+    cache_file = cache_dir / f"ar_{h}_financials.json"
+
+    if cache_file.exists():
+        try:
+            data = json.loads(cache_file.read_text(encoding="utf-8"))
+            logger.info("[RESEARCHER] Stage1 cache hit: %s", cache_file.name)
+            return data
+        except Exception:
+            pass
+
+    text = _select_ar_pages(doc_path, max_chars=60000)
+    if not text:
+        result = {"status": "empty_text", "doc": doc_path.name}
+        cache_file.write_text(json.dumps(result), encoding="utf-8")
+        return result
+
+    prompt = _AR_EXTRACT_PROMPT.format(ar_text=text[:55000])
+
+    try:
+        data = gemini_generate_json(
+            prompt=prompt,
+            task="cheap",
+            system=_AR_EXTRACT_SYSTEM,
+            temperature=0.0,
+            max_tokens=4096,
+        )
+        if not isinstance(data, dict):
+            data = {}
+
+        result = {
+            "status": "ok",
+            "doc": doc_path.name,
+            "doc_type": "annual_report",
+            "file_hash": h,
+            "extracted_at": datetime.now().isoformat(),
+            **data,
+        }
+        cache_file.write_text(json.dumps(result, indent=2), encoding="utf-8")
+        logger.info("[RESEARCHER] Stage1 AR done: %s", doc_path.name)
+        return result
+
+    except LLMError as e:
+        logger.error("[RESEARCHER] Stage1 AR LLM error (%s): %s", e.kind, e)
+        result = {"status": f"llm_{e.kind}", "doc": doc_path.name}
+        cache_file.write_text(json.dumps(result), encoding="utf-8")
+        return result
+    except Exception as e:
+        logger.error("[RESEARCHER] Stage1 AR error: %s", e)
+        return {"status": "error", "doc": doc_path.name}
+
+
+# ── Stage 2: Synthesis (reasoning model, one call, all cards) ─────────────────
+
+_FINANCIAL_TICKERS = {"BAJFINANCE", "HDFCBANK", "ICICIBANK", "KOTAKBANK", "AXISBANK", "SBIN"}
+
+
+def _stage2_synthesize(ticker: str, extractions: list[dict]) -> dict:
+    """
+    One Gemini reasoning call → all 5 cards as structured JSON.
+    Cached by extraction hash (changes only when documents change).
+    """
+    from backend.llm import gemini_generate_json, LLMError
+
+    is_financial = ticker.replace(".NS", "").replace(".BO", "") in _FINANCIAL_TICKERS
+
+    # Hash the extractions to detect changes
+    ext_str = json.dumps(extractions, sort_keys=True)
+    ext_hash = hashlib.sha256(ext_str.encode()).hexdigest()[:16]
+
+    cache_dir = RESEARCH_CACHE / ticker
+    cache_dir.mkdir(parents=True, exist_ok=True)
+    cache_file = cache_dir / f"stage2_{ext_hash}.json"
+
+    if cache_file.exists():
+        try:
+            data = json.loads(cache_file.read_text(encoding="utf-8"))
+            logger.info("[RESEARCHER] Stage2 cache hit for %s", ticker)
+            return data
+        except Exception:
+            pass
+
+    # Trim to stay inside TPM limits
+    ext_trimmed = json.dumps(extractions, indent=1)[:30000]
+    prompt = _STAGE2_PROMPT.format(
+        ticker=ticker,
+        is_financial="Yes" if is_financial else "No",
+        extractions_json=ext_trimmed,
+    )
+
+    try:
+        cards = gemini_generate_json(
+            prompt=prompt,
+            task="reasoning",
+            system=_STAGE2_SYSTEM,
+            temperature=0.1,
+            max_tokens=8192,
+        )
+        if not isinstance(cards, dict):
+            raise ValueError(f"Expected dict from Stage 2, got {type(cards)}")
+
+        result = {
+            "status": "ok",
+            "ticker": ticker,
+            "extraction_hash": ext_hash,
+            "generated_at": datetime.now().isoformat(),
+            "cards_raw": cards,
+        }
+        cache_file.write_text(json.dumps(result, indent=2), encoding="utf-8")
+        logger.info("[RESEARCHER] Stage2 complete for %s", ticker)
+        return result
+
+    except LLMError as e:
+        logger.error("[RESEARCHER] Stage2 LLM error (%s): %s", e.kind, e)
+        return {"status": f"llm_{e.kind}", "ticker": ticker}
+    except Exception as e:
+        logger.error("[RESEARCHER] Stage2 error: %s", e)
+        return {"status": "error", "ticker": ticker, "detail": str(e)[:200]}
+
+
+# ── Card assembly ──────────────────────────────────────────────────────────────
+
+def _delta_pct(guided: Optional[float], actual: Optional[float]) -> Optional[str]:
+    """Compute % delta between guided and actual (Python arithmetic, not LLM)."""
+    if guided is None or actual is None:
+        return None
+    try:
+        g = float(guided)
+        a = float(actual)
+        if g == 0:
+            return None
+        pct = (a - g) / abs(g) * 100
+        return f"{pct:+.1f}%"
+    except (TypeError, ValueError):
+        return None
+
+
+def _assemble_cards(ticker: str, stage2: dict, docs_used: list[str]) -> dict:
+    """
+    Convert Stage 2 raw JSON into the FINN card format.
+    Enforces integrity rules: no verdict without both sides, compute deltas in Python.
+    """
+    raw = stage2.get("cards_raw", {})
+    limited_data = stage2.get("cards_raw", {}).get("limited_data", False)
+
+    provenance_base = {
+        "docs_used": docs_used,
+        "model_used": "Gemini (reasoning)",
+        "generated_at": stage2.get("generated_at", datetime.now().isoformat()),
+        "status": "limited_data" if limited_data else "live",
     }
 
-    for path in cache_dir.glob("*_guidance.json"):
-        with open(path) as f:
-            data = json.load(f)
-        if not data.get("error"):
-            result["guidance_items"].append(data)
+    cards = []
 
-    for path in cache_dir.glob("*_segments.json"):
-        with open(path) as f:
-            data = json.load(f)
-        if not data.get("error"):
-            result["segment_data"].append(data)
-
-    for path in cache_dir.glob("*_results.json"):
-        with open(path) as f:
-            data = json.load(f)
-        if not data.get("error"):
-            result["results_data"].append(data)
-
-    return result
-
-
-def run_claude_analysis(prompt: str, api_key: str) -> str:
-    """Run analysis using Claude Sonnet."""
-    import anthropic
-    client = anthropic.Anthropic(api_key=api_key)
-
-    message = client.messages.create(
-        model="claude-sonnet-4-5",
-        max_tokens=2048,
-        system=(
-            "You are a rigorous financial analyst. "
-            "Use only the data provided to you. "
-            "Do not use outside knowledge about any company. "
-            "If information is not in the provided data, say 'Not found in source documents.' "
-            "Be concise, specific, and analytical."
-        ),
-        messages=[{"role": "user", "content": prompt}],
-    )
-    return message.content[0].text
-
-
-def synthesize_ticker_research(ticker: str) -> dict:
-    """
-    On-demand generalized research engine for ANY ticker.
-    Extracts fundamental ratios and primary business profile via yfinance.
-    Produces 5 complete cards with primary source citations.
-    """
-    import yfinance as yf
-    try:
-        t = yf.Ticker(ticker)
-        info = t.info
-    except Exception:
-        info = {}
-
-    company = info.get("shortName") or info.get("longName") or ticker.replace(".NS", "")
-    summary = info.get("longBusinessSummary", f"{company} is an Indian exchange-listed enterprise.")
-    sector = info.get("sector", "Diversified")
-    industry = info.get("industry", "Diversified")
-
-    rev = info.get("totalRevenue")
-    rev_str = f"₹{rev / 1e7:,.1f} Cr" if rev else "Reported in filings"
-    op_margin = info.get("operatingMargins")
-    op_margin_str = f"{op_margin * 100:.1f}%" if op_margin else "Reported in P&L"
-    roe = info.get("returnOnEquity")
-    roe_str = f"{roe * 100:.1f}%" if roe else "N/A"
-    de = info.get("debtToEquity")
-    de_str = f"{de / 100:.2f}" if de else "0.00 (Minimal)"
-    pe = info.get("trailingPE")
-    pe_str = f"{pe:.1f}x" if pe else "N/A"
-    cur_price = info.get("currentPrice") or info.get("regularMarketPrice") or 0.0
-
-    cards = [
-        {
+    # ── Snapshot ──────────────────────────────────────────────────────────────
+    snap_raw = raw.get("snapshot")
+    if snap_raw:
+        cards.append({
             "card_type": "snapshot",
             "ticker": ticker,
-            "company_name": company,
-            "generated_at": datetime.now().isoformat(),
+            "company_name": ticker.replace(".NS", "").replace(".BO", ""),
+            "generated_at": provenance_base["generated_at"],
             "data": {
-                "content": (
-                    f"### Business Snapshot\n{summary}\n\n"
-                    f"- **Sector / Industry**: {sector} / {industry}\n"
-                    f"- **Primary Exchange**: National Stock Exchange (NSE: {ticker})\n\n"
-                    f"### Financial Snapshot (Key Fundamentals)\n"
-                    f"| Metric | Reported Value | Assessment |\n"
-                    f"| :--- | :--- | :--- |\n"
-                    f"| **Current Price** | ₹{cur_price:,.2f} | Live Exchange Price |\n"
-                    f"| **Trailing Revenue** | {rev_str} | Primary Statements |\n"
-                    f"| **Operating Margin** | {op_margin_str} | Core Profitability |\n"
-                    f"| **Return on Equity (ROE)** | {roe_str} | Capital Efficiency |\n"
-                    f"| **Debt to Equity** | {de_str} | Financial Leverage |\n"
-                    f"| **Trailing P/E** | {pe_str} | Valuation Multiple |"
-                )
-            }
-        },
-        {
+                "business_summary": snap_raw.get("business_summary", ""),
+                "segments": snap_raw.get("segments", []),
+                "key_metrics": snap_raw.get("key_metrics", []),
+            },
+            "provenance": provenance_base,
+        })
+
+    # ── Trajectory ────────────────────────────────────────────────────────────
+    traj_raw = raw.get("trajectory", [])
+    if traj_raw:
+        cards.append({
             "card_type": "trajectory",
             "ticker": ticker,
-            "company_name": company,
-            "generated_at": datetime.now().isoformat(),
-            "data": {
-                "content": (
-                    f"### Multi-Year Direction & Trajectory\n\n"
-                    f"- **Operational Compounding**: Established market position in {sector}, balancing domestic capacity additions with disciplined cost structures.\n"
-                    f"- **Margin Resilience**: Operating profitability ({op_margin_str}) reflects established operating scale and supply-chain integration.\n"
-                    f"- **Balance Sheet Strength**: Financial leverage of {de_str} D/E ensures liquidity headroom across economic cycles.\n"
-                    f"- **Capital Allocation Discipline**: Return on equity of {roe_str} demonstrates disciplined internal cash conversion without equity dilution."
-                )
-            }
-        },
-        {
+            "company_name": ticker.replace(".NS", "").replace(".BO", ""),
+            "generated_at": provenance_base["generated_at"],
+            "data": {"series": traj_raw},
+            "provenance": provenance_base,
+        })
+
+    # ── Guidance ──────────────────────────────────────────────────────────────
+    guidance_raw = raw.get("guidance", [])
+    if guidance_raw:
+        cards.append({
             "card_type": "guidance",
             "ticker": ticker,
-            "company_name": company,
-            "generated_at": datetime.now().isoformat(),
-            "data": {
-                "content": (
-                    f"### Forward Strategic Guidance & Outlook\n\n"
-                    f"| Parameter | Stated Direction | Horizon |\n"
-                    f"| :--- | :--- | :--- |\n"
-                    f"| **Organic Growth** | Sustain above-industry median expansion | FY25–FY26 |\n"
-                    f"| **Margin Protection** | Offset raw material / input pressures via operational efficiencies | Ongoing |\n"
-                    f"| **Capex & Capacity** | Prudent maintenance and brownfield investments funded via internal accruals | Annual Planning |\n\n"
-                    f"**Executive Tone**: Balanced, grounded in execution discipline and risk management."
-                )
-            }
+            "company_name": ticker.replace(".NS", "").replace(".BO", ""),
+            "generated_at": provenance_base["generated_at"],
+            "data": {"items": guidance_raw},
+            "provenance": provenance_base,
+        })
+
+    # ── Promised vs. Delivered ────────────────────────────────────────────────
+    pvd_raw = raw.get("promised_vs_delivered", [])
+    pvd_clean = []
+    for row in pvd_raw:
+        # Enforce: no verdict when actual is missing
+        verdict = row.get("verdict", "insufficient_data")
+        actual = row.get("actual_value")
+        if actual is None and verdict not in ("pending", "insufficient_data"):
+            verdict = "insufficient_data"
+        # Compute delta in Python
+        delta = _delta_pct(
+            _try_float(row.get("guided_value")),
+            _try_float(actual),
+        )
+        pvd_clean.append({
+            "quarter": row.get("quarter", ""),
+            "metric": row.get("metric", ""),
+            "guided_quote": row.get("guided_quote", ""),
+            "source_doc": row.get("source_doc", ""),
+            "actual_value": actual,
+            "actual_period": row.get("actual_period", ""),
+            "delta_computed": delta or row.get("delta_computed"),
+            "verdict": verdict,
+        })
+
+    cards.append({
+        "card_type": "promised_vs_delivered",
+        "ticker": ticker,
+        "company_name": ticker.replace(".NS", "").replace(".BO", ""),
+        "generated_at": provenance_base["generated_at"],
+        "data": {
+            "rows": pvd_clean,
+            "limited_data": limited_data,
         },
-        {
-            "card_type": "promised_vs_delivered",
-            "ticker": ticker,
-            "company_name": company,
-            "generated_at": datetime.now().isoformat(),
-            "data": {
-                "content": (
-                    f"### Promised vs. Delivered — Accountability Matrix\n\n"
-                    f"| Period | Stated Objective | What Was Delivered | Verdict |\n"
-                    f"| :--- | :--- | :--- |\n"
-                    f"| **FY24 Target** | Top-line revenue resilience | Delivered stable revenue run-rate ({rev_str}) | **Met** ✅ |\n"
-                    f"| **Operational Goal** | Protect operating margin threshold | Operating margin maintained at {op_margin_str} | **Met** ✅ |\n"
-                    f"| **Balance Sheet Goal** | Prudent leverage containment | Maintained D/E ratio at {de_str} | **Met** ✅ |\n"
-                    f"| **Capital Return** | Protect return on equity | Achieved {roe_str} ROE | **Met** ✅ |\n\n"
-                    f"**Management Credibility Analysis**: Consistent delivery against foundational operational targets; audited financial statements demonstrate clean accounting conversion."
-                )
-            }
-        },
-        {
+        "provenance": provenance_base,
+    })
+
+    # ── Bull / Bear ───────────────────────────────────────────────────────────
+    bb_raw = raw.get("bull_bear", {})
+    if bb_raw:
+        cards.append({
             "card_type": "bull_bear",
             "ticker": ticker,
-            "company_name": company,
-            "generated_at": datetime.now().isoformat(),
+            "company_name": ticker.replace(".NS", "").replace(".BO", ""),
+            "generated_at": provenance_base["generated_at"],
             "data": {
-                "content": (
-                    f"### Investment Thesis: Bull vs. Bear Case\n\n"
-                    f"#### 🐂 Bull Case\n"
-                    f"1. **Market Leadership**: Entrenched position in {industry} creates structural entry barriers.\n"
-                    f"2. **Capital Efficiency**: High return on equity ({roe_str}) supports self-funded reinvestment.\n"
-                    f"3. **Prudent Leverage**: Debt-to-Equity of {de_str} provides resilience against rate cycles.\n\n"
-                    f"#### 🐻 Bear Case\n"
-                    f"1. **Macro / Cyclical Sensitivity**: Vulnerable to broader economic demand deceleration in {sector}.\n"
-                    f"2. **Margin Headwinds**: Input cost fluctuations could constrain margin expansion above {op_margin_str}.\n"
-                    f"3. **Valuation Multiples**: Current trading multiple of {pe_str} P/E prices in steady execution."
-                )
-            }
-        }
-    ]
+                "bull": bb_raw.get("bull", []),
+                "bear": bb_raw.get("bear", []),
+            },
+            "provenance": provenance_base,
+        })
 
-    result = {
+    return {
         "ticker": ticker,
-        "company_name": company,
-        "generated_at": datetime.now().isoformat(),
+        "company_name": ticker.replace(".NS", "").replace(".BO", ""),
+        "generated_at": provenance_base["generated_at"],
         "cards": cards,
-        "sources_used": [
-            f"{company}_Exchange_Filings_2024.pdf",
-            f"{company}_Audited_Financial_Statements_FY24.pdf",
-            f"{company}_Investor_Presentation.pdf"
-        ],
+        "sources_used": docs_used,
+        "status": "limited_data" if limited_data else "ok",
     }
 
-    # Save to cache
-    card_cache = RESEARCH_CACHE / ticker / "_research_cards.json"
-    card_cache.parent.mkdir(parents=True, exist_ok=True)
-    with open(card_cache, "w") as f:
-        json.dump(result, f, indent=2)
 
-    return result
+def _try_float(val) -> Optional[float]:
+    if val is None:
+        return None
+    try:
+        return float(val)
+    except (TypeError, ValueError):
+        return None
 
+
+# ── Document discovery ─────────────────────────────────────────────────────────
+
+def discover_documents(ticker: str) -> list[Path]:
+    """
+    Return local PDF paths for a ticker from the documents cache.
+    Looks in cache/documents/{ticker}/*.pdf
+    """
+    doc_dir = DOCUMENTS_CACHE / ticker
+    if not doc_dir.exists():
+        return []
+    return sorted(doc_dir.glob("*.pdf"), key=lambda p: p.name)
+
+
+# ── Public entry point ─────────────────────────────────────────────────────────
 
 def build_research_cards(ticker: str, force: bool = False) -> dict:
     """
     Full two-stage research pipeline for a ticker.
-    Returns dict with all research cards.
+
+    Returns a dict with 'cards' list or {'status': 'insufficient_data', 'missing': [...]}.
+    Never returns template/fabricated content.
     """
     cache_dir = RESEARCH_CACHE / ticker
     cache_dir.mkdir(parents=True, exist_ok=True)
-    card_cache = cache_dir / "_research_cards.json"
+    final_cache = cache_dir / "_research_cards.json"
 
-    # Cache hit
-    if card_cache.exists() and not force:
-        with open(card_cache) as f:
-            cached = json.load(f)
-        # Return cached if less than 6 hours old
-        if cached.get("generated_at"):
-            try:
+    # Fast cache path (6h TTL)
+    if final_cache.exists() and not force:
+        try:
+            cached = json.loads(final_cache.read_text(encoding="utf-8"))
+            if cached.get("generated_at"):
                 gen_time = datetime.fromisoformat(cached["generated_at"])
-                age_hours = (datetime.now() - gen_time).total_seconds() / 3600
-                if age_hours < 6:
-                    print(f"  [CACHE] Research cards for {ticker} ({age_hours:.1f}h old)")
+                age_h = (datetime.now() - gen_time).total_seconds() / 3600
+                if age_h < 6:
+                    logger.info("[RESEARCHER] Returning cached cards for %s (%.1fh old)", ticker, age_h)
                     return cached
-            except Exception:
-                pass
+        except Exception:
+            pass
 
-    # Check if we have any extractions
-    extractions = load_extractions(ticker)
-    if not any(extractions.values()):
-        # Try to run extraction first
-        doc_dir = DOCUMENTS_CACHE / ticker
-        if not doc_dir.exists() or not list(doc_dir.glob("*.pdf")):
-            return synthesize_ticker_research(ticker)
-
-        # Run extraction pipeline
-        from data_pipeline.extractors.pdf_extract import extract_all_for_ticker
-        from data_pipeline.extractors.concall_extract import extract_guidance, extract_segment_data
-
-        gemini_key = GEMINI_API_KEY
-        docs = extract_all_for_ticker(ticker, gemini_api_key=gemini_key)
-
-        for doc in docs:
-            if "concall" in doc.get("doc_type", "").lower():
-                extract_guidance(doc["text"], ticker, doc["file_hash"], gemini_key)
-            extract_segment_data(doc["text"], ticker, doc["file_hash"], doc.get("doc_type", "document"), gemini_key)
-
-        extractions = load_extractions(ticker)
-
-    # ── Stage 2: Claude analysis ───────────────────────────────────────────────
-    anthropic_key = ANTHROPIC_API_KEY
-    if not anthropic_key:
-        return synthesize_ticker_research(ticker)
-
-    cards = []
-    company = ticker.replace(".NS", "").replace(".BO", "")
-
-    # Format extractions for prompts
-    extractions_text = json.dumps(extractions, indent=2)[:15000]  # stay within context
-    guidance_text = json.dumps(extractions.get("guidance_items", []), indent=2)[:8000]
-    results_text = json.dumps(extractions.get("results_data", []), indent=2)[:5000]
-
-    try:
-        # Card 1: Snapshot
-        print(f"  [RESEARCH] Building snapshot for {ticker}...")
-        snapshot_text = run_claude_analysis(
-            SNAPSHOT_PROMPT.format(ticker=company, extractions=extractions_text),
-            anthropic_key,
-        )
-        cards.append({
-            "card_type": "snapshot",
+    # ── Discover documents ────────────────────────────────────────────────────
+    docs = discover_documents(ticker)
+    if not docs:
+        return {
+            "status": "insufficient_data",
             "ticker": ticker,
-            "company_name": company,
-            "generated_at": datetime.now().isoformat(),
-            "data": {"content": snapshot_text},
-        })
+            "missing": ["No documents found in cache/documents/{ticker}/. Run the document downloader first."],
+            "cards": [],
+        }
 
-        # Card 2: Trajectory
-        print(f"  [RESEARCH] Building trajectory for {ticker}...")
-        trajectory_text = run_claude_analysis(
-            TRAJECTORY_PROMPT.format(ticker=company, extractions=extractions_text),
-            anthropic_key,
-        )
-        cards.append({
-            "card_type": "trajectory",
+    # ── Stage 1: Extract per document ─────────────────────────────────────────
+    extractions: list[dict] = []
+    concall_count = 0
+    ar_count = 0
+
+    for doc_path in docs:
+        name_lower = doc_path.name.lower()
+        if any(k in name_lower for k in ("concall", "transcript", "earnings_call", "q1", "q2", "q3", "q4")):
+            ext = _stage1_concall(doc_path, ticker)
+            if ext.get("status") == "ok":
+                concall_count += 1
+            extractions.append(ext)
+        else:
+            ext = _stage1_annual_report(doc_path, ticker)
+            if ext.get("status") == "ok":
+                ar_count += 1
+            extractions.append(ext)
+
+    logger.info(
+        "[RESEARCHER] Stage1 complete for %s: %d concalls, %d annual reports, %d docs total",
+        ticker, concall_count, ar_count, len(docs)
+    )
+
+    if not extractions or all(e.get("status") != "ok" for e in extractions):
+        return {
+            "status": "insufficient_data",
             "ticker": ticker,
-            "company_name": company,
-            "generated_at": datetime.now().isoformat(),
-            "data": {"content": trajectory_text},
-        })
+            "missing": ["Stage 1 extraction failed for all documents. Check document quality or LLM quota."],
+            "cards": [],
+        }
 
-        # Card 3: Guidance
-        if extractions.get("guidance_items"):
-            print(f"  [RESEARCH] Building guidance card for {ticker}...")
-            guidance_analysis = run_claude_analysis(
-                GUIDANCE_PROMPT.format(ticker=company, guidance_items=guidance_text),
-                anthropic_key,
-            )
-            cards.append({
-                "card_type": "guidance",
+    # ── Stage 2: Synthesize ────────────────────────────────────────────────────
+    stage2_result = _stage2_synthesize(ticker, extractions)
+
+    if stage2_result.get("status") not in ("ok", None):
+        kind = stage2_result.get("status", "error")
+        if "llm_quota" in kind:
+            return {
+                "status": "temporarily_unavailable",
+                "reason": "Daily LLM budget exhausted. Research cards will be available tomorrow.",
                 "ticker": ticker,
-                "company_name": company,
-                "generated_at": datetime.now().isoformat(),
-                "data": {"content": guidance_analysis},
-            })
-
-        # Card 4: Promised vs. Delivered (HERO)
-        if extractions.get("guidance_items") and extractions.get("results_data"):
-            print(f"  [RESEARCH] Building promised vs delivered for {ticker}...")
-            pvd_text = run_claude_analysis(
-                PROMISED_VS_DELIVERED_PROMPT.format(
-                    ticker=company,
-                    guidance_items=guidance_text,
-                    results_data=results_text,
-                ),
-                anthropic_key,
-            )
-            cards.append({
-                "card_type": "promised_vs_delivered",
-                "ticker": ticker,
-                "company_name": company,
-                "generated_at": datetime.now().isoformat(),
-                "data": {"content": pvd_text},
-            })
-
-        # Card 5: Bull vs. Bear
-        print(f"  [RESEARCH] Building bull/bear for {ticker}...")
-        bull_bear_text = run_claude_analysis(
-            BULL_BEAR_PROMPT.format(ticker=company, extractions=extractions_text),
-            anthropic_key,
-        )
-        cards.append({
-            "card_type": "bull_bear",
+                "cards": [],
+            }
+        return {
+            "status": "insufficient_data",
             "ticker": ticker,
-            "company_name": company,
-            "generated_at": datetime.now().isoformat(),
-            "data": {"content": bull_bear_text},
-        })
+            "missing": [f"Stage 2 synthesis failed: {kind}"],
+            "cards": [],
+        }
 
-    except Exception as e:
-        print(f"  [ERROR] Research pipeline failed: {e}")
-        return {"error": str(e), "ticker": ticker, "partial_cards": cards}
+    # ── Assemble final card output ─────────────────────────────────────────────
+    docs_used = [p.name for p in docs]
+    result = _assemble_cards(ticker, stage2_result, docs_used)
 
-    result = {
-        "ticker": ticker,
-        "company_name": company,
-        "generated_at": datetime.now().isoformat(),
-        "cards": cards,
-        "sources_used": [
-            p.name for p in (DOCUMENTS_CACHE / ticker).glob("*.pdf")
-        ] if (DOCUMENTS_CACHE / ticker).exists() else [],
-    }
-
-    # Cache
-    with open(card_cache, "w") as f:
-        json.dump(result, f, indent=2)
+    # Persist
+    final_cache.write_text(json.dumps(result, indent=2, ensure_ascii=False), encoding="utf-8")
+    logger.info("[RESEARCHER] Research cards persisted for %s (%d cards)", ticker, len(result.get("cards", [])))
 
     return result

@@ -1,6 +1,7 @@
 """
 FINN — Backend Config
 Loads environment variables and defines all app settings.
+All LLM model names come from env vars; nothing is hardcoded in app code.
 """
 
 import os
@@ -12,18 +13,37 @@ ROOT = Path(__file__).resolve().parent.parent
 load_dotenv(ROOT / ".env")
 
 # ── API Keys ──────────────────────────────────────────────────────────────────
+
 def get_gemini_key() -> str:
     key = (
-        os.getenv("GEMINI_API_KEY")
-        or os.getenv("GOOGLE_API_KEY")
-        or os.getenv("GOOGLE_GENAI_API_KEY")
-        or ""
+        os.getenv("GEMINI_API_KEY", "")
+        or os.getenv("GOOGLE_API_KEY", "")
+        or os.getenv("GOOGLE_GENAI_API_KEY", "")
     )
     return key.strip().strip('"').strip("'")
 
+
 GEMINI_API_KEY: str = get_gemini_key()
-ANTHROPIC_API_KEY: str = os.getenv("ANTHROPIC_API_KEY", "").strip().strip('"').strip("'")
-OPENAI_API_KEY: str = os.getenv("OPENAI_API_KEY", "").strip().strip('"').strip("'")
+
+# ── LLM Model Selection ───────────────────────────────────────────────────────
+# Route by task to spread quota across per-model daily limits:
+#
+#  GEMINI_CHEAP_MODEL  : bulk tasks — classification, per-doc extraction, chat
+#  GEMINI_MODEL        : reasoning tasks — Stage-2 research synthesis, grounded bios
+#  GEMINI_FALLBACK_MODELS : comma-separated list tried in order on 429/quota
+#
+# Defaults target the highest-RPD models visible on the free tier.
+# Override any of these in .env or via Render environment variables.
+
+GEMINI_MODEL: str = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
+GEMINI_CHEAP_MODEL: str = os.getenv("GEMINI_CHEAP_MODEL", "gemini-3.5-flash-lite")
+GEMINI_FALLBACK_MODELS: list[str] = [
+    m.strip()
+    for m in os.getenv(
+        "GEMINI_FALLBACK_MODELS", "gemini-2.5-flash-lite,gemini-3.8-flash"
+    ).split(",")
+    if m.strip()
+]
 
 # ── Cache paths ───────────────────────────────────────────────────────────────
 CACHE_DIR = ROOT / "cache"
@@ -73,8 +93,8 @@ MEDIUM_PRIORITY_CATEGORIES = {"credit_rating", "capex", "pledging", "press_relea
 LOW_PRIORITY_CATEGORIES = {"bonus_split", "postal_ballot", "agm_egm", "investor_meetings", "earnings_call", "unclassified"}
 
 # ── Default alert thresholds ──────────────────────────────────────────────────
-DEFAULT_VOLUME_MULTIPLE = 2.0  # alert if volume > X × 20d avg
-DEFAULT_PRICE_MOVE_PCT = 5.0   # alert if |price change| > X%
+DEFAULT_VOLUME_MULTIPLE = 2.0   # alert if volume > X × 20d avg
+DEFAULT_PRICE_MOVE_PCT = 5.0    # alert if |price change| > X%
 DEFAULT_ALERT_CATEGORIES = list(HIGH_PRIORITY_CATEGORIES)
 
 # ── CORS ──────────────────────────────────────────────────────────────────────

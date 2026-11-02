@@ -1,170 +1,192 @@
 """
-FINN — Enricher Service
-Handles push-side enrichment:
-1. Results card — QoQ/YoY table for results announcements
-2. Management bio — bio of incoming/outgoing executive using Gemini + search grounding
+FINN — Enricher Service (Push-side)
+Adds structured enrichment to high-priority announcements:
+  1. Management bio  — Gemini with Google Search grounding (cached by company+person)
+  2. Results card    — placeholder for Phase 2 (PDF-based extraction)
+
+Error handling:
+  - All LLM failures are caught and logged server-side.
+  - Users see typed status objects, never raw exception strings or infra details.
 """
 
+import hashlib
 import json
-import os
+import logging
+import re
 from pathlib import Path
 from typing import Optional
 
-import google.generativeai as genai
+from backend.config import RESEARCH_CACHE
+from backend.llm import LLMError, gemini_generate
 
-from backend.config import RESEARCH_CACHE, DOCUMENTS_CACHE
+logger = logging.getLogger(__name__)
 
-MANAGEMENT_BIO_PROMPT = """
-A company has just announced a management change. Find background information about the person mentioned.
+# ── Bio enrichment ────────────────────────────────────────────────────────────
 
-Company: {company}
-Announcement: {announcement_text}
+_BIO_CACHE_DIR = RESEARCH_CACHE / "_bios"
 
-Write a brief, factual 3-4 line professional bio of the incoming/outgoing executive mentioned.
-Include: their previous role(s), professional background, and why this appointment is notable.
-Use only publicly available information.
-Be specific and factual — no filler phrases.
-Format as plain prose, no bullet points.
-
-If the person is not identifiable from the announcement, say "Background information not available."
-"""
-
-RESULTS_SUMMARY_PROMPT = """
-A company has filed quarterly results. Extract the headline financial numbers.
+_BIO_PROMPT = """
+A company has just announced a management change. Find publicly available background on the person.
 
 Company: {company}
-Quarter: {period}
-Announcement: {announcement_text}
+Filing text: {filing_text}
 
-Look for Revenue, EBITDA, PBT, and PAT figures.
-If you can identify the numbers from the announcement headline/summary alone, extract them.
-Return valid JSON:
+Task:
+1. Identify the person's full name and the role mentioned in the filing.
+2. Write a factual 3-4 line professional bio: previous roles, professional background, why this appointment is notable.
+3. Include 1-2 public source URLs (news articles, LinkedIn, company website) where this is verified.
+
+Output format — valid JSON only:
 {{
-  "found": true/false,
-  "revenue_crore": number or null,
-  "ebitda_crore": number or null,
-  "pbt_crore": number or null,
-  "pat_crore": number or null,
-  "period": "Q2 FY25",
-  "note": "any extraction note"
+  "person_name": "Full Name",
+  "role": "CFO / Director / etc.",
+  "bio": "3-4 line prose bio here.",
+  "sources": ["https://...", "https://..."]
 }}
+
+Rules:
+- If you cannot identify a specific person's name from the filing text, return {{"status": "no_person_identified"}}.
+- Use only publicly verifiable information. Do not speculate.
+- Prose only — no bullet points, no markdown headers.
 """
+
+_BIO_FIELDS_RE = re.compile(
+    r"(?:appointment|resignation|cessation|change).*?(?:of\s+)?([A-Z][a-z]+(?:\s+[A-Z][a-z]+){1,3})"
+    r".*?(?:as|,\s*)([A-Za-z\s/]+(?:Director|CEO|CFO|COO|MD|CTO|President|Officer))",
+    re.IGNORECASE,
+)
+
+
+def _extract_person_hint(text: str) -> Optional[str]:
+    """Best-effort extraction of person name from a filing headline."""
+    m = _BIO_FIELDS_RE.search(text)
+    if m:
+        return m.group(1).strip()
+    return None
+
+
+def _bio_cache_key(company: str, filing_text: str) -> str:
+    payload = f"{company.lower()}:{filing_text[:200].lower()}"
+    return hashlib.sha256(payload.encode()).hexdigest()[:16]
 
 
 def get_management_bio(
     company: str,
-    announcement_text: str,
-    api_key: str,
-) -> str:
-    """Get management bio using Gemini with Google Search grounding."""
-    try:
-        genai.configure(api_key=api_key)
-
-        # Use search grounding for up-to-date bio
-        model = genai.GenerativeModel(
-            "gemini-1.5-flash",
-            tools=[{"google_search": {}}],
-        )
-
-        prompt = MANAGEMENT_BIO_PROMPT.format(
-            company=company,
-            announcement_text=announcement_text[:500],
-        )
-
-        response = model.generate_content(prompt)
-        return response.text.strip()
-    except Exception as e:
-        print(f"  [WARN] Bio enrichment failed: {e}")
-        # Fallback: no-search version
-        try:
-            model_basic = genai.GenerativeModel("gemini-1.5-flash")
-            response = model_basic.generate_content(
-                MANAGEMENT_BIO_PROMPT.format(
-                    company=company,
-                    announcement_text=announcement_text[:500],
-                )
-            )
-            return response.text.strip()
-        except Exception as e2:
-            return f"Background information not available. ({e2})"
-
-
-def get_results_enrichment(
-    company: str,
-    period: str,
-    announcement_text: str,
-    api_key: str,
-    ticker: str,
+    filing_text: str,
 ) -> Optional[dict]:
     """
-    Try to extract headline numbers from the announcement text.
-    Falls back to cached extraction from the actual PDF.
-    """
-    # First: check if we have cached PDF extraction for this ticker
-    ticker_cache = RESEARCH_CACHE / ticker
-    if ticker_cache.exists():
-        results_files = list(ticker_cache.glob("*_results.json"))
-        if results_files:
-            # Return the most recently modified results extraction
-            latest = max(results_files, key=lambda p: p.stat().st_mtime)
-            with open(latest) as f:
-                cached = json.load(f)
-            if cached.get("headline"):
-                return cached["headline"]
+    Return a structured bio dict or None.
+    Tries to identify the person first; skips if no person is findable.
+    Uses Google Search grounding on GEMINI_MODEL.
+    Caches by content hash.
 
-    # Fallback: try to extract from announcement text itself
+    Returns None (not an error string) on any failure — callers must hide the bio block.
+    """
+    # Quick check: is there a plausible person name in the text?
+    person_hint = _extract_person_hint(filing_text)
+    if not person_hint:
+        logger.debug("[ENRICHER] No person name found in filing, skipping bio: %s", filing_text[:80])
+        return None
+
+    # Cache lookup
+    _BIO_CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    cache_key = _bio_cache_key(company, filing_text)
+    cache_file = _BIO_CACHE_DIR / f"{cache_key}.json"
+
+    if cache_file.exists():
+        try:
+            data = json.loads(cache_file.read_text(encoding="utf-8"))
+            if data.get("status") != "no_person_identified":
+                return data
+            return None
+        except Exception:
+            pass
+
+    # Call LLM with grounding
+    prompt = _BIO_PROMPT.format(
+        company=company,
+        filing_text=filing_text[:600],
+    )
+
     try:
-        genai.configure(api_key=api_key)
-        model = genai.GenerativeModel(
-            "gemini-1.5-flash",
-            generation_config={"response_mime_type": "application/json"},
-        )
-        prompt = RESULTS_SUMMARY_PROMPT.format(
-            company=company,
-            period=period,
-            announcement_text=announcement_text[:2000],
-        )
-        response = model.generate_content(prompt)
-        data = json.loads(response.text)
-        if data.get("found"):
-            return data
-    except Exception as e:
-        print(f"  [WARN] Quick results extraction failed: {e}")
+        from backend.llm import gemini_generate_json
+        result = gemini_generate_json(prompt=prompt, task="reasoning", temperature=0.3, max_tokens=512)
+        if isinstance(result, dict):
+            if result.get("status") == "no_person_identified":
+                cache_file.write_text(json.dumps(result), encoding="utf-8")
+                return None
+            # Validate required fields
+            if result.get("bio") and result.get("person_name"):
+                cache_file.write_text(json.dumps(result), encoding="utf-8")
+                return result
+    except LLMError as e:
+        # quota/model issues — skip silently, don't surface to user
+        logger.warning("[ENRICHER] Bio LLM call failed (%s), skipping bio", e.kind)
+    except (json.JSONDecodeError, Exception) as e:
+        logger.warning("[ENRICHER] Bio parse error: %s, skipping", e)
 
     return None
 
 
-def enrich_announcement(
-    announcement: dict,
-    api_key: str,
-) -> dict:
+# ── Results enrichment (Phase 2 placeholder) ──────────────────────────────────
+
+def get_results_enrichment(
+    ticker: str,
+    filing_url: Optional[str] = None,
+) -> Optional[dict]:
+    """
+    Extract Revenue/EBITDA/PBT/PAT from a results filing PDF.
+    Phase 2 will implement full pdfplumber extraction.
+    Returns None when data is unavailable (callers show the filing link instead).
+    """
+    # Check for cached extraction
+    ticker_cache = RESEARCH_CACHE / ticker
+    if ticker_cache.exists():
+        for f in sorted(ticker_cache.glob("*_results.json"), key=lambda p: p.stat().st_mtime, reverse=True):
+            try:
+                data = json.loads(f.read_text(encoding="utf-8"))
+                if data.get("status") == "ok" and data.get("data"):
+                    return data["data"]
+            except Exception:
+                pass
+    return None
+
+
+# ── Main enrichment entry point ───────────────────────────────────────────────
+
+def enrich_announcement(announcement: dict) -> dict:
     """
     Add enrichment to a high-priority announcement.
-    Returns the announcement with 'enrichment' field populated.
+    Returns announcement with an 'enrichment' field:
+      {"type": "management_bio", "person_name": ..., "bio": ..., "sources": [...]}
+      {"type": "results_card", "data": {...}}
+      None  — if no enrichment could be produced
+    All failures are logged server-side and result in enrichment=None, not error strings.
     """
     category = announcement.get("category", "")
     ticker = announcement.get("ticker", "")
     company = ticker.replace(".NS", "").replace(".BO", "")
     headline = announcement.get("headline", "")
+    filing_url = announcement.get("attachment_url")
 
-    enrichment = {}
+    enrichment = None
 
     if category == "management_change":
-        print(f"  [ENRICH] Getting bio for {company}...")
-        bio = get_management_bio(company, headline, api_key)
-        enrichment = {"type": "management_bio", "bio": bio}
+        bio_data = get_management_bio(company, headline)
+        if bio_data:
+            enrichment = {
+                "type": "management_bio",
+                "person_name": bio_data.get("person_name", ""),
+                "role": bio_data.get("role", ""),
+                "bio": bio_data.get("bio", ""),
+                "sources": bio_data.get("sources", []),
+            }
 
     elif category == "results":
-        print(f"  [ENRICH] Getting results numbers for {company}...")
-        numbers = get_results_enrichment(
-            company=company,
-            period="latest",
-            announcement_text=headline,
-            api_key=api_key,
-            ticker=ticker,
-        )
+        numbers = get_results_enrichment(ticker, filing_url)
         if numbers:
             enrichment = {"type": "results_card", "data": numbers}
 
-    announcement["enrichment"] = enrichment or None
-    return announcement
+    ann = {**announcement}
+    ann["enrichment"] = enrichment
+    return ann

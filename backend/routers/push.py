@@ -21,6 +21,7 @@ from backend.config import (
     HIGH_PRIORITY_CATEGORIES,
     MEDIUM_PRIORITY_CATEGORIES,
 )
+# Note: GEMINI_API_KEY used only to decide whether to attempt LLM classification
 from backend.models.schemas import DigestResponse, AlertsResponse, AlertThresholds, Alert
 from backend.services.classifier import classify_announcements
 from backend.services.alerts import get_all_alerts
@@ -89,12 +90,13 @@ async def get_digest(
 
         tier = ann.get("priority_tier", "low")
 
-        # Enrich high-priority items if GEMINI_API_KEY is available
-        if tier == "high" and ann.get("category") in {"results", "management_change"} and GEMINI_API_KEY:
+        # Enrich high-priority items (results card, management bio)
+        if tier == "high" and ann.get("category") in {"results", "management_change"}:
             try:
-                ann = enrich_announcement(ann, GEMINI_API_KEY)
-            except Exception:
-                pass  # Enrichment is optional
+                ann = enrich_announcement(ann)
+            except Exception as ex:
+                import logging
+                logging.getLogger(__name__).warning("[PUSH] Enrichment failed for %s: %s", ann.get("ticker"), ex)
 
         if tier == "high":
             high.append(ann)

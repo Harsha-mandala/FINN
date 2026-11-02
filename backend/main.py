@@ -11,7 +11,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from backend.config import ALLOWED_ORIGINS
-from backend.routers import push, pull, chat
+from backend.routers import push, pull, chat, health
 
 
 def sanitize_floats(obj: Any) -> Any:
@@ -31,10 +31,11 @@ class SafeJSONResponse(JSONResponse):
     def render(self, content: Any) -> bytes:
         return json.dumps(sanitize_floats(content), ensure_ascii=False).encode("utf-8")
 
+
 app = FastAPI(
     title="FINN API",
     description="Financial Investment Agent — ENAM Holdings Build Challenge",
-    version="1.0.0",
+    version="2.0.0",
     default_response_class=SafeJSONResponse,
 )
 
@@ -48,36 +49,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# ── Routers ────────────────────────────────────────────────────────────────────
+# ── Routers ───────────────────────────────────────────────────────────────────
+app.include_router(health.router)
 app.include_router(push.router)
 app.include_router(pull.router)
 app.include_router(chat.router)
-
-
-@app.get("/health")
-async def health():
-    import os
-    gemini_key_detected = bool(
-        os.getenv("GEMINI_API_KEY")
-        or os.getenv("GOOGLE_API_KEY")
-        or os.getenv("GOOGLE_GENAI_API_KEY")
-    )
-    detected_var = None
-    if os.getenv("GEMINI_API_KEY"):
-        detected_var = "GEMINI_API_KEY"
-    elif os.getenv("GOOGLE_API_KEY"):
-        detected_var = "GOOGLE_API_KEY"
-    elif os.getenv("GOOGLE_GENAI_API_KEY"):
-        detected_var = "GOOGLE_GENAI_API_KEY"
-
-    return {
-        "status": "ok",
-        "service": "FINN API",
-        "version": "1.2.0",
-        "has_gemini_key": gemini_key_detected,
-        "gemini_env_var": detected_var,
-        "cors_origins": ALLOWED_ORIGINS,
-    }
 
 
 @app.get("/")
@@ -87,6 +63,8 @@ async def root():
         "description": "Financial Investment Agent",
         "docs": "/docs",
         "endpoints": {
+            "health": "/health",
+            "health_llm": "/health/llm",
             "push_digest": "/push/digest",
             "push_alerts": "/push/alerts",
             "push_prices": "/push/prices",
