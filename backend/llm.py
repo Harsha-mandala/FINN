@@ -430,6 +430,7 @@ def gemini_generate_json(
     system: Optional[str] = None,
     temperature: float = 0.1,
     max_tokens: int = 4096,
+    grounded: bool = False,
 ) -> Union[dict, list]:
     """
     Generate and parse JSON. Strips markdown fences if the model wraps output.
@@ -442,6 +443,7 @@ def gemini_generate_json(
         json_mode=True,
         temperature=temperature,
         max_tokens=max_tokens,
+        grounded=grounded,
     )
     text = text.strip()
     # Strip ```json ... ``` or ``` ... ``` wrappers

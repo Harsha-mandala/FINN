@@ -1,1 +1,56 @@
-{"status": "unavailable", "filing_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/f5d5fb37-aa66-401c-85d6-58ccd3982828.pdf", "reason": "Download deferred"}
+{
+  "status": "ok",
+  "ticker": "HDFCBANK.NS",
+  "is_bank": true,
+  "basis": "standalone",
+  "period_current": "Q2 FY27",
+  "period_qoq": "Q1 FY27",
+  "period_yoy": "Q2 FY26",
+  "metrics": {
+    "revenue": {
+      "current": 97267.62,
+      "qoq_prev": 92184.38,
+      "qoq_pct": 5.5,
+      "yoy_prev": 91040.72,
+      "yoy_pct": 6.8
+    },
+    "ebitda": {
+      "current": null,
+      "qoq_prev": null,
+      "qoq_pct": null,
+      "yoy_prev": null,
+      "yoy_pct": null,
+      "not_applicable": true
+    },
+    "pbt": {
+      "current": 25909.8,
+      "qoq_prev": 26108.3,
+      "qoq_pct": -0.8,
+      "yoy_prev": 24423.07,
+      "yoy_pct": 6.1
+    },
+    "pat": {
+      "current": 19609.96,
+      "qoq_prev": 19069.72,
+      "qoq_pct": 2.8,
+      "yoy_prev": 18641.28,
+      "yoy_pct": 5.2
+    },
+    "total_income": {
+      "current": 97267.62,
+      "qoq_prev": 92184.38,
+      "qoq_pct": 5.5,
+      "yoy_prev": 91040.72,
+      "yoy_pct": 6.8
+    },
+    "nii": {
+      "current": 34619.18,
+      "qoq_prev": 33533.95,
+      "qoq_pct": 3.2,
+      "yoy_prev": 31551.5,
+      "yoy_pct": 9.7
+    }
+  },
+  "filing_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/f5d5fb37-aa66-401c-85d6-58ccd3982828.pdf",
+  "sha256": "1a25f460842bbd8e3632a000cdbc625d7aa1ec2934d3b0d8b60d270bb33e3bdf"
+}

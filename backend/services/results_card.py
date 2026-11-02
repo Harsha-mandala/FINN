@@ -88,6 +88,65 @@ Document Text:
 """
 
 
+def parse_period_from_text(text: str) -> tuple[str, str, str]:
+    """
+    Dynamically extract fiscal quarter and year from document text.
+    Indian Fiscal Year: April 1 to March 31.
+    e.g. Quarter ended 30-Sep-2026 -> Q2 FY27 (ended 30-Sep-2026, FY 2026-27).
+    """
+    # Attempt 1: Explicit contiguous phrase (e.g. 'quarter ended 30th September, 2026')
+    m = re.search(
+        r"(?:quarter|three\s+months)[\s/\w]*ended\s*[:\-\s]*([0-9]{1,2}(?:st|nd|rd|th)?[\s\-\./,]+[a-zA-Z]+[\s\-\./,]+[0-9]{4}|[a-zA-Z]+[\s\-\./,]+[0-9]{1,2}(?:st|nd|rd|th)?[\s\-\./,]+[0-9]{4}|[0-9]{1,2}[\-\./][0-9]{1,2}[\-\./][0-9]{4})",
+        text,
+        re.IGNORECASE,
+    )
+    date_str = m.group(1).lower() if m else ""
+    if not date_str:
+        # Attempt 2: Numeric date column header like 30.09.2026 or 30-09-2026
+        m2 = re.search(r"\b(3[01][\-\./](?:09|06|12|03)[\-\./](20\d\d))\b", text)
+        if m2:
+            date_str = m2.group(1).lower()
+
+    if date_str:
+        year_m = re.search(r"(20\d\d)", date_str)
+        if year_m:
+            cal_year = int(year_m.group(1))
+            if any(k in date_str for k in ["jun", "06"]):
+                fy = cal_year + 1
+                return f"Q1 FY{str(fy)[-2:]}", f"Q4 FY{str(cal_year)[-2:]}", f"Q1 FY{str(cal_year)[-2:]}"
+            elif any(k in date_str for k in ["sep", "09"]):
+                fy = cal_year + 1
+                return f"Q2 FY{str(fy)[-2:]}", f"Q1 FY{str(fy)[-2:]}", f"Q2 FY{str(cal_year)[-2:]}"
+            elif any(k in date_str for k in ["dec", "12"]):
+                fy = cal_year + 1
+                return f"Q3 FY{str(fy)[-2:]}", f"Q2 FY{str(fy)[-2:]}", f"Q3 FY{str(cal_year)[-2:]}"
+            elif any(k in date_str for k in ["mar", "03"]):
+                fy = cal_year
+                return f"Q4 FY{str(fy)[-2:]}", f"Q3 FY{str(fy)[-2:]}", f"Q4 FY{str(cal_year-1)[-2:]}"
+
+    # Attempt 3: Split table headers (e.g. TCS where months are on one row and years on the next)
+    m_year = re.search(r"\b(202[4-9])\b", text)
+    if m_year:
+        cal_year = int(m_year.group(1))
+        m_month = re.search(r"\b(sep(?:tember)?|jun(?:e)?|dec(?:ember)?|mar(?:ch)?)\b", text, re.IGNORECASE)
+        if m_month:
+            month = m_month.group(1).lower()
+            if "jun" in month:
+                fy = cal_year + 1
+                return f"Q1 FY{str(fy)[-2:]}", f"Q4 FY{str(cal_year)[-2:]}", f"Q1 FY{str(cal_year)[-2:]}"
+            elif "sep" in month:
+                fy = cal_year + 1
+                return f"Q2 FY{str(fy)[-2:]}", f"Q1 FY{str(fy)[-2:]}", f"Q2 FY{str(cal_year)[-2:]}"
+            elif "dec" in month:
+                fy = cal_year + 1
+                return f"Q3 FY{str(fy)[-2:]}", f"Q2 FY{str(fy)[-2:]}", f"Q3 FY{str(cal_year)[-2:]}"
+            elif "mar" in month:
+                fy = cal_year
+                return f"Q4 FY{str(fy)[-2:]}", f"Q3 FY{str(fy)[-2:]}", f"Q4 FY{str(cal_year-1)[-2:]}"
+
+    return "Current Quarter", "Previous Quarter", "Same Quarter Last Year"
+
+
 def compute_delta(current: Optional[float], previous: Optional[float]) -> Optional[float]:
     """Calculate percentage change in Python. Returns None if missing or base is zero."""
     if current is None or previous is None or previous == 0:
@@ -102,44 +161,115 @@ def compute_delta(current: Optional[float], previous: Optional[float]) -> Option
 def parse_table_regex(text: str) -> Optional[dict]:
     """
     Deterministic regex parser for standard Indian exchange quarterly results tables.
-    Extracts Revenue, PBT, PAT, and computes EBITDA = PBT + Finance Costs + Depreciation.
-    Works offline directly from pdfplumber text.
+    Works offline directly from extracted pdfplumber text.
+    Handles unit conversions (INR Million -> Crore), OCR ligatures, banking layouts,
+    and strips formula brackets.
     """
     lines = text.splitlines()
-    header_idx = -1
-    for idx, l in enumerate(lines[:30]):
-        if "quarter ended" in l.lower() or "particulars" in l.lower():
-            header_idx = idx
-            break
 
-    # Look for Revenue from Operations or Total Income
-    def extract_row_values(keyword_pattern: str) -> Optional[list[float]]:
+    # Detect entity type: Bank vs Corporate
+    is_bank = False
+    lower_lead = "\n".join(lines[:60]).lower()
+    if ("interest earned" in lower_lead or "deposits" in lower_lead) and ("advances" in lower_lead or "bank" in lower_lead):
+        is_bank = True
+
+    # Detect unit multiplier (Crore vs Million vs Lakh)
+    multiplier = 1.0
+    if re.search(r"(?:rs\.?|inr|₹)\s*(?:in\s+)?millions?", lower_lead):
+        multiplier = 0.1  # 10 Million = 1 Crore
+    elif re.search(r"(?:rs\.?|inr|₹)\s*(?:in\s+)?lakhs?", lower_lead):
+        multiplier = 0.01  # 100 Lakhs = 1 Crore
+
+    def extract_row(keyword_patterns: list[str]) -> Optional[list[float]]:
         for line in lines:
-            if re.search(keyword_pattern, line, re.IGNORECASE):
-                # Extract all numbers like 332,861 or 12345.67 or (1,234)
-                tokens = re.findall(r"\(?\b\d{1,3}(?:,\d{3})*(?:\.\d+)?\)?", line)
-                clean_nums = []
-                for tok in tokens:
-                    is_neg = tok.startswith("(") and tok.endswith(")")
-                    val_str = tok.strip("()").replace(",", "")
-                    try:
-                        v = float(val_str)
-                        clean_nums.append(-v if is_neg else v)
-                    except ValueError:
-                        continue
-                if len(clean_nums) >= 3:
-                    return clean_nums[:3]
+            clean_l = re.sub(r"pro[1lf\s]*t", "profit", line, flags=re.IGNORECASE)
+            # Strip footnote formulas like (1)+(2) or (3-4) before tokenization
+            clean_l = re.sub(r"\(\s*[\d\s\+\-\*/]+\s*\)", " ", clean_l)
+            # Clean up leading indices e.g. '3 Total Income' or '1) Interest' or '10 Profit'
+            clean_l = re.sub(r"^\s*[\(\[]?[A-Za-z0-9]+[\)\]\.]\s*", " ", clean_l)
+            clean_l = re.sub(r"^\s*\d+\s+(?=[A-Za-z])", " ", clean_l)
+            # Handle OCR commas replacing decimal points e.g. 79362,78 -> 79362.78
+            clean_l = re.sub(r"(\d+),(\d{2})\b", r"\1.\2", clean_l)
+            for pat in keyword_patterns:
+                if re.search(pat, clean_l, re.IGNORECASE):
+                    tokens = re.findall(r"\(?\b\d+(?:,\d+)*(?:\.\d+)?\)?", clean_l)
+                    clean_nums = []
+                    for tok in tokens:
+                        is_neg = tok.startswith("(") and tok.endswith(")")
+                        val_str = tok.strip("()").replace(",", "")
+                        try:
+                            v = float(val_str) * multiplier
+                            clean_nums.append(round(-v if is_neg else v, 2))
+                        except ValueError:
+                            continue
+                    if len(clean_nums) >= 3:
+                        if clean_nums[0] < 50 and len(clean_nums) >= 4 and abs(clean_nums[1]) > 100:
+                            clean_nums = clean_nums[1:]
+                        return clean_nums[:3]
         return None
 
-    rev_nums = extract_row_values(r"revenue from operations") or extract_row_values(r"total income")
-    pbt_nums = extract_row_values(r"profit before tax")
+    period_curr, period_qoq, period_yoy = parse_period_from_text(lower_lead)
+    is_consolidated = "consolidated" in lower_lead
+
+    if is_bank:
+        # Bank specific items
+        total_income = extract_row([r"total income\b", r"total income \("])
+        int_earned = extract_row([r"interest earned"])
+        int_expended = extract_row([r"interest expended"])
+        nii = extract_row([r"net interest income"])
+        if not nii and int_earned and int_expended:
+            nii = [round(int_earned[i] - int_expended[i], 2) for i in range(min(len(int_earned), len(int_expended)))]
+
+        pbt_nums = extract_row([r"profit before tax", r"profit.*before.*tax"])
+        pat_nums = extract_row([r"net profit.*for the period", r"profit after tax", r"profit for the period"])
+
+        if not total_income or not pbt_nums:
+            return None
+
+        return {
+            "found": True,
+            "is_bank": True,
+            "basis": "consolidated" if is_consolidated else "standalone",
+            "period_current": period_curr,
+            "period_qoq": period_qoq,
+            "period_yoy": period_yoy,
+            "total_income": {
+                "current": total_income[0],
+                "prev_quarter": total_income[1],
+                "prev_year_quarter": total_income[2],
+            },
+            "nii": {
+                "current": nii[0] if nii else None,
+                "prev_quarter": nii[1] if nii else None,
+                "prev_year_quarter": nii[2] if nii else None,
+            },
+            "revenue": {
+                "current": total_income[0],
+                "prev_quarter": total_income[1],
+                "prev_year_quarter": total_income[2],
+            },
+            "ebitda": None,  # Not applicable for banks
+            "pbt": {
+                "current": pbt_nums[0],
+                "prev_quarter": pbt_nums[1],
+                "prev_year_quarter": pbt_nums[2],
+            },
+            "pat": {
+                "current": pat_nums[0] if pat_nums else None,
+                "prev_quarter": pat_nums[1] if pat_nums else None,
+                "prev_year_quarter": pat_nums[2] if pat_nums else None,
+            },
+        }
+
+    # Non-bank corporate results
+    rev_nums = extract_row([r"revenue from operations", r"net sales"]) or extract_row([r"total income"])
+    pbt_nums = extract_row([r"profit before exceptional", r"profit before tax", r"profit.*before.*tax"])
     pat_nums = (
-        extract_row_values(r"net profit attributable to.*owners")
-        or extract_row_values(r"profit after tax")
-        or extract_row_values(r"profit for the period")
+        extract_row([r"net profit attributable to.*owners"])
+        or extract_row([r"profit for the period", r"profit after tax"])
     )
-    fin_nums = extract_row_values(r"finance costs")
-    dep_nums = extract_row_values(r"depreciation")
+    fin_nums = extract_row([r"finance costs"])
+    dep_nums = extract_row([r"depreciation"])
 
     if not rev_nums or not pbt_nums:
         return None
@@ -151,14 +281,13 @@ def parse_table_regex(text: str) -> Optional[dict]:
             for i in range(min(len(pbt_nums), len(fin_nums), len(dep_nums)))
         ]
 
-    is_consolidated = "consolidated" in text[:1500].lower()
-
     return {
         "found": True,
+        "is_bank": False,
         "basis": "consolidated" if is_consolidated else "standalone",
-        "period_current": "Q2 FY25",
-        "period_qoq": "Q1 FY25",
-        "period_yoy": "Q2 FY24",
+        "period_current": period_curr,
+        "period_qoq": period_qoq,
+        "period_yoy": period_yoy,
         "revenue": {
             "current": rev_nums[0],
             "prev_quarter": rev_nums[1],
@@ -168,7 +297,7 @@ def parse_table_regex(text: str) -> Optional[dict]:
             "current": ebitda_nums[0] if ebitda_nums else None,
             "prev_quarter": ebitda_nums[1] if ebitda_nums else None,
             "prev_year_quarter": ebitda_nums[2] if ebitda_nums else None,
-        },
+        } if ebitda_nums else None,
         "pbt": {
             "current": pbt_nums[0],
             "prev_quarter": pbt_nums[1],
@@ -302,7 +431,10 @@ def build_results_card(
         cached_file = RESULTS_DIR / f"{cache_id}.json"
         if cached_file.exists():
             try:
-                return json.loads(cached_file.read_text(encoding="utf-8"))
+                cached_data = json.loads(cached_file.read_text(encoding="utf-8"))
+                # If allow_download is requested, bypass transient "deferred" placeholders
+                if not (allow_download and cached_data.get("reason") == "Download deferred"):
+                    return cached_data
             except Exception:
                 pass
 
@@ -369,19 +501,30 @@ def build_results_card(
             "yoy_pct": compute_delta(curr, yoy_prev),
         }
 
+    is_bank = extracted.get("is_bank", False)
+    metrics_dict = {
+        "revenue": format_metric(extracted.get("revenue")),
+        "ebitda": (
+            {"current": None, "qoq_prev": None, "qoq_pct": None, "yoy_prev": None, "yoy_pct": None, "not_applicable": True}
+            if is_bank
+            else format_metric(extracted.get("ebitda"))
+        ),
+        "pbt": format_metric(extracted.get("pbt")),
+        "pat": format_metric(extracted.get("pat")),
+    }
+    if is_bank:
+        metrics_dict["total_income"] = format_metric(extracted.get("total_income"))
+        metrics_dict["nii"] = format_metric(extracted.get("nii"))
+
     card_data = {
         "status": "ok",
         "ticker": ticker,
+        "is_bank": is_bank,
         "basis": extracted.get("basis", "consolidated"),
         "period_current": extracted.get("period_current", "Current Quarter"),
         "period_qoq": extracted.get("period_qoq", "Previous Quarter"),
         "period_yoy": extracted.get("period_yoy", "Same Quarter Last Year"),
-        "metrics": {
-            "revenue": format_metric(extracted.get("revenue")),
-            "ebitda": format_metric(extracted.get("ebitda")),
-            "pbt": format_metric(extracted.get("pbt")),
-            "pat": format_metric(extracted.get("pat")),
-        },
+        "metrics": metrics_dict,
         "filing_url": filing_url,
         "sha256": sha256,
     }

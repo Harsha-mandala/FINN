@@ -83,13 +83,7 @@ def get_management_bio(
 
     Returns None (not an error string) on any failure — callers must hide the bio block.
     """
-    # Quick check: is there a plausible person name in the text?
-    person_hint = _extract_person_hint(filing_text)
-    if not person_hint:
-        logger.debug("[ENRICHER] No person name found in filing, skipping bio: %s", filing_text[:80])
-        return None
-
-    # Cache lookup
+    # Cache lookup first
     _BIO_CACHE_DIR.mkdir(parents=True, exist_ok=True)
     cache_key = _bio_cache_key(company, filing_text)
     cache_file = _BIO_CACHE_DIR / f"{cache_key}.json"
@@ -97,13 +91,20 @@ def get_management_bio(
     if cache_file.exists():
         try:
             data = json.loads(cache_file.read_text(encoding="utf-8"))
-            if data.get("status") != "no_person_identified":
+            if data.get("status") != "no_person_identified" and data.get("person_name"):
                 return data
             return None
         except Exception:
             pass
 
     if not allow_network:
+        return None
+
+    # Quick check: is there a plausible person name or key management title in the text?
+    person_hint = _extract_person_hint(filing_text)
+    has_mgmt_title = bool(re.search(r"\b(director|ceo|cfo|coo|md|president|officer)\b", filing_text, re.IGNORECASE))
+    if not person_hint and not has_mgmt_title:
+        logger.debug("[ENRICHER] No person name or title found in filing, skipping bio: %s", filing_text[:80])
         return None
 
     # Call LLM with grounding
@@ -114,7 +115,13 @@ def get_management_bio(
 
     try:
         from backend.llm import gemini_generate_json
-        result = gemini_generate_json(prompt=prompt, task="reasoning", temperature=0.3, max_tokens=512)
+        result = gemini_generate_json(
+            prompt=prompt,
+            task="reasoning",
+            temperature=0.3,
+            max_tokens=512,
+            grounded=True,
+        )
         if isinstance(result, dict):
             if result.get("status") == "no_person_identified":
                 cache_file.write_text(json.dumps(result), encoding="utf-8")

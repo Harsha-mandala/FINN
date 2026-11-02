@@ -1,10 +1,11 @@
 {
   "status": "ok",
   "ticker": "RELIANCE.NS",
+  "is_bank": false,
   "basis": "consolidated",
-  "period_current": "Q2 FY25",
-  "period_qoq": "Q1 FY25",
-  "period_yoy": "Q2 FY24",
+  "period_current": "Q2 FY27",
+  "period_qoq": "Q1 FY27",
+  "period_yoy": "Q2 FY26",
   "metrics": {
     "revenue": {
       "current": 332861.0,

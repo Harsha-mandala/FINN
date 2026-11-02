@@ -1,1 +1,41 @@
-{"status": "unavailable", "filing_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/4ac93ea0-d4d1-4b85-8849-14a19e0dcceb.pdf", "reason": "Download deferred"}
+{
+  "status": "ok",
+  "ticker": "POLYCAB.NS",
+  "is_bank": false,
+  "basis": "consolidated",
+  "period_current": "Q2 FY27",
+  "period_qoq": "Q1 FY27",
+  "period_yoy": "Q2 FY26",
+  "metrics": {
+    "revenue": {
+      "current": 9898.9,
+      "qoq_prev": 8209.73,
+      "qoq_pct": 20.6,
+      "yoy_prev": 6477.21,
+      "yoy_pct": 52.8
+    },
+    "ebitda": {
+      "current": 1510.86,
+      "qoq_prev": 1241.11,
+      "qoq_pct": 21.7,
+      "yoy_prev": 1066.19,
+      "yoy_pct": 41.7
+    },
+    "pbt": {
+      "current": 1306.22,
+      "qoq_prev": 1058.22,
+      "qoq_pct": 23.4,
+      "yoy_prev": 921.0,
+      "yoy_pct": 41.8
+    },
+    "pat": {
+      "current": 990.0,
+      "qoq_prev": 796.65,
+      "qoq_pct": 24.3,
+      "yoy_prev": 692.96,
+      "yoy_pct": 42.9
+    }
+  },
+  "filing_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/4ac93ea0-d4d1-4b85-8849-14a19e0dcceb.pdf",
+  "sha256": "79e9770fac27e6a469ed0d29890f42e357535595cf91b3f3423eeaa5b1411d69"
+}
