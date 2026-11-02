@@ -251,6 +251,11 @@ const ResultsTable: React.FC<{ enrichment: ResultsEnrichmentView }> = ({ enrichm
       </tbody>
     </table>
 
+    {/* Footnote on derived EBITDA */}
+    <div className="px-3 py-1 bg-[#1A2438]/30 border-t border-[#263548]/50 text-[10px] text-[#64748B] italic">
+      * EBITDA (derived) = PBT + Finance Costs + Depreciation (includes other income).
+    </div>
+
     {/* Provenance Footer */}
     {enrichment.provenance && (
       <div className="px-3 py-1 bg-[#1A2438]/50 border-t border-[#263548] text-[10px] text-[#64748B] truncate">
@@ -443,18 +448,31 @@ const FeedScreen: React.FC = () => {
       const cardData = (raw.enrichment.data || {}) as ResultsCard;
       const metricsObj = (cardData.metrics || cardData) as any;
 
-      const metricDefs = [
-        { key: 'revenue', label: 'Revenue' },
-        { key: 'ebitda', label: 'EBITDA' },
-        { key: 'pbt', label: 'PBT' },
-        { key: 'pat', label: 'PAT' },
-      ];
+      const isBank = Boolean((cardData as any).is_bank);
+      const metricDefs = isBank
+        ? [
+            { key: 'total_income', label: 'Total Income' },
+            { key: 'nii', label: 'Net Interest Income (NII)' },
+            { key: 'pbt', label: 'PBT' },
+            { key: 'pat', label: 'PAT' },
+          ]
+        : [
+            { key: 'revenue', label: 'Revenue' },
+            {
+              key: 'ebitda',
+              label: metricsObj.ebitda?.source === 'reported' ? 'EBITDA (reported)' : 'EBITDA (derived)*',
+            },
+            { key: 'pbt', label: 'PBT' },
+            { key: 'pat', label: 'PAT' },
+          ];
 
       const rows: ResultsMetricRow[] = metricDefs.map((m) => {
         const item = metricsObj[m.key] || {};
         const val =
           item.current != null
             ? `₹${Number(item.current).toLocaleString('en-IN')}`
+            : item.not_applicable
+            ? 'N/A'
             : '—';
         return {
           label: m.label,

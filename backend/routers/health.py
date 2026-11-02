@@ -39,7 +39,7 @@ def health():
 
 
 @router.get("/health/llm")
-async def health_llm():
+def health_llm():
     """
     Validate each configured LLM model and return budget counters.
     Makes a minimal 1-token test call to each model if key is present.

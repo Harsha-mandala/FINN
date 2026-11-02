@@ -1,0 +1,45 @@
+{
+  "status": "ok",
+  "ticker": "DIXON.NS",
+  "is_bank": false,
+  "extraction_method": "regex",
+  "basis": "standalone",
+  "period_current": "Q2 FY27",
+  "period_qoq": "Q1 FY27",
+  "period_yoy": "Q2 FY26",
+  "metrics": {
+    "revenue": {
+      "current": 1679.24,
+      "qoq_prev": 1619.9,
+      "qoq_pct": 3.7,
+      "yoy_prev": 1907.64,
+      "yoy_pct": -12.0
+    },
+    "ebitda": {
+      "current": 170.53,
+      "qoq_prev": 608.95,
+      "qoq_pct": -72.0,
+      "yoy_prev": 597.54,
+      "yoy_pct": -71.5,
+      "label": "EBITDA (derived)",
+      "definition": "PBT + finance costs + depreciation; includes other income",
+      "source": "derived"
+    },
+    "pbt": {
+      "current": 147.92,
+      "qoq_prev": 584.27,
+      "qoq_pct": -74.7,
+      "yoy_prev": 566.49,
+      "yoy_pct": -73.9
+    },
+    "pat": {
+      "current": 5335.16,
+      "qoq_prev": 7671.66,
+      "qoq_pct": -30.5,
+      "yoy_prev": 59.12,
+      "yoy_pct": 8924.3
+    }
+  },
+  "filing_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/d7b8fffb-7a5f-4efa-9241-482c5d765f1d.pdf",
+  "sha256": "ba34c117bfa84e0d0886204fe8ef50955303474553035a05f572fa655d1fd275"
+}

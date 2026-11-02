@@ -311,7 +311,7 @@ def parse_table_regex(text: str) -> Optional[dict]:
     }
 
 
-def download_filing_pdf(url: str, timeout: int = 2) -> Optional[tuple[bytes, str]]:
+def download_filing_pdf(url: str, timeout: int = 15) -> Optional[tuple[bytes, str]]:
     """
     Download filing PDF from URL.
     Returns (content_bytes, sha256_hash) or None.
@@ -462,11 +462,13 @@ def build_results_card(
     if not text:
         return _save_unavailable("Could not extract text from PDF")
 
+    method = "regex"
     # Attempt 1: Fast deterministic regex parse from audited tables
     extracted = parse_table_regex(text)
 
     # Attempt 2: Fall back to Gemini if deterministic parse couldn't find metrics
     if not extracted or not extracted.get("found"):
+        method = "gemini"
         from backend.llm import gemini_generate_json, LLMError
         try:
             prompt = RESULTS_EXTRACTION_PROMPT.format(text=text[:32000])
@@ -502,13 +504,19 @@ def build_results_card(
         }
 
     is_bank = extracted.get("is_bank", False)
+    ebitda_metric = (
+        {"current": None, "qoq_prev": None, "qoq_pct": None, "yoy_prev": None, "yoy_pct": None, "not_applicable": True}
+        if is_bank
+        else format_metric(extracted.get("ebitda"))
+    )
+    if not is_bank and ebitda_metric.get("current") is not None:
+        ebitda_metric["label"] = "EBITDA (derived)"
+        ebitda_metric["definition"] = "PBT + finance costs + depreciation; includes other income"
+        ebitda_metric["source"] = "derived"
+
     metrics_dict = {
         "revenue": format_metric(extracted.get("revenue")),
-        "ebitda": (
-            {"current": None, "qoq_prev": None, "qoq_pct": None, "yoy_prev": None, "yoy_pct": None, "not_applicable": True}
-            if is_bank
-            else format_metric(extracted.get("ebitda"))
-        ),
+        "ebitda": ebitda_metric,
         "pbt": format_metric(extracted.get("pbt")),
         "pat": format_metric(extracted.get("pat")),
     }
@@ -520,6 +528,7 @@ def build_results_card(
         "status": "ok",
         "ticker": ticker,
         "is_bank": is_bank,
+        "extraction_method": method,
         "basis": extracted.get("basis", "consolidated"),
         "period_current": extracted.get("period_current", "Current Quarter"),
         "period_qoq": extracted.get("period_qoq", "Previous Quarter"),

@@ -1,0 +1,57 @@
+{
+  "status": "ok",
+  "ticker": "ICICIBANK.NS",
+  "is_bank": true,
+  "extraction_method": "regex",
+  "basis": "standalone",
+  "period_current": "Q2 FY27",
+  "period_qoq": "Q1 FY27",
+  "period_yoy": "Q2 FY26",
+  "metrics": {
+    "revenue": {
+      "current": 3.0,
+      "qoq_prev": 1.0,
+      "qoq_pct": 200.0,
+      "yoy_prev": 57157.49,
+      "yoy_pct": -100.0
+    },
+    "ebitda": {
+      "current": null,
+      "qoq_prev": null,
+      "qoq_pct": null,
+      "yoy_prev": null,
+      "yoy_pct": null,
+      "not_applicable": true
+    },
+    "pbt": {
+      "current": 23.4,
+      "qoq_prev": 19954.0,
+      "qoq_pct": -99.9,
+      "yoy_prev": 2.1,
+      "yoy_pct": 1014.3
+    },
+    "pat": {
+      "current": 20.98,
+      "qoq_prev": 64.0,
+      "qoq_pct": -67.2,
+      "yoy_prev": 38.3,
+      "yoy_pct": -45.2
+    },
+    "total_income": {
+      "current": 3.0,
+      "qoq_prev": 1.0,
+      "qoq_pct": 200.0,
+      "yoy_prev": 57157.49,
+      "yoy_pct": -100.0
+    },
+    "nii": {
+      "current": 17.7,
+      "qoq_prev": 25339.0,
+      "qoq_pct": -99.9,
+      "yoy_prev": 2.6,
+      "yoy_pct": 580.8
+    }
+  },
+  "filing_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/cbd56dbf-e0e2-444e-9793-b261a8e0e05e.pdf",
+  "sha256": "b28a719174d31592413f317e9baf527e4dd127f18b2468179d9cc0bfa74fabd1"
+}
