@@ -17,3 +17,5 @@ frontend/.next/
 *.log
 .DS_Store
 Thumbs.db
+
+cache/_llm_budget.json

@@ -476,10 +476,10 @@ def health_check_llm() -> dict:
                 system=None,
                 json_mode=False,
                 temperature=0.0,
-                max_tokens=5,
+                max_tokens=50,
                 grounded=False,
             )
-            statuses[s] = "ok" if result.strip() else "empty_response"
+            statuses[s] = "ok" if "ok" in result.lower() else "empty_response"
         except LLMError as e:
             statuses[s] = e.kind
         except Exception as e:
