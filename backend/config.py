@@ -35,14 +35,29 @@ GEMINI_API_KEY: str = get_gemini_key()
 # Defaults target the highest-RPD models visible on the free tier.
 # Override any of these in .env or via Render environment variables.
 
-GEMINI_MODEL: str = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
-GEMINI_CHEAP_MODEL: str = os.getenv("GEMINI_CHEAP_MODEL", "gemini-3.5-flash-lite")
-GEMINI_FALLBACK_MODELS: list[str] = [
+GEMINI_CHEAP_CHAIN: list[str] = [
     m.strip()
     for m in os.getenv(
-        "GEMINI_FALLBACK_MODELS", "gemini-3.1-flash-lite,gemini-3.5-flash"
+        "GEMINI_CHEAP_CHAIN",
+        "gemini-3.5-flash-lite,gemini-3.1-flash-lite,gemini-2.5-flash-lite",
     ).split(",")
     if m.strip()
+]
+GEMINI_CHEAP_MODEL: str = GEMINI_CHEAP_CHAIN[0] if GEMINI_CHEAP_CHAIN else "gemini-3.5-flash-lite"
+
+GEMINI_REASONING_CHAIN: list[str] = [
+    m.strip()
+    for m in os.getenv(
+        "GEMINI_REASONING_CHAIN",
+        "gemini-2.5-flash,gemini-3-flash,gemini-3.6-flash,gemini-3.8-flash",
+    ).split(",")
+    if m.strip()
+]
+GEMINI_MODEL: str = GEMINI_REASONING_CHAIN[0] if GEMINI_REASONING_CHAIN else "gemini-2.5-flash"
+
+GEMINI_FALLBACK_MODELS: list[str] = [
+    m for m in (GEMINI_CHEAP_CHAIN[1:] + GEMINI_REASONING_CHAIN[1:])
+    if m not in (GEMINI_MODEL, GEMINI_CHEAP_MODEL)
 ]
 
 # ── Cache paths ───────────────────────────────────────────────────────────────

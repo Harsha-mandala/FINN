@@ -58,10 +58,36 @@ _DEFAULT_DAILY_LIMITS: dict[str, int] = {
     "gemini-3.1-flash-lite": 500,
     "gemini-2.5-flash-lite": 20,
     "gemini-2.5-flash": 20,
+    "gemini-3-flash": 20,
+    "gemini-3-flash-preview": 20,
+    "gemini-3.5-flash": 20,
     "gemini-3.6-flash": 20,
     "gemini-3.8-flash": 20,
-    "gemini-2.0-flash": 1500,  # known free-tier limit
+    "gemini-2.0-flash": 1500,
 }
+
+_MODEL_ALIASES: dict[str, str] = {
+    "gemini-3-flash": "gemini-3-flash-preview",
+}
+
+_LAST_MODEL_USED = threading.local()
+
+def get_last_model_used() -> str:
+    return getattr(_LAST_MODEL_USED, "model", "gemini-3.5-flash-lite")
+
+_LAST_CALL_TIMESTAMP: dict[str, float] = {}
+
+def _pace_call(chain_type: str):
+    """Enforce RPM limits: 15 RPM for cheap (4.0s), 5 RPM for reasoning (12.0s)."""
+    min_interval = 4.0 if chain_type == "cheap" else 12.0
+    now = time.time()
+    last = _LAST_CALL_TIMESTAMP.get(chain_type, 0.0)
+    elapsed = now - last
+    if elapsed < min_interval:
+        sleep_time = min_interval - elapsed
+        logger.debug("[LLM] Pacing %s call: sleeping %.1fs to respect RPM", chain_type, sleep_time)
+        time.sleep(sleep_time)
+    _LAST_CALL_TIMESTAMP[chain_type] = time.time()
 # Use 90% of limit to preserve headroom for retries
 _BUDGET_MARGIN = 0.90
 _budget_lock = threading.Lock()
@@ -92,8 +118,9 @@ def _save_budget(data: dict) -> None:
 
 
 def _slug(model: str) -> str:
-    """Strip 'models/' prefix if present: 'models/gemini-2.5-flash' -> 'gemini-2.5-flash'."""
-    return model.removeprefix("models/").strip()
+    """Strip 'models/' prefix and resolve model aliases."""
+    s = model.removeprefix("models/").strip()
+    return _MODEL_ALIASES.get(s, s)
 
 
 def _daily_limit(slug: str) -> int:
@@ -349,11 +376,20 @@ def gemini_generate(
     On 429 or model_not_found, automatically tries GEMINI_FALLBACK_MODELS.
     Raises LLMError when all models in the chain fail.
     """
-    from backend.config import GEMINI_MODEL, GEMINI_CHEAP_MODEL, GEMINI_FALLBACK_MODELS
+    from backend.config import GEMINI_MODEL, GEMINI_CHEAP_MODEL, GEMINI_CHEAP_CHAIN, GEMINI_REASONING_CHAIN
 
-    primary = GEMINI_MODEL if task == "reasoning" else GEMINI_CHEAP_MODEL
-    fallbacks = [f for f in GEMINI_FALLBACK_MODELS if _slug(f) != _slug(primary)]
-    chain = [primary] + fallbacks
+    if task == "reasoning":
+        raw_chain = GEMINI_REASONING_CHAIN
+    else:
+        raw_chain = GEMINI_CHEAP_CHAIN
+    
+    seen = set()
+    chain = []
+    for m in raw_chain:
+        s = _slug(m)
+        if s not in seen:
+            seen.add(s)
+            chain.append(s)
 
     last_error: Optional[LLMError] = None
 
@@ -371,7 +407,8 @@ def gemini_generate(
         # - 429/quota/timeout/5xx: retry with capped exponential backoff up to 3x, then try next model
         for attempt in range(3):
             try:
-                return _do_generate(
+                _pace_call(task)
+                res = _do_generate(
                     model=s,
                     prompt=prompt,
                     system=system,
@@ -380,6 +417,8 @@ def gemini_generate(
                     max_tokens=max_tokens,
                     grounded=grounded,
                 )
+                _LAST_MODEL_USED.model = s
+                return res
             except Exception as raw_e:
                 err = raw_e if isinstance(raw_e, LLMError) else _classify_error(raw_e, s)
                 last_error = err
@@ -458,14 +497,14 @@ def gemini_generate_json(
 
 def health_check_llm() -> dict:
     """
-    Make a minimal test call to each configured model.
+    Make a minimal test call to each configured model in cheap and reasoning chains.
     Returns {slug: "ok"|"model_not_found"|"auth"|"quota"|"timeout"|"other"}.
     Does NOT include API keys in the response.
     """
-    from backend.config import GEMINI_MODEL, GEMINI_CHEAP_MODEL, GEMINI_FALLBACK_MODELS
+    from backend.config import GEMINI_CHEAP_CHAIN, GEMINI_REASONING_CHAIN
 
     all_slugs = list(dict.fromkeys(
-        _slug(m) for m in [GEMINI_MODEL, GEMINI_CHEAP_MODEL] + GEMINI_FALLBACK_MODELS
+        _slug(m) for m in GEMINI_CHEAP_CHAIN + GEMINI_REASONING_CHAIN
     ))
     statuses: dict[str, str] = {}
 

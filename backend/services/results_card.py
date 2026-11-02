@@ -486,6 +486,75 @@ def build_results_card(
             return _save_unavailable("LLM extraction error")
 
     if not isinstance(extracted, dict) or not extracted.get("found"):
+        # Attempt 3: Vision fallback for dotted glyphs or scanned pages (e.g. INFY consolidated, ideaForge)
+        try:
+            import pypdfium2 as pdfium
+            from PIL import Image
+            from google import genai
+            from google.genai import types
+
+            pdf = pdfium.PdfDocument(pdf_bytes)
+            target_idx = None
+            for p_idx in range(min(25, len(pdf))):
+                ptxt = pdf.get_page(p_idx).get_textpage().get_text_range()
+                if any(w in ptxt.lower() for w in ["statement of consolidated", "audited consolidated", "unaudited consolidated", "statement of standalone", "statement of audited"]):
+                    target_idx = p_idx
+                    if "consolidated" in ptxt.lower():
+                        break
+            if target_idx is not None:
+                img = pdf[target_idx].render(scale=2.0).to_pil()
+                client = genai.Client()
+                vision_prompt = """Extract quarterly financial results from this table for the 3 columns:
+- Current Quarter
+- Previous Quarter
+- Year-ago Quarter
+
+Extract exact numeric values:
+1. Revenue from operations
+2. Other income
+3. Profit before tax (PBT)
+4. Profit for the period (PAT)
+5. Finance cost
+6. Depreciation and amortisation expenses
+
+Return valid JSON:
+{
+  "found": true,
+  "basis": "consolidated",
+  "period_current": "Q2 FY27",
+  "period_qoq": "Q1 FY27",
+  "period_yoy": "Q2 FY26",
+  "revenue": {"current": 0.0, "previous": 0.0, "year_ago": 0.0},
+  "pbt": {"current": 0.0, "previous": 0.0, "year_ago": 0.0},
+  "pat": {"current": 0.0, "previous": 0.0, "year_ago": 0.0},
+  "finance_cost": {"current": 0.0, "previous": 0.0, "year_ago": 0.0},
+  "depreciation": {"current": 0.0, "previous": 0.0, "year_ago": 0.0}
+}
+If no results table, return {"found": false}.
+"""
+                resp = client.models.generate_content(
+                    model="gemini-3.5-flash-lite",
+                    contents=[img, vision_prompt],
+                    config=types.GenerateContentConfig(response_mime_type="application/json", temperature=0.0)
+                )
+                vis_res = json.loads(resp.text)
+                if isinstance(vis_res, dict) and vis_res.get("found"):
+                    # convert strings to floats if needed
+                    for k in ["revenue", "pbt", "pat", "finance_cost", "depreciation"]:
+                        if k in vis_res and isinstance(vis_res[k], dict):
+                            for subk in ["current", "previous", "year_ago"]:
+                                val = vis_res[k].get(subk)
+                                if isinstance(val, str):
+                                    try:
+                                        vis_res[k][subk] = float(val.replace(",", "").strip())
+                                    except ValueError:
+                                        pass
+                    extracted = vis_res
+                    method = "gemini_vision"
+        except Exception as e:
+            logger.warning("[RESULTS] Vision fallback error: %s", e)
+
+    if not isinstance(extracted, dict) or not extracted.get("found"):
         return _save_unavailable("Financial table could not be identified")
 
     # Compute QoQ and YoY deltas in Python
@@ -529,6 +598,7 @@ def build_results_card(
         "ticker": ticker,
         "is_bank": is_bank,
         "extraction_method": method,
+        "model_used": "gemini-3.5-flash-lite" if method != "regex" else "deterministic_regex",
         "basis": extracted.get("basis", "consolidated"),
         "period_current": extracted.get("period_current", "Current Quarter"),
         "period_qoq": extracted.get("period_qoq", "Previous Quarter"),

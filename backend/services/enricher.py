@@ -114,7 +114,7 @@ def get_management_bio(
     )
 
     try:
-        from backend.llm import gemini_generate_json
+        from backend.llm import gemini_generate_json, get_last_model_used
         result = gemini_generate_json(
             prompt=prompt,
             task="reasoning",
@@ -123,6 +123,7 @@ def get_management_bio(
             grounded=True,
         )
         if isinstance(result, dict):
+            result["model_used"] = get_last_model_used()
             if result.get("status") == "no_person_identified":
                 cache_file.write_text(json.dumps(result), encoding="utf-8")
                 return None

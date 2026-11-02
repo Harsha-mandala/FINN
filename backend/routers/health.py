@@ -15,6 +15,8 @@ from backend.config import (
     GEMINI_MODEL,
     GEMINI_CHEAP_MODEL,
     GEMINI_FALLBACK_MODELS,
+    GEMINI_CHEAP_CHAIN,
+    GEMINI_REASONING_CHAIN,
 )
 
 logger = logging.getLogger(__name__)
@@ -63,17 +65,23 @@ def health_llm():
             live_statuses = {}
 
         combined: dict = {}
+        from backend.llm import _slug
         all_slugs = list(dict.fromkeys(
-            m.removeprefix("models/").strip()
-            for m in [GEMINI_MODEL, GEMINI_CHEAP_MODEL] + GEMINI_FALLBACK_MODELS
+            _slug(m)
+            for m in GEMINI_CHEAP_CHAIN + GEMINI_REASONING_CHAIN
         ))
         for s in all_slugs:
             combined[s] = live_statuses.get(s) or availability.get(s, "unknown")
 
     budget = get_budget_status()
 
+    from backend.llm import _slug
     return {
         "generated_at": datetime.now().isoformat(),
+        "chains": {
+            "cheap": [_slug(m) for m in GEMINI_CHEAP_CHAIN],
+            "reasoning": [_slug(m) for m in GEMINI_REASONING_CHAIN],
+        },
         "models": {
             "primary_reasoning": GEMINI_MODEL,
             "primary_cheap": GEMINI_CHEAP_MODEL,
