@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-31T11:32:42.957715",
+  "generated_at": "2026-11-02T20:50:38.692340",
   "tickers": {
     "RELIANCE.NS": {
       "ticker": "RELIANCE.NS",
-      "fetched_at": "2026-10-31T11:32:28.165872",
+      "fetched_at": "2026-11-02T20:50:27.853704",
       "latest_date": "2026-10-30",
       "latest_close": 1164.9000244140625,
       "prev_close": 1167.4000244140625,
@@ -14,7 +14,7 @@
     },
     "HDFCBANK.NS": {
       "ticker": "HDFCBANK.NS",
-      "fetched_at": "2026-10-31T11:32:28.753064",
+      "fetched_at": "2026-11-02T20:50:28.160221",
       "latest_date": "2026-10-30",
       "latest_close": 692.7999877929688,
       "prev_close": 683.2999877929688,
@@ -25,7 +25,7 @@
     },
     "INFY.NS": {
       "ticker": "INFY.NS",
-      "fetched_at": "2026-10-31T11:32:29.329362",
+      "fetched_at": "2026-11-02T20:50:28.485927",
       "latest_date": "2026-10-30",
       "latest_close": 1185.0,
       "prev_close": 1146.5,
@@ -36,7 +36,7 @@
     },
     "TCS.NS": {
       "ticker": "TCS.NS",
-      "fetched_at": "2026-10-31T11:32:29.912426",
+      "fetched_at": "2026-11-02T20:50:28.822871",
       "latest_date": "2026-10-30",
       "latest_close": 2502.60009765625,
       "prev_close": 2478.0,
@@ -47,7 +47,7 @@
     },
     "ICICIBANK.NS": {
       "ticker": "ICICIBANK.NS",
-      "fetched_at": "2026-10-31T11:32:30.561061",
+      "fetched_at": "2026-11-02T20:50:29.096945",
       "latest_date": "2026-10-30",
       "latest_close": 1398.0,
       "prev_close": 1386.5999755859375,
@@ -58,7 +58,7 @@
     },
     "SUNPHARMA.NS": {
       "ticker": "SUNPHARMA.NS",
-      "fetched_at": "2026-10-31T11:32:31.202768",
+      "fetched_at": "2026-11-02T20:50:29.483533",
       "latest_date": "2026-10-30",
       "latest_close": 1777.699951171875,
       "prev_close": 1761.0,
@@ -69,7 +69,7 @@
     },
     "TRENT.NS": {
       "ticker": "TRENT.NS",
-      "fetched_at": "2026-10-31T11:32:31.772192",
+      "fetched_at": "2026-11-02T20:50:29.828599",
       "latest_date": "2026-10-30",
       "latest_close": 3017.300048828125,
       "prev_close": 2861.699951171875,
@@ -80,18 +80,18 @@
     },
     "POLYCAB.NS": {
       "ticker": "POLYCAB.NS",
-      "fetched_at": "2026-10-31T11:32:32.301981",
+      "fetched_at": "2026-11-02T20:50:30.100700",
       "latest_date": "2026-10-30",
-      "latest_close": NaN,
+      "latest_close": 7787.0,
       "prev_close": 7745.0,
-      "price_change_pct": NaN,
-      "volume_latest": 346328,
+      "price_change_pct": 0.54,
+      "volume_latest": 346386,
       "volume_20d_avg": 461971.0,
       "volume_ratio": 0.75
     },
     "DIXON.NS": {
       "ticker": "DIXON.NS",
-      "fetched_at": "2026-10-31T11:32:32.899941",
+      "fetched_at": "2026-11-02T20:50:30.399393",
       "latest_date": "2026-10-30",
       "latest_close": 11000.0,
       "prev_close": 11488.0,
@@ -106,18 +106,18 @@
     },
     "KALYANKJIL.NS": {
       "ticker": "KALYANKJIL.NS",
-      "fetched_at": "2026-10-31T11:32:35.169140",
+      "fetched_at": "2026-11-02T20:50:32.245296",
       "latest_date": "2026-10-30",
-      "latest_close": NaN,
+      "latest_close": 498.0,
       "prev_close": 515.0,
-      "price_change_pct": NaN,
-      "volume_latest": 2976076,
+      "price_change_pct": -3.3,
+      "volume_latest": 2976689,
       "volume_20d_avg": 6522759.0,
       "volume_ratio": 0.46
     },
     "CAMS.NS": {
       "ticker": "CAMS.NS",
-      "fetched_at": "2026-10-31T11:32:35.716106",
+      "fetched_at": "2026-11-02T20:50:32.548937",
       "latest_date": "2026-10-30",
       "latest_close": 653.5999755859375,
       "prev_close": 696.9500122070312,
@@ -128,18 +128,18 @@
     },
     "LALPATHLAB.NS": {
       "ticker": "LALPATHLAB.NS",
-      "fetched_at": "2026-10-31T11:32:36.265632",
+      "fetched_at": "2026-11-02T20:50:32.861362",
       "latest_date": "2026-10-30",
-      "latest_close": NaN,
+      "latest_close": 1906.4000244140625,
       "prev_close": 1911.699951171875,
-      "price_change_pct": NaN,
+      "price_change_pct": -0.28,
       "volume_latest": 282549,
       "volume_20d_avg": 267930.0,
       "volume_ratio": 1.05
     },
     "ASTRAL.NS": {
       "ticker": "ASTRAL.NS",
-      "fetched_at": "2026-10-31T11:32:36.826653",
+      "fetched_at": "2026-11-02T20:50:33.192635",
       "latest_date": "2026-10-30",
       "latest_close": 1341.9000244140625,
       "prev_close": 1365.4000244140625,
@@ -154,7 +154,7 @@
     },
     "IRCTC.NS": {
       "ticker": "IRCTC.NS",
-      "fetched_at": "2026-10-31T11:32:39.645145",
+      "fetched_at": "2026-11-02T20:50:36.939187",
       "latest_date": "2026-10-30",
       "latest_close": 436.20001220703125,
       "prev_close": 444.04998779296875,
@@ -165,7 +165,7 @@
     },
     "CDSL.NS": {
       "ticker": "CDSL.NS",
-      "fetched_at": "2026-10-31T11:32:40.204814",
+      "fetched_at": "2026-11-02T20:50:37.207636",
       "latest_date": "2026-10-30",
       "latest_close": 1263.0,
       "prev_close": 1282.0,
@@ -176,7 +176,7 @@
     },
     "IDEAFORGE.NS": {
       "ticker": "IDEAFORGE.NS",
-      "fetched_at": "2026-10-31T11:32:40.735114",
+      "fetched_at": "2026-11-02T20:50:37.474722",
       "latest_date": "2026-10-30",
       "latest_close": 628.5,
       "prev_close": 676.4000244140625,
@@ -187,7 +187,7 @@
     },
     "PERSISTENT.NS": {
       "ticker": "PERSISTENT.NS",
-      "fetched_at": "2026-10-31T11:32:41.275493",
+      "fetched_at": "2026-11-02T20:50:37.779727",
       "latest_date": "2026-10-30",
       "latest_close": 6048.0,
       "prev_close": 5880.0,
@@ -198,7 +198,7 @@
     },
     "DMART.NS": {
       "ticker": "DMART.NS",
-      "fetched_at": "2026-10-31T11:32:41.854398",
+      "fetched_at": "2026-11-02T20:50:38.038930",
       "latest_date": "2026-10-30",
       "latest_close": 3199.0,
       "prev_close": 3175.0,
@@ -209,7 +209,7 @@
     },
     "BAJFINANCE.NS": {
       "ticker": "BAJFINANCE.NS",
-      "fetched_at": "2026-10-31T11:32:42.403920",
+      "fetched_at": "2026-11-02T20:50:38.374576",
       "latest_date": "2026-10-30",
       "latest_close": 939.0999755859375,
       "prev_close": 938.9000244140625,
@@ -220,7 +220,7 @@
     },
     "MOTHERSON.NS": {
       "ticker": "MOTHERSON.NS",
-      "fetched_at": "2026-10-31T11:32:42.955912",
+      "fetched_at": "2026-11-02T20:50:38.685550",
       "latest_date": "2026-10-30",
       "latest_close": 156.5,
       "prev_close": 160.0,

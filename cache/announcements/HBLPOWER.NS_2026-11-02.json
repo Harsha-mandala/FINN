@@ -1,0 +1,52 @@
+{
+  "ticker": "HBLPOWER.NS",
+  "fetched_at": "2026-11-02T20:49:57.086112",
+  "days_back": 30,
+  "count": 4,
+  "announcements": [
+    {
+      "source": "BSE",
+      "scrip_code": "517271",
+      "headline": "Board Meeting Intimation for Prior Intimation About The Board Meeting",
+      "category_raw": "Board Meeting",
+      "subcategory_raw": "Board Meeting",
+      "date": "2026-10-22T11:25:02",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/4c6b4c12-2c00-4be6-827f-08c1daa41613.pdf",
+      "news_id": "3f05e93d-b2e4-4739-a3c0-ae3bb7da0763",
+      "ticker": "HBLPOWER.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "517271",
+      "headline": "Clarification sought from HBL Engineering Ltd",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Clarification",
+      "date": null,
+      "attachment_url": null,
+      "news_id": "452825dc-e3ed-47d4-95ff-ba33c1495dc2",
+      "ticker": "HBLPOWER.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "517271",
+      "headline": "Announcement under Regulation 30 (LODR)-Credit Rating",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Credit Rating",
+      "date": "2026-10-09T19:27:43",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/eebf0a45-a456-47dc-8307-15faa6a3422c.pdf",
+      "news_id": "4ddd7006-177b-4ffe-91eb-90ef99448478",
+      "ticker": "HBLPOWER.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "517271",
+      "headline": "Video Recording Of The Annual General Meeting",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-05T17:10:54",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/9a6a3b45-17dc-4dbb-9720-08e59d612441.pdf",
+      "news_id": "338f3006-54ba-4f1b-aa67-af29806009e8",
+      "ticker": "HBLPOWER.NS"
+    }
+  ]
+}

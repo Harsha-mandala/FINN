@@ -44,20 +44,29 @@ class Announcement(BaseModel):
     news_id: Optional[str] = None
     summary: Optional[str] = None  # AI one-liner
     enrichment: Optional[dict] = None  # results card, bio, etc.
+    sub_items: Optional[list[dict]] = None  # threaded sub-announcements
+    thread_count: Optional[int] = None  # total items in thread
 
 
 class DigestRequest(BaseModel):
     window_hours: int = 24  # default 24h
+    window: Optional[str] = "24h"
+    start_date: Optional[str] = None
+    end_date: Optional[str] = None
     tickers: Optional[list[str]] = None  # None = all portfolio
     include_low: bool = False  # whether to include low-priority in response
 
 
 class DigestResponse(BaseModel):
+    window: str = "24h"
     window_hours: int
+    data_as_of: Optional[str] = None
     generated_at: str
     high: list[Announcement]
     medium: list[Announcement]
     low: list[Announcement]
+    routine_summary: Optional[dict] = None
+    low_count: int = 0
     total: int
 
 

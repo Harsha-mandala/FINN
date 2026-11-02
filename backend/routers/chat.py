@@ -116,13 +116,11 @@ async def chat(request: ChatRequest):
 
         if err.kind == "quota":
             user_msg = (
-                "FINN's AI engine has reached its request limit for today. "
-                "Please try again tomorrow, or browse the Research tab for pre-generated analysis."
+                "FINN's AI engine has reached its request limit for today. Please try again tomorrow."
             )
         elif err.kind in ("auth", "model_not_found"):
             user_msg = (
-                "FINN's AI engine is temporarily unavailable. "
-                "You can still browse research cards in the Research tab."
+                "FINN's conversational AI engine is temporarily unavailable. Please try again shortly."
             )
         else:
             user_msg = (
@@ -132,9 +130,9 @@ async def chat(request: ChatRequest):
         # If we have context, return a grounded answer from cache
         if ctx:
             cache_reply = (
-                f"Here is what FINN's research data shows for **{ticker}**:\n\n"
+                f"Here is primary-source research context for **{ticker}**:\n\n"
                 f"{ctx[:1800]}\n\n"
-                f"_(Showing cached research — live AI responses unavailable right now.)_"
+                f"_(Showing cached data — live conversational AI is temporarily unavailable.)_"
             )
             return {
                 "response": cache_reply,

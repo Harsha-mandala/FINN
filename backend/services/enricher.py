@@ -73,6 +73,7 @@ def _bio_cache_key(company: str, filing_text: str) -> str:
 def get_management_bio(
     company: str,
     filing_text: str,
+    allow_network: bool = True,
 ) -> Optional[dict]:
     """
     Return a structured bio dict or None.
@@ -101,6 +102,9 @@ def get_management_bio(
             return None
         except Exception:
             pass
+
+    if not allow_network:
+        return None
 
     # Call LLM with grounding
     prompt = _BIO_PROMPT.format(
@@ -154,7 +158,7 @@ def get_results_enrichment(
 
 # ── Main enrichment entry point ───────────────────────────────────────────────
 
-def enrich_announcement(announcement: dict) -> dict:
+def enrich_announcement(announcement: dict, allow_network: bool = True) -> dict:
     """
     Add enrichment to a high-priority announcement.
     Returns announcement with an 'enrichment' field:
@@ -168,12 +172,13 @@ def enrich_announcement(announcement: dict) -> dict:
     company = ticker.replace(".NS", "").replace(".BO", "")
     headline = announcement.get("headline", "")
     filing_url = announcement.get("attachment_url")
+    news_id = announcement.get("news_id")
 
     enrichment = None
 
     if category == "management_change":
-        bio_data = get_management_bio(company, headline)
-        if bio_data:
+        bio_data = get_management_bio(company, headline, allow_network=allow_network)
+        if bio_data and bio_data.get("bio"):
             enrichment = {
                 "type": "management_bio",
                 "person_name": bio_data.get("person_name", ""),
@@ -183,9 +188,19 @@ def enrich_announcement(announcement: dict) -> dict:
             }
 
     elif category == "results":
-        numbers = get_results_enrichment(ticker, filing_url)
-        if numbers:
-            enrichment = {"type": "results_card", "data": numbers}
+        from backend.services.results_card import build_results_card
+        res_card = build_results_card(
+            ticker=ticker,
+            filing_url=filing_url,
+            news_id=news_id,
+            headline=headline,
+            allow_download=allow_network,
+        )
+        if res_card and res_card.get("status") == "ok":
+            enrichment = {
+                "type": "results_card",
+                "data": res_card,
+            }
 
     ann = {**announcement}
     ann["enrichment"] = enrichment

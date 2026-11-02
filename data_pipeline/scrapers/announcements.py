@@ -190,7 +190,7 @@ def fetch_announcements_for_ticker(
             for item in items:
                 item["ticker"] = ticker
             announcements = items
-            print(f"  ✓ BSE: {len(announcements)} announcements")
+            print(f"  [OK] BSE: {len(announcements)} announcements")
         except Exception as e:
             print(f"  [WARN] BSE failed for {ticker}: {e}")
 
@@ -256,7 +256,7 @@ def run(tickers: list[str] | None = None, days_back: int = 30):
             "announcements": all_announcements,
         }, f, indent=2, default=str)
 
-    print(f"\n✅ {len(all_announcements)} total announcements written to {latest_path}")
+    print(f"\n[OK] {len(all_announcements)} total announcements written to {latest_path}")
 
 
 if __name__ == "__main__":

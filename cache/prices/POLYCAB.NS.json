@@ -1,30 +1,14 @@
 {
   "ticker": "POLYCAB.NS",
-  "fetched_at": "2026-10-31T11:32:32.301981",
+  "fetched_at": "2026-11-02T20:50:30.100700",
   "latest_date": "2026-10-30",
-  "latest_close": NaN,
+  "latest_close": 7787.0,
   "prev_close": 7745.0,
-  "price_change_pct": NaN,
-  "volume_latest": 346328,
+  "price_change_pct": 0.54,
+  "volume_latest": 346386,
   "volume_20d_avg": 461971.0,
   "volume_ratio": 0.75,
   "history": [
-    {
-      "date": "2026-05-04",
-      "open": 8072.2,
-      "high": 8323.51,
-      "low": 8024.43,
-      "close": 8305.09,
-      "volume": 435059
-    },
-    {
-      "date": "2026-05-05",
-      "open": 8308.08,
-      "high": 8334.45,
-      "low": 8115.49,
-      "close": 8297.63,
-      "volume": 462166
-    },
     {
       "date": "2026-05-06",
       "open": 8360.33,
@@ -1003,11 +987,11 @@
     },
     {
       "date": "2026-10-30",
-      "open": NaN,
-      "high": NaN,
-      "low": NaN,
-      "close": NaN,
-      "volume": 346328
+      "open": 7700.0,
+      "high": 7950.0,
+      "low": 7573.5,
+      "close": 7787.0,
+      "volume": 346386
     }
   ]
 }

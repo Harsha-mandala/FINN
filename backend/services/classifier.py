@@ -65,8 +65,8 @@ _HEURISTIC_RULES = [
     (r"\bacquisition\b|amalgamation|merger|demerger|joint venture|subsidiary.*?stake", "M&A"),
     # Fund raise — explicit instrument
     (r"rights issue|qualified institutional placement|qip|preferential allotment|buyback|commercial paper|ncd|non.?convertible debenture|debt raise", "fund_raise"),
-    # Management change — only if role is named (avoid triggering on incidental "director" in governance notices)
-    (r"(?:appointment|resignation|cessation|change).*?(?:ceo|cfo|coo|md|managing director|whole.?time director|chief executive|chief financial)|(?:ceo|cfo|coo|md|managing director).*?(?:resign|appoint|cease|step)", "management_change"),
+    # Management change — directorate, CEO, CFO, MD, Director appointments/resignations
+    (r"change in directorate|(?:appointment|resignation|cessation|change).*?(?:director\b|directorate|ceo|cfo|coo|md|managing director|whole.?time director|chief executive|chief financial)|(?:director|ceo|cfo|coo|md|managing director).*?(?:resign|appoint|cease|step)", "management_change"),
     # Litigation
     (r"\bcourt\b|tribunal|nclt|nclat|show cause|penalty|sebi order|regulatory order|litigation|lawsuit|insolvency", "litigation"),
     # Insider trading — promoter personal trades
@@ -93,12 +93,11 @@ _HEURISTIC_RULES = [
     (r"press release|media release|order win|contract win|new product|partnership announce|clarification on", "press_release"),
 ]
 
-_UNCLASSIFIED_INDICATORS = re.compile(
+_EXPLICIT_UNCLASSIFIED = re.compile(
+    r"auditor appointment|appointment of.*?(?:statutory\s+)?auditors?|statutory auditor|auditors?\b|"
     r"esop|allotment of.*?(?:share|option)|compliance certificate|"
-    r"auditor appointment|appointment of.*?auditor|secretarial audit|"
-    r"newspaper clip|annual secretarial|listing of.*?(?:share|equity)|"
-    r"regulation 30.*?intimation|intimation.*?regulation 30|"
-    r"general intimation|investor presentation upload|credit rating intimation",
+    r"secretarial audit|newspaper clip|annual secretarial|listing of.*?(?:share|equity)|"
+    r"duplicate share certificate|loss of share certificate",
     re.IGNORECASE,
 )
 
@@ -114,14 +113,15 @@ def classify_heuristic(item: dict) -> tuple[str, str]:
         item.get("subcategory_raw", ""),
     ]).lower()
 
-    # Explicit unclassified patterns take priority
-    if _UNCLASSIFIED_INDICATORS.search(text):
+    # Explicit unclassified patterns (auditors, ESOPs, compliance certs) take priority
+    if _EXPLICIT_UNCLASSIFIED.search(text):
         return "unclassified", item.get("headline", "")[:120]
 
     for pattern, cat in _HEURISTIC_RULES:
         if re.search(pattern, text, re.IGNORECASE):
             return cat, item.get("headline", "")[:120]
 
+    # Generic Reg 30 or anything without a specific match falls through to unclassified
     return "unclassified", item.get("headline", "")[:120]
 
 

@@ -1,0 +1,140 @@
+{
+  "ticker": "DMART.NS",
+  "fetched_at": "2026-11-02T20:50:14.827609",
+  "days_back": 30,
+  "count": 12,
+  "announcements": [
+    {
+      "source": "BSE",
+      "scrip_code": "540376",
+      "headline": "Store Opening Intimation",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-30T18:00:51",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/f38d3a44-253b-41dd-b5bb-6cbcd6d39fc9.pdf",
+      "news_id": "b5bfcca8-4269-4cbc-83e3-67f1e3c6b114",
+      "ticker": "DMART.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "540376",
+      "headline": "Allotment Of Commercial Paper",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-29T17:42:48",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/5e117bed-c817-4650-b465-8c5602f4973e.pdf",
+      "news_id": "9d5be7a7-5d1b-47dd-97f9-1f04643f5b49",
+      "ticker": "DMART.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "540376",
+      "headline": "Disclosure Under Regulation 30 Of SEBI (LODR) Regulations, 2015",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-27T17:12:36",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/9a7bd398-3b0d-44a5-90c1-4309017b1e99.pdf",
+      "news_id": "8b0c75df-0935-418d-be39-7a0f679ca6a8",
+      "ticker": "DMART.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "540376",
+      "headline": "Announcement under Regulation 30 (LODR)-Newspaper Publication",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Newspaper Publication",
+      "date": "2026-10-12T17:41:31",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/d53ca9e8-05c3-4b7f-a3c4-c5a577120583.pdf",
+      "news_id": "97d059b1-15bf-4194-912e-66e5177b9efe",
+      "ticker": "DMART.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "540376",
+      "headline": "Announcement under Regulation 30 (LODR)-Investor Presentation",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Investor Presentation",
+      "date": "2026-10-10T15:44:37",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/28519d83-e15b-41c1-842c-b589621d6439.pdf",
+      "news_id": "26a5e02f-dbe0-4b69-bd26-322d6d9b4fc4",
+      "ticker": "DMART.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "540376",
+      "headline": "Announcement under Regulation 30 (LODR)-Press Release / Media Release",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Press Release / Media Release",
+      "date": "2026-10-10T15:42:01",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/7b231ec5-e90f-4423-8abf-7a22a88dc285.pdf",
+      "news_id": "7d9ce457-3cf3-426d-af21-c03ffcbf69f2",
+      "ticker": "DMART.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "540376",
+      "headline": "Financial Results For The Quarter Ended 30Th September, 2026",
+      "category_raw": "Result",
+      "subcategory_raw": "Financial Results",
+      "date": "2026-10-10T15:37:34",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/5265885f-b4a6-4f12-8503-26911647c4f0.pdf",
+      "news_id": "cb7008c2-af19-442d-8d52-5ef4d1e858dc",
+      "ticker": "DMART.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "540376",
+      "headline": "Board Meeting Outcome for Meeting Held On October 10, 2026",
+      "category_raw": "Board Meeting",
+      "subcategory_raw": "Outcome of Board Meeting",
+      "date": "2026-10-10T15:23:58",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/229db0b1-7348-4aef-8a35-a1ec23de8fe8.pdf",
+      "news_id": "d74541f8-3c03-4595-9b59-1abd4b83f93a",
+      "ticker": "DMART.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "540376",
+      "headline": "Announcement under Regulation 30 (LODR)-Credit Rating",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Credit Rating",
+      "date": "2026-10-09T18:40:36",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/fe5414f4-e77b-4a76-880e-4a6aed8e29e1.pdf",
+      "news_id": "8c2b93fa-01ff-4fcc-9be8-3465ee4f21ef",
+      "ticker": "DMART.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "540376",
+      "headline": "Compliances-Certificate under Reg. 74 (5) of SEBI (DP) Regulations, 2018",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Certificate under Reg. 74 (5) of SEBI (DP) Regulations, 2018",
+      "date": "2026-10-07T17:09:57",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/b413c23e-6f7d-481a-acbf-ea3bd92e0f5a.pdf",
+      "news_id": "ae4b08dd-21e4-4ecf-9f3f-3ef0fa1a141e",
+      "ticker": "DMART.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "540376",
+      "headline": "Announcement under Regulation 30 (LODR)-Allotment of ESOP / ESPS",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Allotment of ESOP / ESPS",
+      "date": "2026-10-07T17:02:12",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/e0883e47-4e38-4ad2-8e23-3fe8297d4856.pdf",
+      "news_id": "3b277ae8-75c8-4226-9df4-e0793f446cdb",
+      "ticker": "DMART.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "540376",
+      "headline": "Company Update",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-03T12:28:26",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/ed14080b-1e04-462e-9a92-75a03fcbfa49.pdf",
+      "news_id": "e96b3dd0-3008-4cf7-9a73-ac1903a2f095",
+      "ticker": "DMART.NS"
+    }
+  ]
+}

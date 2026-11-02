@@ -22,7 +22,7 @@ router = APIRouter(tags=["health"])
 
 
 @router.get("/health")
-async def health():
+def health():
     gemini_key_set = bool(
         os.getenv("GEMINI_API_KEY")
         or os.getenv("GOOGLE_API_KEY")
@@ -83,6 +83,8 @@ async def health_llm():
         "budget": budget,
         "note": (
             "estimated_daily_limit values are conservative estimates "
-            "based on known free-tier RPD. Actual limits depend on your API key tier."
+            "based on known free-tier RPD. The budget counter is best-effort and may "
+            "reset on redeploy or container restart; real 429 (RESOURCE_EXHAUSTED) "
+            "responses from Google API are the single authoritative source of truth."
         ),
     }

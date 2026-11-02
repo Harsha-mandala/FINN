@@ -1,0 +1,261 @@
+{
+  "ticker": "POLYCAB.NS",
+  "fetched_at": "2026-11-02T20:49:53.524118",
+  "days_back": 30,
+  "count": 23,
+  "announcements": [
+    {
+      "source": "BSE",
+      "scrip_code": "542652",
+      "headline": "Corporate Insolvency Resolution Process (CIRP)-Updates - Corporate Insolvency Resolution Process  (CIRP)",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Updates - Corporate Insolvency Resolution Process  (CIRP)",
+      "date": "2026-10-30T12:17:22",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/c3d1ba29-6132-47b7-9f3b-79a294e53189.pdf",
+      "news_id": "0df598a9-08f7-48f3-b53d-f69d332706e2",
+      "ticker": "POLYCAB.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "542652",
+      "headline": "Announcement Under Regulation 30 (LODR) - Analyst(S) / Investor(S) Meet - Intimation",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-28T17:41:24",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/26cdd582-7e95-4019-88b5-fdff3d5e60e1.pdf",
+      "news_id": "8285e7a1-d78d-46ff-ab46-fae476882893",
+      "ticker": "POLYCAB.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "542652",
+      "headline": "Corporate Insolvency Resolution Process (CIRP)-Updates - Corporate Insolvency Resolution Process  (CIRP)",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Updates - Corporate Insolvency Resolution Process  (CIRP)",
+      "date": "2026-10-28T10:21:03",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/ead5c0dc-e464-4e53-8006-b861205174a9.pdf",
+      "news_id": "ec5b190e-b037-4cb0-91a8-d037cfad8574",
+      "ticker": "POLYCAB.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "542652",
+      "headline": "Announcement Under Regulation 30 (LODR) - Analyst(S) / Investor(S) Meet - Intimation",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-27T19:01:42",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/cafe2036-e51b-413a-80cd-65e331d170be.pdf",
+      "news_id": "757969fc-1b60-4ab9-884f-258a81e89ee9",
+      "ticker": "POLYCAB.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "542652",
+      "headline": "Announcement Under Regulation 30 (LODR) - Analyst(S) / Investor(S) Meet - Intimation",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-23T14:32:26",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/a9743040-8809-46d3-85ca-c6ca01bc322a.pdf",
+      "news_id": "f9560b59-3651-4e92-8b18-6f23905f96d5",
+      "ticker": "POLYCAB.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "542652",
+      "headline": "Announcement Under Regulation 30 (LODR) - Earnings Call Transcript",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-19T16:38:15",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/77b6d277-0ffc-440d-ba8a-2bd9bc3dc43e.pdf",
+      "news_id": "dbd52dde-0b59-4e47-aa89-6072c98e60eb",
+      "ticker": "POLYCAB.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "542652",
+      "headline": "Announcement Under Regulation 30 (LODR) - Analyst(S) / Investor(S) Meet - Intimation",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-19T16:22:22",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/9cf5ed4b-10af-4d0f-aa1f-75f22f8e5a75.pdf",
+      "news_id": "b1d235b4-bfac-4428-bf69-8ba1246d83ae",
+      "ticker": "POLYCAB.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "542652",
+      "headline": "Corporate Insolvency Resolution Process (CIRP)-Updates - Corporate Insolvency Resolution Process  (CIRP)",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Updates - Corporate Insolvency Resolution Process  (CIRP)",
+      "date": "2026-10-16T09:34:04",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/a0fba81c-bd84-40eb-8435-9643b019e9fc.pdf",
+      "news_id": "4f686399-b641-4495-a5dd-e5124e088cf0",
+      "ticker": "POLYCAB.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "542652",
+      "headline": "Audio Recording Of Earnings Conference Call Q2 FY 26-27",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-15T20:48:30",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/3264baf9-979a-4835-85b1-c5a9838c57d6.pdf",
+      "news_id": "0e8598ab-7df7-4804-bb66-037c9b719541",
+      "ticker": "POLYCAB.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "542652",
+      "headline": "Unaudited Interim Condensed (Standalone And Consolidated) Financial Statements For The Quarter And Half Year Ended September 30, 2026",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-15T15:32:17",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/d809fc71-20ab-4486-999a-953e40641efd.pdf",
+      "news_id": "e015caf8-728c-49ad-86d6-5008e2714ee0",
+      "ticker": "POLYCAB.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "542652",
+      "headline": "Earnings Presentation",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-15T13:58:12",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/a940f987-41db-4848-8f35-4b6c8a8f5b47.pdf",
+      "news_id": "71e9eb0f-581f-462a-b7e6-8b3c2f5556e7",
+      "ticker": "POLYCAB.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "542652",
+      "headline": "Announcement under Regulation 30 (LODR)-Press Release / Media Release",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Press Release / Media Release",
+      "date": "2026-10-15T13:13:36",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/b345a7a1-bdff-4a45-800c-889ce7a659a4.pdf",
+      "news_id": "86eb8d0a-7bb5-424c-9bd3-dd66a20ac450",
+      "ticker": "POLYCAB.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "542652",
+      "headline": "Unaudited Financial Results For The Quarter And Half Year Ended 30Th September 2026",
+      "category_raw": "Result",
+      "subcategory_raw": "Financial Results",
+      "date": "2026-10-15T13:05:55",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/4ac93ea0-d4d1-4b85-8849-14a19e0dcceb.pdf",
+      "news_id": "880e99bc-b13a-435b-901c-3b2bee137437",
+      "ticker": "POLYCAB.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "542652",
+      "headline": "Board Meeting Outcome for Outcome Of Board Meeting",
+      "category_raw": "Board Meeting",
+      "subcategory_raw": "Outcome of Board Meeting",
+      "date": "2026-10-15T12:58:38",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/d05b4d50-f4ad-4c2f-8e4f-61c0a7bb6e8e.pdf",
+      "news_id": "98f8755d-b964-4fd1-8ded-163dca00bdcd",
+      "ticker": "POLYCAB.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "542652",
+      "headline": "Corporate Insolvency Resolution Process (CIRP)-Updates - Corporate Insolvency Resolution Process  (CIRP)",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Updates - Corporate Insolvency Resolution Process  (CIRP)",
+      "date": "2026-10-14T11:16:13",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/67cc4dbb-3fd4-4c34-95ef-8e997068efc8.pdf",
+      "news_id": "61157978-171e-4045-9c2b-e6f7b96d5287",
+      "ticker": "POLYCAB.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "542652",
+      "headline": "Announcement under Regulation 30 (LODR)-Press Release / Media Release",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Press Release / Media Release",
+      "date": "2026-10-13T16:47:17",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/2b7b1011-46d7-4061-a24e-29fde5a50704.pdf",
+      "news_id": "bf615b3e-1055-4e59-9faf-f018c41bb19e",
+      "ticker": "POLYCAB.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "542652",
+      "headline": "Announcement Under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-10T20:21:32",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/6115074d-88f5-49e6-8355-33600ae7baf9.pdf",
+      "news_id": "38a4bda9-38e0-4b9b-96c2-e2c17e575ca9",
+      "ticker": "POLYCAB.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "542652",
+      "headline": "Corporate Insolvency Resolution Process (CIRP)-Updates - Corporate Insolvency Resolution Process  (CIRP)",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Updates - Corporate Insolvency Resolution Process  (CIRP)",
+      "date": "2026-10-09T19:39:13",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/3a53003a-4241-4122-a791-03247f3ddc97.pdf",
+      "news_id": "15cd40f6-d8a5-4582-8a5f-ff42d1a81889",
+      "ticker": "POLYCAB.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "542652",
+      "headline": "Corporate Insolvency Resolution Process (CIRP)-Updates - Corporate Insolvency Resolution Process  (CIRP)",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Updates - Corporate Insolvency Resolution Process  (CIRP)",
+      "date": "2026-10-09T16:42:44",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/24b2c5f0-3922-47a2-b527-11189f3ed1e4.pdf",
+      "news_id": "58a1c574-ce5f-4633-8d75-19f63327b2ce",
+      "ticker": "POLYCAB.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "542652",
+      "headline": "Corporate Insolvency Resolution Process (CIRP)-Updates - Corporate Insolvency Resolution Process  (CIRP)",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Updates - Corporate Insolvency Resolution Process  (CIRP)",
+      "date": "2026-10-08T20:31:45",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/e5c8154c-8a52-46df-99a6-efc75b2bad52.pdf",
+      "news_id": "534122fd-c948-40cc-8f4a-c278b06c064e",
+      "ticker": "POLYCAB.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "542652",
+      "headline": "Disclosure Under Regulation 30 Of SEBI (LODR) Regulations, 2015",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-07T22:42:34",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/0642c007-0688-4bcf-aab0-5b77cfd3dd5c.pdf",
+      "news_id": "37b18ff0-2192-4f56-ab40-62a302e34a84",
+      "ticker": "POLYCAB.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "542652",
+      "headline": "Announcement Under Regulation 30 (LODR)-Allotment Of ESOP / ESPS",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-06T14:29:53",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/3e9e159a-2de5-42bf-9871-64cbee6837c4.pdf",
+      "news_id": "4288f405-8778-4ed8-8ae0-eeff1a7f3ed7",
+      "ticker": "POLYCAB.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "542652",
+      "headline": "Board Meeting Intimation for Unaudited Quarterly Results For Q2 FY 2026-27",
+      "category_raw": "Board Meeting",
+      "subcategory_raw": "Board Meeting",
+      "date": "2026-10-06T13:57:23",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/7f0076d6-8db5-497d-8bca-89b7ade9455e.pdf",
+      "news_id": "f9a8d62d-22da-49b6-aa15-0cda83b3c904",
+      "ticker": "POLYCAB.NS"
+    }
+  ]
+}

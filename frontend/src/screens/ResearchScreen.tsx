@@ -350,15 +350,18 @@ const ResearchScreen: React.FC = () => {
           </>
         )}
 
-        {/* Error state */}
+        {/* Un-generated / Not available state */}
         {!loading && error && (
           <div className="flex flex-col items-center justify-center py-16 text-center gap-3">
-            <AlertCircle size={32} className="text-[#EF4444]" />
+            <div className="w-10 h-10 rounded-full bg-[#1E293B] flex items-center justify-center text-[#64748B]">
+              <FileText size={20} />
+            </div>
             <p className="text-sm text-[#94A3B8]">
-              No data available for{' '}
-              <span className="text-white font-semibold">{error}</span>.
+              Research for <span className="text-white font-semibold">{error}</span> hasn't been generated yet.
             </p>
-            <p className="text-xs text-[#475569]">Try a portfolio company.</p>
+            <p className="text-xs text-[#475569] max-w-[280px]">
+              FINN builds research exclusively from verified audited filings and concall transcripts.
+            </p>
           </div>
         )}
 

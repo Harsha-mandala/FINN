@@ -1,0 +1,162 @@
+{
+  "ticker": "TRENT.NS",
+  "fetched_at": "2026-11-02T20:49:51.757367",
+  "days_back": 30,
+  "count": 14,
+  "announcements": [
+    {
+      "source": "BSE",
+      "scrip_code": "500251",
+      "headline": "Announcement under Regulation 30 (LODR)-Newspaper Publication",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Newspaper Publication",
+      "date": "2026-11-02T13:27:38",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/773ac0af-b53b-4ef9-9866-32dac67c2935.pdf",
+      "news_id": "bf31fdcb-d512-4b5a-8d47-567d52e00a4c",
+      "ticker": "TRENT.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500251",
+      "headline": "Announcement under Regulation 30 (LODR)-Investor Presentation",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Investor Presentation",
+      "date": "2026-10-29T16:39:36",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/5634f899-a008-45ab-b930-2b74cf08e566.pdf",
+      "news_id": "29b51816-e553-4185-9a5c-72064ea8f7af",
+      "ticker": "TRENT.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500251",
+      "headline": "Announcement under Regulation 30 (LODR)-Retirement",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Retirement",
+      "date": "2026-10-29T16:36:32",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/6d04e12f-221f-4d62-925d-0792202a19e7.pdf",
+      "news_id": "ffa8ae18-f840-4cf4-965a-616cd00c62ee",
+      "ticker": "TRENT.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500251",
+      "headline": "Announcement under Regulation 30 (LODR)-Change in Directorate",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Change in Directorate",
+      "date": "2026-10-29T16:34:37",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/b891b5ce-4d60-44f6-a01f-1bd507d5de0f.pdf",
+      "news_id": "37dd4c42-b030-4d7b-9513-bf3026388a2d",
+      "ticker": "TRENT.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500251",
+      "headline": "Announcement under Regulation 30 (LODR)-Press Release / Media Release",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Press Release / Media Release",
+      "date": "2026-10-29T16:21:57",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/984d68e3-738c-43cf-afd1-756b33f60610.pdf",
+      "news_id": "e12a0431-78d7-4f7d-85dc-2be70cc0647d",
+      "ticker": "TRENT.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500251",
+      "headline": "Board Meeting Outcome for Outcome Of Board Meeting Held Today I.E. 29Th October 2026",
+      "category_raw": "Board Meeting",
+      "subcategory_raw": "Outcome of Board Meeting",
+      "date": "2026-10-29T16:11:10",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/b962e91a-b409-4f5f-a22f-3275c992153a.pdf",
+      "news_id": "d53eaf45-b3a2-4b76-95c4-35d69f117a62",
+      "ticker": "TRENT.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500251",
+      "headline": "Outcome Of Board Meeting Held Today I.E. 29Th October 2026",
+      "category_raw": "Result",
+      "subcategory_raw": "Financial Results",
+      "date": "2026-10-29T16:08:09",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/386aab9b-d99c-44af-ba52-1bd95d49a60c.pdf",
+      "news_id": "34e227a1-ebd2-4b77-98fb-cb8e66c7450e",
+      "ticker": "TRENT.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500251",
+      "headline": "Announcement under Regulation 30 (LODR)-Diversification / Disinvestment",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Diversification / Disinvestment",
+      "date": "2026-10-23T19:49:14",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/cf9c8eec-654a-4016-acf5-b7160985dc78.pdf",
+      "news_id": "d3016b7e-4efb-458a-95ee-01a85d813dc5",
+      "ticker": "TRENT.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500251",
+      "headline": "Reminder Letter For Transfer Of Equity Shares To The Investor Education And Protection Fund ('IEPF')",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-23T16:35:03",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/aeaf0a5d-3d57-41ef-87d1-a10268a57932.pdf",
+      "news_id": "cc5f4786-34b8-4078-bd57-89b3ad960f64",
+      "ticker": "TRENT.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500251",
+      "headline": "Announcement under Regulation 30 (LODR)-Newspaper Publication",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Newspaper Publication",
+      "date": "2026-10-19T11:07:58",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/096b4491-68dc-4163-8b20-3621448309db.pdf",
+      "news_id": "4831d1f0-2bfb-48ac-84dc-0651e3e483ce",
+      "ticker": "TRENT.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500251",
+      "headline": "Announcement under Regulation 30 (LODR)-Resignation of Director",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Resignation of Director",
+      "date": "2026-10-18T18:44:51",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/5f2619df-b01f-4905-978f-00de8477b2f8.pdf",
+      "news_id": "39411793-001f-4adf-82c6-2fa5985df914",
+      "ticker": "TRENT.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500251",
+      "headline": "Board Meeting Intimation for Notice Of Board Meeting",
+      "category_raw": "Board Meeting",
+      "subcategory_raw": "Board Meeting",
+      "date": "2026-10-06T12:10:53",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/db15dcb8-dfc0-478f-a8cc-e528917d5414.pdf",
+      "news_id": "a1a041c5-d376-4fe5-bcd1-741372502738",
+      "ticker": "TRENT.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500251",
+      "headline": "Announcement under Regulation 30 (LODR)-Press Release / Media Release",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Press Release / Media Release",
+      "date": "2026-10-05T18:43:18",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/d875718e-467a-4f6c-bed2-acaca2693aef.pdf",
+      "news_id": "c5c9570c-5471-4280-a1d5-2be2cf45579d",
+      "ticker": "TRENT.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500251",
+      "headline": "Compliances-Certificate under Reg. 74 (5) of SEBI (DP) Regulations, 2018",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Certificate under Reg. 74 (5) of SEBI (DP) Regulations, 2018",
+      "date": "2026-10-05T14:53:39",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/31c0197c-75f9-4c97-b92e-4554175326b7.pdf",
+      "news_id": "389b3e05-bd1b-4db8-91ca-af20ae7290b1",
+      "ticker": "TRENT.NS"
+    }
+  ]
+}

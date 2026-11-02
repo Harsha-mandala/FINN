@@ -1,6 +1,6 @@
 {
   "ticker": "PERSISTENT.NS",
-  "fetched_at": "2026-10-31T11:32:41.275493",
+  "fetched_at": "2026-11-02T20:50:37.779727",
   "latest_date": "2026-10-30",
   "latest_close": 6048.0,
   "prev_close": 5880.0,
@@ -9,22 +9,6 @@
   "volume_20d_avg": 768925.0,
   "volume_ratio": 1.44,
   "history": [
-    {
-      "date": "2026-05-04",
-      "open": 4798.53,
-      "high": 4828.03,
-      "low": 4729.27,
-      "close": 4771.53,
-      "volume": 486694
-    },
-    {
-      "date": "2026-05-05",
-      "open": 4753.49,
-      "high": 4841.88,
-      "low": 4726.68,
-      "close": 4799.63,
-      "volume": 499615
-    },
     {
       "date": "2026-05-06",
       "open": 4863.11,

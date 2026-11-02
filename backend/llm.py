@@ -45,6 +45,10 @@ class BudgetExhausted(LLMError):
 
 
 # ── Budget tracking (persisted per day) ───────────────────────────────────────
+# NOTE: The local budget counter is a best-effort client-side heuristic to avoid
+# burning quota when a daily ceiling is near. It is persisted to cache/_llm_budget.json
+# but may reset upon container restarts/redeploys. Real 429 (RESOURCE_EXHAUSTED) responses
+# from Google API are the single authoritative source of truth.
 
 # Conservative daily-request estimates per model slug.
 # User can override via env var GEMINI_DAILY_LIMIT_<SLUG_UPPER_WITH_UNDERSCORES>.
@@ -360,7 +364,10 @@ def gemini_generate(
             last_error = BudgetExhausted(s)
             continue
 
-        # Retry the same model up to 3× for transient 5xx / timeout
+        # Retry loop for model s:
+        # - model_not_found: skip immediately to next model in chain (no backoff)
+        # - auth: stop immediately (fatal error)
+        # - 429/quota/timeout/5xx: retry with capped exponential backoff up to 3x, then try next model
         for attempt in range(3):
             try:
                 return _do_generate(
@@ -372,33 +379,45 @@ def gemini_generate(
                     max_tokens=max_tokens,
                     grounded=grounded,
                 )
-            except LLMError as e:
-                last_error = e
-                if e.kind == "quota":
-                    logger.warning("[LLM] Quota hit on %s, moving to fallback model", s)
-                    # Mark as exhausted in budget so future calls skip fast
-                    with _budget_lock:
-                        data = _load_budget()
-                        data["models"][s] = _daily_limit(s) + 1  # force over limit
-                        _save_budget(data)
-                    break  # try next model
-                if e.kind == "model_not_found":
+            except Exception as raw_e:
+                err = raw_e if isinstance(raw_e, LLMError) else _classify_error(raw_e, s)
+                last_error = err
+
+                # Rule 1: auth -> fatal, stop at once
+                if err.kind == "auth":
+                    logger.error("[LLM] Authentication failure on %s. Stopping immediately.", s)
+                    raise err
+
+                # Rule 2: model_not_found -> skip immediately to next model (NO backoff)
+                if err.kind == "model_not_found":
                     with _avail_lock:
                         _avail_cache[s] = False
-                    logger.warning("[LLM] Model %s not found, moving to fallback", s)
-                    break  # try next model
-                if e.kind == "auth":
-                    raise  # fatal — don't retry
-                # timeout / other: retry with backoff
+                    logger.warning("[LLM] Model '%s' not found. Skipping to fallback model immediately.", s)
+                    break
+
+                # Rule 3: quota (429) -> retry with backoff, then switch model
+                if err.kind == "quota":
+                    if attempt < 2:
+                        wait = min(2 ** (attempt + 1), 8)
+                        logger.warning("[LLM] Quota hit on %s (attempt %d/3). Backing off %ds...", s, attempt + 1, wait)
+                        time.sleep(wait)
+                        continue
+                    else:
+                        logger.warning("[LLM] Quota exhausted on %s after 3 attempts. Moving to next fallback model.", s)
+                        with _budget_lock:
+                            data = _load_budget()
+                            data["models"][s] = _daily_limit(s) + 1
+                            _save_budget(data)
+                        break
+
+                # Rule 4: timeout or transient server/network error -> retry with backoff
                 if attempt < 2:
-                    wait = 2 ** (attempt + 1)
-                    logger.warning("[LLM] %s on %s (attempt %d/3), retrying in %ds", e.kind, s, attempt + 1, wait)
+                    wait = min(2 ** (attempt + 1), 8)
+                    logger.warning("[LLM] %s on %s (attempt %d/3). Retrying in %ds...", err.kind, s, attempt + 1, wait)
                     time.sleep(wait)
-                # else fall through to break
-            except Exception as e:
-                last_error = _classify_error(e, s)
-                if attempt < 2:
-                    time.sleep(2 ** (attempt + 1))
+                else:
+                    logger.warning("[LLM] %s failed on %s after 3 attempts. Moving to next fallback model.", err.kind, s)
+                    break
 
     if last_error:
         raise last_error

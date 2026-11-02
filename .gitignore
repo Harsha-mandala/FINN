@@ -10,6 +10,7 @@ dist/
 build/
 .pytest_cache/
 cache/documents/
+cache/filings/*.pdf
 node_modules/
 frontend/dist/
 frontend/.next/

@@ -26,22 +26,43 @@ export interface Announcement {
   priority_tier: 'high' | 'medium' | 'low'
   date: string
   attachment_url?: string
+  news_id?: string
   summary?: string
+  sub_items?: Array<{
+    headline: string
+    date: string
+    attachment_url?: string
+    news_id?: string
+    category?: string
+  }>
+  thread_count?: number
   enrichment?: {
     type: 'management_bio' | 'results_card'
+    person_name?: string
+    role?: string
     bio?: string
+    sources?: string[]
     data?: ResultsCard
   }
 }
 
 export interface ResultsCard {
-  period_current: string
+  status?: string
+  basis?: string
+  period_current?: string
   period_qoq?: string
   period_yoy?: string
-  revenue: MetricDelta
-  ebitda: MetricDelta
-  pbt: MetricDelta
-  pat: MetricDelta
+  metrics?: {
+    revenue: MetricDelta
+    ebitda: MetricDelta
+    pbt: MetricDelta
+    pat: MetricDelta
+  }
+  revenue?: MetricDelta
+  ebitda?: MetricDelta
+  pbt?: MetricDelta
+  pat?: MetricDelta
+  filing_url?: string
 }
 
 export interface MetricDelta {
@@ -53,11 +74,17 @@ export interface MetricDelta {
 }
 
 export interface DigestResponse {
+  window?: string
   window_hours: number
+  data_as_of?: string
   generated_at: string
   high: Announcement[]
   medium: Announcement[]
   low: Announcement[]
+  routine_summary?: {
+    count: number
+    label: string
+  }
   low_count: number
   total: number
 }
@@ -117,8 +144,22 @@ export interface ResearchResponse {
 
 export const api = {
   // Push
-  getDigest: (window_hours = 24, include_low = false) =>
-    fetchJSON<DigestResponse>(`/push/digest?window_hours=${window_hours}&include_low=${include_low}`),
+  getDigest: (
+    window: string | number = '24h',
+    options?: { start_date?: string; end_date?: string; include_low?: boolean; window_hours?: number }
+  ) => {
+    const params = new URLSearchParams()
+    if (typeof window === 'number') {
+      params.set('window_hours', String(window))
+    } else {
+      params.set('window', window)
+    }
+    if (options?.start_date) params.set('start_date', options.start_date)
+    if (options?.end_date) params.set('end_date', options.end_date)
+    if (options?.include_low !== undefined) params.set('include_low', String(options.include_low))
+    if (options?.window_hours) params.set('window_hours', String(options.window_hours))
+    return fetchJSON<DigestResponse>(`/push/digest?${params.toString()}`)
+  },
 
   getPrices: (tickers?: string) =>
     fetchJSON<{ generated_at: string; tickers: Record<string, TickerSummary> }>(

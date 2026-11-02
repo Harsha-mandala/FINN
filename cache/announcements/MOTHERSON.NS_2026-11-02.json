@@ -1,0 +1,162 @@
+{
+  "ticker": "MOTHERSON.NS",
+  "fetched_at": "2026-11-02T20:50:18.802590",
+  "days_back": 30,
+  "count": 14,
+  "announcements": [
+    {
+      "source": "BSE",
+      "scrip_code": "517334",
+      "headline": "Announcement under Regulation 30 (LODR)-Press Release / Media Release",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Press Release / Media Release",
+      "date": "2026-11-02T17:19:42",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/f983104c-3c8d-4835-8640-e4c65da18335.pdf",
+      "news_id": "69e5b296-358e-4fde-a9d7-b03c204017be",
+      "ticker": "MOTHERSON.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "517334",
+      "headline": "Announcement Under Regulation 30 Of SEBI (Listing Obligations And Disclosure Requirements)Regulations, 2015.",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-31T12:26:26",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/df3f1db8-c42f-4b7b-ade5-779d5a7953de.pdf",
+      "news_id": "cbb333ea-001a-4d7b-bae0-f9ccb7bfd43d",
+      "ticker": "MOTHERSON.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "517334",
+      "headline": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Analyst / Investor Meet",
+      "date": "2026-10-30T19:05:22",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/198564f5-6194-47a0-a2f1-a17834c45d9b.pdf",
+      "news_id": "e877e9eb-1ead-474e-9247-def345419e66",
+      "ticker": "MOTHERSON.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "517334",
+      "headline": "Announcement Under Regulation 30 Of SEBI(Listing Obligations And Disclosure Requirements)Regulations, 2015.",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-29T18:40:16",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/f90f92b6-ad09-45a7-ac64-a069b5a4fbe0.pdf",
+      "news_id": "f6735858-1eb6-454b-96a5-fe77e5fd6ec6",
+      "ticker": "MOTHERSON.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "517334",
+      "headline": "General-Updates",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-27T19:36:55",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/414f8617-a299-43e7-be84-92a89f0ff82d.pdf",
+      "news_id": "c54d03a7-9d98-426a-bd70-8061b5169e7b",
+      "ticker": "MOTHERSON.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "517334",
+      "headline": "Announcement Under Regulation 30 Of SEBI Listing Regulations",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-27T19:32:14",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/0d5a83b1-471d-4395-a338-752f0ddd65e6.pdf",
+      "news_id": "1636ae69-847e-4f3a-b401-9524ccc5e1f1",
+      "ticker": "MOTHERSON.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "517334",
+      "headline": "Announcement under Regulation 30 (LODR)-Scheme of Arrangement",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Scheme of Arrangement",
+      "date": "2026-10-26T19:31:57",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/41b00076-3c7d-467f-bd5e-3a8f784b7353.pdf",
+      "news_id": "f29cc0a7-5091-420a-b419-36eb5490db78",
+      "ticker": "MOTHERSON.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "517334",
+      "headline": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Analyst / Investor Meet",
+      "date": "2026-10-22T19:29:06",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/43d0259b-99d9-4862-908d-7da7e7c7c5a3.pdf",
+      "news_id": "ce31d66d-89d2-420c-98bc-8ed763a05459",
+      "ticker": "MOTHERSON.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "517334",
+      "headline": "Board Meeting Intimation for Consideration And Approval Of Unaudited Standalone And Consolidated Financial Results Of The Company For The Second Quarter And Half Year Ended September 30, 2026.",
+      "category_raw": "Board Meeting",
+      "subcategory_raw": "Board Meeting",
+      "date": "2026-10-22T19:04:32",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/fae2440e-027f-414e-90c8-6ded3087949f.pdf",
+      "news_id": "b584c859-506e-4cd8-918c-b87b6a564c1c",
+      "ticker": "MOTHERSON.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "517334",
+      "headline": "General Updates",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-16T20:52:27",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/b7a8b82d-542d-422f-aff9-d042e028af49.pdf",
+      "news_id": "cba65219-d7e5-4ebd-bf12-3e8236a4466c",
+      "ticker": "MOTHERSON.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "517334",
+      "headline": "Announcement Under Regulation 30 Of SEBI (Listing Obligations And Disclosure Requirements), Regulations, 2015",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-16T20:41:21",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/ed429bc1-5897-4c55-9c2f-62ec61ed259c.pdf",
+      "news_id": "afef193e-c457-4ec7-a636-c0030c79fb1c",
+      "ticker": "MOTHERSON.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "517334",
+      "headline": "Announcement Under Regulation 30 Of SEBI (Listing Obligations And Disclosure Requirements) Regulations 2015.",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-14T18:09:37",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/58d7cb95-e044-4955-85ca-16f8c45013be.pdf",
+      "news_id": "2c9a000a-3e6f-4719-a9d7-38a450d2d4b0",
+      "ticker": "MOTHERSON.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "517334",
+      "headline": "Announcement under Regulation 30 (LODR)-Conversion of Securities",
+      "category_raw": " Corp Action",
+      "subcategory_raw": "Conversion of Securities",
+      "date": "2026-10-08T18:31:02",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/909212bd-28b1-4ccc-ab93-9105b3e4a586.pdf",
+      "news_id": "4ea1ca63-efde-45ce-b27e-466ca62b0663",
+      "ticker": "MOTHERSON.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "517334",
+      "headline": "Compliances-Certificate under Reg. 74 (5) of SEBI (DP) Regulations, 2018",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Certificate under Reg. 74 (5) of SEBI (DP) Regulations, 2018",
+      "date": "2026-10-08T12:19:04",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/fe976f3f-d6d8-413d-ad3f-83f1fdf6391b.pdf",
+      "news_id": "b253d566-466c-4603-9363-096fabe92f24",
+      "ticker": "MOTHERSON.NS"
+    }
+  ]
+}

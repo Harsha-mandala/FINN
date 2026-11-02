@@ -1,8 +1,30 @@
 {
-  "generated_at": "2026-10-31T14:26:08.183416",
+  "generated_at": "2026-11-02T20:50:20.304585",
   "days_back": 30,
-  "total": 302,
+  "total": 295,
   "announcements": [
+    {
+      "source": "BSE",
+      "scrip_code": "500325",
+      "headline": "Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Earnings Call Transcript",
+      "date": "2026-11-01T23:05:17",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/8e997741-4d35-4188-933a-cf020fb9c816.pdf",
+      "news_id": "e415860f-9a80-4f00-aef6-d2399ad9e1e7",
+      "ticker": "RELIANCE.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500325",
+      "headline": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Analyst / Investor Meet",
+      "date": "2026-10-31T18:33:56",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/0f665e67-b13f-4624-9278-3f4183d817eb.pdf",
+      "news_id": "bd9ee49e-a779-4042-8196-bdd7d2768d85",
+      "ticker": "RELIANCE.NS"
+    },
     {
       "source": "BSE",
       "scrip_code": "500325",
@@ -192,14 +214,14 @@
     },
     {
       "source": "BSE",
-      "scrip_code": "500325",
-      "headline": "Announcement under Regulation 30 (LODR)-Allotment",
+      "scrip_code": "500180",
+      "headline": "Announcement under Regulation 30 (LODR)-Change in Management",
       "category_raw": "Company Update",
-      "subcategory_raw": "Allotment of Equity Shares",
-      "date": "2026-10-01T15:00:05",
-      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/13487d78-7814-439c-898d-f8d21bb398d5.pdf",
-      "news_id": "6339f6f2-c8ee-4409-bb52-113c1e8e96fb",
-      "ticker": "RELIANCE.NS"
+      "subcategory_raw": "Change in Management",
+      "date": "2026-10-31T22:14:41",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/b36ff756-1cf7-44a3-9b2c-4583e7e0e792.pdf",
+      "news_id": "be305212-ae95-4757-93fe-23429494a3c8",
+      "ticker": "HDFCBANK.NS"
     },
     {
       "source": "BSE",
@@ -375,17 +397,6 @@
       "date": "2026-10-04T22:03:59",
       "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/77b525dd-aefa-4773-93d4-08b72f426e54.pdf",
       "news_id": "bcbc99f7-3a17-41ab-9c47-13ff4dad20da",
-      "ticker": "HDFCBANK.NS"
-    },
-    {
-      "source": "BSE",
-      "scrip_code": "500180",
-      "headline": "Announcement under Regulation 30 (LODR)-Change in Directorate",
-      "category_raw": "Company Update",
-      "subcategory_raw": "Change in Directorate",
-      "date": "2026-10-01T18:19:13",
-      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/709c1ca1-bbc6-4432-949f-6a84683a6ebe.pdf",
-      "news_id": "55fb605b-9f23-4ca9-b278-e5c042ca95b9",
       "ticker": "HDFCBANK.NS"
     },
     {
@@ -577,28 +588,6 @@
     },
     {
       "source": "BSE",
-      "scrip_code": "500209",
-      "headline": "Compliances-Certificate under Reg. 74 (5) of SEBI (DP) Regulations, 2018",
-      "category_raw": "Company Update",
-      "subcategory_raw": "Certificate under Reg. 74 (5) of SEBI (DP) Regulations, 2018",
-      "date": "2026-10-01T22:22:22",
-      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/5c295729-f51a-4338-b119-80bf357d6004.pdf",
-      "news_id": "8272733b-8cef-4e14-a6be-ae7c63790fad",
-      "ticker": "INFY.NS"
-    },
-    {
-      "source": "BSE",
-      "scrip_code": "500209",
-      "headline": "Infosys And Columbia University Launch Strategic Collaboration Across Deep Research To Drive Innovation And Unlock Business Value",
-      "category_raw": "Company Update",
-      "subcategory_raw": "General",
-      "date": "2026-10-01T17:32:03",
-      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/40f77b4d-1c54-4d0d-bd13-8ee65a9efcdd.pdf",
-      "news_id": "53b12319-76f9-4483-9800-022465ce940f",
-      "ticker": "INFY.NS"
-    },
-    {
-      "source": "BSE",
       "scrip_code": "532540",
       "headline": "Press Release - TCS Bancs For Treasury Marks Its Entry Into Sri Lanka With Indian Bank",
       "category_raw": "Company Update",
@@ -775,47 +764,14 @@
     },
     {
       "source": "BSE",
-      "scrip_code": "532540",
-      "headline": "Announcement under Regulation 30 (LODR)-Press Release / Media Release",
+      "scrip_code": "532174",
+      "headline": "Disclosure Under Regulation 30 Of The SEBI (Listing Obligations                             And Disclosure Requirements) Regulations, 2015",
       "category_raw": "Company Update",
-      "subcategory_raw": "Press Release / Media Release",
-      "date": "2026-10-01T21:45:48",
-      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/8950eec0-7cfa-48bf-a02c-ae376052b13b.pdf",
-      "news_id": "47dc0c32-15d5-445a-86fa-677e86cda5db",
-      "ticker": "TCS.NS"
-    },
-    {
-      "source": "BSE",
-      "scrip_code": "532540",
-      "headline": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
-      "category_raw": "Company Update",
-      "subcategory_raw": "Analyst / Investor Meet",
-      "date": "2026-10-01T20:05:54",
-      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/5a6e5118-5f5a-4b44-8e67-c24e9bbe9cf1.pdf",
-      "news_id": "03ee91cc-4207-4da0-bd3d-7bdede371c5f",
-      "ticker": "TCS.NS"
-    },
-    {
-      "source": "BSE",
-      "scrip_code": "532540",
-      "headline": "Announcement under Regulation 30 (LODR)-Acquisition",
-      "category_raw": "Company Update",
-      "subcategory_raw": "Acquisition",
-      "date": "2026-10-01T18:41:45",
-      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/b9aa9da2-26fd-47a3-b7fc-c4960b515818.pdf",
-      "news_id": "25f3312c-2c87-4aad-8564-22db915a9103",
-      "ticker": "TCS.NS"
-    },
-    {
-      "source": "BSE",
-      "scrip_code": "532540",
-      "headline": "Board Meeting Outcome for Meeting Of The Investment Committee Of The Board",
-      "category_raw": "Others",
-      "subcategory_raw": "Outcome without intimation",
-      "date": "2026-10-01T18:39:09",
-      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/7ef42c35-5d4e-417e-90b1-f89e44233c97.pdf",
-      "news_id": "0b6e71c4-77db-41e4-a3bc-ef395b2f5d60",
-      "ticker": "TCS.NS"
+      "subcategory_raw": "General",
+      "date": "2026-11-01T09:35:06",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/0b2bb991-d0b5-491a-ab93-08cd260db05e.pdf",
+      "news_id": "79eb6f4e-650d-43bb-839d-1d1018c29a6d",
+      "ticker": "ICICIBANK.NS"
     },
     {
       "source": "BSE",
@@ -995,36 +951,36 @@
     },
     {
       "source": "BSE",
-      "scrip_code": "532174",
-      "headline": "Disclosure Under Regulation 30 Of The SEBI (Listing Obligations And Disclosure Requirements) Regulations, 2015",
+      "scrip_code": "524715",
+      "headline": "Clarification Sought From Sun Pharmaceutical Industries Ltd",
       "category_raw": "Company Update",
-      "subcategory_raw": "General",
-      "date": "2026-10-02T17:41:03",
-      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/f47d9cac-3fad-413b-91cf-11178fa9fe29.pdf",
-      "news_id": "452905ce-2e22-42f1-99ea-11bb81c317ca",
-      "ticker": "ICICIBANK.NS"
+      "subcategory_raw": "Clarification",
+      "date": null,
+      "attachment_url": null,
+      "news_id": "b7973cf1-9ab6-46f6-8975-89195ed32106",
+      "ticker": "SUNPHARMA.NS"
     },
     {
       "source": "BSE",
-      "scrip_code": "532174",
-      "headline": "Disclosure Under Regulation 30 Of The SEBI (Listing Obligations\r\nAnd Disclosure Requirements) Regulations, 2015",
+      "scrip_code": "524715",
+      "headline": "Completion And Results Of Postal Ballot Dated 01 October 2026",
       "category_raw": "Company Update",
       "subcategory_raw": "General",
-      "date": "2026-10-01T17:02:22",
-      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/2f33a7a0-e67a-4f17-a615-afc0732e2fcb.pdf",
-      "news_id": "e50cc83e-01f4-45ee-b73d-caec263377a1",
-      "ticker": "ICICIBANK.NS"
+      "date": "2026-10-31T20:14:03",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/e87d46d8-c447-4fc2-9b82-a95a8a922b0f.pdf",
+      "news_id": "924bbea8-ad95-4772-af15-b51226af9464",
+      "ticker": "SUNPHARMA.NS"
     },
     {
       "source": "BSE",
-      "scrip_code": "532174",
-      "headline": "Newspaper Advertisement - Special Window For Transfer And Dematerialisation Of Physical Securities",
+      "scrip_code": "524715",
+      "headline": "Announcement under Regulation 30 (LODR)-Newspaper Publication",
       "category_raw": "Company Update",
-      "subcategory_raw": "General",
-      "date": "2026-10-01T13:52:21",
-      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/8fa2623c-b325-4851-bb82-41d2e821a983.pdf",
-      "news_id": "9fafc058-2ba5-4883-9b1e-bf0c863c4b94",
-      "ticker": "ICICIBANK.NS"
+      "subcategory_raw": "Newspaper Publication",
+      "date": "2026-10-31T18:35:16",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/9ce2ef60-0b4f-44dc-a3a0-435c1066af80.pdf",
+      "news_id": "e35ea451-a1f8-4dc0-9cba-c10cd3a02125",
+      "ticker": "SUNPHARMA.NS"
     },
     {
       "source": "BSE",
@@ -1193,36 +1149,14 @@
     },
     {
       "source": "BSE",
-      "scrip_code": "524715",
+      "scrip_code": "500251",
       "headline": "Announcement under Regulation 30 (LODR)-Newspaper Publication",
       "category_raw": "Company Update",
       "subcategory_raw": "Newspaper Publication",
-      "date": "2026-10-02T17:15:29",
-      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/b4f6afd9-f770-453f-b01c-26d3f0f9183a.pdf",
-      "news_id": "e20d8113-8e74-4e33-a7bb-993824bdb15b",
-      "ticker": "SUNPHARMA.NS"
-    },
-    {
-      "source": "BSE",
-      "scrip_code": "524715",
-      "headline": "Shareholder Meeting / Postal Ballot-Notice of Postal Ballot",
-      "category_raw": "AGM/EGM",
-      "subcategory_raw": "Postal Ballot",
-      "date": "2026-10-01T18:51:20",
-      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/e9b028cb-60f7-42e9-b241-67c6ccfd930b.pdf",
-      "news_id": "6f34128e-1ced-408a-a53e-dc7633a461ed",
-      "ticker": "SUNPHARMA.NS"
-    },
-    {
-      "source": "BSE",
-      "scrip_code": "524715",
-      "headline": "Announcement under Regulation 30 (LODR)-Press Release / Media Release",
-      "category_raw": "Company Update",
-      "subcategory_raw": "Press Release / Media Release",
-      "date": "2026-10-01T17:46:55",
-      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/16d1ce88-8075-44a3-88ee-141418273dff.pdf",
-      "news_id": "ee9cd11a-03da-4573-8d52-64ec45997960",
-      "ticker": "SUNPHARMA.NS"
+      "date": "2026-11-02T13:27:38",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/773ac0af-b53b-4ef9-9866-32dac67c2935.pdf",
+      "news_id": "bf31fdcb-d512-4b5a-8d47-567d52e00a4c",
+      "ticker": "TRENT.NS"
     },
     {
       "source": "BSE",
@@ -1623,6 +1557,17 @@
     {
       "source": "BSE",
       "scrip_code": "540699",
+      "headline": "Announcement under Regulation 30 (LODR)-Newspaper Publication",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Newspaper Publication",
+      "date": "2026-10-31T19:34:28",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/2336e442-6dfb-4af9-81c4-09a8770d2c94.pdf",
+      "news_id": "7bdce317-b2e3-4c9b-86de-a59235d0e9f1",
+      "ticker": "DIXON.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "540699",
       "headline": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
       "category_raw": "Company Update",
       "subcategory_raw": "Analyst / Investor Meet",
@@ -1743,17 +1688,6 @@
     },
     {
       "source": "BSE",
-      "scrip_code": "540699",
-      "headline": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
-      "category_raw": "Company Update",
-      "subcategory_raw": "Analyst / Investor Meet",
-      "date": "2026-10-01T15:57:41",
-      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/8f44a9b9-4d58-445d-8bd0-10306982373a.pdf",
-      "news_id": "43bc3624-6348-4795-9af8-a7af169c577b",
-      "ticker": "DIXON.NS"
-    },
-    {
-      "source": "BSE",
       "scrip_code": "517271",
       "headline": "Board Meeting Intimation for Prior Intimation About The Board Meeting",
       "category_raw": "Board Meeting",
@@ -1850,6 +1784,17 @@
       "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/43b1b5d9-c275-4673-87fd-9ad6955815e9.pdf",
       "news_id": "26c86396-4aa8-4cb8-9919-2719a5996557",
       "ticker": "KALYANKJIL.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "543232",
+      "headline": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Analyst / Investor Meet",
+      "date": "2026-11-02T11:30:00",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/11986af0-f740-43a9-bde8-515d70113abe.pdf",
+      "news_id": "adb6f02c-f2c4-4a1e-ae48-74a27dc60ad0",
+      "ticker": "CAMS.NS"
     },
     {
       "source": "BSE",
@@ -1985,28 +1930,6 @@
     },
     {
       "source": "BSE",
-      "scrip_code": "543232",
-      "headline": "Announcement under Regulation 30 (LODR)-Allotment of ESOP / ESPS",
-      "category_raw": "Company Update",
-      "subcategory_raw": "Allotment of ESOP / ESPS",
-      "date": "2026-10-01T18:11:45",
-      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/1c67ab2e-8a28-4289-86b0-a8f293cd0dc2.pdf",
-      "news_id": "0e025c73-b5f0-4f4a-9c6c-925b1fc955d1",
-      "ticker": "CAMS.NS"
-    },
-    {
-      "source": "BSE",
-      "scrip_code": "543232",
-      "headline": "Disclosures under Reg. 29(2) of SEBI (SAST) Regulations, 2011",
-      "category_raw": "Insider Trading / SAST",
-      "subcategory_raw": "Disclosures under Reg. 29(2) of SEBI (SAST) Regulations, 2011",
-      "date": null,
-      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/F4CF33D0_4A7E_458E_A386_4E1DA14D1810_085811.pdf",
-      "news_id": "f4cf33d0-4a7e-458e-a386-4e1da14d1810",
-      "ticker": "CAMS.NS"
-    },
-    {
-      "source": "BSE",
       "scrip_code": "539524",
       "headline": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
       "category_raw": "Company Update",
@@ -2084,14 +2007,14 @@
     },
     {
       "source": "BSE",
-      "scrip_code": "539524",
-      "headline": "Announcement under Regulation 30 (LODR)-Updates on Acquisition",
+      "scrip_code": "532830",
+      "headline": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
       "category_raw": "Company Update",
-      "subcategory_raw": "Acquisition",
-      "date": "2026-10-01T19:32:36",
-      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/ac53cec4-4e55-46c5-b588-c59465653368.pdf",
-      "news_id": "ff0473ae-3f26-4a34-b18d-83d076eb9cb5",
-      "ticker": "LALPATHLAB.NS"
+      "subcategory_raw": "Analyst / Investor Meet",
+      "date": "2026-10-31T15:36:58",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/2684ff83-e0e0-41ce-bcd0-935a714cf850.pdf",
+      "news_id": "b57093d4-15e7-43ab-a10e-ceb844a9ff0d",
+      "ticker": "ASTRAL.NS"
     },
     {
       "source": "BSE",
@@ -2216,17 +2139,6 @@
     },
     {
       "source": "BSE",
-      "scrip_code": "543320",
-      "headline": "Announcement under Regulation 30 (LODR)-Allotment of ESOP / ESPS",
-      "category_raw": "Company Update",
-      "subcategory_raw": "Allotment of ESOP / ESPS",
-      "date": "2026-10-01T17:20:25",
-      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/097ee9d0-49df-4a37-a2f0-ba45f5109537.pdf",
-      "news_id": "b3be7fb5-a58a-4ce1-a49a-cb248170c932",
-      "ticker": "ZOMATO.NS"
-    },
-    {
-      "source": "BSE",
       "scrip_code": "542830",
       "headline": "Board Comments On Fines Levied By The Exchanges For Non-Compliances Of Certain Regulations Of SEBI (Listing Obligations And Disclosure Requirements) Regulations, 2015.",
       "category_raw": "Company Update",
@@ -2327,6 +2239,61 @@
     {
       "source": "BSE",
       "scrip_code": "543932",
+      "headline": "Announcement under Regulation 30 (LODR)-Investor Presentation",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Investor Presentation",
+      "date": "2026-11-02T20:49:25",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/99c3f4c5-c3dd-44ec-be57-41fe523f6c52.pdf",
+      "news_id": "0c30295a-a5d3-4b36-a6a6-c5f9c3e536ed",
+      "ticker": "IDEAFORGE.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "543932",
+      "headline": "Announcement under Regulation 30 (LODR)-Press Release / Media Release",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Press Release / Media Release",
+      "date": "2026-11-02T20:39:57",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/577f9655-47dd-4a4b-b3e5-af77cb938b8e.pdf",
+      "news_id": "db4cf4a1-9a4d-4dec-9bce-85acb3b13aeb",
+      "ticker": "IDEAFORGE.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "543932",
+      "headline": "Unaudited Financial Results For The Quarter And Half Year Ended September 30, 2026.",
+      "category_raw": "Result",
+      "subcategory_raw": "Financial Results",
+      "date": "2026-11-02T20:29:51",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/c389a59c-42c7-43bd-8222-3b190444ab64.pdf",
+      "news_id": "e55bc95f-e6f1-4c48-b81f-38de0cbd1888",
+      "ticker": "IDEAFORGE.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "543932",
+      "headline": "Board Meeting Outcome for Outcome Of The Board Meeting For The Adoption Of Financial Results For The Quarter And Half Year Ended September 30, 2026.",
+      "category_raw": "Board Meeting",
+      "subcategory_raw": "Outcome of Board Meeting",
+      "date": "2026-11-02T20:25:59",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/b9aee13f-b15f-41bb-984e-f5529998120a.pdf",
+      "news_id": "942e9ea0-6a6a-4dfd-b8aa-bbf796bd1816",
+      "ticker": "IDEAFORGE.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "543932",
+      "headline": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Analyst / Investor Meet",
+      "date": "2026-11-02T17:53:30",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/c46f59c3-088d-4530-8fbe-fae0c6a94f92.pdf",
+      "news_id": "ebcb2b4a-88ea-48d1-90de-0b0574fb82f6",
+      "ticker": "IDEAFORGE.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "543932",
       "headline": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
       "category_raw": "Company Update",
       "subcategory_raw": "Analyst / Investor Meet",
@@ -2421,17 +2388,6 @@
       "date": null,
       "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/566FB29A_FE31_4531_87A1_26B8D9489D75_112405.pdf",
       "news_id": "566fb29a-fe31-4531-87a1-26b8d9489d75",
-      "ticker": "IDEAFORGE.NS"
-    },
-    {
-      "source": "BSE",
-      "scrip_code": "543932",
-      "headline": "Intimation Under Regulation 30- Order Received By The Company Under Section 74 Of The CGST Act.",
-      "category_raw": "Company Update",
-      "subcategory_raw": "General",
-      "date": "2026-10-02T11:54:51",
-      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/d0ef0b92-01fe-406c-8dd9-b6ac01e1e04c.pdf",
-      "news_id": "3675e7e6-6e36-4f06-8ac2-28c3144d9ccf",
       "ticker": "IDEAFORGE.NS"
     },
     {
@@ -2777,17 +2733,6 @@
     },
     {
       "source": "BSE",
-      "scrip_code": "533179",
-      "headline": "Announcement under Regulation 30 (LODR)-Allotment",
-      "category_raw": "Company Update",
-      "subcategory_raw": "Allotment of Equity Shares",
-      "date": "2026-10-02T23:22:46",
-      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/065a5c81-456e-4658-ae6e-c9e10c315a86.pdf",
-      "news_id": "9a29605f-e804-46f7-99a9-238713497628",
-      "ticker": "PERSISTENT.NS"
-    },
-    {
-      "source": "BSE",
       "scrip_code": "540376",
       "headline": "Store Opening Intimation",
       "category_raw": "Company Update",
@@ -2920,14 +2865,14 @@
     },
     {
       "source": "BSE",
-      "scrip_code": "540376",
-      "headline": "Board Meeting Intimation for Consideration Of Financial Results",
-      "category_raw": "Board Meeting",
-      "subcategory_raw": "Board Meeting",
-      "date": "2026-10-01T18:26:34",
-      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/67b9c152-db1d-4ce2-8e2a-d30daf6758c4.pdf",
-      "news_id": "e8fa432c-e4e3-4ede-8aca-87199f522dfd",
-      "ticker": "DMART.NS"
+      "scrip_code": "500034",
+      "headline": "Shareholder Meeting / Postal Ballot-Outcome of EGM",
+      "category_raw": "AGM/EGM",
+      "subcategory_raw": "EGM",
+      "date": "2026-11-02T19:17:27",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/5f21f715-4d81-4470-9e3b-2ca076cf4e22.pdf",
+      "news_id": "fa36cde7-2447-4f2a-8bd4-4d99941bbc20",
+      "ticker": "BAJFINANCE.NS"
     },
     {
       "source": "BSE",
@@ -3151,36 +3096,14 @@
     },
     {
       "source": "BSE",
-      "scrip_code": "500034",
-      "headline": "Announcement under Regulation 30 (LODR)-Qualified Institutional Placement",
+      "scrip_code": "517334",
+      "headline": "Announcement under Regulation 30 (LODR)-Press Release / Media Release",
       "category_raw": "Company Update",
-      "subcategory_raw": "Qualified Institutional Placement",
-      "date": "2026-10-01T23:30:47",
-      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/011617d6-a18d-4fd3-a414-4b681bf37224.pdf",
-      "news_id": "b665c797-4a14-4ca7-90df-bc94c93ddb2b",
-      "ticker": "BAJFINANCE.NS"
-    },
-    {
-      "source": "BSE",
-      "scrip_code": "500034",
-      "headline": "Announcement under Regulation 30 (LODR)-Preferential Issue",
-      "category_raw": "Company Update",
-      "subcategory_raw": "Preferential Issue",
-      "date": "2026-10-01T23:27:15",
-      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/50fbec1c-9852-4043-9020-d9df179271d5.pdf",
-      "news_id": "52d08a9e-3ae5-42ae-8581-1992e98c3b89",
-      "ticker": "BAJFINANCE.NS"
-    },
-    {
-      "source": "BSE",
-      "scrip_code": "500034",
-      "headline": "Board Meeting Outcome for Capital Raise Through QIP And Preferential Issue",
-      "category_raw": "Board Meeting",
-      "subcategory_raw": "Outcome of Board Meeting",
-      "date": "2026-10-01T23:10:45",
-      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/8a657d02-934b-47e9-ad14-128578cc57ff.pdf",
-      "news_id": "860141ba-6a41-47fe-b3b7-85ea7ce6091a",
-      "ticker": "BAJFINANCE.NS"
+      "subcategory_raw": "Press Release / Media Release",
+      "date": "2026-11-02T17:19:42",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/f983104c-3c8d-4835-8640-e4c65da18335.pdf",
+      "news_id": "69e5b296-358e-4fde-a9d7-b03c204017be",
+      "ticker": "MOTHERSON.NS"
     },
     {
       "source": "BSE",

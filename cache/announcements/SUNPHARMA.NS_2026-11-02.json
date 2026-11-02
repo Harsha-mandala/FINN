@@ -1,0 +1,206 @@
+{
+  "ticker": "SUNPHARMA.NS",
+  "fetched_at": "2026-11-02T20:49:50.042928",
+  "days_back": 30,
+  "count": 18,
+  "announcements": [
+    {
+      "source": "BSE",
+      "scrip_code": "524715",
+      "headline": "Clarification Sought From Sun Pharmaceutical Industries Ltd",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Clarification",
+      "date": null,
+      "attachment_url": null,
+      "news_id": "b7973cf1-9ab6-46f6-8975-89195ed32106",
+      "ticker": "SUNPHARMA.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "524715",
+      "headline": "Completion And Results Of Postal Ballot Dated 01 October 2026",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-31T20:14:03",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/e87d46d8-c447-4fc2-9b82-a95a8a922b0f.pdf",
+      "news_id": "924bbea8-ad95-4772-af15-b51226af9464",
+      "ticker": "SUNPHARMA.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "524715",
+      "headline": "Announcement under Regulation 30 (LODR)-Newspaper Publication",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Newspaper Publication",
+      "date": "2026-10-31T18:35:16",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/9ce2ef60-0b4f-44dc-a3a0-435c1066af80.pdf",
+      "news_id": "e35ea451-a1f8-4dc0-9cba-c10cd3a02125",
+      "ticker": "SUNPHARMA.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "524715",
+      "headline": "Q2FY27 -Investor Call Audio Recording",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-30T20:18:47",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/5e1a8352-6166-444c-848a-29299a80a8d1.pdf",
+      "news_id": "bb9f8015-ef30-4520-b0de-2c31fcb077da",
+      "ticker": "SUNPHARMA.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "524715",
+      "headline": "Appointment Of Statutory Auditors Pursuant To Mandatory Auditor Rotation",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-30T15:17:46",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/8c1e7a04-f30c-4229-8189-88b576aab720.pdf",
+      "news_id": "ec707522-529d-49a5-bc71-3e7f7df28129",
+      "ticker": "SUNPHARMA.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "524715",
+      "headline": "Unaudited Financial Results For The Quarter And Half Year Ended 30 September 2026",
+      "category_raw": "Result",
+      "subcategory_raw": "Financial Results",
+      "date": "2026-10-30T14:14:55",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/658231ad-7203-4355-be99-2a162b722c0c.pdf",
+      "news_id": "7bbcaf67-e404-4ffb-b7fd-07ff385fdb0a",
+      "ticker": "SUNPHARMA.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "524715",
+      "headline": "Announcement under Regulation 30 (LODR)-Press Release / Media Release",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Press Release / Media Release",
+      "date": "2026-10-30T08:05:37",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/9b8f28d0-1101-4b12-82d0-e2ef23c8ef6c.pdf",
+      "news_id": "a56e304a-a629-417a-8882-023924df0b88",
+      "ticker": "SUNPHARMA.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "524715",
+      "headline": "Announcement under Regulation 30 (LODR)-Allotment",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Allotment of Equity Shares",
+      "date": "2026-10-26T12:30:09",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/2f44a1be-85a8-4545-a86e-71a27b7b7f15.pdf",
+      "news_id": "3d7c6ff9-d53f-4bf1-8ecf-5587d287b1ed",
+      "ticker": "SUNPHARMA.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "524715",
+      "headline": "Announcement under Regulation 30 (LODR)-Press Release / Media Release",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Press Release / Media Release",
+      "date": "2026-10-23T18:01:34",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/46b44110-a538-4759-8351-04d4731da2ae.pdf",
+      "news_id": "ce77353e-4987-4ce8-b231-170f5e9944c4",
+      "ticker": "SUNPHARMA.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "524715",
+      "headline": "Announcement under Regulation 30 (LODR)-Press Release / Media Release",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Press Release / Media Release",
+      "date": "2026-10-20T17:33:54",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/9a434af1-62a4-4822-a754-fa547098def0.pdf",
+      "news_id": "92bfa9a7-469a-4360-af1e-71de13927b80",
+      "ticker": "SUNPHARMA.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "524715",
+      "headline": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Analyst / Investor Meet",
+      "date": "2026-10-15T18:24:16",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/fee4866d-b8c6-40e5-b8d5-c93ade038a11.pdf",
+      "news_id": "9f479947-019f-43b7-b145-e75f77043e24",
+      "ticker": "SUNPHARMA.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "524715",
+      "headline": "Board Meeting Intimation for Consideration And Approval The Unaudited Financial Results For The Quarter And Half Year Ended 30 September 2026",
+      "category_raw": "Board Meeting",
+      "subcategory_raw": "Board Meeting",
+      "date": "2026-10-14T20:16:45",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/ab1efc78-7c9b-45b4-be79-85ae32c29b34.pdf",
+      "news_id": "08bfa0c6-24d4-4aa6-bc37-4271923dc3cc",
+      "ticker": "SUNPHARMA.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "524715",
+      "headline": "Compliances-Certificate under Reg. 74 (5) of SEBI (DP) Regulations, 2018",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Certificate under Reg. 74 (5) of SEBI (DP) Regulations, 2018",
+      "date": "2026-10-14T17:38:43",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/d366fdf5-735e-4074-95a0-3aff58a1a054.pdf",
+      "news_id": "3d5124cc-2271-4d41-8f1d-53d8896d26d3",
+      "ticker": "SUNPHARMA.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "524715",
+      "headline": "Announcement under Regulation 30 (LODR)-Credit Rating",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Credit Rating",
+      "date": "2026-10-13T17:53:34",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/1d806877-d790-4c37-9a4a-73b3ed0f8cff.pdf",
+      "news_id": "f039d44f-8dbf-42dd-bf8b-d2a9e290ecb6",
+      "ticker": "SUNPHARMA.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "524715",
+      "headline": "Announcement under Regulation 30 (LODR)-Resignation of Director",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Resignation of Director",
+      "date": "2026-10-12T20:04:52",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/bc2b1f08-317b-4303-9d5c-597e62c03e75.pdf",
+      "news_id": "e3e14132-9769-42f3-8c08-0ee46f64140a",
+      "ticker": "SUNPHARMA.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "524715",
+      "headline": "Board Meeting Outcome for Outcome Of The Board Meeting Held On 12 October 2026",
+      "category_raw": "Board Meeting",
+      "subcategory_raw": "Outcome of Board Meeting",
+      "date": "2026-10-12T19:56:53",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/4f30423a-d0f5-47c9-9ea8-48c96a5983b9.pdf",
+      "news_id": "4b3fd56d-6c37-4b6b-acdf-88fc4652fdae",
+      "ticker": "SUNPHARMA.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "524715",
+      "headline": "Board Meeting Intimation for Consideration And Approval Of The Issuance Of Listed, Rated, Unsecured, Redeemable, Non-Convertible Debentures",
+      "category_raw": "Board Meeting",
+      "subcategory_raw": "Board Meeting",
+      "date": "2026-10-07T20:39:10",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/9861d93a-f50c-4d70-99a0-987b035775d4.pdf",
+      "news_id": "4f54fc97-9a9e-4d4e-b3ac-273e35db7aea",
+      "ticker": "SUNPHARMA.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "524715",
+      "headline": "Announcement under Regulation 30 (LODR)-Press Release / Media Release",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Press Release / Media Release",
+      "date": "2026-10-06T18:22:59",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/bf422af8-0aaf-42d2-be8a-ad1a4ce081d9.pdf",
+      "news_id": "d1f8e649-ab86-4e59-8c13-4d65a8072d23",
+      "ticker": "SUNPHARMA.NS"
+    }
+  ]
+}

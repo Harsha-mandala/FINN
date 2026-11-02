@@ -1,6 +1,6 @@
 {
   "ticker": "DMART.NS",
-  "fetched_at": "2026-10-31T11:32:41.854398",
+  "fetched_at": "2026-11-02T20:50:38.038930",
   "latest_date": "2026-10-30",
   "latest_close": 3199.0,
   "prev_close": 3175.0,
@@ -9,22 +9,6 @@
   "volume_20d_avg": 856934.0,
   "volume_ratio": 0.37,
   "history": [
-    {
-      "date": "2026-05-04",
-      "open": 4585.0,
-      "high": 4585.0,
-      "low": 4351.0,
-      "close": 4376.5,
-      "volume": 1358897
-    },
-    {
-      "date": "2026-05-05",
-      "open": 4380.0,
-      "high": 4385.9,
-      "low": 4303.0,
-      "close": 4358.7,
-      "volume": 318092
-    },
     {
       "date": "2026-05-06",
       "open": 4363.4,

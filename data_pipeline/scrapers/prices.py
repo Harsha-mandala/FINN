@@ -126,7 +126,7 @@ def run(tickers: list[str] | None = None):
     summary_path = CACHE_DIR / "_summary.json"
     with open(summary_path, "w") as f:
         json.dump({"generated_at": datetime.now().isoformat(), "tickers": summary}, f, indent=2)
-    print(f"\n✅ Price summary written to {summary_path}")
+    print(f"\n[OK] Price summary written to {summary_path}")
 
 
 if __name__ == "__main__":

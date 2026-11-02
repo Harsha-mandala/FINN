@@ -1,0 +1,195 @@
+{
+  "ticker": "INFY.NS",
+  "fetched_at": "2026-11-02T20:49:44.609171",
+  "days_back": 30,
+  "count": 17,
+  "announcements": [
+    {
+      "source": "BSE",
+      "scrip_code": "500209",
+      "headline": "Infosys Announces Expansion Of Pocharam Development Center In Hyderabad",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-30T18:52:32",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/de1d0c27-5ad6-474d-b3b4-44084de360c0.pdf",
+      "news_id": "ed229dd3-9d22-4c2c-8214-d65575b6be4d",
+      "ticker": "INFY.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500209",
+      "headline": "Announcement under Regulation 30 (LODR)-Newspaper Publication",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Newspaper Publication",
+      "date": "2026-10-29T15:14:07",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/0335049c-de81-4e49-b02a-5887dfa42644.pdf",
+      "news_id": "cbbf7462-ce7a-42d3-8ee4-d7ba539eb9f8",
+      "ticker": "INFY.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500209",
+      "headline": "Winners Of Qorus-Infosys Finacle Banking Innovation Awards 2026 Announced",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-29T15:07:23",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/35b12a6d-e165-42d3-a0d1-cbe42fe2a99f.pdf",
+      "news_id": "7a84603f-bc08-4550-8369-4a85e398b56d",
+      "ticker": "INFY.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500209",
+      "headline": "Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Earnings Call Transcript",
+      "date": "2026-10-28T17:41:16",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/7982fc61-7765-4981-ab3d-6aec36ba2137.pdf",
+      "news_id": "fa202b41-867d-401b-9509-7bb6338f0c2b",
+      "ticker": "INFY.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500209",
+      "headline": "Canada'S UNI Financial Cooperation Advances Branch Modernization With Infosys Finacle Universal Banker",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-28T17:34:48",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/e740e1c4-75bc-4392-808c-a3323d612194.pdf",
+      "news_id": "78b62689-e2db-497a-a44a-207b3bfd64ed",
+      "ticker": "INFY.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500209",
+      "headline": "Investor Conference",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-27T22:51:19",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/198a321f-ab50-4557-8e45-2905e7ff1a2b.pdf",
+      "news_id": "1ee21456-900d-4569-95b2-6e286e6f3ef5",
+      "ticker": "INFY.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500209",
+      "headline": "Infosys Successfully Delivers Syngenta'S Global SAP S/4HANA Transformation For Crop Protection Business",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-27T16:39:22",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/00c170b0-d771-4ac7-bda2-8424c8729de7.pdf",
+      "news_id": "a95a8739-fabf-4609-95cc-a1dd59da22c4",
+      "ticker": "INFY.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500209",
+      "headline": "Announcement under Regulation 30 (LODR)-Newspaper Publication",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Newspaper Publication",
+      "date": "2026-10-24T19:51:19",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/33c1b5fb-5050-4952-9b3b-741b61357dfa.pdf",
+      "news_id": "f06535b8-cd74-496d-9dcf-e7917aab7604",
+      "ticker": "INFY.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500209",
+      "headline": "Report Of Auditors On Financial Statements For The Quarter And Half Year Ended September 30, 2026 With UDIN",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-23T20:08:50",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/b0157a38-ac25-43d0-8be4-d73cfead434b.pdf",
+      "news_id": "3ed442c3-8be6-4770-85e4-3986fc47f16a",
+      "ticker": "INFY.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500209",
+      "headline": "Corporate Action-Board approves Dividend",
+      "category_raw": "Corp. Action",
+      "subcategory_raw": "Dividend",
+      "date": "2026-10-23T16:19:52",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/0f7c4fa3-6c9a-497a-921a-e14c20919f86.pdf",
+      "news_id": "af95ecc7-ad1a-42ce-a6ef-7c5a46f327e3",
+      "ticker": "INFY.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500209",
+      "headline": "Financial Results For The Quarter And Half Year Ended September 30, 2026 And Declaration Of Interim Dividend",
+      "category_raw": "Result",
+      "subcategory_raw": "Financial Results",
+      "date": "2026-10-23T16:16:06",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/26c12463-d44e-4050-bd47-b53cc294b4e0.pdf",
+      "news_id": "50d31412-9909-4254-b5da-52df1d25080e",
+      "ticker": "INFY.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500209",
+      "headline": "Board Meeting Outcome for Financial Results For The Quarter And Half Year Ended September 30, 2026 And Declaration Of Interim Dividend",
+      "category_raw": "Board Meeting",
+      "subcategory_raw": "Outcome of Board Meeting",
+      "date": "2026-10-23T16:08:49",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/7a7cacec-6e60-4f88-9c95-ad60962ad4d4.pdf",
+      "news_id": "bbfbd1a4-e4d1-47d2-a70b-69956f4e84f9",
+      "ticker": "INFY.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500209",
+      "headline": "Infosys To Announce Second Quarter Results On October 23, 2026",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-19T15:41:22",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/4a39bee0-4f0d-4b6e-9383-284a0ca26e0f.pdf",
+      "news_id": "f1dae341-aa3e-4bf7-970c-fd9bedfff67c",
+      "ticker": "INFY.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500209",
+      "headline": "Infosys And Truist Strengthen Strategic Collaboration To Build A Global Capability Center In India",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-19T15:32:46",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/0fa9a84b-8686-4831-8cee-de8486f1c6c1.pdf",
+      "news_id": "af966210-08cc-49da-b19e-b90e2e4b58f9",
+      "ticker": "INFY.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500209",
+      "headline": "Infosys Foundation Enables Over 2.5 Lakh Job Offers Across India Through Infosys Springboard Livelihood Program",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-13T12:28:05",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/0d9bcd05-697f-4fc7-aeba-36f6a000986b.pdf",
+      "news_id": "e29f33dd-dd6e-4980-9f9a-d1de5bb6d3f8",
+      "ticker": "INFY.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500209",
+      "headline": "Company Statement On The U.S. Permanent Labor Certification Program",
+      "category_raw": "Company Update",
+      "subcategory_raw": "General",
+      "date": "2026-10-10T22:45:54",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/8c46593f-8874-4274-a9e6-2f350d7d7da8.pdf",
+      "news_id": "62eb160b-0dc9-4212-a998-a6a1d29c8f11",
+      "ticker": "INFY.NS"
+    },
+    {
+      "source": "BSE",
+      "scrip_code": "500209",
+      "headline": "Announcement under Regulation 30 (LODR)-Newspaper Publication",
+      "category_raw": "Company Update",
+      "subcategory_raw": "Newspaper Publication",
+      "date": "2026-10-09T10:15:17",
+      "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/059809bd-88c7-4fce-a050-42333e6cbb2c.pdf",
+      "news_id": "f290def0-1c67-45ea-a9dd-9cebceda3de0",
+      "ticker": "INFY.NS"
+    }
+  ]
+}

@@ -1,11 +1,19 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ChevronDown, ChevronRight, MessageCircle } from 'lucide-react';
-import { api } from '@/lib/api';
+import {
+  ChevronDown,
+  ChevronRight,
+  MessageCircle,
+  ExternalLink,
+  Layers,
+  FileCheck,
+  Calendar,
+} from 'lucide-react';
+import { api, ResultsCard } from '@/lib/api';
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
-type WindowHours = 24 | 168;
+type WindowOption = '24h' | '7d' | '30d' | 'custom';
 
 interface PriceTick {
   ticker: string;
@@ -14,48 +22,97 @@ interface PriceTick {
   volume_ratio: number;
 }
 
-interface ResultsEnrichment {
+interface ResultsMetricRow {
+  label: string;
+  current: string;
+  qoq_pct?: number | null;
+  yoy_pct?: number | null;
+}
+
+interface ResultsEnrichmentView {
   type: 'results_card';
-  qoq: { label: string; value: string; delta?: string }[];
-  yoy: { label: string; value: string; delta?: string }[];
+  basis: string;
+  period: string;
+  provenance?: string;
+  filingUrl?: string;
+  rows: ResultsMetricRow[];
 }
 
-interface BioEnrichment {
+interface BioEnrichmentView {
   type: 'management_bio';
+  personName?: string;
+  role?: string;
   bio: string;
+  sources?: string[];
 }
 
-type Enrichment = ResultsEnrichment | BioEnrichment | null;
+type EnrichmentView = ResultsEnrichmentView | BioEnrichmentView | null;
 
-interface Announcement {
+interface SubItem {
+  headline: string;
+  date: string;
+  attachment_url?: string;
+  news_id?: string;
+  category?: string;
+}
+
+interface AnnouncementView {
   id: string;
   ticker: string;
   category: string;
   headline: string;
   priority: 'high' | 'medium' | 'low';
   timestamp: string;
-  enrichment?: Enrichment;
+  attachmentUrl?: string;
+  threadCount?: number;
+  subItems?: SubItem[];
+  enrichment?: EnrichmentView;
 }
 
 interface DigestData {
-  high: Announcement[];
-  medium: Announcement[];
-  low: Announcement[];
+  high: AnnouncementView[];
+  medium: AnnouncementView[];
+  low: AnnouncementView[];
+  dataAsOf?: string;
+  routineSummary?: {
+    count: number;
+    label: string;
+  };
 }
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
 function relativeTime(iso: string): string {
-  const diff = Date.now() - new Date(iso).getTime();
-  const mins = Math.floor(diff / 60000);
-  if (mins < 60) return `${mins}m ago`;
-  const hrs = Math.floor(mins / 60);
-  if (hrs < 24) return `${hrs}h ago`;
-  return `${Math.floor(hrs / 24)}d ago`;
+  try {
+    const diff = Date.now() - new Date(iso).getTime();
+    if (isNaN(diff)) return iso;
+    const mins = Math.floor(diff / 60000);
+    if (mins < 60) return `${Math.max(1, mins)}m ago`;
+    const hrs = Math.floor(mins / 60);
+    if (hrs < 24) return `${hrs}h ago`;
+    return `${Math.floor(hrs / 24)}d ago`;
+  } catch {
+    return iso;
+  }
 }
 
 function fmt(n: number, decimals = 2): string {
   return n.toFixed(decimals);
+}
+
+function formatAsOf(iso?: string): string {
+  if (!iso) return '';
+  try {
+    const d = new Date(iso);
+    return d.toLocaleString('en-IN', {
+      month: 'short',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+    });
+  } catch {
+    return iso;
+  }
 }
 
 // ─── Skeleton Components ──────────────────────────────────────────────────────
@@ -108,7 +165,7 @@ const PriceChip: React.FC<{ tick: PriceTick }> = ({ tick }) => {
 
 // ─── Priority Dot ─────────────────────────────────────────────────────────────
 
-const PriorityDot: React.FC<{ priority: Announcement['priority'] }> = ({ priority }) => {
+const PriorityDot: React.FC<{ priority: AnnouncementView['priority'] }> = ({ priority }) => {
   const colors: Record<string, string> = {
     high: 'bg-[#EF4444]',
     medium: 'bg-[#F59E0B]',
@@ -121,70 +178,100 @@ const PriorityDot: React.FC<{ priority: Announcement['priority'] }> = ({ priorit
   );
 };
 
-// ─── Results Table ────────────────────────────────────────────────────────────
+// ─── Results Table Component ──────────────────────────────────────────────────
 
-const ResultsTable: React.FC<{ enrichment: ResultsEnrichment }> = ({ enrichment }) => (
-  <div className="mt-3 rounded-lg overflow-hidden border border-[#263548] text-xs">
+const ResultsTable: React.FC<{ enrichment: ResultsEnrichmentView }> = ({ enrichment }) => (
+  <div className="mt-3 rounded-lg overflow-hidden border border-[#263548] bg-[#0F172A]/80 text-xs">
+    {/* Card sub-header with basis & period */}
+    <div className="flex items-center justify-between px-3 py-2 bg-[#1A2438] border-b border-[#263548]">
+      <div className="flex items-center gap-2">
+        <FileCheck size={14} className="text-[#3B82F6]" />
+        <span className="text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-[#3B82F6]/20 text-[#60A5FA]">
+          {enrichment.basis}
+        </span>
+        <span className="text-xs font-medium text-[#E2E8F0]">
+          {enrichment.period}
+        </span>
+      </div>
+      {enrichment.filingUrl && (
+        <a
+          href={enrichment.filingUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[11px] text-[#3B82F6] hover:underline flex items-center gap-1"
+        >
+          Filing <ExternalLink size={10} />
+        </a>
+      )}
+    </div>
+
+    {/* Metrics Table */}
     <table className="w-full">
       <thead>
-        <tr className="bg-[#263548] text-[#94A3B8]">
+        <tr className="bg-[#1E293B] text-[#94A3B8]">
           <th className="text-left px-3 py-1.5 font-medium">Metric</th>
+          <th className="text-right px-3 py-1.5 font-medium">Value (₹ Cr)</th>
           <th className="text-right px-3 py-1.5 font-medium">QoQ</th>
           <th className="text-right px-3 py-1.5 font-medium">YoY</th>
         </tr>
       </thead>
       <tbody>
-        {enrichment.qoq.map((row, i) => {
-          const yoyRow = enrichment.yoy[i];
-          return (
-            <tr key={row.label} className="border-t border-[#263548]">
-              <td className="px-3 py-1.5 text-[#CBD5E1]">{row.label}</td>
-              <td className="px-3 py-1.5 text-right">
-                <span className="text-white">{row.value}</span>
-                {row.delta && (
-                  <span
-                    className={`ml-1 ${
-                      row.delta.startsWith('+') ? 'text-[#22C55E]' : 'text-[#EF4444]'
-                    }`}
-                  >
-                    {row.delta}
-                  </span>
-                )}
-              </td>
-              <td className="px-3 py-1.5 text-right">
-                {yoyRow && (
-                  <>
-                    <span className="text-white">{yoyRow.value}</span>
-                    {yoyRow.delta && (
-                      <span
-                        className={`ml-1 ${
-                          yoyRow.delta.startsWith('+') ? 'text-[#22C55E]' : 'text-[#EF4444]'
-                        }`}
-                      >
-                        {yoyRow.delta}
-                      </span>
-                    )}
-                  </>
-                )}
-              </td>
-            </tr>
-          );
-        })}
+        {enrichment.rows.map((row) => (
+          <tr key={row.label} className="border-t border-[#263548]/80 hover:bg-[#1E293B]/40">
+            <td className="px-3 py-1.5 text-[#CBD5E1] font-medium">{row.label}</td>
+            <td className="px-3 py-1.5 text-right font-mono text-white">
+              {row.current}
+            </td>
+            <td className="px-3 py-1.5 text-right font-mono">
+              {row.qoq_pct != null ? (
+                <span
+                  className={row.qoq_pct >= 0 ? 'text-[#22C55E]' : 'text-[#EF4444]'}
+                >
+                  {row.qoq_pct >= 0 ? '+' : ''}
+                  {row.qoq_pct}%
+                </span>
+              ) : (
+                <span className="text-[#64748B]">—</span>
+              )}
+            </td>
+            <td className="px-3 py-1.5 text-right font-mono">
+              {row.yoy_pct != null ? (
+                <span
+                  className={row.yoy_pct >= 0 ? 'text-[#22C55E]' : 'text-[#EF4444]'}
+                >
+                  {row.yoy_pct >= 0 ? '+' : ''}
+                  {row.yoy_pct}%
+                </span>
+              ) : (
+                <span className="text-[#64748B]">—</span>
+              )}
+            </td>
+          </tr>
+        ))}
       </tbody>
     </table>
+
+    {/* Provenance Footer */}
+    {enrichment.provenance && (
+      <div className="px-3 py-1 bg-[#1A2438]/50 border-t border-[#263548] text-[10px] text-[#64748B] truncate">
+        {enrichment.provenance}
+      </div>
+    )}
   </div>
 );
 
 // ─── Announcement Card ────────────────────────────────────────────────────────
 
 const AnnouncementCard: React.FC<{
-  item: Announcement;
-  onAskFinn: (item: Announcement) => void;
+  item: AnnouncementView;
+  onAskFinn: (item: AnnouncementView) => void;
 }> = ({ item, onAskFinn }) => {
+  const [threadOpen, setThreadOpen] = useState(false);
   const hasEnrichment = !!item.enrichment;
+  const hasThread = !!(item.subItems && item.subItems.length > 0);
 
   return (
-    <div className="rounded-xl bg-[#1E293B] p-4 space-y-2">
+    <div className="rounded-xl bg-[#1E293B] p-4 space-y-2 border border-[#263548]/40 shadow-sm">
       {/* Header row */}
       <div className="flex flex-wrap items-center gap-2">
         <PriorityDot priority={item.priority} />
@@ -194,34 +281,105 @@ const AnnouncementCard: React.FC<{
         <span className="text-[10px] font-semibold text-[#3B82F6] bg-[#3B82F6]/10 px-2 py-0.5 rounded-full uppercase tracking-wide">
           {item.category.replace(/_/g, ' ')}
         </span>
+
+        {hasThread && (
+          <button
+            onClick={() => setThreadOpen((p) => !p)}
+            className="flex items-center gap-1 text-[10px] font-medium text-[#A78BFA] bg-[#8B5CF6]/15 hover:bg-[#8B5CF6]/25 px-2 py-0.5 rounded-full transition-colors"
+          >
+            <Layers size={10} />
+            <span>Thread ({item.threadCount || item.subItems!.length + 1})</span>
+            {threadOpen ? <ChevronDown size={10} /> : <ChevronRight size={10} />}
+          </button>
+        )}
+
         <span className="ml-auto text-[11px] text-[#64748B]">
           {relativeTime(item.timestamp)}
         </span>
       </div>
 
       {/* Headline */}
-      <p className="text-sm text-[#E2E8F0] leading-snug line-clamp-2">{item.headline}</p>
+      <p className="text-sm text-[#E2E8F0] leading-snug">{item.headline}</p>
 
-      {/* Enrichment */}
+      {/* Results Enrichment Card */}
       {item.enrichment?.type === 'results_card' && (
         <ResultsTable enrichment={item.enrichment} />
       )}
+
+      {/* Management Bio Enrichment Card */}
       {item.enrichment?.type === 'management_bio' && (
-        <p className="text-xs text-[#94A3B8] leading-relaxed border-l-2 border-[#3B82F6] pl-2 mt-2">
-          {item.enrichment.bio}
-        </p>
+        <div className="mt-2.5 p-3 rounded-lg bg-[#0F172A]/80 border-l-2 border-[#3B82F6] space-y-1">
+          <div className="flex items-center justify-between">
+            <span className="text-xs font-bold text-white">
+              {item.enrichment.personName || 'Management Appointment'}
+            </span>
+            {item.enrichment.role && (
+              <span className="text-[10px] text-[#94A3B8] font-medium">
+                {item.enrichment.role}
+              </span>
+            )}
+          </div>
+          <p className="text-xs text-[#CBD5E1] leading-relaxed">
+            {item.enrichment.bio}
+          </p>
+        </div>
       )}
 
-      {/* Ask FINN */}
-      {hasEnrichment && (
+      {/* Collapsible Thread Sub-items */}
+      {hasThread && threadOpen && (
+        <div className="mt-2.5 pt-2 border-t border-[#263548] space-y-2">
+          <p className="text-[10px] font-semibold uppercase tracking-wider text-[#64748B]">
+            Related Filings
+          </p>
+          {item.subItems!.map((sub, idx) => (
+            <div
+              key={idx}
+              className="text-xs text-[#94A3B8] pl-2 border-l-2 border-[#3B82F6]/40 flex items-start justify-between gap-2"
+            >
+              <div className="space-y-0.5">
+                <p className="text-[#CBD5E1] text-[11px] leading-tight">
+                  {sub.headline}
+                </p>
+                <span className="text-[10px] text-[#64748B]">
+                  {relativeTime(sub.date)}
+                </span>
+              </div>
+              {sub.attachment_url && (
+                <a
+                  href={sub.attachment_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-shrink-0 text-[10px] text-[#3B82F6] hover:underline"
+                >
+                  PDF
+                </a>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Action footer */}
+      <div className="flex items-center justify-between pt-1">
+        {item.attachmentUrl ? (
+          <a
+            href={item.attachmentUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[11px] text-[#64748B] hover:text-[#94A3B8] flex items-center gap-1"
+          >
+            Original Filing <ExternalLink size={10} />
+          </a>
+        ) : <div />}
+
         <button
           onClick={() => onAskFinn(item)}
-          className="mt-1 flex items-center gap-1.5 text-xs font-semibold text-[#3B82F6] hover:text-white transition-colors"
+          className="flex items-center gap-1.5 text-xs font-semibold text-[#3B82F6] hover:text-white transition-colors py-0.5 px-2 rounded hover:bg-[#3B82F6]/10"
         >
           <MessageCircle size={13} />
           Ask FINN
         </button>
-      )}
+      </div>
     </div>
   );
 };
@@ -239,7 +397,7 @@ const CollapsibleSection: React.FC<{
     <div>
       <button
         onClick={() => setOpen((p) => !p)}
-        className="w-full flex items-center justify-between py-2 px-1"
+        className="w-full flex items-center justify-between py-2 px-1 hover:bg-[#1E293B]/30 rounded-lg transition-colors"
       >
         <span className="text-xs font-semibold text-[#94A3B8] uppercase tracking-widest">
           {label}{' '}
@@ -262,54 +420,73 @@ const CollapsibleSection: React.FC<{
 
 const FeedScreen: React.FC = () => {
   const navigate = useNavigate();
-  const [window, setWindow] = useState<WindowHours>(24);
+  const [windowOpt, setWindowOpt] = useState<WindowOption>('24h');
+  const [startDate, setStartDate] = useState<string>('');
+  const [endDate, setEndDate] = useState<string>('');
   const [prices, setPrices] = useState<PriceTick[]>([]);
   const [digest, setDigest] = useState<DigestData | null>(null);
   const [loadingPrices, setLoadingPrices] = useState(true);
   const [loadingDigest, setLoadingDigest] = useState(true);
 
-function mapApiAnnouncement(raw: any, idx: number): Announcement {
-  let enrichment: Enrichment = null;
-  if (raw.enrichment?.type === 'management_bio') {
-    enrichment = {
-      type: 'management_bio',
-      bio: raw.enrichment.bio || '',
-    };
-  } else if (raw.enrichment?.type === 'results_card') {
-    const d = raw.enrichment.data || {};
-    const metrics = [
-      { key: 'revenue', label: 'Revenue' },
-      { key: 'ebitda', label: 'EBITDA' },
-      { key: 'pbt', label: 'PBT' },
-      { key: 'pat', label: 'PAT' },
-    ];
-    enrichment = {
-      type: 'results_card',
-      qoq: metrics.map((m) => {
-        const item = d[m.key];
-        const val = item?.current != null ? `₹${item.current} Cr` : '-';
-        const pct = item?.qoq_pct != null ? `${item.qoq_pct >= 0 ? '+' : ''}${item.qoq_pct}%` : undefined;
-        return { label: m.label, value: val, delta: pct };
-      }),
-      yoy: metrics.map((m) => {
-        const item = d[m.key];
-        const val = item?.current != null ? `₹${item.current} Cr` : '-';
-        const pct = item?.yoy_pct != null ? `${item.yoy_pct >= 0 ? '+' : ''}${item.yoy_pct}%` : undefined;
-        return { label: m.label, value: val, delta: pct };
-      }),
+  function mapApiAnnouncement(raw: any, idx: number): AnnouncementView {
+    let enrichment: EnrichmentView = null;
+
+    if (raw.enrichment?.type === 'management_bio') {
+      enrichment = {
+        type: 'management_bio',
+        personName: raw.enrichment.person_name,
+        role: raw.enrichment.role,
+        bio: raw.enrichment.bio || '',
+        sources: raw.enrichment.sources,
+      };
+    } else if (raw.enrichment?.type === 'results_card') {
+      const cardData = (raw.enrichment.data || {}) as ResultsCard;
+      const metricsObj = (cardData.metrics || cardData) as any;
+
+      const metricDefs = [
+        { key: 'revenue', label: 'Revenue' },
+        { key: 'ebitda', label: 'EBITDA' },
+        { key: 'pbt', label: 'PBT' },
+        { key: 'pat', label: 'PAT' },
+      ];
+
+      const rows: ResultsMetricRow[] = metricDefs.map((m) => {
+        const item = metricsObj[m.key] || {};
+        const val =
+          item.current != null
+            ? `₹${Number(item.current).toLocaleString('en-IN')}`
+            : '—';
+        return {
+          label: m.label,
+          current: val,
+          qoq_pct: item.qoq_pct,
+          yoy_pct: item.yoy_pct,
+        };
+      });
+
+      enrichment = {
+        type: 'results_card',
+        basis: (cardData.basis || 'consolidated').toUpperCase(),
+        period: cardData.period_current || 'Quarterly Results',
+        provenance: (cardData as any).provenance,
+        filingUrl: (cardData as any).filing_url || raw.attachment_url,
+        rows,
+      };
+    }
+
+    return {
+      id: `${raw.ticker}-${raw.date || idx}-${idx}`,
+      ticker: (raw.ticker || '').replace('.NS', '').replace('.BO', ''),
+      category: (raw.category || 'unclassified').toUpperCase(),
+      headline: raw.summary || raw.headline || '',
+      priority: raw.priority_tier || 'low',
+      timestamp: raw.date || new Date().toISOString(),
+      attachmentUrl: raw.attachment_url,
+      threadCount: raw.thread_count,
+      subItems: raw.sub_items,
+      enrichment,
     };
   }
-
-  return {
-    id: `${raw.ticker}-${raw.date || idx}-${idx}`,
-    ticker: (raw.ticker || '').replace('.NS', '').replace('.BO', ''),
-    category: (raw.category || 'unclassified').toUpperCase(),
-    headline: raw.summary || raw.headline || '',
-    priority: raw.priority_tier || 'low',
-    timestamp: raw.date || new Date().toISOString(),
-    enrichment,
-  };
-}
 
   const fetchPrices = useCallback(async () => {
     setLoadingPrices(true);
@@ -331,14 +508,22 @@ function mapApiAnnouncement(raw: any, idx: number): Announcement {
     }
   }, []);
 
-  const fetchDigest = useCallback(async (windowHours: WindowHours) => {
+  const fetchDigest = useCallback(async (win: WindowOption, start?: string, end?: string) => {
     setLoadingDigest(true);
     try {
-      const data = await api.getDigest(windowHours);
+      let data;
+      if (win === 'custom' && start && end) {
+        data = await api.getDigest('custom', { start_date: start, end_date: end, include_low: false });
+      } else {
+        data = await api.getDigest(win, { include_low: false });
+      }
+
       setDigest({
         high: (data.high ?? []).map(mapApiAnnouncement),
         medium: (data.medium ?? []).map(mapApiAnnouncement),
         low: (data.low ?? []).map(mapApiAnnouncement),
+        dataAsOf: data.data_as_of,
+        routineSummary: data.routine_summary,
       });
     } catch {
       setDigest({ high: [], medium: [], low: [] });
@@ -352,10 +537,18 @@ function mapApiAnnouncement(raw: any, idx: number): Announcement {
   }, [fetchPrices]);
 
   useEffect(() => {
-    fetchDigest(window);
-  }, [window, fetchDigest]);
+    if (windowOpt !== 'custom') {
+      fetchDigest(windowOpt);
+    }
+  }, [windowOpt, fetchDigest]);
 
-  const handleAskFinn = (item: Announcement) => {
+  const handleCustomApply = () => {
+    if (startDate && endDate) {
+      fetchDigest('custom', startDate, endDate);
+    }
+  };
+
+  const handleAskFinn = (item: AnnouncementView) => {
     navigate(`/chat?ticker=${item.ticker}&context=${encodeURIComponent(item.headline)}`);
   };
 
@@ -367,32 +560,70 @@ function mapApiAnnouncement(raw: any, idx: number): Announcement {
   return (
     <div className="min-h-screen bg-[#0F172A] max-w-[430px] mx-auto flex flex-col">
       {/* Top bar */}
-      <header className="sticky top-0 z-20 bg-[#0F172A]/95 backdrop-blur border-b border-[#1E293B] px-4 py-3 flex items-center justify-between">
-        <span className="text-lg font-black tracking-tight text-white">
-          FINN
-        </span>
-        <div className="flex bg-[#1E293B] rounded-lg p-0.5 gap-0.5">
-          {([24, 168] as WindowHours[]).map((h) => (
-            <button
-              key={h}
-              onClick={() => setWindow(h)}
-              className={`text-xs font-semibold px-3 py-1 rounded-md transition-colors ${
-                window === h
-                  ? 'bg-[#3B82F6] text-white'
-                  : 'text-[#64748B] hover:text-white'
-              }`}
-            >
-              {h === 24 ? '24h' : '7d'}
-            </button>
-          ))}
+      <header className="sticky top-0 z-20 bg-[#0F172A]/95 backdrop-blur border-b border-[#1E293B] px-4 py-3 space-y-2">
+        <div className="flex items-center justify-between">
+          <div>
+            <span className="text-lg font-black tracking-tight text-white">
+              FINN
+            </span>
+            {digest?.dataAsOf && (
+              <span className="ml-2 text-[10px] text-[#64748B]">
+                as of {formatAsOf(digest.dataAsOf)}
+              </span>
+            )}
+          </div>
+
+          {/* Window Tabs: 24h | 7d | 30d | Custom */}
+          <div className="flex bg-[#1E293B] rounded-lg p-0.5 gap-0.5">
+            {(['24h', '7d', '30d', 'custom'] as WindowOption[]).map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setWindowOpt(tab)}
+                className={`text-[11px] font-semibold px-2.5 py-1 rounded-md transition-colors ${
+                  windowOpt === tab
+                    ? 'bg-[#3B82F6] text-white shadow-sm'
+                    : 'text-[#64748B] hover:text-white'
+                }`}
+              >
+                {tab === 'custom' ? 'Custom' : tab}
+              </button>
+            ))}
+          </div>
         </div>
+
+        {/* Custom Date Range Picker */}
+        {windowOpt === 'custom' && (
+          <div className="flex items-center gap-2 pt-1 pb-0.5 text-xs">
+            <Calendar size={13} className="text-[#3B82F6] flex-shrink-0" />
+            <input
+              type="date"
+              value={startDate}
+              onChange={(e) => setStartDate(e.target.value)}
+              className="bg-[#1E293B] text-white text-[11px] px-2 py-1 rounded border border-[#263548] focus:outline-none focus:border-[#3B82F6]"
+            />
+            <span className="text-[#64748B]">to</span>
+            <input
+              type="date"
+              value={endDate}
+              onChange={(e) => setEndDate(e.target.value)}
+              className="bg-[#1E293B] text-white text-[11px] px-2 py-1 rounded border border-[#263548] focus:outline-none focus:border-[#3B82F6]"
+            />
+            <button
+              onClick={handleCustomApply}
+              disabled={!startDate || !endDate}
+              className="px-2.5 py-1 bg-[#3B82F6] hover:bg-[#2563EB] text-white rounded text-[11px] font-semibold disabled:opacity-40"
+            >
+              Apply
+            </button>
+          </div>
+        )}
       </header>
 
       <div className="flex-1 overflow-y-auto pb-6">
         {/* Price strip */}
         <div className="px-4 pt-4">
           <p className="text-[10px] font-semibold text-[#64748B] uppercase tracking-widest mb-2">
-            Portfolio
+            Watchlist
           </p>
           <div className="flex gap-2 overflow-x-auto pb-2 -mx-4 px-4 scrollbar-none">
             {loadingPrices
@@ -416,19 +647,36 @@ function mapApiAnnouncement(raw: any, idx: number): Announcement {
             </>
           ) : totalItems === 0 ? (
             <div className="flex flex-col items-center justify-center py-16 text-center gap-3">
-              <span className="text-4xl">🌿</span>
+              <span className="text-3xl">🌿</span>
               <p className="text-sm text-[#94A3B8]">
-                Quiet day — no material events in the last {window === 24 ? '24h' : '7 days'}.
+                No filings found in the{' '}
+                <span className="text-white font-medium">{windowOpt}</span> window.
               </p>
+              <div className="flex gap-2 mt-1">
+                <button
+                  onClick={() => setWindowOpt('7d')}
+                  className="px-3 py-1.5 text-xs font-semibold bg-[#1E293B] text-[#3B82F6] hover:bg-[#263548] rounded-lg transition-colors"
+                >
+                  View 7d
+                </button>
+                <button
+                  onClick={() => setWindowOpt('30d')}
+                  className="px-3 py-1.5 text-xs font-semibold bg-[#1E293B] text-[#3B82F6] hover:bg-[#263548] rounded-lg transition-colors"
+                >
+                  View 30d
+                </button>
+              </div>
             </div>
           ) : (
             <>
               {/* High priority — always visible */}
               {digest!.high.length > 0 && (
                 <div className="space-y-3">
-                  <p className="text-[10px] font-semibold text-[#64748B] uppercase tracking-widest">
-                    Needs Attention
-                  </p>
+                  <div className="flex items-center justify-between">
+                    <p className="text-[10px] font-semibold text-[#64748B] uppercase tracking-widest">
+                      Needs Attention ({digest!.high.length})
+                    </p>
+                  </div>
                   {digest!.high.map((item) => (
                     <AnnouncementCard
                       key={item.id}
@@ -442,7 +690,7 @@ function mapApiAnnouncement(raw: any, idx: number): Announcement {
               {/* Medium priority */}
               {digest!.medium.length > 0 && (
                 <CollapsibleSection
-                  label="Also Today"
+                  label="Also Noteworthy"
                   count={digest!.medium.length}
                   defaultOpen
                 >
@@ -456,10 +704,20 @@ function mapApiAnnouncement(raw: any, idx: number): Announcement {
                 </CollapsibleSection>
               )}
 
-              {/* Low priority */}
+              {/* Routine summary row or low items */}
+              {digest!.routineSummary && digest!.routineSummary.count > 0 && (
+                <div className="p-3 rounded-lg bg-[#1E293B]/60 border border-[#263548] text-xs text-[#64748B] flex items-center justify-between">
+                  <span>{digest!.routineSummary.label}</span>
+                  <span className="text-[10px] px-2 py-0.5 rounded bg-[#263548] text-[#94A3B8]">
+                    Filtered
+                  </span>
+                </div>
+              )}
+
+              {/* Low priority (if included) */}
               {digest!.low.length > 0 && (
                 <CollapsibleSection
-                  label="Routine"
+                  label="Routine Filings"
                   count={digest!.low.length}
                   defaultOpen={false}
                 >

@@ -1,6 +1,6 @@
 {
   "ticker": "IDEAFORGE.NS",
-  "fetched_at": "2026-10-31T11:32:40.735114",
+  "fetched_at": "2026-11-02T20:50:37.474722",
   "latest_date": "2026-10-30",
   "latest_close": 628.5,
   "prev_close": 676.4000244140625,
@@ -9,22 +9,6 @@
   "volume_20d_avg": 286924.0,
   "volume_ratio": 1.92,
   "history": [
-    {
-      "date": "2026-05-04",
-      "open": 710.0,
-      "high": 731.0,
-      "low": 682.6,
-      "close": 731.0,
-      "volume": 7679966
-    },
-    {
-      "date": "2026-05-05",
-      "open": 751.0,
-      "high": 804.1,
-      "low": 745.15,
-      "close": 804.1,
-      "volume": 11592268
-    },
     {
       "date": "2026-05-06",
       "open": 814.7,

@@ -1,6 +1,6 @@
 {
   "ticker": "MOTHERSON.NS",
-  "fetched_at": "2026-10-31T11:32:42.955912",
+  "fetched_at": "2026-11-02T20:50:38.685550",
   "latest_date": "2026-10-30",
   "latest_close": 156.5,
   "prev_close": 160.0,
@@ -9,22 +9,6 @@
   "volume_20d_avg": 11007059.0,
   "volume_ratio": 0.82,
   "history": [
-    {
-      "date": "2026-05-04",
-      "open": 121.78,
-      "high": 123.22,
-      "low": 119.38,
-      "close": 120.0,
-      "volume": 9964145
-    },
-    {
-      "date": "2026-05-05",
-      "open": 120.0,
-      "high": 120.9,
-      "low": 118.2,
-      "close": 120.03,
-      "volume": 10287116
-    },
     {
       "date": "2026-05-06",
       "open": 121.6,
