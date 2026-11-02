@@ -119,7 +119,7 @@ def get_management_bio(
             prompt=prompt,
             task="reasoning",
             temperature=0.3,
-            max_tokens=512,
+            max_tokens=2048,
             grounded=True,
         )
         if isinstance(result, dict):

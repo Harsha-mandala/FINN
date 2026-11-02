@@ -1,0 +1,42 @@
+{
+  "status": "ok",
+  "ticker": "BAJFINANCE.NS",
+  "is_bank": false,
+  "extraction_method": "regex",
+  "basis": "consolidated",
+  "period_current": "Q2 FY27",
+  "period_qoq": "Q1 FY27",
+  "period_yoy": "Q2 FY26",
+  "metrics": {
+    "revenue": {
+      "current": 23.0,
+      "qoq_prev": 15974.0,
+      "qoq_pct": -99.9,
+      "yoy_prev": 12982.0,
+      "yoy_pct": -99.8
+    },
+    "ebitda": {
+      "current": null,
+      "qoq_prev": null,
+      "qoq_pct": null,
+      "yoy_prev": null,
+      "yoy_pct": null
+    },
+    "pbt": {
+      "current": 30.0,
+      "qoq_prev": 51.0,
+      "qoq_pct": -41.2,
+      "yoy_prev": 134.0,
+      "yoy_pct": -77.6
+    },
+    "pat": {
+      "current": 21.0,
+      "qoq_prev": 34.0,
+      "qoq_pct": -38.2,
+      "yoy_prev": 89.0,
+      "yoy_pct": -76.4
+    }
+  },
+  "filing_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/e7c0f169-e396-4a7d-a57d-b1f7c47f6290.pdf",
+  "sha256": "40722430396106b1a34e1ca6f84d8c873cf4e15a2650a96afedc5be169841e94"
+}

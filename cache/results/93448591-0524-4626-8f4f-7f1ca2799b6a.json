@@ -1,0 +1,45 @@
+{
+  "status": "ok",
+  "ticker": "CAMS.NS",
+  "is_bank": false,
+  "extraction_method": "regex",
+  "basis": "consolidated",
+  "period_current": "Current Quarter",
+  "period_qoq": "Previous Quarter",
+  "period_yoy": "Same Quarter Last Year",
+  "metrics": {
+    "revenue": {
+      "current": 366.46,
+      "qoq_prev": 353.89,
+      "qoq_pct": 3.6,
+      "yoy_prev": 12.57,
+      "yoy_pct": 2815.4
+    },
+    "ebitda": {
+      "current": 188.53,
+      "qoq_prev": 171.19,
+      "qoq_pct": 10.1,
+      "yoy_prev": 11.17,
+      "yoy_pct": 1587.8,
+      "label": "EBITDA (derived)",
+      "definition": "PBT + finance costs + depreciation; includes other income",
+      "source": "derived"
+    },
+    "pbt": {
+      "current": 162.37,
+      "qoq_prev": 148.11,
+      "qoq_pct": 9.6,
+      "yoy_prev": 14.26,
+      "yoy_pct": 1038.6
+    },
+    "pat": {
+      "current": null,
+      "qoq_prev": null,
+      "qoq_pct": null,
+      "yoy_prev": null,
+      "yoy_pct": null
+    }
+  },
+  "filing_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/ae29c181-f576-49a7-ada1-5e1da3832ae0.pdf",
+  "sha256": "73f1d230b055d36f4008ea6a45a5b610dcde46bca85aba12e4abe7a7e9f8af6a"
+}

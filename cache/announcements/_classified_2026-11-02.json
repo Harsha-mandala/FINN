@@ -10,9 +10,10 @@
     "news_id": "e415860f-9a80-4f00-aef6-d2399ad9e1e7",
     "ticker": "RELIANCE.NS",
     "category": "earnings_call",
-    "summary": "Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+    "summary": "Earnings call transcript submitted for investor access",
     "priority": 15,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -25,9 +26,10 @@
     "news_id": "bd9ee49e-a779-4042-8196-bdd7d2768d85",
     "ticker": "RELIANCE.NS",
     "category": "investor_meetings",
-    "summary": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+    "summary": "Outcome of analyst and investor meeting announced",
     "priority": 15,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -39,10 +41,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/0dc8ebe7-5e2d-4946-85ee-1e536c461a71.pdf",
     "news_id": "009ca8ed-52dc-481d-92f1-291961ea16e0",
     "ticker": "RELIANCE.NS",
-    "category": "unclassified",
-    "summary": "Announcement under Regulation 30 (LODR)-Investor Presentation",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "results",
+    "summary": "Investor presentation filed under Regulation 30",
+    "priority": 90,
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -55,9 +58,10 @@
     "news_id": "b8e02617-92c5-4f96-918b-15d92b0d6d51",
     "ticker": "RELIANCE.NS",
     "category": "press_release",
-    "summary": "Announcement under Regulation 30 (LODR)-Press Release / Media Release",
+    "summary": "Press or media release issued by the company",
     "priority": 45,
-    "priority_tier": "medium"
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -70,9 +74,10 @@
     "news_id": "3d90a81b-52f2-427a-b1f7-27f545cf1ca5",
     "ticker": "RELIANCE.NS",
     "category": "results",
-    "summary": "Unaudited Financial Results (Consolidated And Standalone) For The Quarter And Half Year Ended September 30, 2026.",
+    "summary": "Unaudited consolidated and standalone financial results announced for Q2",
     "priority": 90,
-    "priority_tier": "high"
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -85,9 +90,10 @@
     "news_id": "927accc7-0fc2-4b9e-936e-1b94594cf77c",
     "ticker": "RELIANCE.NS",
     "category": "results",
-    "summary": "Board Meeting Outcome for Board Meeting Outcome For Unaudited Financial Results (Consolidated And Standalone) For The Qu",
+    "summary": "Board meeting outcome for financial results and NCD issuance",
     "priority": 90,
-    "priority_tier": "high"
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -99,10 +105,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/bc9fc5d1-9c04-4a88-b807-79d27dd63697.pdf",
     "news_id": "313ccc61-deae-4673-a050-3a78c4290c8f",
     "ticker": "RELIANCE.NS",
-    "category": "unclassified",
-    "summary": "Disclosure Under Regulation 30 Of The Securities And Exchange Board Of India (Listing Obligations And Disclosure Require",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "M&A",
+    "summary": "Voluntary strike off of subsidiary Hamleys Franchising Limited",
+    "priority": 85,
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -114,10 +121,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/70bfc361-3c9a-45d0-8240-e1b544debd01.pdf",
     "news_id": "c737601e-dff8-49ed-8959-263b42e68df0",
     "ticker": "RELIANCE.NS",
-    "category": "unclassified",
-    "summary": "Listing Of Equity Shares Of Jio Platforms Limited",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "fund_raise",
+    "summary": "Listing of equity shares of Jio Platforms Limited",
+    "priority": 70,
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -130,9 +138,10 @@
     "news_id": "e70ee0c0-22ad-4428-a23a-2da1f60f735f",
     "ticker": "RELIANCE.NS",
     "category": "investor_meetings",
-    "summary": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+    "summary": "Intimation of upcoming analyst or investor meeting",
     "priority": 15,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -145,9 +154,10 @@
     "news_id": "d8dc0c7b-ad03-42fb-a6cb-c907e219a6d7",
     "ticker": "RELIANCE.NS",
     "category": "results",
-    "summary": "Board Meeting Intimation for Considering And Approving The Standalone And Consolidated Unaudited Financial Results For T",
+    "summary": "Board meeting intimation for financial results and debenture fundraising",
     "priority": 90,
-    "priority_tier": "high"
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -159,10 +169,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/0056a3dc-6357-48ff-a037-f1b206624331.pdf",
     "news_id": "16ea0782-d143-468b-901a-3f244a3373ce",
     "ticker": "RELIANCE.NS",
-    "category": "unclassified",
-    "summary": "Initial Public Offer Of Jio Platforms Limited - Update",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "fund_raise",
+    "summary": "Update on initial public offer of Jio Platforms Limited",
+    "priority": 70,
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -174,10 +185,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/3667a6e5-6d63-45c2-b94e-d09043e401b4.pdf",
     "news_id": "bf30a59b-8e78-4017-bcfc-867b22b7b601",
     "ticker": "RELIANCE.NS",
-    "category": "unclassified",
-    "summary": "Media Statement",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "press_release",
+    "summary": "Media statement released by the company",
+    "priority": 45,
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -189,10 +201,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/77e3ec52-056d-4103-8388-14b48756f70d.pdf",
     "news_id": "e3ce80df-6eed-4b99-9262-5e8463ceb38f",
     "ticker": "RELIANCE.NS",
-    "category": "unclassified",
-    "summary": "Announcement under Regulation 30 (LODR)-Credit Rating",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "credit_rating",
+    "summary": "Credit rating details announced under Regulation 30",
+    "priority": 60,
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -207,7 +220,8 @@
     "category": "unclassified",
     "summary": "Newspaper Clipping - Proposed Initial Public Offer Of Jio Platforms Limited -Reservation For Eligible RIL Shareholders",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -222,7 +236,8 @@
     "category": "unclassified",
     "summary": "Newspaper Clippings - Proposed Initial Public Offer Of Jio Platforms Limited - Reservation For Eligible RIL Shareholders",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -237,7 +252,8 @@
     "category": "unclassified",
     "summary": "Newspaper Clippings - Special Window For Transfer And Dematerialisation (Demat) Of Physical Shares",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -249,10 +265,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/cc57bd43-7392-405d-b507-f1a83de93453.pdf",
     "news_id": "8f0e4798-3443-4095-82a1-4d6b0029483f",
     "ticker": "RELIANCE.NS",
-    "category": "unclassified",
-    "summary": "Proposed Initial Public Offer Of Jio Platforms Limited",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "fund_raise",
+    "summary": "Proposed initial public offer of Jio Platforms Limited announced",
+    "priority": 70,
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -264,10 +281,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/9f9c9b25-75e8-45ba-83a4-e230e7657f54.pdf",
     "news_id": "fa7c81b8-d6f0-424d-9f8e-f40b710d9f8a",
     "ticker": "RELIANCE.NS",
-    "category": "unclassified",
-    "summary": "Proposed Initial Public Offer Of Jio Platforms Limited - Filing Of The Red Herring Prospectus",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "fund_raise",
+    "summary": "Filing of red herring prospectus for Jio Platforms IPO",
+    "priority": 70,
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -282,7 +300,8 @@
     "category": "unclassified",
     "summary": "Disclosure Under Regulation 30 Of The Securities And Exchange Board Of India (Listing Obligations And Disclosure Require",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -294,10 +313,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/b36ff756-1cf7-44a3-9b2c-4583e7e0e792.pdf",
     "news_id": "be305212-ae95-4757-93fe-23429494a3c8",
     "ticker": "HDFCBANK.NS",
-    "category": "unclassified",
-    "summary": "Announcement under Regulation 30 (LODR)-Change in Management",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "management_change",
+    "summary": "Change in management announced under Regulation 30",
+    "priority": 80,
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -312,7 +332,8 @@
     "category": "unclassified",
     "summary": "Announcement under Regulation 30 (LODR)-Allotment of ESOP / ESPS",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -325,9 +346,10 @@
     "news_id": "eee0209e-2a9c-4d1c-91a1-8b1dbc6868a2",
     "ticker": "HDFCBANK.NS",
     "category": "management_change",
-    "summary": "Disclosure Under Regulation 30 And Other Applicable Regulations Of The SEBI (Listing Obligations And Disclosure Requirem",
+    "summary": "Change in Managing Director and Chief Executive Officer",
     "priority": 80,
-    "priority_tier": "high"
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -342,7 +364,8 @@
     "category": "unclassified",
     "summary": "Grant Of Stock Options Under Employee Stock Option Scheme",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -355,9 +378,10 @@
     "news_id": "fd8f06cf-fd65-4a93-944c-e6463ce1eda6",
     "ticker": "HDFCBANK.NS",
     "category": "investor_meetings",
-    "summary": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+    "summary": "Outcome of analyst and investor meeting announced",
     "priority": 15,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -372,7 +396,8 @@
     "category": "unclassified",
     "summary": "Announcement under Regulation 30 (LODR)-Allotment of ESOP / ESPS",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -387,7 +412,8 @@
     "category": "unclassified",
     "summary": "Announcement under Regulation 30 (LODR)-Newspaper Publication",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -400,9 +426,10 @@
     "news_id": "dd194e0a-4c4d-4692-9778-4edd64a1a93e",
     "ticker": "HDFCBANK.NS",
     "category": "postal_ballot",
-    "summary": "Shareholder Meeting / Postal Ballot-Notice of Postal Ballot",
+    "summary": "Notice of postal ballot sent to shareholders",
     "priority": 20,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -415,9 +442,10 @@
     "news_id": "01894d11-473e-4d23-b680-8ff3a6ae8eb7",
     "ticker": "HDFCBANK.NS",
     "category": "investor_meetings",
-    "summary": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+    "summary": "Outcome of analyst and investor meeting",
     "priority": 15,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -432,7 +460,8 @@
     "category": "unclassified",
     "summary": "Disclosure Under Regulation 30 And Other Applicable Regulations Of The SEBI (Listing Obligations And Disclosure Requirem",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -445,9 +474,10 @@
     "news_id": "32a27243-b8f5-4b43-9d8d-920879f571f0",
     "ticker": "HDFCBANK.NS",
     "category": "investor_meetings",
-    "summary": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+    "summary": "Intimation of upcoming analyst or investor meeting",
     "priority": 15,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -460,9 +490,10 @@
     "news_id": "ae8b989d-e24d-45bf-8958-f610b3c0e66a",
     "ticker": "HDFCBANK.NS",
     "category": "results",
-    "summary": "Board Meeting Outcome for Approval Of Unaudited Standalone And Consolidated Financial Results Of The Bank For The Quarte",
+    "summary": "Board approves standalone and consolidated financial results",
     "priority": 90,
-    "priority_tier": "high"
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -477,7 +508,8 @@
     "category": "unclassified",
     "summary": "Compliances-Certificate under Reg. 74 (5) of SEBI (DP) Regulations, 2018",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -490,9 +522,10 @@
     "news_id": "a6201033-6636-4149-b8cb-1c70f2a99fcc",
     "ticker": "HDFCBANK.NS",
     "category": "investor_meetings",
-    "summary": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+    "summary": "Intimation of upcoming analyst or investor meeting",
     "priority": 15,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -507,7 +540,8 @@
     "category": "unclassified",
     "summary": "Announcement under Regulation 30 (LODR)-Newspaper Publication",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -520,9 +554,10 @@
     "news_id": "ea5bd89f-5734-42c4-bac2-c19023e96209",
     "ticker": "HDFCBANK.NS",
     "category": "postal_ballot",
-    "summary": "Shareholder Meeting / Postal Ballot-Notice of Postal Ballot",
+    "summary": "Notice of postal ballot issued to shareholders",
     "priority": 20,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -537,7 +572,8 @@
     "category": "unclassified",
     "summary": "Intimation Under SEBI (Listing Obligations And Disclosure Requirements) Regulations, 2015",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -549,10 +585,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/de1d0c27-5ad6-474d-b3b4-44084de360c0.pdf",
     "news_id": "ed229dd3-9d22-4c2c-8214-d65575b6be4d",
     "ticker": "INFY.NS",
-    "category": "unclassified",
-    "summary": "Infosys Announces Expansion Of Pocharam Development Center In Hyderabad",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "capex",
+    "summary": "Infosys expands Pocharam development center in Hyderabad",
+    "priority": 55,
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -567,7 +604,8 @@
     "category": "unclassified",
     "summary": "Announcement under Regulation 30 (LODR)-Newspaper Publication",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -579,10 +617,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/35b12a6d-e165-42d3-a0d1-cbe42fe2a99f.pdf",
     "news_id": "7a84603f-bc08-4550-8369-4a85e398b56d",
     "ticker": "INFY.NS",
-    "category": "unclassified",
-    "summary": "Winners Of Qorus-Infosys Finacle Banking Innovation Awards 2026 Announced",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "press_release",
+    "summary": "Winners of Qorus-Infosys Finacle Banking Innovation Awards announced",
+    "priority": 45,
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -595,9 +634,10 @@
     "news_id": "fa202b41-867d-401b-9509-7bb6338f0c2b",
     "ticker": "INFY.NS",
     "category": "earnings_call",
-    "summary": "Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+    "summary": "Transcript of earnings call published",
     "priority": 15,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -609,10 +649,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/e740e1c4-75bc-4392-808c-a3323d612194.pdf",
     "news_id": "78b62689-e2db-497a-a44a-207b3bfd64ed",
     "ticker": "INFY.NS",
-    "category": "unclassified",
-    "summary": "Canada'S UNI Financial Cooperation Advances Branch Modernization With Infosys Finacle Universal Banker",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "press_release",
+    "summary": "UNI Financial Cooperation advances branch modernization with Infosys Finacle",
+    "priority": 45,
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -624,10 +665,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/198a321f-ab50-4557-8e45-2905e7ff1a2b.pdf",
     "news_id": "1ee21456-900d-4569-95b2-6e286e6f3ef5",
     "ticker": "INFY.NS",
-    "category": "unclassified",
-    "summary": "Investor Conference",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "investor_meetings",
+    "summary": "Participation in investor conference announced",
+    "priority": 15,
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -639,10 +681,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/00c170b0-d771-4ac7-bda2-8424c8729de7.pdf",
     "news_id": "a95a8739-fabf-4609-95cc-a1dd59da22c4",
     "ticker": "INFY.NS",
-    "category": "unclassified",
-    "summary": "Infosys Successfully Delivers Syngenta'S Global SAP S/4HANA Transformation For Crop Protection Business",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "press_release",
+    "summary": "Infosys delivers global SAP S/4HANA transformation for Syngenta",
+    "priority": 45,
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -657,7 +700,8 @@
     "category": "unclassified",
     "summary": "Announcement under Regulation 30 (LODR)-Newspaper Publication",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -672,7 +716,8 @@
     "category": "unclassified",
     "summary": "Report Of Auditors On Financial Statements For The Quarter And Half Year Ended September 30, 2026 With UDIN",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -684,10 +729,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/0f7c4fa3-6c9a-497a-921a-e14c20919f86.pdf",
     "news_id": "af95ecc7-ad1a-42ce-a6ef-7c5a46f327e3",
     "ticker": "INFY.NS",
-    "category": "unclassified",
-    "summary": "Corporate Action-Board approves Dividend",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "dividend",
+    "summary": "Board approves dividend corporate action",
+    "priority": 38,
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -700,9 +746,10 @@
     "news_id": "50d31412-9909-4254-b5da-52df1d25080e",
     "ticker": "INFY.NS",
     "category": "results",
-    "summary": "Financial Results For The Quarter And Half Year Ended September 30, 2026 And Declaration Of Interim Dividend",
+    "summary": "Financial results and interim dividend declared for Q2 FY27",
     "priority": 90,
-    "priority_tier": "high"
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -715,9 +762,10 @@
     "news_id": "bbfbd1a4-e4d1-47d2-a70b-69956f4e84f9",
     "ticker": "INFY.NS",
     "category": "results",
-    "summary": "Board Meeting Outcome for Financial Results For The Quarter And Half Year Ended September 30, 2026 And Declaration Of In",
+    "summary": "Board meeting outcome for financial results and interim dividend",
     "priority": 90,
-    "priority_tier": "high"
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -729,10 +777,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/4a39bee0-4f0d-4b6e-9383-284a0ca26e0f.pdf",
     "news_id": "f1dae341-aa3e-4bf7-970c-fd9bedfff67c",
     "ticker": "INFY.NS",
-    "category": "unclassified",
-    "summary": "Infosys To Announce Second Quarter Results On October 23, 2026",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "results",
+    "summary": "Infosys schedules second quarter results announcement date",
+    "priority": 90,
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -744,10 +793,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/0fa9a84b-8686-4831-8cee-de8486f1c6c1.pdf",
     "news_id": "af966210-08cc-49da-b19e-b90e2e4b58f9",
     "ticker": "INFY.NS",
-    "category": "unclassified",
-    "summary": "Infosys And Truist Strengthen Strategic Collaboration To Build A Global Capability Center In India",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "press_release",
+    "summary": "Infosys and Truist strengthen strategic collaboration for GCC in India",
+    "priority": 45,
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -759,10 +809,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/0d9bcd05-697f-4fc7-aeba-36f6a000986b.pdf",
     "news_id": "e29f33dd-dd6e-4980-9f9a-d1de5bb6d3f8",
     "ticker": "INFY.NS",
-    "category": "unclassified",
-    "summary": "Infosys Foundation Enables Over 2.5 Lakh Job Offers Across India Through Infosys Springboard Livelihood Program",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "press_release",
+    "summary": "Infosys Foundation enables job offers through Springboard Livelihood Program.",
+    "priority": 45,
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -774,10 +825,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/8c46593f-8874-4274-a9e6-2f350d7d7da8.pdf",
     "news_id": "62eb160b-0dc9-4212-a998-a6a1d29c8f11",
     "ticker": "INFY.NS",
-    "category": "unclassified",
-    "summary": "Company Statement On The U.S. Permanent Labor Certification Program",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "press_release",
+    "summary": "Company issues statement on the U.S. Permanent Labor Certification Program.",
+    "priority": 45,
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -792,7 +844,8 @@
     "category": "unclassified",
     "summary": "Announcement under Regulation 30 (LODR)-Newspaper Publication",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -805,9 +858,10 @@
     "news_id": "c37d335d-6a92-418d-a7ec-d1b4092ae322",
     "ticker": "TCS.NS",
     "category": "press_release",
-    "summary": "Press Release - TCS Bancs For Treasury Marks Its Entry Into Sri Lanka With Indian Bank",
+    "summary": "TCS BaNCS for Treasury enters Sri Lanka with Indian Bank.",
     "priority": 45,
-    "priority_tier": "medium"
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -820,9 +874,10 @@
     "news_id": "fccd372b-db66-488d-a963-726b42f7324a",
     "ticker": "TCS.NS",
     "category": "investor_meetings",
-    "summary": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+    "summary": "Intimation of analyst or investor meeting under Regulation 30.",
     "priority": 15,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -835,9 +890,10 @@
     "news_id": "85a90a42-ccad-4d29-983b-6c2164f010e0",
     "ticker": "TCS.NS",
     "category": "M&A",
-    "summary": "Announcement under Regulation 30 (LODR)-Updates on Acquisition",
+    "summary": "Provides updates regarding an ongoing acquisition.",
     "priority": 85,
-    "priority_tier": "high"
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -850,9 +906,10 @@
     "news_id": "f478aa4a-86b6-4aca-a3c4-bfb9633a571a",
     "ticker": "TCS.NS",
     "category": "press_release",
-    "summary": "Press Release - TCS Launches Industrial Intelligence Foundry To Accelerate AI-Led Autonomy And Engineering",
+    "summary": "TCS launches Industrial Intelligence Foundry for AI-led autonomy.",
     "priority": 45,
-    "priority_tier": "medium"
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -865,9 +922,10 @@
     "news_id": "a461d052-8d3d-476e-a68c-1a93703d4a66",
     "ticker": "TCS.NS",
     "category": "earnings_call",
-    "summary": "Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+    "summary": "Earnings call transcript submitted under Regulation 30.",
     "priority": 15,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -880,9 +938,10 @@
     "news_id": "4dfb8847-0910-4133-85a8-02689a866868",
     "ticker": "TCS.NS",
     "category": "press_release",
-    "summary": "Press Release - Mystate Limited Selects TCS Bancs TM To Transform Core Banking Operations",
+    "summary": "MyState Limited selects TCS BaNCS to transform core banking operations.",
     "priority": 45,
-    "priority_tier": "medium"
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -897,7 +956,8 @@
     "category": "unclassified",
     "summary": "Announcement under Regulation 30 (LODR)-Newspaper Publication",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -912,7 +972,8 @@
     "category": "unclassified",
     "summary": "Announcement under Regulation 30 (LODR)-Newspaper Publication",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -927,7 +988,8 @@
     "category": "unclassified",
     "summary": "Announcement under Regulation 30 (LODR)-Newspaper Publication",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -939,10 +1001,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/7957e48e-7854-4625-94c5-d2a85d1cc6c3.pdf",
     "news_id": "4199978a-9aa6-455c-91e9-f42e5fa8c9b5",
     "ticker": "TCS.NS",
-    "category": "unclassified",
-    "summary": "Statement Of The Company Regarding The Announcement By The US Government On The Permanent Labor Certification Program",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "press_release",
+    "summary": "Company statement regarding US government Permanent Labor Certification announcement.",
+    "priority": 45,
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -955,9 +1018,10 @@
     "news_id": "75f3fd1a-da6b-46c0-8417-27c98fc7325e",
     "ticker": "TCS.NS",
     "category": "earnings_call",
-    "summary": "Audio Recording Of Earnings Conference  Call  For  The Quarter  And  Six-Month  Period Ended September 30, 2026",
+    "summary": "Audio recording of earnings conference call for Q2 FY27 submitted.",
     "priority": 15,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -969,10 +1033,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/102737a9-ec93-46d0-9938-0010483fa70c.pdf",
     "news_id": "716097f6-5403-4b5d-b43e-2bb65eca15b1",
     "ticker": "TCS.NS",
-    "category": "unclassified",
-    "summary": "Announcement under Regulation 30 (LODR)-Date of payment of Dividend",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "dividend",
+    "summary": "Intimation of dividend payment date.",
+    "priority": 38,
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -984,10 +1049,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/a56421f2-14fb-4122-b747-ed7ac3072d7d.pdf",
     "news_id": "fb99b35b-67f2-496c-8d21-d1fcea8ab5e2",
     "ticker": "TCS.NS",
-    "category": "unclassified",
-    "summary": "Corporate Action-Board approves Dividend",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "dividend",
+    "summary": "Board approves dividend corporate action.",
+    "priority": 38,
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -1000,9 +1066,10 @@
     "news_id": "61876d65-47c3-4388-9177-82f24276b8c3",
     "ticker": "TCS.NS",
     "category": "press_release",
-    "summary": "Announcement under Regulation 30 (LODR)-Press Release / Media Release",
+    "summary": "General press or media release issued under Regulation 30.",
     "priority": 45,
-    "priority_tier": "medium"
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -1015,9 +1082,10 @@
     "news_id": "966b7e15-3cad-43bb-b36a-028ed1b58f26",
     "ticker": "TCS.NS",
     "category": "results",
-    "summary": "Financial Results For The Quarter And Six-Month Period Ended September 30, 2026 And Declaration Of Second Interim Divide",
+    "summary": "Financial results for quarter ended September 30, 2026 and interim dividend declaration.",
     "priority": 90,
-    "priority_tier": "high"
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -1030,9 +1098,10 @@
     "news_id": "47fe4353-fc19-48df-8f32-133520ed3cd2",
     "ticker": "TCS.NS",
     "category": "results",
-    "summary": "Board Meeting Outcome for Financial Results For The Quarter And Six-Month Period Ended September 30, 2026 And Declaratio",
+    "summary": "Board meeting outcome for financial results and interim dividend declaration.",
     "priority": 90,
-    "priority_tier": "high"
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -1047,7 +1116,8 @@
     "category": "unclassified",
     "summary": "Disclosure Under Regulation 30 Of The SEBI (Listing Obligations                             And Disclosure Requirements)",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -1062,7 +1132,8 @@
     "category": "unclassified",
     "summary": "Announcement under Regulation 30 (LODR)-Allotment of ESOP / ESPS",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -1077,7 +1148,8 @@
     "category": "unclassified",
     "summary": "Announcement under Regulation 30 (LODR)-Allotment of ESOP / ESPS",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -1089,10 +1161,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/94d9e62f-952d-4046-8379-bbdd1761f3ab.pdf",
     "news_id": "090d44c9-ed1b-4374-b984-fed3831e72ad",
     "ticker": "ICICIBANK.NS",
-    "category": "unclassified",
-    "summary": "Announcement under Regulation 30 (LODR)-Credit Rating",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "credit_rating",
+    "summary": "Credit rating intimation announced under Regulation 30.",
+    "priority": 60,
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -1105,9 +1178,10 @@
     "news_id": "217ee68f-868b-4216-9304-675440632ce7",
     "ticker": "ICICIBANK.NS",
     "category": "earnings_call",
-    "summary": "Transcripts Of The Call With Media And Of Earnings Call With\r\nAnalysts And Investors\r\n",
+    "summary": "Transcripts of media and analyst earnings calls submitted.",
     "priority": 15,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -1122,7 +1196,8 @@
     "category": "unclassified",
     "summary": "Announcement under Regulation 30 (LODR)-Allotment of ESOP / ESPS",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -1135,9 +1210,10 @@
     "news_id": "28f9e367-22e9-456e-8377-3fdf1d4226f0",
     "ticker": "ICICIBANK.NS",
     "category": "investor_meetings",
-    "summary": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+    "summary": "Analyst and investor meeting outcome announced",
     "priority": 15,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -1149,10 +1225,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/b831cebf-9ddc-48a6-861f-1879e07a86fc.pdf",
     "news_id": "c04ba836-7b62-471c-9914-e0cd15be7e37",
     "ticker": "ICICIBANK.NS",
-    "category": "unclassified",
-    "summary": "Announcement under Regulation 30 (LODR)-Investor Presentation",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "results",
+    "summary": "Investor presentation filed under Regulation 30",
+    "priority": 90,
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -1167,7 +1244,8 @@
     "category": "unclassified",
     "summary": "Board Meeting Outcome for Outcome Of Board Meeting Held On October 17, 2026",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -1180,9 +1258,10 @@
     "news_id": "2871e7ba-96fe-41f0-bc84-79215ff8893e",
     "ticker": "ICICIBANK.NS",
     "category": "results",
-    "summary": "Unaudited Financial Results (Standalone And Consolidated) For The Quarter And Six Months Ended September 30, 2026",
+    "summary": "Standalone and consolidated unaudited results for Q2 FY27",
     "priority": 90,
-    "priority_tier": "high"
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -1197,7 +1276,8 @@
     "category": "unclassified",
     "summary": "Announcement under Regulation 30 (LODR)-Allotment of ESOP / ESPS",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -1212,7 +1292,8 @@
     "category": "unclassified",
     "summary": "Announcement under Regulation 30 (LODR)-Allotment of ESOP / ESPS",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -1224,10 +1305,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/771bee58-f784-482f-b1bd-e19e499d866f.pdf",
     "news_id": "294e4bd4-5d5b-4bd7-8a05-e9beb4d4c4f3",
     "ticker": "ICICIBANK.NS",
-    "category": "results",
-    "summary": "Call With Media On Financial Results For The Quarter And Six Months Ended September 30, 2026",
-    "priority": 90,
-    "priority_tier": "high"
+    "category": "earnings_call",
+    "summary": "Media call scheduled for financial results",
+    "priority": 15,
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -1240,9 +1322,10 @@
     "news_id": "0312d927-b933-4d9b-800d-bd849a113225",
     "ticker": "ICICIBANK.NS",
     "category": "investor_meetings",
-    "summary": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+    "summary": "Intimation of analyst and investor meeting",
     "priority": 15,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -1257,7 +1340,8 @@
     "category": "unclassified",
     "summary": "Announcement under Regulation 30 (LODR)-Allotment of ESOP / ESPS",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -1272,7 +1356,8 @@
     "category": "unclassified",
     "summary": "Compliances-Certificate under Reg. 74 (5) of SEBI (DP) Regulations, 2018",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -1287,7 +1372,8 @@
     "category": "unclassified",
     "summary": "Announcement under Regulation 30 (LODR)-Allotment of ESOP / ESPS",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -1299,10 +1385,11 @@
     "attachment_url": null,
     "news_id": "b7973cf1-9ab6-46f6-8975-89195ed32106",
     "ticker": "SUNPHARMA.NS",
-    "category": "unclassified",
-    "summary": "Clarification Sought From Sun Pharmaceutical Industries Ltd",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "press_release",
+    "summary": "Clarification sought from company on news or events",
+    "priority": 45,
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -1315,9 +1402,10 @@
     "news_id": "924bbea8-ad95-4772-af15-b51226af9464",
     "ticker": "SUNPHARMA.NS",
     "category": "postal_ballot",
-    "summary": "Completion And Results Of Postal Ballot Dated 01 October 2026",
+    "summary": "Postal ballot completion and results announced",
     "priority": 20,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -1332,7 +1420,8 @@
     "category": "unclassified",
     "summary": "Announcement under Regulation 30 (LODR)-Newspaper Publication",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -1345,9 +1434,10 @@
     "news_id": "bb9f8015-ef30-4520-b0de-2c31fcb077da",
     "ticker": "SUNPHARMA.NS",
     "category": "earnings_call",
-    "summary": "Q2FY27 -Investor Call Audio Recording",
+    "summary": "Audio recording of Q2 FY27 investor earnings call submitted",
     "priority": 15,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -1362,7 +1452,8 @@
     "category": "unclassified",
     "summary": "Appointment Of Statutory Auditors Pursuant To Mandatory Auditor Rotation",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -1375,9 +1466,10 @@
     "news_id": "7bbcaf67-e404-4ffb-b7fd-07ff385fdb0a",
     "ticker": "SUNPHARMA.NS",
     "category": "results",
-    "summary": "Unaudited Financial Results For The Quarter And Half Year Ended 30 September 2026",
+    "summary": "Unaudited financial results for the quarter and half year",
     "priority": 90,
-    "priority_tier": "high"
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -1390,9 +1482,10 @@
     "news_id": "a56e304a-a629-417a-8882-023924df0b88",
     "ticker": "SUNPHARMA.NS",
     "category": "press_release",
-    "summary": "Announcement under Regulation 30 (LODR)-Press Release / Media Release",
+    "summary": "Press release issued regarding corporate developments",
     "priority": 45,
-    "priority_tier": "medium"
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -1407,7 +1500,8 @@
     "category": "unclassified",
     "summary": "Announcement under Regulation 30 (LODR)-Allotment",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -1420,9 +1514,10 @@
     "news_id": "ce77353e-4987-4ce8-b231-170f5e9944c4",
     "ticker": "SUNPHARMA.NS",
     "category": "press_release",
-    "summary": "Announcement under Regulation 30 (LODR)-Press Release / Media Release",
+    "summary": "Press release issued regarding corporate developments",
     "priority": 45,
-    "priority_tier": "medium"
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -1435,9 +1530,10 @@
     "news_id": "92bfa9a7-469a-4360-af1e-71de13927b80",
     "ticker": "SUNPHARMA.NS",
     "category": "press_release",
-    "summary": "Announcement under Regulation 30 (LODR)-Press Release / Media Release",
+    "summary": "Press release issued regarding corporate developments",
     "priority": 45,
-    "priority_tier": "medium"
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -1450,9 +1546,10 @@
     "news_id": "9f479947-019f-43b7-b145-e75f77043e24",
     "ticker": "SUNPHARMA.NS",
     "category": "investor_meetings",
-    "summary": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+    "summary": "Intimation of upcoming analyst and investor meeting",
     "priority": 15,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -1465,9 +1562,10 @@
     "news_id": "08bfa0c6-24d4-4aa6-bc37-4271923dc3cc",
     "ticker": "SUNPHARMA.NS",
     "category": "results",
-    "summary": "Board Meeting Intimation for Consideration And Approval The Unaudited Financial Results For The Quarter And Half Year En",
+    "summary": "Board meeting intimation to consider quarterly financial results",
     "priority": 90,
-    "priority_tier": "high"
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -1482,7 +1580,8 @@
     "category": "unclassified",
     "summary": "Compliances-Certificate under Reg. 74 (5) of SEBI (DP) Regulations, 2018",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -1494,10 +1593,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/1d806877-d790-4c37-9a4a-73b3ed0f8cff.pdf",
     "news_id": "f039d44f-8dbf-42dd-bf8b-d2a9e290ecb6",
     "ticker": "SUNPHARMA.NS",
-    "category": "unclassified",
-    "summary": "Announcement under Regulation 30 (LODR)-Credit Rating",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "credit_rating",
+    "summary": "Credit rating action intimated by the company",
+    "priority": 60,
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -1510,9 +1610,10 @@
     "news_id": "e3e14132-9769-42f3-8c08-0ee46f64140a",
     "ticker": "SUNPHARMA.NS",
     "category": "management_change",
-    "summary": "Announcement under Regulation 30 (LODR)-Resignation of Director",
+    "summary": "Director resigns from the board",
     "priority": 80,
-    "priority_tier": "high"
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -1527,7 +1628,8 @@
     "category": "unclassified",
     "summary": "Board Meeting Outcome for Outcome Of The Board Meeting Held On 12 October 2026",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -1540,9 +1642,10 @@
     "news_id": "4f54fc97-9a9e-4d4e-b3ac-273e35db7aea",
     "ticker": "SUNPHARMA.NS",
     "category": "fund_raise",
-    "summary": "Board Meeting Intimation for Consideration And Approval Of The Issuance Of Listed, Rated, Unsecured, Redeemable, Non-Con",
+    "summary": "Board to consider issuance of non-convertible debentures",
     "priority": 70,
-    "priority_tier": "high"
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -1555,9 +1658,10 @@
     "news_id": "d1f8e649-ab86-4e59-8c13-4d65a8072d23",
     "ticker": "SUNPHARMA.NS",
     "category": "press_release",
-    "summary": "Announcement under Regulation 30 (LODR)-Press Release / Media Release",
+    "summary": "Press release issued regarding corporate updates",
     "priority": 45,
-    "priority_tier": "medium"
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -1572,7 +1676,8 @@
     "category": "unclassified",
     "summary": "Announcement under Regulation 30 (LODR)-Newspaper Publication",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -1584,10 +1689,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/5634f899-a008-45ab-b930-2b74cf08e566.pdf",
     "news_id": "29b51816-e553-4185-9a5c-72064ea8f7af",
     "ticker": "TRENT.NS",
-    "category": "unclassified",
-    "summary": "Announcement under Regulation 30 (LODR)-Investor Presentation",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "results",
+    "summary": "Investor presentation released",
+    "priority": 90,
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -1599,10 +1705,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/6d04e12f-221f-4d62-925d-0792202a19e7.pdf",
     "news_id": "ffa8ae18-f840-4cf4-965a-616cd00c62ee",
     "ticker": "TRENT.NS",
-    "category": "unclassified",
-    "summary": "Announcement under Regulation 30 (LODR)-Retirement",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "management_change",
+    "summary": "Director retires from the company",
+    "priority": 80,
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -1615,9 +1722,10 @@
     "news_id": "37dd4c42-b030-4d7b-9513-bf3026388a2d",
     "ticker": "TRENT.NS",
     "category": "management_change",
-    "summary": "Announcement under Regulation 30 (LODR)-Change in Directorate",
+    "summary": "Change in directorate announced",
     "priority": 80,
-    "priority_tier": "high"
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -1630,9 +1738,10 @@
     "news_id": "e12a0431-78d7-4f7d-85dc-2be70cc0647d",
     "ticker": "TRENT.NS",
     "category": "press_release",
-    "summary": "Announcement under Regulation 30 (LODR)-Press Release / Media Release",
+    "summary": "Press release issued regarding business updates",
     "priority": 45,
-    "priority_tier": "medium"
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -1644,10 +1753,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/b962e91a-b409-4f5f-a22f-3275c992153a.pdf",
     "news_id": "d53eaf45-b3a2-4b76-95c4-35d69f117a62",
     "ticker": "TRENT.NS",
-    "category": "unclassified",
-    "summary": "Board Meeting Outcome for Outcome Of Board Meeting Held Today I.E. 29Th October 2026",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "results",
+    "summary": "Board meeting outcome for financial results",
+    "priority": 90,
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -1660,9 +1770,10 @@
     "news_id": "34e227a1-ebd2-4b77-98fb-cb8e66c7450e",
     "ticker": "TRENT.NS",
     "category": "results",
-    "summary": "Outcome Of Board Meeting Held Today I.E. 29Th October 2026",
+    "summary": "Financial results approved by the board",
     "priority": 90,
-    "priority_tier": "high"
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -1674,10 +1785,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/cf9c8eec-654a-4016-acf5-b7160985dc78.pdf",
     "news_id": "d3016b7e-4efb-458a-95ee-01a85d813dc5",
     "ticker": "TRENT.NS",
-    "category": "unclassified",
-    "summary": "Announcement under Regulation 30 (LODR)-Diversification / Disinvestment",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "M&A",
+    "summary": "Diversification or disinvestment announced",
+    "priority": 85,
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -1692,7 +1804,8 @@
     "category": "unclassified",
     "summary": "Reminder Letter For Transfer Of Equity Shares To The Investor Education And Protection Fund ('IEPF')",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -1707,7 +1820,8 @@
     "category": "unclassified",
     "summary": "Announcement under Regulation 30 (LODR)-Newspaper Publication",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -1720,9 +1834,10 @@
     "news_id": "39411793-001f-4adf-82c6-2fa5985df914",
     "ticker": "TRENT.NS",
     "category": "management_change",
-    "summary": "Announcement under Regulation 30 (LODR)-Resignation of Director",
+    "summary": "Director resigns from the company",
     "priority": 80,
-    "priority_tier": "high"
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -1737,7 +1852,8 @@
     "category": "unclassified",
     "summary": "Board Meeting Intimation for Notice Of Board Meeting",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -1750,9 +1866,10 @@
     "news_id": "c5c9570c-5471-4280-a1d5-2be2cf45579d",
     "ticker": "TRENT.NS",
     "category": "press_release",
-    "summary": "Announcement under Regulation 30 (LODR)-Press Release / Media Release",
+    "summary": "Press release issued on company developments",
     "priority": 45,
-    "priority_tier": "medium"
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -1767,7 +1884,8 @@
     "category": "unclassified",
     "summary": "Compliances-Certificate under Reg. 74 (5) of SEBI (DP) Regulations, 2018",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -1780,9 +1898,10 @@
     "news_id": "0df598a9-08f7-48f3-b53d-f69d332706e2",
     "ticker": "POLYCAB.NS",
     "category": "litigation",
-    "summary": "Corporate Insolvency Resolution Process (CIRP)-Updates - Corporate Insolvency Resolution Process  (CIRP)",
+    "summary": "Corporate Insolvency Resolution Process update",
     "priority": 75,
-    "priority_tier": "high"
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -1794,10 +1913,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/26cdd582-7e95-4019-88b5-fdff3d5e60e1.pdf",
     "news_id": "8285e7a1-d78d-46ff-ab46-fae476882893",
     "ticker": "POLYCAB.NS",
-    "category": "unclassified",
-    "summary": "Announcement Under Regulation 30 (LODR) - Analyst(S) / Investor(S) Meet - Intimation",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "investor_meetings",
+    "summary": "Intimation of analyst or investor meeting",
+    "priority": 15,
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -1810,9 +1930,10 @@
     "news_id": "ec5b190e-b037-4cb0-91a8-d037cfad8574",
     "ticker": "POLYCAB.NS",
     "category": "litigation",
-    "summary": "Corporate Insolvency Resolution Process (CIRP)-Updates - Corporate Insolvency Resolution Process  (CIRP)",
+    "summary": "Corporate Insolvency Resolution Process status update",
     "priority": 75,
-    "priority_tier": "high"
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -1824,10 +1945,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/cafe2036-e51b-413a-80cd-65e331d170be.pdf",
     "news_id": "757969fc-1b60-4ab9-884f-258a81e89ee9",
     "ticker": "POLYCAB.NS",
-    "category": "unclassified",
-    "summary": "Announcement Under Regulation 30 (LODR) - Analyst(S) / Investor(S) Meet - Intimation",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "investor_meetings",
+    "summary": "Intimation of analyst or investor meeting",
+    "priority": 15,
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -1839,10 +1961,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/a9743040-8809-46d3-85ca-c6ca01bc322a.pdf",
     "news_id": "f9560b59-3651-4e92-8b18-6f23905f96d5",
     "ticker": "POLYCAB.NS",
-    "category": "unclassified",
-    "summary": "Announcement Under Regulation 30 (LODR) - Analyst(S) / Investor(S) Meet - Intimation",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "investor_meetings",
+    "summary": "Intimation of analyst or investor meeting",
+    "priority": 15,
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -1855,9 +1978,10 @@
     "news_id": "dbd52dde-0b59-4e47-aa89-6072c98e60eb",
     "ticker": "POLYCAB.NS",
     "category": "earnings_call",
-    "summary": "Announcement Under Regulation 30 (LODR) - Earnings Call Transcript",
+    "summary": "Earnings call transcript submitted",
     "priority": 15,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -1869,10 +1993,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/9cf5ed4b-10af-4d0f-aa1f-75f22f8e5a75.pdf",
     "news_id": "b1d235b4-bfac-4428-bf69-8ba1246d83ae",
     "ticker": "POLYCAB.NS",
-    "category": "unclassified",
-    "summary": "Announcement Under Regulation 30 (LODR) - Analyst(S) / Investor(S) Meet - Intimation",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "investor_meetings",
+    "summary": "Intimation of analyst or investor meeting",
+    "priority": 15,
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -1885,9 +2010,10 @@
     "news_id": "4f686399-b641-4495-a5dd-e5124e088cf0",
     "ticker": "POLYCAB.NS",
     "category": "litigation",
-    "summary": "Corporate Insolvency Resolution Process (CIRP)-Updates - Corporate Insolvency Resolution Process  (CIRP)",
+    "summary": "Provides updates on the corporate insolvency resolution process",
     "priority": 75,
-    "priority_tier": "high"
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -1900,9 +2026,10 @@
     "news_id": "0e8598ab-7df7-4804-bb66-037c9b719541",
     "ticker": "POLYCAB.NS",
     "category": "earnings_call",
-    "summary": "Audio Recording Of Earnings Conference Call Q2 FY 26-27",
+    "summary": "Submits audio recording of Q2 FY27 earnings conference call",
     "priority": 15,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -1914,10 +2041,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/d809fc71-20ab-4486-999a-953e40641efd.pdf",
     "news_id": "e015caf8-728c-49ad-86d6-5008e2714ee0",
     "ticker": "POLYCAB.NS",
-    "category": "unclassified",
-    "summary": "Unaudited Interim Condensed (Standalone And Consolidated) Financial Statements For The Quarter And Half Year Ended Septe",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "results",
+    "summary": "Submits financial statements for the quarter ended September 30, 2026",
+    "priority": 90,
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -1929,10 +2057,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/a940f987-41db-4848-8f35-4b6c8a8f5b47.pdf",
     "news_id": "71e9eb0f-581f-462a-b7e6-8b3c2f5556e7",
     "ticker": "POLYCAB.NS",
-    "category": "unclassified",
-    "summary": "Earnings Presentation",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "results",
+    "summary": "Submits earnings presentation for quarterly financial performance",
+    "priority": 90,
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -1945,9 +2074,10 @@
     "news_id": "86eb8d0a-7bb5-424c-9bd3-dd66a20ac450",
     "ticker": "POLYCAB.NS",
     "category": "press_release",
-    "summary": "Announcement under Regulation 30 (LODR)-Press Release / Media Release",
+    "summary": "Submits press or media release under Regulation 30",
     "priority": 45,
-    "priority_tier": "medium"
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -1960,9 +2090,10 @@
     "news_id": "880e99bc-b13a-435b-901c-3b2bee137437",
     "ticker": "POLYCAB.NS",
     "category": "results",
-    "summary": "Unaudited Financial Results For The Quarter And Half Year Ended 30Th September 2026",
+    "summary": "Declares unaudited financial results for the quarter and half year",
     "priority": 90,
-    "priority_tier": "high"
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -1977,7 +2108,8 @@
     "category": "unclassified",
     "summary": "Board Meeting Outcome for Outcome Of Board Meeting",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -1990,9 +2122,10 @@
     "news_id": "61157978-171e-4045-9c2b-e6f7b96d5287",
     "ticker": "POLYCAB.NS",
     "category": "litigation",
-    "summary": "Corporate Insolvency Resolution Process (CIRP)-Updates - Corporate Insolvency Resolution Process  (CIRP)",
+    "summary": "Provides further updates on the corporate insolvency resolution process",
     "priority": 75,
-    "priority_tier": "high"
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -2005,9 +2138,10 @@
     "news_id": "bf615b3e-1055-4e59-9faf-f018c41bb19e",
     "ticker": "POLYCAB.NS",
     "category": "press_release",
-    "summary": "Announcement under Regulation 30 (LODR)-Press Release / Media Release",
+    "summary": "Submits press release regarding company updates",
     "priority": 45,
-    "priority_tier": "medium"
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -2020,9 +2154,10 @@
     "news_id": "38a4bda9-38e0-4b9b-96c2-e2c17e575ca9",
     "ticker": "POLYCAB.NS",
     "category": "investor_meetings",
-    "summary": "Announcement Under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+    "summary": "Intimates upcoming analyst or investor meeting",
     "priority": 15,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -2035,9 +2170,10 @@
     "news_id": "15cd40f6-d8a5-4582-8a5f-ff42d1a81889",
     "ticker": "POLYCAB.NS",
     "category": "litigation",
-    "summary": "Corporate Insolvency Resolution Process (CIRP)-Updates - Corporate Insolvency Resolution Process  (CIRP)",
+    "summary": "Provides updates on ongoing CIRP proceedings",
     "priority": 75,
-    "priority_tier": "high"
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -2050,9 +2186,10 @@
     "news_id": "58a1c574-ce5f-4633-8d75-19f63327b2ce",
     "ticker": "POLYCAB.NS",
     "category": "litigation",
-    "summary": "Corporate Insolvency Resolution Process (CIRP)-Updates - Corporate Insolvency Resolution Process  (CIRP)",
+    "summary": "Provides status update on corporate insolvency resolution process",
     "priority": 75,
-    "priority_tier": "high"
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -2065,9 +2202,10 @@
     "news_id": "534122fd-c948-40cc-8f4a-c278b06c064e",
     "ticker": "POLYCAB.NS",
     "category": "litigation",
-    "summary": "Corporate Insolvency Resolution Process (CIRP)-Updates - Corporate Insolvency Resolution Process  (CIRP)",
+    "summary": "Submits update on corporate insolvency resolution process",
     "priority": 75,
-    "priority_tier": "high"
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -2082,7 +2220,8 @@
     "category": "unclassified",
     "summary": "Disclosure Under Regulation 30 Of SEBI (LODR) Regulations, 2015",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -2097,7 +2236,8 @@
     "category": "unclassified",
     "summary": "Announcement Under Regulation 30 (LODR)-Allotment Of ESOP / ESPS",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -2110,9 +2250,10 @@
     "news_id": "f9a8d62d-22da-49b6-aa15-0cda83b3c904",
     "ticker": "POLYCAB.NS",
     "category": "results",
-    "summary": "Board Meeting Intimation for Unaudited Quarterly Results For Q2 FY 2026-27",
+    "summary": "Intimates board meeting for considering quarterly results",
     "priority": 90,
-    "priority_tier": "high"
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -2127,7 +2268,8 @@
     "category": "unclassified",
     "summary": "Announcement under Regulation 30 (LODR)-Newspaper Publication",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -2140,9 +2282,10 @@
     "news_id": "491a2b6d-04d1-46b9-a9d6-cbb68f0d0120",
     "ticker": "DIXON.NS",
     "category": "investor_meetings",
-    "summary": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+    "summary": "Submits outcome of analyst or investor meet",
     "priority": 15,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -2155,9 +2298,10 @@
     "news_id": "096f1e5a-3667-42a5-b4e2-ba8272ee52fc",
     "ticker": "DIXON.NS",
     "category": "results",
-    "summary": "Results For The Quarter And Half Year Ended 30Th September, 2026",
+    "summary": "Reports results for the quarter and half year ended September 2026",
     "priority": 90,
-    "priority_tier": "high"
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -2169,10 +2313,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/53529778-f611-4f21-b789-0bc1bf52e7e5.pdf",
     "news_id": "573832b2-d25c-4a3e-a3b4-46c15e9b0178",
     "ticker": "DIXON.NS",
-    "category": "unclassified",
-    "summary": "Announcement under Regulation 30 (LODR)-Change in Management",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "management_change",
+    "summary": "Announces change in senior management",
+    "priority": 80,
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -2187,7 +2332,8 @@
     "category": "unclassified",
     "summary": "Board Meeting Outcome for Outcome Of Board Meeting Held On 30Th October, 2026",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -2200,9 +2346,10 @@
     "news_id": "618d8e5c-8cf3-417f-b2e0-e5bf9310235c",
     "ticker": "DIXON.NS",
     "category": "investor_meetings",
-    "summary": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+    "summary": "Intimates schedule of analyst or investor meetings",
     "priority": 15,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -2215,9 +2362,10 @@
     "news_id": "7b023dbb-c6c3-4850-a772-82e5a94a13e4",
     "ticker": "DIXON.NS",
     "category": "results",
-    "summary": "Board Meeting Intimation for Inter-Alia, Consideration And Approval Of Un-Audited Financial Results (Standalone & Consol",
+    "summary": "Intimates board meeting to consider financial results",
     "priority": 90,
-    "priority_tier": "high"
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -2232,7 +2380,8 @@
     "category": "unclassified",
     "summary": "Announcement Under Regulation 30 Of SEBI LODR- Giving Of Guarantees Or Indemnity Or Becoming A Surety For Any Third Part",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -2247,7 +2396,8 @@
     "category": "credit_rating",
     "summary": "Announcement Under Regulation 30 Of SEBI LODR- ESG Rating By Crisil ESG Ratings & Analytics Ltd",
     "priority": 60,
-    "priority_tier": "medium"
+    "priority_tier": "medium",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -2260,9 +2410,10 @@
     "news_id": "b192af02-c07c-4b05-90ca-53f7e7134f94",
     "ticker": "DIXON.NS",
     "category": "investor_meetings",
-    "summary": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+    "summary": "Analyst or investor meet outcome submitted under Regulation 30",
     "priority": 15,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -2277,7 +2428,8 @@
     "category": "unclassified",
     "summary": "Compliances-Certificate under Reg. 74 (5) of SEBI (DP) Regulations, 2018",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -2289,10 +2441,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/287f464c-c823-4fe5-b997-c493ec819216.pdf",
     "news_id": "2899f2e8-f4f5-47bd-acea-b95340f55986",
     "ticker": "DIXON.NS",
-    "category": "unclassified",
-    "summary": "Announcement under Regulation 30 (LODR)-Memorandum of Understanding /Agreements",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "press_release",
+    "summary": "Memorandum of Understanding or agreement announcement under Regulation 30",
+    "priority": 45,
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -2307,7 +2460,8 @@
     "category": "unclassified",
     "summary": "Board Meeting Intimation for Prior Intimation About The Board Meeting",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -2319,10 +2473,11 @@
     "attachment_url": null,
     "news_id": "452825dc-e3ed-47d4-95ff-ba33c1495dc2",
     "ticker": "HBLPOWER.NS",
-    "category": "unclassified",
-    "summary": "Clarification sought from HBL Engineering Ltd",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "press_release",
+    "summary": "Clarification sought from the company by the exchange",
+    "priority": 45,
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -2334,10 +2489,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/eebf0a45-a456-47dc-8307-15faa6a3422c.pdf",
     "news_id": "4ddd7006-177b-4ffe-91eb-90ef99448478",
     "ticker": "HBLPOWER.NS",
-    "category": "unclassified",
-    "summary": "Announcement under Regulation 30 (LODR)-Credit Rating",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "credit_rating",
+    "summary": "Credit rating update announced under Regulation 30",
+    "priority": 60,
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -2350,9 +2506,10 @@
     "news_id": "338f3006-54ba-4f1b-aa67-af29806009e8",
     "ticker": "HBLPOWER.NS",
     "category": "agm_egm",
-    "summary": "Video Recording Of The Annual General Meeting",
+    "summary": "Video recording of the Annual General Meeting submitted",
     "priority": 20,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -2365,9 +2522,10 @@
     "news_id": "f577bbde-0fa3-44c1-aa11-8fcc648b9620",
     "ticker": "KALYANKJIL.NS",
     "category": "investor_meetings",
-    "summary": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+    "summary": "Intimation of upcoming analyst or investor meeting",
     "priority": 15,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -2380,9 +2538,10 @@
     "news_id": "e64e678d-93ae-4f6b-8ef2-766fe4cfc271",
     "ticker": "KALYANKJIL.NS",
     "category": "investor_meetings",
-    "summary": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+    "summary": "Intimation of upcoming analyst or investor meeting",
     "priority": 15,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -2394,10 +2553,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/caa391dd-6df4-43b6-9643-aa15caa84018.pdf",
     "news_id": "a38e4bb2-c3b6-44a2-b54b-660dd72fd8f3",
     "ticker": "KALYANKJIL.NS",
-    "category": "unclassified",
-    "summary": "Board Meeting Intimation for The Quarter And Half Year Ended September 30, 2026",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "results",
+    "summary": "Board meeting intimation for financial results for quarter ended September 2026",
+    "priority": 90,
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -2412,7 +2572,8 @@
     "category": "unclassified",
     "summary": "Compliances-Certificate under Reg. 74 (5) of SEBI (DP) Regulations, 2018",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -2424,10 +2585,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/43b1b5d9-c275-4673-87fd-9ad6955815e9.pdf",
     "news_id": "26c86396-4aa8-4cb8-9919-2719a5996557",
     "ticker": "KALYANKJIL.NS",
-    "category": "unclassified",
-    "summary": "Quarterly Update - Q2 FY 2026-27",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "press_release",
+    "summary": "Quarterly business update and performance overview",
+    "priority": 45,
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -2440,9 +2602,10 @@
     "news_id": "adb6f02c-f2c4-4a1e-ae48-74a27dc60ad0",
     "ticker": "CAMS.NS",
     "category": "investor_meetings",
-    "summary": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+    "summary": "Analyst or investor meet outcome submitted under Regulation 30",
     "priority": 15,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -2457,7 +2620,8 @@
     "category": "unclassified",
     "summary": "Announcement under Regulation 30 (LODR)-Newspaper Publication",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -2469,10 +2633,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/ae29c181-f576-49a7-ada1-5e1da3832ae0.pdf",
     "news_id": "93448591-0524-4626-8f4f-7f1ca2799b6a",
     "ticker": "CAMS.NS",
-    "category": "unclassified",
-    "summary": "Announcement under Regulation 30 (LODR)-Investor Presentation",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "results",
+    "summary": "Investor presentation on financial results submitted",
+    "priority": 90,
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -2485,9 +2650,10 @@
     "news_id": "4481d995-982c-48c7-b541-f3c1d28c2bae",
     "ticker": "CAMS.NS",
     "category": "press_release",
-    "summary": "Announcement under Regulation 30 (LODR)-Press Release / Media Release",
+    "summary": "Press or media release announced under Regulation 30",
     "priority": 45,
-    "priority_tier": "medium"
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -2500,9 +2666,10 @@
     "news_id": "87f5310a-038e-497e-9e21-3499c6ad3a6f",
     "ticker": "CAMS.NS",
     "category": "dividend",
-    "summary": "Corporate Action - Fixes Record Date For Interim Dividend",
+    "summary": "Record date fixed for interim dividend",
     "priority": 38,
-    "priority_tier": "medium"
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -2514,10 +2681,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/dd742cda-e9d2-4c75-ab8d-3266fa9c13a1.pdf",
     "news_id": "8a082813-c237-4e8e-b6c7-ad721e483c27",
     "ticker": "CAMS.NS",
-    "category": "unclassified",
-    "summary": "Corporate Action-Board approves Dividend",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "dividend",
+    "summary": "Board approves dividend for shareholders",
+    "priority": 38,
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -2530,9 +2698,10 @@
     "news_id": "122ce105-97bb-4c31-8eb0-608b244105ea",
     "ticker": "CAMS.NS",
     "category": "results",
-    "summary": "Unaudited Financial Results For The Quarter And Half Year Ended September 30, 2026",
+    "summary": "Unaudited financial results for the quarter and half year ended September 30, 2026",
     "priority": 90,
-    "priority_tier": "high"
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -2544,10 +2713,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/754fb311-bcd6-4789-9cad-9e98d7cf62cf.pdf",
     "news_id": "ad66a47d-cb77-4488-b0d6-947a82ffd724",
     "ticker": "CAMS.NS",
-    "category": "unclassified",
-    "summary": "Board Meeting Outcome for Outcome Of Board Meeting Held On 29Th October 2026",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "results",
+    "summary": "Board meeting outcome regarding financial results",
+    "priority": 90,
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -2562,7 +2732,8 @@
     "category": "unclassified",
     "summary": "Announcement under Regulation 30 (LODR)-Allotment of ESOP / ESPS",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -2575,9 +2746,10 @@
     "news_id": "facb550d-3a3b-4f5d-a8bd-80fc154818ae",
     "ticker": "CAMS.NS",
     "category": "investor_meetings",
-    "summary": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+    "summary": "Intimation of upcoming analyst or investor meeting",
     "priority": 15,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -2590,9 +2762,10 @@
     "news_id": "17fe974d-2a5a-43c9-ae0f-d5b23a13752e",
     "ticker": "CAMS.NS",
     "category": "press_release",
-    "summary": "Announcement under Regulation 30 (LODR)-Press Release / Media Release",
+    "summary": "Press or media release announced under Regulation 30",
     "priority": 45,
-    "priority_tier": "medium"
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -2605,9 +2778,10 @@
     "news_id": "da1aaaed-5037-4ac5-9912-62ab134f9d11",
     "ticker": "CAMS.NS",
     "category": "investor_meetings",
-    "summary": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+    "summary": "Intimation of upcoming analyst or investor meeting",
     "priority": 15,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -2622,7 +2796,8 @@
     "category": "unclassified",
     "summary": "Compliances-Certificate under Reg. 74 (5) of SEBI (DP) Regulations, 2018",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -2635,9 +2810,10 @@
     "news_id": "ad7cecdf-4479-4ca3-9ee0-a7f99aa8ce2d",
     "ticker": "LALPATHLAB.NS",
     "category": "investor_meetings",
-    "summary": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+    "summary": "Intimation of analyst or investor meeting",
     "priority": 15,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -2649,10 +2825,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/1527b875-ace6-4820-a1ea-be235b77ac11.pdf",
     "news_id": "96c52283-b184-4b19-94b0-59cbc9c2e38e",
     "ticker": "LALPATHLAB.NS",
-    "category": "unclassified",
-    "summary": "Corporate Action-Board to consider Dividend",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "dividend",
+    "summary": "Board to consider dividend proposal",
+    "priority": 38,
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -2667,7 +2844,8 @@
     "category": "unclassified",
     "summary": "Update on board meeting",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -2680,9 +2858,10 @@
     "news_id": "a1bd7ff7-e108-45f7-86f9-9fdfbc19c659",
     "ticker": "LALPATHLAB.NS",
     "category": "M&A",
-    "summary": "Announcement under Regulation 30 (LODR)-Acquisition",
+    "summary": "Announcement of acquisition under Regulation 30",
     "priority": 85,
-    "priority_tier": "high"
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -2695,9 +2874,10 @@
     "news_id": "6af16ef1-2567-4192-bd7a-41931721d853",
     "ticker": "LALPATHLAB.NS",
     "category": "M&A",
-    "summary": "Announcement under Regulation 30 (LODR)-Acquisition",
+    "summary": "Announcement of acquisition under Regulation 30",
     "priority": 85,
-    "priority_tier": "high"
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -2712,7 +2892,8 @@
     "category": "unclassified",
     "summary": "Compliances-Certificate under Reg. 74 (5) of SEBI (DP) Regulations, 2018",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -2727,7 +2908,8 @@
     "category": "unclassified",
     "summary": "Intimation Under Regulation 30",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -2740,9 +2922,10 @@
     "news_id": "b57093d4-15e7-43ab-a10e-ceb844a9ff0d",
     "ticker": "ASTRAL.NS",
     "category": "investor_meetings",
-    "summary": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+    "summary": "Intimation of analyst or investor meet",
     "priority": 15,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -2755,9 +2938,10 @@
     "news_id": "46c8b4db-5927-475f-9cb6-e4222ef054f2",
     "ticker": "ASTRAL.NS",
     "category": "results",
-    "summary": "Board Meeting Intimation for To Consider And Approve The Unaudited Financial Results (Standalone And Consolidated) Of Th",
+    "summary": "Board meeting to consider financial results and interim dividend",
     "priority": 90,
-    "priority_tier": "high"
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -2772,7 +2956,8 @@
     "category": "unclassified",
     "summary": "Compliances-Certificate under Reg. 74 (5) of SEBI (DP) Regulations, 2018",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -2785,9 +2970,10 @@
     "news_id": "be299086-d70d-4db2-af4b-0307eb15a5d9",
     "ticker": "ZOMATO.NS",
     "category": "earnings_call",
-    "summary": "Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+    "summary": "Earnings call transcript submitted under Regulation 30",
     "priority": 15,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -2802,7 +2988,8 @@
     "category": "unclassified",
     "summary": "Announcement under Regulation 30 (LODR)-Monitoring Agency Report",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -2814,10 +3001,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/a0daf632-ab45-41ef-bbc5-bfc655056cbb.pdf",
     "news_id": "15f7c96b-d24a-46f7-9e04-c71db3f54f4c",
     "ticker": "ZOMATO.NS",
-    "category": "unclassified",
-    "summary": "Announcement under Regulation 30 (LODR)-Restructuring",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "M&A",
+    "summary": "Corporate restructuring announcement under Regulation 30",
+    "priority": 85,
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -2830,9 +3018,10 @@
     "news_id": "4f43fab8-8509-4b73-a036-8f1267c8a4b0",
     "ticker": "ZOMATO.NS",
     "category": "results",
-    "summary": "Results For The Quarter And Half Year Ended September 30, 2026",
+    "summary": "Financial results for the quarter and half year ended September 30, 2026",
     "priority": 90,
-    "priority_tier": "high"
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -2844,10 +3033,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/cbfbd146-6a68-43d6-9cbc-dfb7d0f50fd0.pdf",
     "news_id": "0901dc87-4137-4fd5-9433-e03acdfdb125",
     "ticker": "ZOMATO.NS",
-    "category": "unclassified",
-    "summary": "Shareholders Letter",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "press_release",
+    "summary": "Shareholders letter issued by the company",
+    "priority": 45,
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -2862,7 +3052,8 @@
     "category": "unclassified",
     "summary": "Board Meeting Outcome for Outcome Of Board Meeting",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -2875,9 +3066,10 @@
     "news_id": "a3bde67d-91d9-45bf-8d2d-295402350926",
     "ticker": "ZOMATO.NS",
     "category": "investor_meetings",
-    "summary": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+    "summary": "Intimation of analyst or investor meet",
     "priority": 15,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -2890,9 +3082,10 @@
     "news_id": "c3dec85e-5288-47b3-a6f4-d12cac4bd027",
     "ticker": "ZOMATO.NS",
     "category": "results",
-    "summary": "Board Meeting Intimation for Financial Results For Quarter And Half Year Ended September 30, 2026",
+    "summary": "Board meeting intimation for financial results",
     "priority": 90,
-    "priority_tier": "high"
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -2907,7 +3100,8 @@
     "category": "unclassified",
     "summary": "Compliances-Certificate under Reg. 74 (5) of SEBI (DP) Regulations, 2018",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -2919,10 +3113,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/d7008597-6ddd-4192-ab30-da3d6832abd9.pdf",
     "news_id": "6a571724-390e-41eb-9ab3-80719d9c0e73",
     "ticker": "IRCTC.NS",
-    "category": "unclassified",
-    "summary": "Board Comments On Fines Levied By The Exchanges For Non-Compliances Of Certain Regulations Of SEBI (Listing Obligations ",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "litigation",
+    "summary": "Board comments on fines levied by stock exchanges",
+    "priority": 75,
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -2934,10 +3129,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/5d46695c-4996-4b8f-aa8d-1fb80280d8f1.pdf",
     "news_id": "c6b16a1d-208a-4598-a2ad-ea7f97886a16",
     "ticker": "IRCTC.NS",
-    "category": "unclassified",
-    "summary": "Announcement under Regulation 30 (LODR)-Change in Management",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "management_change",
+    "summary": "Change in management announced under Regulation 30",
+    "priority": 80,
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -2950,9 +3146,10 @@
     "news_id": "9ac94bb8-eed8-4efb-af82-6a3535fd0252",
     "ticker": "IRCTC.NS",
     "category": "press_release",
-    "summary": "Announcement under Regulation 30 (LODR)-Press Release / Media Release",
+    "summary": "Press or media release issued under Regulation 30",
     "priority": 45,
-    "priority_tier": "medium"
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -2967,7 +3164,8 @@
     "category": "unclassified",
     "summary": "Disclosure Under Regulation 30 Of SEBI (LODR) Regulations, 2015.",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -2979,10 +3177,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/efea3641-beb0-497c-b395-df71da0c1896.pdf",
     "news_id": "8c68bb61-85f8-4bb7-bd5a-8f382380e18b",
     "ticker": "IRCTC.NS",
-    "category": "unclassified",
-    "summary": "Announcement under Regulation 30 (LODR)-Change in Management",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "management_change",
+    "summary": "Change in management announced under Regulation 30",
+    "priority": 80,
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -2997,7 +3196,8 @@
     "category": "unclassified",
     "summary": "Compliances-Certificate under Reg. 74 (5) of SEBI (DP) Regulations, 2018",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -3010,9 +3210,10 @@
     "news_id": "d038944c-50ae-4737-8476-6e351cc29f32",
     "ticker": "CDSL.NS",
     "category": "investor_meetings",
-    "summary": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+    "summary": "Intimation of investor or analyst meet",
     "priority": 15,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -3025,9 +3226,10 @@
     "news_id": "091d87fb-e458-43e6-be32-19fff011119d",
     "ticker": "CDSL.NS",
     "category": "results",
-    "summary": "Board Meeting Intimation for Approving Unaudited Financial Results For The Quarter And Half Year Ended 30Th  September 2",
+    "summary": "Board meeting intimation for financial results",
     "priority": 90,
-    "priority_tier": "high"
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -3039,10 +3241,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/697cd656-1852-4827-bf29-b3101360fa68.pdf",
     "news_id": "8a3b2955-3e07-4f78-b32c-a2516250fd60",
     "ticker": "CDSL.NS",
-    "category": "unclassified",
-    "summary": "Company Update For The Quarter And Half Year Ended September 30, 2026",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "results",
+    "summary": "Company update for the quarter and half year ended September 30, 2026",
+    "priority": 90,
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -3054,10 +3257,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/99c3f4c5-c3dd-44ec-be57-41fe523f6c52.pdf",
     "news_id": "0c30295a-a5d3-4b36-a6a6-c5f9c3e536ed",
     "ticker": "IDEAFORGE.NS",
-    "category": "unclassified",
-    "summary": "Announcement under Regulation 30 (LODR)-Investor Presentation",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "results",
+    "summary": "Investor presentation filed under Regulation 30",
+    "priority": 90,
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -3070,9 +3274,10 @@
     "news_id": "db4cf4a1-9a4d-4dec-9bce-85acb3b13aeb",
     "ticker": "IDEAFORGE.NS",
     "category": "press_release",
-    "summary": "Announcement under Regulation 30 (LODR)-Press Release / Media Release",
+    "summary": "Press or media release issued under Regulation 30",
     "priority": 45,
-    "priority_tier": "medium"
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -3085,9 +3290,10 @@
     "news_id": "e55bc95f-e6f1-4c48-b81f-38de0cbd1888",
     "ticker": "IDEAFORGE.NS",
     "category": "results",
-    "summary": "Unaudited Financial Results For The Quarter And Half Year Ended September 30, 2026.",
+    "summary": "Unaudited financial results for quarter and half year ended September 30, 2026",
     "priority": 90,
-    "priority_tier": "high"
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -3100,9 +3306,10 @@
     "news_id": "942e9ea0-6a6a-4dfd-b8aa-bbf796bd1816",
     "ticker": "IDEAFORGE.NS",
     "category": "results",
-    "summary": "Board Meeting Outcome for Outcome Of The Board Meeting For The Adoption Of Financial Results For The Quarter And Half Ye",
+    "summary": "Board meeting outcome adopting financial results",
     "priority": 90,
-    "priority_tier": "high"
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -3115,9 +3322,10 @@
     "news_id": "ebcb2b4a-88ea-48d1-90de-0b0574fb82f6",
     "ticker": "IDEAFORGE.NS",
     "category": "investor_meetings",
-    "summary": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+    "summary": "Intimation of analyst or investor meeting",
     "priority": 15,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -3130,9 +3338,10 @@
     "news_id": "9e036b9b-43a4-4918-a035-3b532ecc7fbb",
     "ticker": "IDEAFORGE.NS",
     "category": "investor_meetings",
-    "summary": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+    "summary": "Intimation of analyst or investor meet",
     "priority": 15,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -3145,9 +3354,10 @@
     "news_id": "1da5931c-d469-4297-bd5e-5b7f0e25123a",
     "ticker": "IDEAFORGE.NS",
     "category": "M&A",
-    "summary": "Intimation Under Regulation 30 Of SEBI (Listing Obligations And Disclosure Requirements) Regulations, 2015 - Termination",
+    "summary": "Termination of joint venture agreement by subsidiary",
     "priority": 85,
-    "priority_tier": "high"
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -3160,9 +3370,10 @@
     "news_id": "443e6db8-0532-4608-8f22-f180330b314a",
     "ticker": "IDEAFORGE.NS",
     "category": "results",
-    "summary": "Board Meeting Intimation for Declaration Of Unaudited Financial Results For The Quarter And Half Year Ended September 30",
+    "summary": "Board meeting intimation for unaudited financial results",
     "priority": 90,
-    "priority_tier": "high"
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -3174,10 +3385,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/daeb8753-6bc1-4f2b-97e6-a6d7f7ffd41f.pdf",
     "news_id": "c2483c19-68cd-4463-9ec6-4d9f1e0bb8f6",
     "ticker": "IDEAFORGE.NS",
-    "category": "unclassified",
-    "summary": "Announcement under Regulation 30 (LODR)-Resignation of Company Secretary / Compliance Officer",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "management_change",
+    "summary": "Resignation of Company Secretary or Compliance Officer",
+    "priority": 80,
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -3192,7 +3404,8 @@
     "category": "unclassified",
     "summary": "Announcement under Regulation 30 (LODR)-Allotment of ESOP / ESPS",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -3204,10 +3417,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/49e0bcaf-0e00-4a3b-b00d-73fc32158504.pdf",
     "news_id": "67382a06-0544-4c1c-809e-d245dee11994",
     "ticker": "IDEAFORGE.NS",
-    "category": "unclassified",
-    "summary": "Announcement Under Regulation 30 (LODR)_Ideaforge Has Entered Into Loan Agreement With Technology Development Board For ",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "fund_raise",
+    "summary": "Entered into loan agreement for Rs. 151 crores",
+    "priority": 70,
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -3222,7 +3436,8 @@
     "category": "unclassified",
     "summary": "Compliances-Certificate under Reg. 74 (5) of SEBI (DP) Regulations, 2018",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -3234,10 +3449,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/F6DFA303_DE65_4048_B8E4_B4E7B8C04129_120627.pdf",
     "news_id": "f6dfa303-de65-4048-b8e4-b4e7b8c04129",
     "ticker": "IDEAFORGE.NS",
-    "category": "insider_trading",
-    "summary": "Disclosures of reasons for encumbrance by promoter of listed companies under Reg. 31(1) read with Regulation 28(3) of SE",
-    "priority": 40,
-    "priority_tier": "medium"
+    "category": "pledging",
+    "summary": "Disclosure of reasons for promoter encumbrance",
+    "priority": 50,
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -3249,10 +3465,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/566FB29A_FE31_4531_87A1_26B8D9489D75_112405.pdf",
     "news_id": "566fb29a-fe31-4531-87a1-26b8d9489d75",
     "ticker": "IDEAFORGE.NS",
-    "category": "insider_trading",
-    "summary": "Disclosures under Reg. 31(1) and 31(2) of SEBI (SAST) Regulations, 2011.",
-    "priority": 40,
-    "priority_tier": "medium"
+    "category": "pledging",
+    "summary": "Promoter share encumbrance disclosure under SAST Regulations",
+    "priority": 50,
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -3267,7 +3484,8 @@
     "category": "unclassified",
     "summary": "Announcement under Regulation 30 (LODR)-Allotment",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -3279,10 +3497,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/4491cbf4-b27c-45f2-a905-1220b80dec9c.pdf",
     "news_id": "2147983d-9115-4c12-8ce1-32024d8b1f39",
     "ticker": "PERSISTENT.NS",
-    "category": "unclassified",
-    "summary": "Announcement under Regulation 30 (LODR)-Meeting Updates",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "investor_meetings",
+    "summary": "Meeting updates announced under Regulation 30",
+    "priority": 15,
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -3294,10 +3513,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/d3ba2a8b-279a-4e0f-9ee8-c99ca501552b.pdf",
     "news_id": "4db0280f-72d0-493e-bbe5-7f64c848f71c",
     "ticker": "PERSISTENT.NS",
-    "category": "unclassified",
-    "summary": "Announcement under Regulation 30 (LODR)-Meeting Updates",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "investor_meetings",
+    "summary": "Meeting updates announced under Regulation 30",
+    "priority": 15,
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -3310,9 +3530,10 @@
     "news_id": "cf7dff3e-65f6-4857-9129-8234b8197245",
     "ticker": "PERSISTENT.NS",
     "category": "earnings_call",
-    "summary": "Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+    "summary": "Earnings call transcript submitted under Regulation 30",
     "priority": 15,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -3324,10 +3545,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/d500e04f-fe02-4b5c-923a-0275b18f6044.pdf",
     "news_id": "3dbcfb55-1bb7-4987-a427-1be66b13b9de",
     "ticker": "PERSISTENT.NS",
-    "category": "unclassified",
-    "summary": "Announcement under Regulation 30 (LODR)-Credit Rating",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "credit_rating",
+    "summary": "Credit rating announcement issued under Regulation 30",
+    "priority": 60,
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -3339,10 +3561,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/439fef91-1dfa-4639-944f-eccbddfae1ff.pdf",
     "news_id": "ea10492d-a916-49a2-8c21-2438b7dad808",
     "ticker": "PERSISTENT.NS",
-    "category": "unclassified",
-    "summary": "Announcement under Regulation 30 (LODR)-Credit Rating",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "credit_rating",
+    "summary": "Credit rating update issued under Regulation 30",
+    "priority": 60,
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -3354,10 +3577,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/34d0f640-5c7b-4bfa-b042-6b4fbe63daa0.pdf",
     "news_id": "5025e69b-c76d-417c-bc8f-43a172b48b48",
     "ticker": "PERSISTENT.NS",
-    "category": "unclassified",
-    "summary": "Announcement under Regulation 30 (LODR)-Meeting Updates",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "investor_meetings",
+    "summary": "Meeting updates submitted under Regulation 30",
+    "priority": 15,
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -3369,10 +3593,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/f7cde952-83d0-475d-b216-02af2204013a.pdf",
     "news_id": "5f00980e-357d-40e2-a34d-2e8f104df277",
     "ticker": "PERSISTENT.NS",
-    "category": "unclassified",
-    "summary": "Announcement under Regulation 30 (LODR)-Issue of Securities",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "fund_raise",
+    "summary": "Issue of securities announced under Regulation 30",
+    "priority": 70,
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -3387,7 +3612,8 @@
     "category": "unclassified",
     "summary": "Announcement under Regulation 30 (LODR)-Meeting Updates",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -3402,7 +3628,8 @@
     "category": "unclassified",
     "summary": "Announcement under Regulation 30 (LODR)-Newspaper Publication",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -3414,10 +3641,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/68fc3ccb-8531-4cde-b4c6-b612a3ea8718.pdf",
     "news_id": "ef085bc5-f876-4a36-8110-ada91aea4c11",
     "ticker": "PERSISTENT.NS",
-    "category": "unclassified",
-    "summary": "Announcement under Regulation 30 (LODR)-Issue of Securities",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "fund_raise",
+    "summary": "Intimation regarding issue of securities",
+    "priority": 70,
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -3432,7 +3660,8 @@
     "category": "unclassified",
     "summary": "Announcement under Regulation 30 (LODR)-Meeting Updates",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -3445,9 +3674,10 @@
     "news_id": "4fc9232f-3186-4ae5-af7c-4159fd44e390",
     "ticker": "PERSISTENT.NS",
     "category": "investor_meetings",
-    "summary": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+    "summary": "Outcome of analyst or investor meeting",
     "priority": 15,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -3459,10 +3689,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/b434e771-e1e4-44d8-ba0f-4a92c67031ac.pdf",
     "news_id": "a68646d0-bc61-4f82-9b6e-1e49d3344946",
     "ticker": "PERSISTENT.NS",
-    "category": "unclassified",
-    "summary": "Audited Financial Statements For The Quarter And Half Year Ended September 30, 2026",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "results",
+    "summary": "Audited financial statements for quarter and half year",
+    "priority": 90,
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -3475,9 +3706,10 @@
     "news_id": "5da9c5e9-76c1-4837-a6f5-910f871cf54b",
     "ticker": "PERSISTENT.NS",
     "category": "press_release",
-    "summary": "Announcement under Regulation 30 (LODR)-Press Release / Media Release",
+    "summary": "Company issues press release or media update",
     "priority": 45,
-    "priority_tier": "medium"
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -3489,10 +3721,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/69eb4f2c-1eb5-4654-a500-c7bef33d2f19.pdf",
     "news_id": "356e9c74-a646-4703-9331-16bae2e5b67e",
     "ticker": "PERSISTENT.NS",
-    "category": "unclassified",
-    "summary": "Announcement under Regulation 30 (LODR)-Investor Presentation",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "results",
+    "summary": "Investor presentation released",
+    "priority": 90,
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -3505,9 +3738,10 @@
     "news_id": "8e79c896-5803-4f7e-a939-e6380086a31e",
     "ticker": "PERSISTENT.NS",
     "category": "results",
-    "summary": "Financial Results As Of September 30, 2026",
+    "summary": "Financial results for the period ended September 30, 2026",
     "priority": 90,
-    "priority_tier": "high"
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -3519,10 +3753,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/b34da17b-32f8-4d73-8f1a-803d6f561798.pdf",
     "news_id": "8cffcf45-1cae-48e0-b764-4bc3926817dd",
     "ticker": "PERSISTENT.NS",
-    "category": "unclassified",
-    "summary": "Board Meeting Outcome for Outcome Of The Board Meeting Held On October 14, 2026, And Concluded On October 15, 2026",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "results",
+    "summary": "Board meeting outcome regarding financial results",
+    "priority": 90,
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -3537,7 +3772,8 @@
     "category": "unclassified",
     "summary": "Compliances-Certificate under Reg. 74 (5) of SEBI (DP) Regulations, 2018",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -3550,9 +3786,10 @@
     "news_id": "b548f8df-8f44-41bc-8f3b-89f5c59231fb",
     "ticker": "PERSISTENT.NS",
     "category": "press_release",
-    "summary": "Announcement under Regulation 30 (LODR)-Press Release / Media Release",
+    "summary": "Company issues press release or media update",
     "priority": 45,
-    "priority_tier": "medium"
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -3564,10 +3801,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/1ffb29fc-9816-4e05-a1b6-3eb4f3035e9a.pdf",
     "news_id": "9dbf2eee-e7ec-4825-a51b-a2fb6453ea56",
     "ticker": "PERSISTENT.NS",
-    "category": "unclassified",
-    "summary": "Announcement under Regulation 30 (LODR)-Credit Rating",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "credit_rating",
+    "summary": "Credit rating update announced by company",
+    "priority": 60,
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -3582,7 +3820,8 @@
     "category": "unclassified",
     "summary": "Announcement Under Regulation 30 Of SEBI (LODR), 2015",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -3595,9 +3834,10 @@
     "news_id": "70c28402-5e70-4933-af45-6d458c5a57f5",
     "ticker": "PERSISTENT.NS",
     "category": "press_release",
-    "summary": "Announcement under Regulation 30 (LODR)-Press Release / Media Release",
+    "summary": "Company issues press release or media update",
     "priority": 45,
-    "priority_tier": "medium"
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -3609,10 +3849,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/ad115b10-81f8-4fdd-aaf7-6a41f1c4eb05.pdf",
     "news_id": "77b214c2-3303-47e9-b3bb-44f680ceffbf",
     "ticker": "PERSISTENT.NS",
-    "category": "unclassified",
-    "summary": "Update On Voluntary Public Takeover Offer Made By Persistent Systems Limited To The Shareholders Of Nagarro SE",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "M&A",
+    "summary": "Update on voluntary public takeover offer for Nagarro SE",
+    "priority": 85,
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -3627,7 +3868,8 @@
     "category": "unclassified",
     "summary": "The Corrigendum To Our Earlier Letter Under Ref. No. NSE & BSE / 2026-27 / 143 Dated September 30, 2026, Is As Enclosed.",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -3640,9 +3882,10 @@
     "news_id": "27b46f43-eb7a-43b1-9f75-c6d5fdfed546",
     "ticker": "PERSISTENT.NS",
     "category": "investor_meetings",
-    "summary": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+    "summary": "Intimation of upcoming analyst or investor meeting",
     "priority": 15,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -3657,7 +3900,8 @@
     "category": "unclassified",
     "summary": "Board Meeting Intimation for Intimation Under Regulation 29 Of The SEBI (Listing Obligations And Disclosure Requirements",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -3672,7 +3916,8 @@
     "category": "unclassified",
     "summary": "Announcement under Regulation 30 (LODR)-Amendments to Memorandum & Articles of Association",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -3685,9 +3930,10 @@
     "news_id": "fe38292d-6989-4228-8c02-7b685b53da70",
     "ticker": "PERSISTENT.NS",
     "category": "agm_egm",
-    "summary": "Announcement Of The Voting Result Of The Extra Ordinary General Meeting",
+    "summary": "Voting results of extraordinary general meeting",
     "priority": 20,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -3700,9 +3946,10 @@
     "news_id": "3f6097a2-20d5-467f-95b7-345acc1a5a32",
     "ticker": "PERSISTENT.NS",
     "category": "postal_ballot",
-    "summary": "Shareholder Meeting / Postal Ballot-Scrutinizer\"s Report",
+    "summary": "Scrutinizer report for shareholder meeting or postal ballot",
     "priority": 20,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -3714,10 +3961,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/c959a392-0275-459e-84a0-d65e3b1ce205.pdf",
     "news_id": "1416dd88-7051-4dba-b46c-0ace4807f551",
     "ticker": "PERSISTENT.NS",
-    "category": "postal_ballot",
-    "summary": "Shareholder Meeting / Postal Ballot-Outcome of EGM",
+    "category": "agm_egm",
+    "summary": "Outcome of extraordinary general meeting",
     "priority": 20,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -3729,10 +3977,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/f38d3a44-253b-41dd-b5bb-6cbcd6d39fc9.pdf",
     "news_id": "b5bfcca8-4269-4cbc-83e3-67f1e3c6b114",
     "ticker": "DMART.NS",
-    "category": "unclassified",
-    "summary": "Store Opening Intimation",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "press_release",
+    "summary": "Intimation of new store opening",
+    "priority": 45,
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -3745,9 +3994,10 @@
     "news_id": "9d5be7a7-5d1b-47dd-97f9-1f04643f5b49",
     "ticker": "DMART.NS",
     "category": "fund_raise",
-    "summary": "Allotment Of Commercial Paper",
+    "summary": "Allotment of commercial paper",
     "priority": 70,
-    "priority_tier": "high"
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -3762,7 +4012,8 @@
     "category": "unclassified",
     "summary": "Disclosure Under Regulation 30 Of SEBI (LODR) Regulations, 2015",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -3777,7 +4028,8 @@
     "category": "unclassified",
     "summary": "Announcement under Regulation 30 (LODR)-Newspaper Publication",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -3789,10 +4041,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/28519d83-e15b-41c1-842c-b589621d6439.pdf",
     "news_id": "26a5e02f-dbe0-4b69-bd26-322d6d9b4fc4",
     "ticker": "DMART.NS",
-    "category": "unclassified",
-    "summary": "Announcement under Regulation 30 (LODR)-Investor Presentation",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "results",
+    "summary": "Investor presentation submitted under Regulation 30",
+    "priority": 90,
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -3805,9 +4058,10 @@
     "news_id": "7d9ce457-3cf3-426d-af21-c03ffcbf69f2",
     "ticker": "DMART.NS",
     "category": "press_release",
-    "summary": "Announcement under Regulation 30 (LODR)-Press Release / Media Release",
+    "summary": "Press release issued under Regulation 30",
     "priority": 45,
-    "priority_tier": "medium"
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -3820,9 +4074,10 @@
     "news_id": "cb7008c2-af19-442d-8d52-5ef4d1e858dc",
     "ticker": "DMART.NS",
     "category": "results",
-    "summary": "Financial Results For The Quarter Ended 30Th September, 2026",
+    "summary": "Financial results for the quarter ended September 30, 2026",
     "priority": 90,
-    "priority_tier": "high"
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -3837,7 +4092,8 @@
     "category": "unclassified",
     "summary": "Board Meeting Outcome for Meeting Held On October 10, 2026",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -3849,10 +4105,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/fe5414f4-e77b-4a76-880e-4a6aed8e29e1.pdf",
     "news_id": "8c2b93fa-01ff-4fcc-9be8-3465ee4f21ef",
     "ticker": "DMART.NS",
-    "category": "unclassified",
-    "summary": "Announcement under Regulation 30 (LODR)-Credit Rating",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "credit_rating",
+    "summary": "Credit rating disclosure under Regulation 30",
+    "priority": 60,
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -3867,7 +4124,8 @@
     "category": "unclassified",
     "summary": "Compliances-Certificate under Reg. 74 (5) of SEBI (DP) Regulations, 2018",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -3882,7 +4140,8 @@
     "category": "unclassified",
     "summary": "Announcement under Regulation 30 (LODR)-Allotment of ESOP / ESPS",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -3897,7 +4156,8 @@
     "category": "unclassified",
     "summary": "Company Update",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -3909,10 +4169,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/5f21f715-4d81-4470-9e3b-2ca076cf4e22.pdf",
     "news_id": "fa36cde7-2447-4f2a-8bd4-4d99941bbc20",
     "ticker": "BAJFINANCE.NS",
-    "category": "postal_ballot",
-    "summary": "Shareholder Meeting / Postal Ballot-Outcome of EGM",
+    "category": "agm_egm",
+    "summary": "Outcome of extraordinary general meeting",
     "priority": 20,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -3927,7 +4188,8 @@
     "category": "unclassified",
     "summary": "Announcement under Regulation 30 (LODR)-Allotment",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -3940,9 +4202,10 @@
     "news_id": "4c4478a2-f1b2-4f86-a5a2-e999fb27a12a",
     "ticker": "BAJFINANCE.NS",
     "category": "investor_meetings",
-    "summary": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+    "summary": "Intimation of analyst or investor meet",
     "priority": 15,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -3955,9 +4218,10 @@
     "news_id": "3edbe0c3-f3ed-4804-92a8-a4bc45e22fb6",
     "ticker": "BAJFINANCE.NS",
     "category": "investor_meetings",
-    "summary": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+    "summary": "Outcome of analyst or investor meeting",
     "priority": 15,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -3972,7 +4236,8 @@
     "category": "unclassified",
     "summary": "Announcement under Regulation 30 (LODR)-Allotment",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -3985,9 +4250,10 @@
     "news_id": "38bd2591-6085-4377-8935-62a6fffdd756",
     "ticker": "BAJFINANCE.NS",
     "category": "investor_meetings",
-    "summary": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+    "summary": "Outcome of analyst or investor meeting",
     "priority": 15,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -3999,10 +4265,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/eb4bfa8c-5285-4b6f-86c3-852bf82c8015.pdf",
     "news_id": "9817a9b7-6de3-4bfa-8e80-ac4cf87d1d6a",
     "ticker": "BAJFINANCE.NS",
-    "category": "unclassified",
-    "summary": "Announcement under Regulation 30 (LODR)-Change in Management",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "management_change",
+    "summary": "Change in management announced under Regulation 30",
+    "priority": 80,
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -4014,10 +4281,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/fda5e9e1-3aa9-4ccc-837a-d45817ef7360.pdf",
     "news_id": "913014a6-a273-4cfc-8a62-a2fccb69a061",
     "ticker": "BAJFINANCE.NS",
-    "category": "unclassified",
-    "summary": "Announcement under Regulation 30 (LODR)-Issue of Securities",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "fund_raise",
+    "summary": "Issue of securities announced under Regulation 30",
+    "priority": 70,
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -4030,9 +4298,10 @@
     "news_id": "35bf242b-58db-4820-9ded-2d759a71d9f8",
     "ticker": "BAJFINANCE.NS",
     "category": "results",
-    "summary": "Unaudited Standalone And Consolidated Financial Results For The Quarter And Half Year Ended 30 September 2026",
+    "summary": "Standalone and consolidated financial results for Q2 FY27",
     "priority": 90,
-    "priority_tier": "high"
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -4044,10 +4313,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/e7c0f169-e396-4a7d-a57d-b1f7c47f6290.pdf",
     "news_id": "c862464b-817a-43bb-b588-6fc0f0f78eb5",
     "ticker": "BAJFINANCE.NS",
-    "category": "unclassified",
-    "summary": "Announcement under Regulation 30 (LODR)-Investor Presentation",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "results",
+    "summary": "Investor presentation submitted under Regulation 30",
+    "priority": 90,
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -4062,7 +4332,8 @@
     "category": "unclassified",
     "summary": "Board Meeting Outcome for Outcome Of Board Meeting Held On 19 October 2026",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -4075,9 +4346,10 @@
     "news_id": "5043cd2c-5f3e-44fb-bd46-9a1ec5e35d0b",
     "ticker": "BAJFINANCE.NS",
     "category": "investor_meetings",
-    "summary": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+    "summary": "Intimation of analyst or investor meet",
     "priority": 15,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -4090,9 +4362,10 @@
     "news_id": "545db3fb-3a29-4083-8357-bece4653cb77",
     "ticker": "BAJFINANCE.NS",
     "category": "investor_meetings",
-    "summary": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+    "summary": "Intimation of analyst or investor meet",
     "priority": 15,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -4105,9 +4378,10 @@
     "news_id": "f10171fc-5d3d-4905-823a-a6ba1d682a1d",
     "ticker": "BAJFINANCE.NS",
     "category": "investor_meetings",
-    "summary": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+    "summary": "Intimation of analyst or investor meet",
     "priority": 15,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -4120,9 +4394,10 @@
     "news_id": "ea84d51e-b0fc-4b7e-aea0-0b7e5c24bb2c",
     "ticker": "BAJFINANCE.NS",
     "category": "investor_meetings",
-    "summary": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+    "summary": "Intimation of analyst or investor meet",
     "priority": 15,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -4137,7 +4412,8 @@
     "category": "unclassified",
     "summary": "Announcement under Regulation 30 (LODR)-Newspaper Publication",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -4150,9 +4426,10 @@
     "news_id": "1d865404-5093-4169-91ac-51d32dda6dd9",
     "ticker": "BAJFINANCE.NS",
     "category": "agm_egm",
-    "summary": "Notice Of The Extraordinary General Meeting Under Regulation 30 Of SEBI (Listing Obligations And Disclosure Requirements",
+    "summary": "Notice of Extraordinary General Meeting under Regulation 30",
     "priority": 20,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -4167,7 +4444,8 @@
     "category": "unclassified",
     "summary": "Announcement under Regulation 30 (LODR)-Allotment",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -4182,7 +4460,8 @@
     "category": "unclassified",
     "summary": "Compliances-Certificate under Reg. 74 (5) of SEBI (DP) Regulations, 2018",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -4195,9 +4474,10 @@
     "news_id": "8053132b-873b-4c42-a225-b6332f0f8dd6",
     "ticker": "BAJFINANCE.NS",
     "category": "results",
-    "summary": "Board Meeting Intimation for Considering And Approving Unaudited Standalone And Consolidated Financial Results For The Q",
+    "summary": "Board meeting intimation for quarterly financial results",
     "priority": 90,
-    "priority_tier": "high"
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -4212,7 +4492,8 @@
     "category": "insider_trading",
     "summary": "Information Under Regulation 30 Of SEBI (Listing Obligations And Disclosure Requirements) Regulation, 2015 R/W Schedule ",
     "priority": 40,
-    "priority_tier": "medium"
+    "priority_tier": "medium",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -4225,9 +4506,10 @@
     "news_id": "69e5b296-358e-4fde-a9d7-b03c204017be",
     "ticker": "MOTHERSON.NS",
     "category": "press_release",
-    "summary": "Announcement under Regulation 30 (LODR)-Press Release / Media Release",
+    "summary": "Press or media release issued under Regulation 30",
     "priority": 45,
-    "priority_tier": "medium"
+    "priority_tier": "medium",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -4242,7 +4524,8 @@
     "category": "unclassified",
     "summary": "Announcement Under Regulation 30 Of SEBI (Listing Obligations And Disclosure Requirements)Regulations, 2015.",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -4255,9 +4538,10 @@
     "news_id": "e877e9eb-1ead-474e-9247-def345419e66",
     "ticker": "MOTHERSON.NS",
     "category": "investor_meetings",
-    "summary": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+    "summary": "Intimation of analyst or investor meeting",
     "priority": 15,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -4272,7 +4556,8 @@
     "category": "unclassified",
     "summary": "Announcement Under Regulation 30 Of SEBI(Listing Obligations And Disclosure Requirements)Regulations, 2015.",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -4287,7 +4572,8 @@
     "category": "unclassified",
     "summary": "General-Updates",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -4302,7 +4588,8 @@
     "category": "unclassified",
     "summary": "Announcement Under Regulation 30 Of SEBI Listing Regulations",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -4314,10 +4601,11 @@
     "attachment_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/41b00076-3c7d-467f-bd5e-3a8f784b7353.pdf",
     "news_id": "f29cc0a7-5091-420a-b419-36eb5490db78",
     "ticker": "MOTHERSON.NS",
-    "category": "unclassified",
-    "summary": "Announcement under Regulation 30 (LODR)-Scheme of Arrangement",
-    "priority": 5,
-    "priority_tier": "low"
+    "category": "M&A",
+    "summary": "Announcement regarding a scheme of arrangement",
+    "priority": 85,
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -4330,9 +4618,10 @@
     "news_id": "ce31d66d-89d2-420c-98bc-8ed763a05459",
     "ticker": "MOTHERSON.NS",
     "category": "investor_meetings",
-    "summary": "Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation",
+    "summary": "Intimation of analyst or investor meeting",
     "priority": 15,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -4345,9 +4634,10 @@
     "news_id": "b584c859-506e-4cd8-918c-b87b6a564c1c",
     "ticker": "MOTHERSON.NS",
     "category": "results",
-    "summary": "Board Meeting Intimation for Consideration And Approval Of Unaudited Standalone And Consolidated Financial Results Of Th",
+    "summary": "Board meeting intimation for quarterly financial results",
     "priority": 90,
-    "priority_tier": "high"
+    "priority_tier": "high",
+    "classification_source": "gemini"
   },
   {
     "source": "BSE",
@@ -4362,7 +4652,8 @@
     "category": "unclassified",
     "summary": "General Updates",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -4377,7 +4668,8 @@
     "category": "unclassified",
     "summary": "Announcement Under Regulation 30 Of SEBI (Listing Obligations And Disclosure Requirements), Regulations, 2015",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -4392,7 +4684,8 @@
     "category": "unclassified",
     "summary": "Announcement Under Regulation 30 Of SEBI (Listing Obligations And Disclosure Requirements) Regulations 2015.",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -4407,7 +4700,8 @@
     "category": "unclassified",
     "summary": "Announcement under Regulation 30 (LODR)-Conversion of Securities",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   },
   {
     "source": "BSE",
@@ -4422,6 +4716,7 @@
     "category": "unclassified",
     "summary": "Compliances-Certificate under Reg. 74 (5) of SEBI (DP) Regulations, 2018",
     "priority": 5,
-    "priority_tier": "low"
+    "priority_tier": "low",
+    "classification_source": "heuristic"
   }
 ]

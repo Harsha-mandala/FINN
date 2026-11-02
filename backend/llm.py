@@ -295,7 +295,8 @@ def _do_generate(
         "temperature": temperature,
         "max_output_tokens": max_tokens,
     }
-    if json_mode:
+    # Gemini API does not allow combining tools with response_mime_type
+    if json_mode and not grounded:
         cfg_kwargs["response_mime_type"] = "application/json"
     if system:
         cfg_kwargs["system_instruction"] = system
@@ -476,7 +477,7 @@ def health_check_llm() -> dict:
                 system=None,
                 json_mode=False,
                 temperature=0.0,
-                max_tokens=50,
+                max_tokens=100,
                 grounded=False,
             )
             statuses[s] = "ok" if "ok" in result.lower() else "empty_response"

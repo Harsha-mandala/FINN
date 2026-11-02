@@ -1,0 +1,488 @@
+[
+  {
+    "ticker": "RELIANCE.NS",
+    "headline": "Announcement under Regulation 30 (LODR)-Investor Presentation",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "results"
+  },
+  {
+    "ticker": "RELIANCE.NS",
+    "headline": "Disclosure Under Regulation 30 Of The Securities And Exchange Board Of India (Listing Obli",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "M&A"
+  },
+  {
+    "ticker": "RELIANCE.NS",
+    "headline": "Listing Of Equity Shares Of Jio Platforms Limited",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "fund_raise"
+  },
+  {
+    "ticker": "RELIANCE.NS",
+    "headline": "Initial Public Offer Of Jio Platforms Limited - Update",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "fund_raise"
+  },
+  {
+    "ticker": "RELIANCE.NS",
+    "headline": "Media Statement",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "press_release"
+  },
+  {
+    "ticker": "RELIANCE.NS",
+    "headline": "Announcement under Regulation 30 (LODR)-Credit Rating",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "credit_rating"
+  },
+  {
+    "ticker": "RELIANCE.NS",
+    "headline": "Proposed Initial Public Offer Of Jio Platforms Limited",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "fund_raise"
+  },
+  {
+    "ticker": "RELIANCE.NS",
+    "headline": "Proposed Initial Public Offer Of Jio Platforms Limited - Filing Of The Red Herring Prospec",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "fund_raise"
+  },
+  {
+    "ticker": "HDFCBANK.NS",
+    "headline": "Announcement under Regulation 30 (LODR)-Change in Management",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "management_change"
+  },
+  {
+    "ticker": "INFY.NS",
+    "headline": "Infosys Announces Expansion Of Pocharam Development Center In Hyderabad",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "capex"
+  },
+  {
+    "ticker": "INFY.NS",
+    "headline": "Winners Of Qorus-Infosys Finacle Banking Innovation Awards 2026 Announced",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "press_release"
+  },
+  {
+    "ticker": "INFY.NS",
+    "headline": "Canada'S UNI Financial Cooperation Advances Branch Modernization With Infosys Finacle Univ",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "press_release"
+  },
+  {
+    "ticker": "INFY.NS",
+    "headline": "Investor Conference",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "investor_meetings"
+  },
+  {
+    "ticker": "INFY.NS",
+    "headline": "Infosys Successfully Delivers Syngenta'S Global SAP S/4HANA Transformation For Crop Protec",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "press_release"
+  },
+  {
+    "ticker": "INFY.NS",
+    "headline": "Corporate Action-Board approves Dividend",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "dividend"
+  },
+  {
+    "ticker": "INFY.NS",
+    "headline": "Infosys To Announce Second Quarter Results On October 23, 2026",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "results"
+  },
+  {
+    "ticker": "INFY.NS",
+    "headline": "Infosys And Truist Strengthen Strategic Collaboration To Build A Global Capability Center ",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "press_release"
+  },
+  {
+    "ticker": "INFY.NS",
+    "headline": "Infosys Foundation Enables Over 2.5 Lakh Job Offers Across India Through Infosys Springboa",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "press_release"
+  },
+  {
+    "ticker": "INFY.NS",
+    "headline": "Company Statement On The U.S. Permanent Labor Certification Program",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "press_release"
+  },
+  {
+    "ticker": "TCS.NS",
+    "headline": "Statement Of The Company Regarding The Announcement By The US Government On The Permanent ",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "press_release"
+  },
+  {
+    "ticker": "TCS.NS",
+    "headline": "Announcement under Regulation 30 (LODR)-Date of payment of Dividend",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "dividend"
+  },
+  {
+    "ticker": "TCS.NS",
+    "headline": "Corporate Action-Board approves Dividend",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "dividend"
+  },
+  {
+    "ticker": "ICICIBANK.NS",
+    "headline": "Announcement under Regulation 30 (LODR)-Credit Rating",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "credit_rating"
+  },
+  {
+    "ticker": "ICICIBANK.NS",
+    "headline": "Announcement under Regulation 30 (LODR)-Investor Presentation",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "results"
+  },
+  {
+    "ticker": "ICICIBANK.NS",
+    "headline": "Call With Media On Financial Results For The Quarter And Six Months Ended September 30, 20",
+    "heuristic_cat": "results",
+    "gemini_cat": "earnings_call"
+  },
+  {
+    "ticker": "SUNPHARMA.NS",
+    "headline": "Clarification Sought From Sun Pharmaceutical Industries Ltd",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "press_release"
+  },
+  {
+    "ticker": "SUNPHARMA.NS",
+    "headline": "Announcement under Regulation 30 (LODR)-Credit Rating",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "credit_rating"
+  },
+  {
+    "ticker": "TRENT.NS",
+    "headline": "Announcement under Regulation 30 (LODR)-Investor Presentation",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "results"
+  },
+  {
+    "ticker": "TRENT.NS",
+    "headline": "Announcement under Regulation 30 (LODR)-Retirement",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "management_change"
+  },
+  {
+    "ticker": "TRENT.NS",
+    "headline": "Board Meeting Outcome for Outcome Of Board Meeting Held Today I.E. 29Th October 2026",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "results"
+  },
+  {
+    "ticker": "TRENT.NS",
+    "headline": "Announcement under Regulation 30 (LODR)-Diversification / Disinvestment",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "M&A"
+  },
+  {
+    "ticker": "POLYCAB.NS",
+    "headline": "Announcement Under Regulation 30 (LODR) - Analyst(S) / Investor(S) Meet - Intimation",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "investor_meetings"
+  },
+  {
+    "ticker": "POLYCAB.NS",
+    "headline": "Announcement Under Regulation 30 (LODR) - Analyst(S) / Investor(S) Meet - Intimation",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "investor_meetings"
+  },
+  {
+    "ticker": "POLYCAB.NS",
+    "headline": "Announcement Under Regulation 30 (LODR) - Analyst(S) / Investor(S) Meet - Intimation",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "investor_meetings"
+  },
+  {
+    "ticker": "POLYCAB.NS",
+    "headline": "Announcement Under Regulation 30 (LODR) - Analyst(S) / Investor(S) Meet - Intimation",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "investor_meetings"
+  },
+  {
+    "ticker": "POLYCAB.NS",
+    "headline": "Unaudited Interim Condensed (Standalone And Consolidated) Financial Statements For The Qua",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "results"
+  },
+  {
+    "ticker": "POLYCAB.NS",
+    "headline": "Earnings Presentation",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "results"
+  },
+  {
+    "ticker": "DIXON.NS",
+    "headline": "Announcement under Regulation 30 (LODR)-Change in Management",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "management_change"
+  },
+  {
+    "ticker": "DIXON.NS",
+    "headline": "Announcement Under Regulation 30 Of SEBI LODR- ESG Rating By Crisil ESG Ratings & Analytic",
+    "heuristic_cat": "credit_rating",
+    "gemini_cat": "unclassified"
+  },
+  {
+    "ticker": "DIXON.NS",
+    "headline": "Announcement under Regulation 30 (LODR)-Memorandum of Understanding /Agreements",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "press_release"
+  },
+  {
+    "ticker": "HBLPOWER.NS",
+    "headline": "Clarification sought from HBL Engineering Ltd",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "press_release"
+  },
+  {
+    "ticker": "HBLPOWER.NS",
+    "headline": "Announcement under Regulation 30 (LODR)-Credit Rating",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "credit_rating"
+  },
+  {
+    "ticker": "KALYANKJIL.NS",
+    "headline": "Board Meeting Intimation for The Quarter And Half Year Ended September 30, 2026",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "results"
+  },
+  {
+    "ticker": "KALYANKJIL.NS",
+    "headline": "Quarterly Update - Q2 FY 2026-27",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "press_release"
+  },
+  {
+    "ticker": "CAMS.NS",
+    "headline": "Announcement under Regulation 30 (LODR)-Investor Presentation",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "results"
+  },
+  {
+    "ticker": "CAMS.NS",
+    "headline": "Corporate Action-Board approves Dividend",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "dividend"
+  },
+  {
+    "ticker": "CAMS.NS",
+    "headline": "Board Meeting Outcome for Outcome Of Board Meeting Held On 29Th October 2026",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "results"
+  },
+  {
+    "ticker": "LALPATHLAB.NS",
+    "headline": "Corporate Action-Board to consider Dividend",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "dividend"
+  },
+  {
+    "ticker": "ZOMATO.NS",
+    "headline": "Announcement under Regulation 30 (LODR)-Restructuring",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "M&A"
+  },
+  {
+    "ticker": "ZOMATO.NS",
+    "headline": "Shareholders Letter",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "press_release"
+  },
+  {
+    "ticker": "IRCTC.NS",
+    "headline": "Board Comments On Fines Levied By The Exchanges For Non-Compliances Of Certain Regulations",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "litigation"
+  },
+  {
+    "ticker": "IRCTC.NS",
+    "headline": "Announcement under Regulation 30 (LODR)-Change in Management",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "management_change"
+  },
+  {
+    "ticker": "IRCTC.NS",
+    "headline": "Announcement under Regulation 30 (LODR)-Change in Management",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "management_change"
+  },
+  {
+    "ticker": "CDSL.NS",
+    "headline": "Company Update For The Quarter And Half Year Ended September 30, 2026",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "results"
+  },
+  {
+    "ticker": "IDEAFORGE.NS",
+    "headline": "Announcement under Regulation 30 (LODR)-Investor Presentation",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "results"
+  },
+  {
+    "ticker": "IDEAFORGE.NS",
+    "headline": "Announcement under Regulation 30 (LODR)-Resignation of Company Secretary / Compliance Offi",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "management_change"
+  },
+  {
+    "ticker": "IDEAFORGE.NS",
+    "headline": "Announcement Under Regulation 30 (LODR)_Ideaforge Has Entered Into Loan Agreement With Tec",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "fund_raise"
+  },
+  {
+    "ticker": "IDEAFORGE.NS",
+    "headline": "Disclosures of reasons for encumbrance by promoter of listed companies under Reg. 31(1) re",
+    "heuristic_cat": "insider_trading",
+    "gemini_cat": "pledging"
+  },
+  {
+    "ticker": "IDEAFORGE.NS",
+    "headline": "Disclosures under Reg. 31(1) and 31(2) of SEBI (SAST) Regulations, 2011.",
+    "heuristic_cat": "insider_trading",
+    "gemini_cat": "pledging"
+  },
+  {
+    "ticker": "PERSISTENT.NS",
+    "headline": "Announcement under Regulation 30 (LODR)-Meeting Updates",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "investor_meetings"
+  },
+  {
+    "ticker": "PERSISTENT.NS",
+    "headline": "Announcement under Regulation 30 (LODR)-Meeting Updates",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "investor_meetings"
+  },
+  {
+    "ticker": "PERSISTENT.NS",
+    "headline": "Announcement under Regulation 30 (LODR)-Credit Rating",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "credit_rating"
+  },
+  {
+    "ticker": "PERSISTENT.NS",
+    "headline": "Announcement under Regulation 30 (LODR)-Credit Rating",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "credit_rating"
+  },
+  {
+    "ticker": "PERSISTENT.NS",
+    "headline": "Announcement under Regulation 30 (LODR)-Meeting Updates",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "investor_meetings"
+  },
+  {
+    "ticker": "PERSISTENT.NS",
+    "headline": "Announcement under Regulation 30 (LODR)-Issue of Securities",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "fund_raise"
+  },
+  {
+    "ticker": "PERSISTENT.NS",
+    "headline": "Announcement under Regulation 30 (LODR)-Issue of Securities",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "fund_raise"
+  },
+  {
+    "ticker": "PERSISTENT.NS",
+    "headline": "Audited Financial Statements For The Quarter And Half Year Ended September 30, 2026",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "results"
+  },
+  {
+    "ticker": "PERSISTENT.NS",
+    "headline": "Announcement under Regulation 30 (LODR)-Investor Presentation",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "results"
+  },
+  {
+    "ticker": "PERSISTENT.NS",
+    "headline": "Board Meeting Outcome for Outcome Of The Board Meeting Held On October 14, 2026, And Concl",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "results"
+  },
+  {
+    "ticker": "PERSISTENT.NS",
+    "headline": "Announcement under Regulation 30 (LODR)-Credit Rating",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "credit_rating"
+  },
+  {
+    "ticker": "PERSISTENT.NS",
+    "headline": "Update On Voluntary Public Takeover Offer Made By Persistent Systems Limited To The Shareh",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "M&A"
+  },
+  {
+    "ticker": "PERSISTENT.NS",
+    "headline": "Shareholder Meeting / Postal Ballot-Outcome of EGM",
+    "heuristic_cat": "postal_ballot",
+    "gemini_cat": "agm_egm"
+  },
+  {
+    "ticker": "DMART.NS",
+    "headline": "Store Opening Intimation",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "press_release"
+  },
+  {
+    "ticker": "DMART.NS",
+    "headline": "Announcement under Regulation 30 (LODR)-Investor Presentation",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "results"
+  },
+  {
+    "ticker": "DMART.NS",
+    "headline": "Announcement under Regulation 30 (LODR)-Credit Rating",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "credit_rating"
+  },
+  {
+    "ticker": "BAJFINANCE.NS",
+    "headline": "Shareholder Meeting / Postal Ballot-Outcome of EGM",
+    "heuristic_cat": "postal_ballot",
+    "gemini_cat": "agm_egm"
+  },
+  {
+    "ticker": "BAJFINANCE.NS",
+    "headline": "Announcement under Regulation 30 (LODR)-Change in Management",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "management_change"
+  },
+  {
+    "ticker": "BAJFINANCE.NS",
+    "headline": "Announcement under Regulation 30 (LODR)-Issue of Securities",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "fund_raise"
+  },
+  {
+    "ticker": "BAJFINANCE.NS",
+    "headline": "Announcement under Regulation 30 (LODR)-Investor Presentation",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "results"
+  },
+  {
+    "ticker": "BAJFINANCE.NS",
+    "headline": "Information Under Regulation 30 Of SEBI (Listing Obligations And Disclosure Requirements) ",
+    "heuristic_cat": "insider_trading",
+    "gemini_cat": "unclassified"
+  },
+  {
+    "ticker": "MOTHERSON.NS",
+    "headline": "Announcement under Regulation 30 (LODR)-Scheme of Arrangement",
+    "heuristic_cat": "unclassified",
+    "gemini_cat": "M&A"
+  }
+]

@@ -1,0 +1,45 @@
+{
+  "status": "ok",
+  "ticker": "PERSISTENT.NS",
+  "is_bank": false,
+  "extraction_method": "regex",
+  "basis": "standalone",
+  "period_current": "Q2 FY27",
+  "period_qoq": "Q1 FY27",
+  "period_yoy": "Q2 FY26",
+  "metrics": {
+    "revenue": {
+      "current": 44941.71,
+      "qoq_prev": 41178.01,
+      "qoq_pct": 9.1,
+      "yoy_prev": 34929.47,
+      "yoy_pct": 28.7
+    },
+    "ebitda": {
+      "current": 7644.64,
+      "qoq_prev": 6493.29,
+      "qoq_pct": 17.7,
+      "yoy_prev": 7012.51,
+      "yoy_pct": 9.0,
+      "label": "EBITDA (derived)",
+      "definition": "PBT + finance costs + depreciation; includes other income",
+      "source": "derived"
+    },
+    "pbt": {
+      "current": 6558.73,
+      "qoq_prev": 5458.71,
+      "qoq_pct": 20.2,
+      "yoy_prev": 6202.18,
+      "yoy_pct": 5.7
+    },
+    "pat": {
+      "current": 4828.94,
+      "qoq_prev": 4020.24,
+      "qoq_pct": 20.1,
+      "yoy_prev": 4589.03,
+      "yoy_pct": 5.2
+    }
+  },
+  "filing_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/b34da17b-32f8-4d73-8f1a-803d6f561798.pdf",
+  "sha256": "332b82921b260e4deb2fb3cecd88294a5c0a57e5d80705b23cf708c0b69872e2"
+}
