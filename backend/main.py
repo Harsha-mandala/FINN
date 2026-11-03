@@ -53,7 +53,8 @@ app.add_middleware(
 # ── Lightweight Keepalive / Health Route ───────────────────────────────────────
 # Fast keepalive route responding to both GET and HEAD with zero overhead (no disk, no LLM, no network).
 # NOTE: Never use /health/llm for keepalive or uptime pings because it makes live Gemini API calls and burns quota.
-@app.api_route("/health", methods=["GET", "HEAD"], tags=["health"])
+@app.get("/health", tags=["health"])
+@app.head("/health", tags=["health"], include_in_schema=False)
 async def health_check():
     return {"status": "ok"}
 
