@@ -1,24 +1,22 @@
 """
 FINN — Backend Config
-Loads environment variables and defines all app settings.
-All LLM model names come from env vars; nothing is hardcoded in app code.
+Loads process environment variables and defines all app settings.
+All settings come from environment variables; no secrets or .env files are loaded from disk.
 """
 
 import os
 from pathlib import Path
-from dotenv import load_dotenv
 
-# Load .env from project root
 ROOT = Path(__file__).resolve().parent.parent
-load_dotenv(ROOT / ".env")
 
 # ── API Keys ──────────────────────────────────────────────────────────────────
-
+# The key is read ONLY from process environment variables.
+# It is NEVER loaded from a file on disk.
 def get_gemini_key() -> str:
     key = (
-        os.getenv("GEMINI_API_KEY", "")
-        or os.getenv("GOOGLE_API_KEY", "")
-        or os.getenv("GOOGLE_GENAI_API_KEY", "")
+        os.environ.get("GEMINI_API_KEY", "")
+        or os.environ.get("GOOGLE_API_KEY", "")
+        or os.environ.get("GOOGLE_GENAI_API_KEY", "")
     )
     return key.strip().strip('"').strip("'")
 
@@ -28,12 +26,11 @@ GEMINI_API_KEY: str = get_gemini_key()
 # ── LLM Model Selection ───────────────────────────────────────────────────────
 # Route by task to spread quota across per-model daily limits:
 #
-#  GEMINI_CHEAP_MODEL  : bulk tasks — classification, per-doc extraction, chat
-#  GEMINI_MODEL        : reasoning tasks — Stage-2 research synthesis, grounded bios
-#  GEMINI_FALLBACK_MODELS : comma-separated list tried in order on 429/quota
+#  GEMINI_CHEAP_CHAIN    : bulk tasks — classification, per-doc extraction
+#  GEMINI_REASONING_CHAIN: reasoning tasks — Stage-2 research synthesis, grounded bios
 #
 # Defaults target the highest-RPD models visible on the free tier.
-# Override any of these in .env or via Render environment variables.
+# Override via process environment variables if needed.
 
 GEMINI_CHEAP_CHAIN: list[str] = [
     m.strip()

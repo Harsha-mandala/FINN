@@ -11,7 +11,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from backend.config import ALLOWED_ORIGINS
-from backend.routers import push, pull, chat, health
+from backend.routers import push, pull, health
 
 
 def sanitize_floats(obj: Any) -> Any:
@@ -49,11 +49,19 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
+# ── Lightweight Keepalive / Health Route ───────────────────────────────────────
+# Fast keepalive route responding to both GET and HEAD with zero overhead (no disk, no LLM, no network).
+# NOTE: Never use /health/llm for keepalive or uptime pings because it makes live Gemini API calls and burns quota.
+@app.api_route("/health", methods=["GET", "HEAD"], tags=["health"])
+async def health_check():
+    return {"status": "ok"}
+
+
 # ── Routers ───────────────────────────────────────────────────────────────────
 app.include_router(health.router)
 app.include_router(push.router)
 app.include_router(pull.router)
-app.include_router(chat.router)
 
 
 @app.get("/")
@@ -69,7 +77,7 @@ async def root():
             "push_alerts": "/push/alerts",
             "push_prices": "/push/prices",
             "pull_research": "/pull/research/{ticker}",
-            "chat": "/chat",
+            "pull_overview": "/pull/overview/{ticker}",
         },
     }
 

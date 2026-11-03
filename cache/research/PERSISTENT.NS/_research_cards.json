@@ -1,0 +1,302 @@
+{
+  "ticker": "PERSISTENT.NS",
+  "company_name": "PERSISTENT",
+  "generated_at": "2026-11-03T15:05:57.461639",
+  "cards": [
+    {
+      "card_type": "snapshot",
+      "ticker": "PERSISTENT.NS",
+      "company_name": "PERSISTENT",
+      "generated_at": "2026-11-03T15:05:57.461639",
+      "data": {
+        "content": "**Business Overview**\nPersistent Systems is a global provider of digital engineering, technology, and consulting services. The company operates through three primary segments: Software, Hi-Tech and Emerging Industries; Banking, Financial Services and Insurance (BFSI); and Healthcare & Life Sciences. It focuses on product engineering, platform development, and end-to-end digital transformation for enterprises and technology companies.\n\n**Segment Revenue Mix**\n- **Software, Hi-Tech and Emerging Industries** (42.76%) [Q2 FY27]: Quarter ended September 30, 2026\n- **Banking, Financial Services and Insurance (BFSI)** (33.7%) [Q2 FY27]: Quarter ended September 30, 2026\n- **Healthcare & Life Sciences** (23.54%) [Q2 FY27]: Quarter ended September 30, 2026\n\n**Key Operating Metrics**\n- **Revenue**: 147484.49 INR crore (FY26) — Source: PERSISTENT_Financial_Results_Q2_FY27.pdf\n- **EBITDA**: 29031.87 INR crore (FY26) — Source: PERSISTENT_Financial_Results_Q2_FY27.pdf\n- **PAT**: 18651.2 INR crore (FY26) — Source: PERSISTENT_Financial_Results_Q2_FY27.pdf\n- **Capex**: 2467.57 INR crore (Q2 FY27) — Source: PERSISTENT_Financial_Results_Q2_FY27.pdf",
+        "business_summary": "Persistent Systems is a global provider of digital engineering, technology, and consulting services. The company operates through three primary segments: Software, Hi-Tech and Emerging Industries; Banking, Financial Services and Insurance (BFSI); and Healthcare & Life Sciences. It focuses on product engineering, platform development, and end-to-end digital transformation for enterprises and technology companies.",
+        "segments": [
+          {
+            "name": "Software, Hi-Tech and Emerging Industries",
+            "revenue_share_pct": 42.76,
+            "period": "Q2 FY27",
+            "note": "Quarter ended September 30, 2026"
+          },
+          {
+            "name": "Banking, Financial Services and Insurance (BFSI)",
+            "revenue_share_pct": 33.7,
+            "period": "Q2 FY27",
+            "note": "Quarter ended September 30, 2026"
+          },
+          {
+            "name": "Healthcare & Life Sciences",
+            "revenue_share_pct": 23.54,
+            "period": "Q2 FY27",
+            "note": "Quarter ended September 30, 2026"
+          }
+        ],
+        "key_metrics": [
+          {
+            "name": "Revenue",
+            "value": 147484.49,
+            "unit": "INR crore",
+            "period": "FY26",
+            "source_ref": "PERSISTENT_Financial_Results_Q2_FY27.pdf"
+          },
+          {
+            "name": "EBITDA",
+            "value": 29031.87,
+            "unit": "INR crore",
+            "period": "FY26",
+            "source_ref": "PERSISTENT_Financial_Results_Q2_FY27.pdf"
+          },
+          {
+            "name": "PAT",
+            "value": 18651.2,
+            "unit": "INR crore",
+            "period": "FY26",
+            "source_ref": "PERSISTENT_Financial_Results_Q2_FY27.pdf"
+          },
+          {
+            "name": "Capex",
+            "value": 2467.57,
+            "unit": "INR crore",
+            "period": "Q2 FY27",
+            "source_ref": "PERSISTENT_Financial_Results_Q2_FY27.pdf"
+          }
+        ]
+      },
+      "provenance": {
+        "docs_used": [
+          "PERSISTENT_Concall_Transcript_Q1_FY25.pdf",
+          "PERSISTENT_Concall_Transcript_Q2_FY25.pdf",
+          "PERSISTENT_Concall_Transcript_Q4_FY26.pdf",
+          "PERSISTENT_Financial_Results_Q2_FY27.pdf"
+        ],
+        "model_used": "Gemini",
+        "generated_at": "2026-11-03T15:05:57.461639",
+        "status": "live"
+      }
+    },
+    {
+      "card_type": "trajectory",
+      "ticker": "PERSISTENT.NS",
+      "company_name": "PERSISTENT",
+      "generated_at": "2026-11-03T15:05:57.461639",
+      "data": {
+        "content": "**Revenue (INR Crore) Trajectory**\n- Historical: Q2 FY26: 35807.2, FY26: 147484.49, Q1 FY27: 43032.27, Q2 FY27: 46639.04\n- Insight: The company has shown consistent sequential and year-on-year revenue growth, with Q2 FY27 revenue increasing by approximately 30% compared to Q2 FY26.\n- Source: PERSISTENT_Financial_Results_Q2_FY27.pdf\n\n**PAT (INR Crore) Trajectory**\n- Historical: Q2 FY26: 4714.7, FY26: 18651.2, Q1 FY27: 4830.43, Q2 FY27: 3515.14\n- Insight: While annual PAT for FY26 was strong, Q2 FY27 saw a sequential and year-on-year decline, partly impacted by transaction-related costs and acquisition expenses.\n- Source: PERSISTENT_Financial_Results_Q2_FY27.pdf",
+        "series": [
+          {
+            "metric": "Revenue (INR Crore)",
+            "series": [
+              {
+                "period": "Q2 FY26",
+                "value": 35807.2
+              },
+              {
+                "period": "FY26",
+                "value": 147484.49
+              },
+              {
+                "period": "Q1 FY27",
+                "value": 43032.27
+              },
+              {
+                "period": "Q2 FY27",
+                "value": 46639.04
+              }
+            ],
+            "takeaway": "The company has shown consistent sequential and year-on-year revenue growth, with Q2 FY27 revenue increasing by approximately 30% compared to Q2 FY26.",
+            "source_ref": "PERSISTENT_Financial_Results_Q2_FY27.pdf"
+          },
+          {
+            "metric": "PAT (INR Crore)",
+            "series": [
+              {
+                "period": "Q2 FY26",
+                "value": 4714.7
+              },
+              {
+                "period": "FY26",
+                "value": 18651.2
+              },
+              {
+                "period": "Q1 FY27",
+                "value": 4830.43
+              },
+              {
+                "period": "Q2 FY27",
+                "value": 3515.14
+              }
+            ],
+            "takeaway": "While annual PAT for FY26 was strong, Q2 FY27 saw a sequential and year-on-year decline, partly impacted by transaction-related costs and acquisition expenses.",
+            "source_ref": "PERSISTENT_Financial_Results_Q2_FY27.pdf"
+          }
+        ]
+      },
+      "provenance": {
+        "docs_used": [
+          "PERSISTENT_Concall_Transcript_Q1_FY25.pdf",
+          "PERSISTENT_Concall_Transcript_Q2_FY25.pdf",
+          "PERSISTENT_Concall_Transcript_Q4_FY26.pdf",
+          "PERSISTENT_Financial_Results_Q2_FY27.pdf"
+        ],
+        "model_used": "Gemini",
+        "generated_at": "2026-11-03T15:05:57.461639",
+        "status": "live"
+      }
+    },
+    {
+      "card_type": "guidance",
+      "ticker": "PERSISTENT.NS",
+      "company_name": "PERSISTENT",
+      "generated_at": "2026-11-03T15:05:57.461639",
+      "data": {
+        "content": "- **Revenue Run Rate** (FY27): $2 billion\n  Quote: \"the $2 billion by FY27, that's a run rate. We are marching towards it steadily.\" (Sandeep Kalra, Executive Director and Chief Executive Officer)\n  Source: PERSISTENT_Concall_Transcript_Q4_FY26.pdf\n- **Quarterly Revenue Run Rate** (Q4 FY27): $500 million\n  Quote: \"FY’27, Q4 exit is where we are looking at the run rate being in the range of $500 million or so.\" (Sandeep Kalra, Executive Director and Chief Executive Officer)\n  Source: PERSISTENT_Concall_Transcript_Q4_FY26.pdf\n- **EBIT margin** (Aspirational): 16 to 17%\n  Quote: \"we want to be in the 16 to 17 % range, that is our aspiration. That will be our endeavour\" (Sandeep Kalra, Executive Director and Chief Executive Officer)\n  Source: PERSISTENT_Concall_Transcript_Q2_FY25.pdf",
+        "items": [
+          {
+            "metric": "Revenue Run Rate",
+            "guided_value": "$2 billion",
+            "horizon": "FY27",
+            "verbatim_quote": "the $2 billion by FY27, that's a run rate. We are marching towards it steadily.",
+            "source_doc": "PERSISTENT_Concall_Transcript_Q4_FY26.pdf",
+            "speaker": "Sandeep Kalra, Executive Director and Chief Executive Officer"
+          },
+          {
+            "metric": "Quarterly Revenue Run Rate",
+            "guided_value": "$500 million",
+            "horizon": "Q4 FY27",
+            "verbatim_quote": "FY’27, Q4 exit is where we are looking at the run rate being in the range of $500 million or so.",
+            "source_doc": "PERSISTENT_Concall_Transcript_Q4_FY26.pdf",
+            "speaker": "Sandeep Kalra, Executive Director and Chief Executive Officer"
+          },
+          {
+            "metric": "EBIT margin",
+            "guided_value": "16 to 17%",
+            "horizon": "Aspirational",
+            "verbatim_quote": "we want to be in the 16 to 17 % range, that is our aspiration. That will be our endeavour",
+            "source_doc": "PERSISTENT_Concall_Transcript_Q2_FY25.pdf",
+            "speaker": "Sandeep Kalra, Executive Director and Chief Executive Officer"
+          }
+        ]
+      },
+      "provenance": {
+        "docs_used": [
+          "PERSISTENT_Concall_Transcript_Q1_FY25.pdf",
+          "PERSISTENT_Concall_Transcript_Q2_FY25.pdf",
+          "PERSISTENT_Concall_Transcript_Q4_FY26.pdf",
+          "PERSISTENT_Financial_Results_Q2_FY27.pdf"
+        ],
+        "model_used": "Gemini",
+        "generated_at": "2026-11-03T15:05:57.461639",
+        "status": "live"
+      }
+    },
+    {
+      "card_type": "promised_vs_delivered",
+      "ticker": "PERSISTENT.NS",
+      "company_name": "PERSISTENT",
+      "generated_at": "2026-11-03T15:05:57.461639",
+      "data": {
+        "content": "- **[Pending]** FY27 Revenue Run Rate: Guided 'the $2 billion by FY27, that's a run rate. We are marching towards it steadily.'\n  Actual: None (FY27) | Delta: None | Source: PERSISTENT_Concall_Transcript_Q4_FY26.pdf\n- **[Pending]** Q1 FY25 Annual Revenue Addition (New Deal): Guided 'This is a net new deal which will add roughly about $125 million plus on an annual basis'\n  Actual: None (FY25-FY26) | Delta: None | Source: PERSISTENT_Concall_Transcript_Q1_FY25.pdf",
+        "commitments": [
+          {
+            "statement": "FY27 Revenue Run Rate: Guided 'the $2 billion by FY27, that's a run rate. We are marching towards it steadily.'",
+            "verdict": "Pending",
+            "note": "Actual: None (FY27) | Delta: None | Source: PERSISTENT_Concall_Transcript_Q4_FY26.pdf"
+          },
+          {
+            "statement": "Q1 FY25 Annual Revenue Addition (New Deal): Guided 'This is a net new deal which will add roughly about $125 million plus on an annual basis'",
+            "verdict": "Pending",
+            "note": "Actual: None (FY25-FY26) | Delta: None | Source: PERSISTENT_Concall_Transcript_Q1_FY25.pdf"
+          }
+        ],
+        "rows": [
+          {
+            "quarter": "FY27",
+            "metric": "Revenue Run Rate",
+            "guided_quote": "the $2 billion by FY27, that's a run rate. We are marching towards it steadily.",
+            "source_doc": "PERSISTENT_Concall_Transcript_Q4_FY26.pdf",
+            "actual_value": null,
+            "actual_period": "FY27",
+            "delta_computed": null,
+            "verdict": "pending"
+          },
+          {
+            "quarter": "Q1 FY25",
+            "metric": "Annual Revenue Addition (New Deal)",
+            "guided_quote": "This is a net new deal which will add roughly about $125 million plus on an annual basis",
+            "source_doc": "PERSISTENT_Concall_Transcript_Q1_FY25.pdf",
+            "actual_value": null,
+            "actual_period": "FY25-FY26",
+            "delta_computed": null,
+            "verdict": "insufficient_data"
+          }
+        ],
+        "limited_data": false
+      },
+      "provenance": {
+        "docs_used": [
+          "PERSISTENT_Concall_Transcript_Q1_FY25.pdf",
+          "PERSISTENT_Concall_Transcript_Q2_FY25.pdf",
+          "PERSISTENT_Concall_Transcript_Q4_FY26.pdf",
+          "PERSISTENT_Financial_Results_Q2_FY27.pdf"
+        ],
+        "model_used": "Gemini",
+        "generated_at": "2026-11-03T15:05:57.461639",
+        "status": "live"
+      }
+    },
+    {
+      "card_type": "bull_bear",
+      "ticker": "PERSISTENT.NS",
+      "company_name": "PERSISTENT",
+      "generated_at": "2026-11-03T15:05:57.461639",
+      "data": {
+        "content": "**Bull Case (Key Catalysts & Strengths)**\n- **Strategic long-term agreement with a US-based global technology leader expected to add $125M+ annually and $650M+ over 6.5 years.** — Source: PERSISTENT_Concall_Transcript_Q1_FY25.pdf\n- **Expansion of AI capabilities through preferred partnerships with Anthropic and Microsoft agentic business solution specializations.** — Source: PERSISTENT_Concall_Transcript_Q2_FY25.pdf\n- **Proposed acquisition of Nagarro SE to significantly enhance digital engineering scale and European market presence.** — Source: PERSISTENT_Financial_Results_Q2_FY27.pdf\n\n**Bear Case (Key Risks & Headwinds)**\n- **One-time acquisition-related expenses (estimated at $50M) and transaction costs weighing on reported EPS and PAT growth.** — Source: PERSISTENT_Concall_Transcript_Q2_FY25.pdf, PERSISTENT_Financial_Results_Q2_FY27.pdf\n- **Slower conversion from AI pilots to enterprise-wide adoption in regulated sectors like BFSI and Healthcare compared to the tech sector.** — Source: PERSISTENT_Concall_Transcript_Q4_FY26.pdf\n- **Macroeconomic risks including potential inflation impacts from higher oil prices due to geopolitical tensions.** — Source: PERSISTENT_Concall_Transcript_Q4_FY26.pdf",
+        "bull": [
+          {
+            "argument": "Strategic long-term agreement with a US-based global technology leader expected to add $125M+ annually and $650M+ over 6.5 years.",
+            "source_ref": "PERSISTENT_Concall_Transcript_Q1_FY25.pdf"
+          },
+          {
+            "argument": "Expansion of AI capabilities through preferred partnerships with Anthropic and Microsoft agentic business solution specializations.",
+            "source_ref": "PERSISTENT_Concall_Transcript_Q2_FY25.pdf"
+          },
+          {
+            "argument": "Proposed acquisition of Nagarro SE to significantly enhance digital engineering scale and European market presence.",
+            "source_ref": "PERSISTENT_Financial_Results_Q2_FY27.pdf"
+          }
+        ],
+        "bear": [
+          {
+            "argument": "One-time acquisition-related expenses (estimated at $50M) and transaction costs weighing on reported EPS and PAT growth.",
+            "source_ref": "PERSISTENT_Concall_Transcript_Q2_FY25.pdf, PERSISTENT_Financial_Results_Q2_FY27.pdf"
+          },
+          {
+            "argument": "Slower conversion from AI pilots to enterprise-wide adoption in regulated sectors like BFSI and Healthcare compared to the tech sector.",
+            "source_ref": "PERSISTENT_Concall_Transcript_Q4_FY26.pdf"
+          },
+          {
+            "argument": "Macroeconomic risks including potential inflation impacts from higher oil prices due to geopolitical tensions.",
+            "source_ref": "PERSISTENT_Concall_Transcript_Q4_FY26.pdf"
+          }
+        ]
+      },
+      "provenance": {
+        "docs_used": [
+          "PERSISTENT_Concall_Transcript_Q1_FY25.pdf",
+          "PERSISTENT_Concall_Transcript_Q2_FY25.pdf",
+          "PERSISTENT_Concall_Transcript_Q4_FY26.pdf",
+          "PERSISTENT_Financial_Results_Q2_FY27.pdf"
+        ],
+        "model_used": "Gemini",
+        "generated_at": "2026-11-03T15:05:57.461639",
+        "status": "live"
+      }
+    }
+  ],
+  "sources_used": [
+    "PERSISTENT_Concall_Transcript_Q1_FY25.pdf",
+    "PERSISTENT_Concall_Transcript_Q2_FY25.pdf",
+    "PERSISTENT_Concall_Transcript_Q4_FY26.pdf",
+    "PERSISTENT_Financial_Results_Q2_FY27.pdf"
+  ],
+  "status": "ok"
+}

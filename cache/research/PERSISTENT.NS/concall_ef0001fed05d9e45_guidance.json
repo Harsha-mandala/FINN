@@ -1,0 +1,33 @@
+{
+  "status": "ok",
+  "doc": "PERSISTENT_Concall_Transcript_Q2_FY25.pdf",
+  "doc_type": "concall",
+  "file_hash": "ef0001fed05d9e45",
+  "extracted_at": "2026-11-03T15:05:26.340616",
+  "guidance_items": [
+    {
+      "metric": "EBIT margin",
+      "direction": "target",
+      "value": "16 to 17",
+      "unit": "%",
+      "horizon": "aspirational",
+      "verbatim_quote": "we want to be in the 16 to 17 % range, that is our aspiration. That will be our endeavour",
+      "speaker": "Sandeep Kalra, Executive Director and Chief Executive Officer",
+      "confidence": "implied"
+    }
+  ],
+  "catalysts": [
+    {
+      "point": "Strong partnership expansion with Anthropic and Microsoft agentic business solution specialization",
+      "verbatim_quote": "the quarter gone by, we continue to expand our partnerships by becoming a preferred partner in Anthropic's cloud partner network services track and earning Microsoft's agentic business solution specialization.",
+      "speaker": "Nitish Shrivastava, Chief Technology Officer \u2013 Engineering Hyper Productivity"
+    }
+  ],
+  "risks": [
+    {
+      "point": "One-time expenses related to the Nagarro acquisition impacting reported EPS growth",
+      "verbatim_quote": "Overall, we are expecting one-time expenses to the tune of approximately $50 million spread over three to four quarters. These expenses will weigh in on the reported EPS growth as you would have seen in our Q2 results reflecting an impact of around 3.1% on our reported PAT.",
+      "speaker": "Sandeep Kalra, Executive Director and Chief Executive Officer"
+    }
+  ]
+}

@@ -1,0 +1,279 @@
+{
+  "ticker": "RELIANCE.NS",
+  "company_name": "RELIANCE",
+  "generated_at": "2026-11-03T15:04:40.389191",
+  "cards": [
+    {
+      "card_type": "snapshot",
+      "ticker": "RELIANCE.NS",
+      "company_name": "RELIANCE",
+      "generated_at": "2026-11-03T15:04:40.389191",
+      "data": {
+        "content": "**Business Overview**\nReliance Industries Limited operates across diverse segments including Oil to Chemicals (O2C), which encompasses refining, petrochemicals, fuel retailing, and aviation fuel. The company is also involved in Oil and Gas exploration and production, consumer retail services, and a range of digital services. These segments are deeply integrated, with O2C being the largest contributor to revenue.\n\n**Segment Revenue Mix**\n- **Oil to Chemicals (O2C)** (57.45%) [30th Sep '26]: \n- **Retail** (22.75%) [30th Sep '26]: \n- **Digital Services** (12.03%) [30th Sep '26]: \n- **Others** (6.28%) [30th Sep '26]: \n- **Oil and Gas** (1.49%) [30th Sep '26]: \n\n**Key Operating Metrics**\n- **Revenue**: 332861.0 INR crore (Q2 FY27 (30th Sep'26)) — Source: Q2 FY27 Financial Results\n- **EBITDA**: 61224.0 INR crore (Q2 FY27 (30th Sep'26)) — Source: Q2 FY27 Financial Results\n- **PAT**: 29550.0 INR crore (Q2 FY27 (30th Sep'26)) — Source: Q2 FY27 Financial Results\n- **Capex**: 52813.0 INR crore (Q2 FY27 (30th Sep'26)) — Source: Q2 FY27 Financial Results\n- **D/E**: 0.41  (Q2 FY27 (30th Sep'26)) — Source: Q2 FY27 Financial Results\n- **Current Ratio**: 1.13  (Q2 FY27 (30th Sep'26)) — Source: Q2 FY27 Financial Results\n- **Interest Coverage**: 5.55  (Q2 FY27 (30th Sep'26)) — Source: Q2 FY27 Financial Results",
+        "business_summary": "Reliance Industries Limited operates across diverse segments including Oil to Chemicals (O2C), which encompasses refining, petrochemicals, fuel retailing, and aviation fuel. The company is also involved in Oil and Gas exploration and production, consumer retail services, and a range of digital services. These segments are deeply integrated, with O2C being the largest contributor to revenue.",
+        "segments": [
+          {
+            "name": "Oil to Chemicals (O2C)",
+            "revenue_share_pct": 57.45,
+            "period": "30th Sep '26",
+            "note": ""
+          },
+          {
+            "name": "Retail",
+            "revenue_share_pct": 22.75,
+            "period": "30th Sep '26",
+            "note": ""
+          },
+          {
+            "name": "Digital Services",
+            "revenue_share_pct": 12.03,
+            "period": "30th Sep '26",
+            "note": ""
+          },
+          {
+            "name": "Others",
+            "revenue_share_pct": 6.28,
+            "period": "30th Sep '26",
+            "note": ""
+          },
+          {
+            "name": "Oil and Gas",
+            "revenue_share_pct": 1.49,
+            "period": "30th Sep '26",
+            "note": ""
+          }
+        ],
+        "key_metrics": [
+          {
+            "name": "Revenue",
+            "value": 332861.0,
+            "unit": "INR crore",
+            "period": "Q2 FY27 (30th Sep'26)",
+            "source_ref": "Q2 FY27 Financial Results"
+          },
+          {
+            "name": "EBITDA",
+            "value": 61224.0,
+            "unit": "INR crore",
+            "period": "Q2 FY27 (30th Sep'26)",
+            "source_ref": "Q2 FY27 Financial Results"
+          },
+          {
+            "name": "PAT",
+            "value": 29550.0,
+            "unit": "INR crore",
+            "period": "Q2 FY27 (30th Sep'26)",
+            "source_ref": "Q2 FY27 Financial Results"
+          },
+          {
+            "name": "Capex",
+            "value": 52813.0,
+            "unit": "INR crore",
+            "period": "Q2 FY27 (30th Sep'26)",
+            "source_ref": "Q2 FY27 Financial Results"
+          },
+          {
+            "name": "D/E",
+            "value": 0.41,
+            "unit": "",
+            "period": "Q2 FY27 (30th Sep'26)",
+            "source_ref": "Q2 FY27 Financial Results"
+          },
+          {
+            "name": "Current Ratio",
+            "value": 1.13,
+            "unit": "",
+            "period": "Q2 FY27 (30th Sep'26)",
+            "source_ref": "Q2 FY27 Financial Results"
+          },
+          {
+            "name": "Interest Coverage",
+            "value": 5.55,
+            "unit": "",
+            "period": "Q2 FY27 (30th Sep'26)",
+            "source_ref": "Q2 FY27 Financial Results"
+          }
+        ]
+      },
+      "provenance": {
+        "docs_used": [
+          "RELIANCE_Q2_FY25_Concall_Transcript.pdf",
+          "RELIANCE_Q2_FY25_Financial_Results.pdf"
+        ],
+        "model_used": "Gemini",
+        "generated_at": "2026-11-03T15:04:40.389191",
+        "status": "live"
+      }
+    },
+    {
+      "card_type": "trajectory",
+      "ticker": "RELIANCE.NS",
+      "company_name": "RELIANCE",
+      "generated_at": "2026-11-03T15:04:40.389191",
+      "data": {
+        "content": "**Revenue Trajectory**\n- Historical: Q2 FY26 (30th Sep'25): 258898.0, Q1 FY27 (30th Jun'26): 311850.0, Q2 FY27 (30th Sep'26): 332861.0\n- Insight: Revenue shows a consistent upward trend over the reported quarters.\n- Source: Q2 FY27 Financial Results\n\n**EBITDA Trajectory**\n- Historical: Q2 FY26 (30th Sep'25): 48480.0, Q1 FY27 (30th Jun'26): 51403.0, Q2 FY27 (30th Sep'26): 61224.0\n- Insight: EBITDA has also shown a strong increasing trend across the reported quarters.\n- Source: Q2 FY27 Financial Results",
+        "series": [
+          {
+            "metric": "Revenue",
+            "series": [
+              {
+                "period": "Q2 FY26 (30th Sep'25)",
+                "value": 258898.0
+              },
+              {
+                "period": "Q1 FY27 (30th Jun'26)",
+                "value": 311850.0
+              },
+              {
+                "period": "Q2 FY27 (30th Sep'26)",
+                "value": 332861.0
+              }
+            ],
+            "takeaway": "Revenue shows a consistent upward trend over the reported quarters.",
+            "source_ref": "Q2 FY27 Financial Results"
+          },
+          {
+            "metric": "EBITDA",
+            "series": [
+              {
+                "period": "Q2 FY26 (30th Sep'25)",
+                "value": 48480.0
+              },
+              {
+                "period": "Q1 FY27 (30th Jun'26)",
+                "value": 51403.0
+              },
+              {
+                "period": "Q2 FY27 (30th Sep'26)",
+                "value": 61224.0
+              }
+            ],
+            "takeaway": "EBITDA has also shown a strong increasing trend across the reported quarters.",
+            "source_ref": "Q2 FY27 Financial Results"
+          }
+        ]
+      },
+      "provenance": {
+        "docs_used": [
+          "RELIANCE_Q2_FY25_Concall_Transcript.pdf",
+          "RELIANCE_Q2_FY25_Financial_Results.pdf"
+        ],
+        "model_used": "Gemini",
+        "generated_at": "2026-11-03T15:04:40.389191",
+        "status": "live"
+      }
+    },
+    {
+      "card_type": "guidance",
+      "ticker": "RELIANCE.NS",
+      "company_name": "RELIANCE",
+      "generated_at": "2026-11-03T15:04:40.389191",
+      "data": {
+        "content": "- **EBITDA** (FY2027): 80,000 Cr\n  Quote: \"So, when you look at the first half of FY 2027 performance, it is in our minds tracking annualized EBITDA well over Rs.80,000 Crores and I think this is something, it just tells you how the markets are.\" (Sh V Srikanth, CFO, Reliance Industries Limited)\n  Source: Q2 FY25 Concall\n- **New Energy earnings contribution** (FY2028): None\n  Quote: \"And on new energy, I just wanted to say that it is accelerating and we see the benefit, earnings contribution definitely starting in FY 2028.\" (Sh V Srikanth, CFO, Reliance Industries Limited)\n  Source: Q2 FY25 Concall",
+        "items": [
+          {
+            "metric": "EBITDA",
+            "guided_value": "80,000 Cr",
+            "horizon": "FY2027",
+            "verbatim_quote": "So, when you look at the first half of FY 2027 performance, it is in our minds tracking annualized EBITDA well over Rs.80,000 Crores and I think this is something, it just tells you how the markets are.",
+            "source_doc": "Q2 FY25 Concall",
+            "speaker": "Sh V Srikanth, CFO, Reliance Industries Limited"
+          },
+          {
+            "metric": "New Energy earnings contribution",
+            "guided_value": null,
+            "horizon": "FY2028",
+            "verbatim_quote": "And on new energy, I just wanted to say that it is accelerating and we see the benefit, earnings contribution definitely starting in FY 2028.",
+            "source_doc": "Q2 FY25 Concall",
+            "speaker": "Sh V Srikanth, CFO, Reliance Industries Limited"
+          }
+        ]
+      },
+      "provenance": {
+        "docs_used": [
+          "RELIANCE_Q2_FY25_Concall_Transcript.pdf",
+          "RELIANCE_Q2_FY25_Financial_Results.pdf"
+        ],
+        "model_used": "Gemini",
+        "generated_at": "2026-11-03T15:04:40.389191",
+        "status": "live"
+      }
+    },
+    {
+      "card_type": "promised_vs_delivered",
+      "ticker": "RELIANCE.NS",
+      "company_name": "RELIANCE",
+      "generated_at": "2026-11-03T15:04:40.389191",
+      "data": {
+        "content": "No past guidance vs delivered items tracked.",
+        "commitments": [],
+        "rows": [],
+        "limited_data": false
+      },
+      "provenance": {
+        "docs_used": [
+          "RELIANCE_Q2_FY25_Concall_Transcript.pdf",
+          "RELIANCE_Q2_FY25_Financial_Results.pdf"
+        ],
+        "model_used": "Gemini",
+        "generated_at": "2026-11-03T15:04:40.389191",
+        "status": "live"
+      }
+    },
+    {
+      "card_type": "bull_bear",
+      "ticker": "RELIANCE.NS",
+      "company_name": "RELIANCE",
+      "generated_at": "2026-11-03T15:04:40.389191",
+      "data": {
+        "content": "**Bull Case (Key Catalysts & Strengths)**\n- **Significant expansion and growth in online grocery B2C, up 42% year-on-year, showing early signs of progress.** — Source: Q2 FY25 Concall\n- **Expansion of fixed wireless access (FWA) with 15.1 million connections and over 78% market share, expected to ramp up in coming quarters.** — Source: Q2 FY25 Concall\n- **Strong crude sourcing flexibility, enabling switches between crude grades from various regions, and premium ethane advantage.** — Source: Q2 FY25 Concall\n- **Initial Public Offer (IPO) of Jio Platforms Limited (JPL) raising gross proceeds of 30,188 crore via fresh issue of 27,00,00,000 equity shares.** — Source: Q2 FY27 Financial Results\n\n**Bear Case (Key Risks & Headwinds)**\n- **High inflation is impacting consumer purchasing power and domestic demand.** — Source: Q2 FY25 Concall\n- **Currency depreciation is significantly affecting the landed costs of imported products.** — Source: Q2 FY25 Concall\n- **Elevated operating expenses driven by crude premiums, surge in freight rates, and increased insurance costs.** — Source: Q2 FY25 Concall",
+        "bull": [
+          {
+            "argument": "Significant expansion and growth in online grocery B2C, up 42% year-on-year, showing early signs of progress.",
+            "source_ref": "Q2 FY25 Concall"
+          },
+          {
+            "argument": "Expansion of fixed wireless access (FWA) with 15.1 million connections and over 78% market share, expected to ramp up in coming quarters.",
+            "source_ref": "Q2 FY25 Concall"
+          },
+          {
+            "argument": "Strong crude sourcing flexibility, enabling switches between crude grades from various regions, and premium ethane advantage.",
+            "source_ref": "Q2 FY25 Concall"
+          },
+          {
+            "argument": "Initial Public Offer (IPO) of Jio Platforms Limited (JPL) raising gross proceeds of 30,188 crore via fresh issue of 27,00,00,000 equity shares.",
+            "source_ref": "Q2 FY27 Financial Results"
+          }
+        ],
+        "bear": [
+          {
+            "argument": "High inflation is impacting consumer purchasing power and domestic demand.",
+            "source_ref": "Q2 FY25 Concall"
+          },
+          {
+            "argument": "Currency depreciation is significantly affecting the landed costs of imported products.",
+            "source_ref": "Q2 FY25 Concall"
+          },
+          {
+            "argument": "Elevated operating expenses driven by crude premiums, surge in freight rates, and increased insurance costs.",
+            "source_ref": "Q2 FY25 Concall"
+          }
+        ]
+      },
+      "provenance": {
+        "docs_used": [
+          "RELIANCE_Q2_FY25_Concall_Transcript.pdf",
+          "RELIANCE_Q2_FY25_Financial_Results.pdf"
+        ],
+        "model_used": "Gemini",
+        "generated_at": "2026-11-03T15:04:40.389191",
+        "status": "live"
+      }
+    }
+  ],
+  "sources_used": [
+    "RELIANCE_Q2_FY25_Concall_Transcript.pdf",
+    "RELIANCE_Q2_FY25_Financial_Results.pdf"
+  ],
+  "status": "ok"
+}

@@ -1,0 +1,63 @@
+{
+  "status": "ok",
+  "doc": "RELIANCE_Q2_FY25_Concall_Transcript.pdf",
+  "doc_type": "concall",
+  "file_hash": "075c98ba6154dbb2",
+  "extracted_at": "2026-11-03T15:04:11.289072",
+  "guidance_items": [
+    {
+      "metric": "EBITDA",
+      "direction": "other",
+      "value": "80,000",
+      "unit": "Cr",
+      "horizon": "FY2027",
+      "verbatim_quote": "So, when you look at the first half of FY 2027 performance, it is in our minds tracking annualized EBITDA well over Rs.80,000 Crores and I think this is something, it just tells you how the markets are.",
+      "speaker": "Sh V Srikanth, CFO, Reliance Industries Limited",
+      "confidence": "implied"
+    },
+    {
+      "metric": "New Energy earnings contribution",
+      "direction": "other",
+      "value": null,
+      "unit": "other",
+      "horizon": "FY2028",
+      "verbatim_quote": "And on new energy, I just wanted to say that it is accelerating and we see the benefit, earnings contribution definitely starting in FY 2028.",
+      "speaker": "Sh V Srikanth, CFO, Reliance Industries Limited",
+      "confidence": "implied"
+    }
+  ],
+  "catalysts": [
+    {
+      "point": "Significant expansion and growth in online grocery B2C, up 42% year-on-year",
+      "verbatim_quote": "What is good is that we are seeing the early signs of progress are pretty good when you look at online scale, especially on grocery B2C, that number is up 42%, very impressive set of numbers.",
+      "speaker": "Sh V Srikanth, CFO, Reliance Industries Limited"
+    },
+    {
+      "point": "Expansion of fixed wireless access (FWA) and market leadership in homes",
+      "verbatim_quote": "We have been the world's largest fixed wireless service with 15.1 million connections and with over 78% fixed wireless market share. And we do expect that to ramp up in the coming quarters.",
+      "speaker": "Sh Anshuman Thakur, Head of Strategy, Jio Platforms Limited"
+    },
+    {
+      "point": "Strong crude sourcing flexibility and downstream ethane advantage",
+      "verbatim_quote": "And we have talked about flexibility and again coming in useful when you see the kind of grades of crude that we were able to switch from the Americas and from the Meds, being able to offset the impact of Gulf and the premium ethane advantage is something Amit keeps talking about.",
+      "speaker": "Sh V Srikanth, CFO, Reliance Industries Limited"
+    }
+  ],
+  "risks": [
+    {
+      "point": "High inflation impacting consumer purchasing power and domestic demand",
+      "verbatim_quote": "Inflation is on a two year high, which is impacting the purchasing power for people.",
+      "speaker": "Sh Dinesh Taluja, CFO & Head of Corporate Development, Reliance Retail"
+    },
+    {
+      "point": "Currency depreciation affecting landed costs of imported products",
+      "verbatim_quote": "Currency has depreciated significantly. That is impacting, especially, some of the imported products. The landed products have gone up.",
+      "speaker": "Sh Dinesh Taluja, CFO & Head of Corporate Development, Reliance Retail"
+    },
+    {
+      "point": "Elevated OpEx driven by crude premiums, freight rates, and insurance costs",
+      "verbatim_quote": "And what is particularly impressive is that it came on the back of significantly elevated OpEx, the kind of crude premiums that we saw, the kind of surge in freight rates, insurance costs.",
+      "speaker": "Sh V Srikanth, CFO, Reliance Industries Limited"
+    }
+  ]
+}

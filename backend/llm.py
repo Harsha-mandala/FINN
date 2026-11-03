@@ -2,7 +2,7 @@
 FINN — Unified LLM Gateway (Gemini only)
 ==========================================
 Routes tasks to the correct Gemini model based on task type:
-  - "cheap"     -> GEMINI_CHEAP_MODEL   (bulk: classify, extract, chat)
+  - "cheap"     -> GEMINI_CHEAP_MODEL   (bulk: classify, extract)
   - "reasoning" -> GEMINI_MODEL         (Stage-2: synthesis, grounded bio)
 
 On 429/quota: tries GEMINI_FALLBACK_MODELS in order.
@@ -24,6 +24,47 @@ from typing import Literal, Optional, Union
 
 logger = logging.getLogger(__name__)
 
+# ── Secret Redaction & Logging Filter ─────────────────────────────────────────
+
+_SECRET_PATTERN = re.compile(r"(AQ\.[A-Za-z0-9_-]{20,}|AIza[0-9A-Za-z_-]{20,})")
+
+
+def mask_secrets(text: str) -> str:
+    """Mask any string matching Gemini API key patterns."""
+    if not isinstance(text, str):
+        return text
+    return _SECRET_PATTERN.sub("[REDACTED_API_KEY]", text)
+
+
+class SecretMaskingFilter(logging.Filter):
+    """Logging filter that redacts API keys from all log records and arguments."""
+
+    def filter(self, record: logging.LogRecord) -> bool:
+        if isinstance(record.msg, str):
+            record.msg = mask_secrets(record.msg)
+        if record.args:
+            if isinstance(record.args, dict):
+                record.args = {
+                    k: mask_secrets(v) if isinstance(v, str) else v
+                    for k, v in record.args.items()
+                }
+            elif isinstance(record.args, (list, tuple)):
+                record.args = tuple(
+                    mask_secrets(v) if isinstance(v, str) else v
+                    for v in record.args
+                )
+        return True
+
+
+# Install masking filter on root logger so all logs across modules are redacted
+_root_logger = logging.getLogger()
+_mask_filter = SecretMaskingFilter()
+if _mask_filter not in _root_logger.filters:
+    _root_logger.addFilter(_mask_filter)
+for _h in _root_logger.handlers:
+    if _mask_filter not in _h.filters:
+        _h.addFilter(_mask_filter)
+
 # ── Types ─────────────────────────────────────────────────────────────────────
 
 TaskType = Literal["cheap", "reasoning"]
@@ -36,7 +77,7 @@ class LLMError(Exception):
     def __init__(self, kind: FailureKind, message: str, model: str = ""):
         self.kind = kind
         self.model = model
-        super().__init__(message)
+        super().__init__(mask_secrets(message))
 
 
 class BudgetExhausted(LLMError):
@@ -88,6 +129,7 @@ def _pace_call(chain_type: str):
         logger.debug("[LLM] Pacing %s call: sleeping %.1fs to respect RPM", chain_type, sleep_time)
         time.sleep(sleep_time)
     _LAST_CALL_TIMESTAMP[chain_type] = time.time()
+
 # Use 90% of limit to preserve headroom for retries
 _BUDGET_MARGIN = 0.90
 _budget_lock = threading.Lock()
@@ -176,16 +218,12 @@ _avail_lock = threading.Lock()
 
 
 def _get_client():
-    """Return an authenticated Gemini client. Raises LLMError('auth') if key missing."""
+    """Return an authenticated Gemini client. Reads key ONLY from GEMINI_API_KEY env var."""
     try:
         from google import genai  # type: ignore
     except ImportError as e:
         raise LLMError("other", f"google-genai package not installed: {e}")
-    key = (
-        os.environ.get("GEMINI_API_KEY", "")
-        or os.environ.get("GOOGLE_API_KEY", "")
-        or os.environ.get("GOOGLE_GENAI_API_KEY", "")
-    ).strip().strip('"').strip("'")
+    key = os.environ.get("GEMINI_API_KEY", "").strip().strip('"').strip("'")
     if not key:
         raise LLMError("auth", "GEMINI_API_KEY is not set in environment variables")
     return genai.Client(api_key=key)
@@ -206,13 +244,11 @@ def list_available_text_models() -> list[str]:
         for m in client.models.list():
             name: str = getattr(m, "name", "") or ""
             s = _slug(name)
-            # Check for content-generation capability
             methods = (
                 getattr(m, "supported_generation_methods", None)
                 or getattr(m, "supported_actions", None)
                 or []
             )
-            # In newer SDK versions, methods may be a list of strings or action objects
             method_strs = [
                 (str(x.get("name", x)) if isinstance(x, dict) else str(x))
                 for x in methods
@@ -220,7 +256,6 @@ def list_available_text_models() -> list[str]:
             if any("generate" in x.lower() or "content" in x.lower() for x in method_strs):
                 slugs.append(s)
             elif not methods:
-                # SDK version that doesn't expose methods — include by name if it looks like a text model
                 if "flash" in s or "pro" in s or "ultra" in s:
                     slugs.append(s)
 
@@ -276,8 +311,8 @@ def validate_models() -> dict[str, str]:
 # ── Error classification ───────────────────────────────────────────────────────
 
 def _classify_error(exc: Exception, model: str) -> LLMError:
-    """Map any SDK/HTTP exception to a typed LLMError."""
-    msg = str(exc).lower()
+    """Map any SDK/HTTP exception to a typed LLMError with masked secrets."""
+    msg = mask_secrets(str(exc)).lower()
 
     # Try to extract numeric HTTP status
     code: Optional[int] = getattr(exc, "status_code", None) or getattr(exc, "code", None)
@@ -294,7 +329,7 @@ def _classify_error(exc: Exception, model: str) -> LLMError:
         return LLMError("auth", "Authentication failed — check GEMINI_API_KEY.", model)
     if any(k in msg for k in ("timeout", "deadline", "timed out")):
         return LLMError("timeout", f"Request timed out on {model}.", model)
-    return LLMError("other", str(exc)[:300], model)
+    return LLMError("other", mask_secrets(str(exc))[:300], model)
 
 
 # ── Core generation ────────────────────────────────────────────────────────────
@@ -322,7 +357,6 @@ def _do_generate(
         "temperature": temperature,
         "max_output_tokens": max_tokens,
     }
-    # Gemini API does not allow combining tools with response_mime_type
     if json_mode and not grounded:
         cfg_kwargs["response_mime_type"] = "application/json"
     if system:
@@ -331,7 +365,6 @@ def _do_generate(
         try:
             cfg_kwargs["tools"] = [genai_types.Tool(google_search=genai_types.GoogleSearch())]
         except Exception:
-            # Grounding not available in this SDK version — fall back silently
             pass
 
     try:
@@ -344,7 +377,6 @@ def _do_generate(
         increment_budget(s)
         text = getattr(response, "text", None)
         if text is None:
-            # Some SDK versions expose candidates
             try:
                 text = response.candidates[0].content.parts[0].text
             except Exception:
@@ -370,7 +402,7 @@ def gemini_generate(
     """
     Generate text using the appropriate model for the task.
 
-    task="cheap"     -> GEMINI_CHEAP_MODEL  (classification, extraction, chat)
+    task="cheap"     -> GEMINI_CHEAP_MODEL  (classification, extraction)
     task="reasoning" -> GEMINI_MODEL        (synthesis, grounded bio)
 
     On 429 or model_not_found, automatically tries GEMINI_FALLBACK_MODELS.
@@ -401,10 +433,6 @@ def gemini_generate(
             last_error = BudgetExhausted(s)
             continue
 
-        # Retry loop for model s:
-        # - model_not_found: skip immediately to next model in chain (no backoff)
-        # - auth: stop immediately (fatal error)
-        # - 429/quota/timeout/5xx: retry with capped exponential backoff up to 3x, then try next model
         for attempt in range(3):
             try:
                 _pace_call(task)
@@ -423,19 +451,16 @@ def gemini_generate(
                 err = raw_e if isinstance(raw_e, LLMError) else _classify_error(raw_e, s)
                 last_error = err
 
-                # Rule 1: auth -> fatal, stop at once
                 if err.kind == "auth":
                     logger.error("[LLM] Authentication failure on %s. Stopping immediately.", s)
                     raise err
 
-                # Rule 2: model_not_found -> skip immediately to next model (NO backoff)
                 if err.kind == "model_not_found":
                     with _avail_lock:
                         _avail_cache[s] = False
                     logger.warning("[LLM] Model '%s' not found. Skipping to fallback model immediately.", s)
                     break
 
-                # Rule 3: quota (429) -> retry with backoff, then switch model
                 if err.kind == "quota":
                     if attempt < 2:
                         wait = min(2 ** (attempt + 1), 8)
@@ -450,7 +475,6 @@ def gemini_generate(
                             _save_budget(data)
                         break
 
-                # Rule 4: timeout or transient server/network error -> retry with backoff
                 if attempt < 2:
                     wait = min(2 ** (attempt + 1), 8)
                     logger.warning("[LLM] %s on %s (attempt %d/3). Retrying in %ds...", err.kind, s, attempt + 1, wait)
@@ -486,10 +510,9 @@ def gemini_generate_json(
         grounded=grounded,
     )
     text = text.strip()
-    # Strip ```json ... ``` or ``` ... ``` wrappers
     if text.startswith("```"):
         lines = text.splitlines()
-        start = 1  # skip the opening fence line
+        start = 1
         end = len(lines) - 1 if lines[-1].strip() == "```" else len(lines)
         text = "\n".join(lines[start:end]).strip()
     return json.loads(text)

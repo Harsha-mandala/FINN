@@ -17,6 +17,7 @@ If the pipeline cannot produce a card, returns {"status":"insufficient_data","mi
 Never uses template content, yfinance snapshots, or model memory for facts.
 """
 
+import os
 import hashlib
 import json
 import logging
@@ -37,25 +38,42 @@ Return ONLY valid JSON — no prose, no markdown.
 """
 
 _CONCALL_EXTRACT_PROMPT = """
-Extract guidance items from this earnings-call transcript.
+Extract guidance items and key qualitative points from this earnings-call transcript.
 
-For each distinct forward-looking management statement, output one object:
+Return a JSON object:
 {
-  "metric": "Revenue / EBITDA margin / NIM / GNPA / etc.",
-  "direction": "grow|maintain|reduce|target|other",
-  "value": "specific number/range if stated, else null",
-  "unit": "% / Cr / x / bps / other",
-  "horizon": "FY25 / H2 FY25 / 12 months / etc.",
-  "verbatim_quote": "exact substring from the transcript",
-  "speaker": "Name, Title (if available)",
-  "confidence": "explicit if a specific number was given, implied if directional only"
+  "guidance_items": [
+    {
+      "metric": "Revenue / EBITDA margin / EBIT margin / Capex / etc.",
+      "direction": "grow|maintain|reduce|target|other",
+      "value": "specific number or range if stated, else null",
+      "unit": "% / Cr / x / bps / USD / other",
+      "horizon": "FY25 / H2 FY25 / FY27 / etc.",
+      "verbatim_quote": "exact substring from the transcript",
+      "speaker": "Name, Title (if available)",
+      "confidence": "explicit if a specific number was given, implied if directional only"
+    }
+  ],
+  "catalysts": [
+    {
+      "point": "growth driver, deal win, market demand, or competitive advantage",
+      "verbatim_quote": "exact substring from transcript",
+      "speaker": "Name, Title"
+    }
+  ],
+  "risks": [
+    {
+      "point": "headwind, margin drag, macro risk, attrition, or client budget pressure",
+      "verbatim_quote": "exact substring from transcript",
+      "speaker": "Name, Title"
+    }
+  ]
 }
 
 Rules:
 - verbatim_quote must be an exact substring of the source text — copy-paste, do not paraphrase.
-- Include only forward-looking statements. Exclude historical fact statements.
-- Return a JSON array: [{"metric": ..., ...}, ...]
-- If no guidance items found, return [].
+- Include only forward-looking statements or explicit strategic drivers/risks.
+- If no items found for a category, return empty list [].
 
 Transcript (may be truncated):
 {transcript}
@@ -67,29 +85,33 @@ Return ONLY valid JSON — no prose, no markdown.
 """
 
 _AR_EXTRACT_PROMPT = """
-Extract the following from this annual report text:
+Extract the following from this financial statement or annual report text:
 
-1. segment_mix: list of {{segment, revenue_cr, revenue_pct, period}} — most recent year
-2. financials: list of {{year, metric, value, unit}} — cover Revenue, EBITDA, PAT, EBITDA_margin, ROE, ROCE, D_E, CFO, Capex, Working_capital_days for each year available (up to 5 years)
-3. key_ratios: latest values for ROE, ROCE, D/E, current ratio, interest coverage
-4. contingent_liabilities: any material items disclosed (text description, amount if given)
-5. business_segments: brief description of each segment (1-2 sentences)
+1. segment_mix: list of {segment, revenue_cr, revenue_pct, period} — most recent period
+2. financials: list of {period, metric, value, unit} — extract Revenue, EBITDA (or Operating Profit / PBT if EBITDA not explicitly stated), PAT, Capex for ALL periods/columns present in the statement table (e.g. Q2 FY27, Q1 FY27, Q2 FY26, FY26, etc. - include at least 3-4 historical periods so multi-period trajectory can be tracked).
+3. key_ratios: latest values for ROE, ROCE, D/E, current ratio, interest coverage (or NIM, GNPA, NNPA for banks/NBFCs)
+4. growth_drivers: list of strategic initiatives, order wins, capacity additions mentioned
+5. risks_and_challenges: list of headwinds, margin pressures, debt/interest burdens, litigation, or regulatory issues mentioned
+6. contingent_liabilities: any material items disclosed (text description, amount if given)
+7. business_segments: brief description of each segment (1-2 sentences)
 
 Return JSON:
-{{
+{
   "segment_mix": [...],
   "financials": [...],
-  "key_ratios": {{...}},
+  "key_ratios": {...},
+  "growth_drivers": [...],
+  "risks_and_challenges": [...],
   "contingent_liabilities": [...],
   "business_segments": [...]
-}}
+}
 
 Rules:
 - Only include data that appears explicitly in the text. Set null for anything absent.
-- Use INR crore as the unit for monetary values (convert if needed, note conversion).
+- Standardise monetary values to INR crore (Cr). If figures in statement are in ₹ Lakhs, divide by 100. If in ₹ Millions, divide by 10. If in ₹ Crore, keep as is.
 - If this is a bank/NBFC, include NIM, GNPA, NNPA, ROA, CAR instead of D/E and capex.
 
-Annual report text (may be truncated to key sections):
+Financial report text (may be truncated to key sections):
 {ar_text}
 """
 
@@ -160,16 +182,14 @@ Produce all 5 research cards in a single JSON object with this exact structure:
 Strict rules:
 1. snapshot.business_summary: only facts in the extraction. No memory.
 2. key_metrics: only explicitly stated numbers. null for missing.
-3. trajectory.series: only years where data is in the extraction. Minimum 2 points or omit the metric.
-4. guidance: only items with verbatim_quote present in extraction.
+3. trajectory.series: build multi-period series for Revenue and PAT/EBITDA from the available periods in the extraction. Each series must have at least 2 points.
+4. guidance: only items with verbatim_quote present in extraction. Include speaker and horizon.
 5. promised_vs_delivered:
-   - Only rows where BOTH guided_quote (from a past concall) AND actual_value (from a later filing) are present in the extraction.
-   - verdict must be one of: "met" | "partial" | "missed" | "pending" | "insufficient_data"
-   - "pending": guidance horizon is still in the future.
-   - "insufficient_data": either the guided value or actual value is missing — DO NOT guess.
-   - delta_computed: if both sides are numeric, compute the % delta. Otherwise null.
-   - No verdict may be emitted when actual_value is null.
-6. bull_bear: each point must cite source_ref from the extraction. No generic claims.
+   - For guidance from older periods where the actual result is reported in a subsequent filing, extract the pair, compute delta_computed, and assign verdict: "met" | "partial" | "missed".
+   - If guidance was given for a future period (e.g. FY27 exit) and the result is not yet available, set actual_value = null, delta_computed = null, and verdict = "pending".
+   - If an item was guided for a past period but the actual result is missing from the filings, set verdict = "insufficient_data".
+   - Never guess numbers or verdicts without primary-source backing.
+6. bull_bear: cite source_ref for every bull and bear argument directly from the catalysts/risks or financial extractions. Include 2-4 points for bull and 2-4 for bear.
 7. If you have fewer than 2 concall extractions available, set promised_vs_delivered = [] and add "limited_data": true to the root.
 8. For banks/NBFCs: replace D/E and capex framing with NIM, GNPA, ROA, CAR where available.
 
@@ -264,7 +284,7 @@ def _stage1_concall(doc_path: Path, ticker: str) -> dict:
         cache_file.write_text(json.dumps(result), encoding="utf-8")
         return result
 
-    prompt = _CONCALL_EXTRACT_PROMPT.format(transcript=text[:55000])
+    prompt = _CONCALL_EXTRACT_PROMPT.replace("{transcript}", text[:55000])
 
     try:
         items = gemini_generate_json(
@@ -274,17 +294,37 @@ def _stage1_concall(doc_path: Path, ticker: str) -> dict:
             temperature=0.0,
             max_tokens=4096,
         )
-        if not isinstance(items, list):
-            items = []
+        if isinstance(items, dict):
+            raw_guidance = items.get("guidance_items") or items.get("items") or items.get("guidance") or []
+            raw_cats = items.get("catalysts") or []
+            raw_risks = items.get("risks") or []
+        elif isinstance(items, list):
+            raw_guidance = items
+            raw_cats = []
+            raw_risks = []
+        else:
+            raw_guidance, raw_cats, raw_risks = [], [], []
 
-        # Validate verbatim quotes (drop items whose quote isn't in the source)
-        validated = []
-        for item in items:
+        norm_text = " ".join(text.split()).lower()
+        validated_guidance = []
+        for item in raw_guidance:
             quote = item.get("verbatim_quote", "")
-            if quote and quote in text:
-                validated.append(item)
+            if quote and " ".join(quote.split()).lower() in norm_text:
+                validated_guidance.append(item)
             elif quote:
                 logger.debug("[RESEARCHER] Dropped guidance item — quote not found in source: %s", quote[:60])
+
+        validated_cats = []
+        for item in raw_cats:
+            quote = item.get("verbatim_quote", "")
+            if quote and " ".join(quote.split()).lower() in norm_text:
+                validated_cats.append(item)
+
+        validated_risks = []
+        for item in raw_risks:
+            quote = item.get("verbatim_quote", "")
+            if quote and " ".join(quote.split()).lower() in norm_text:
+                validated_risks.append(item)
 
         result = {
             "status": "ok",
@@ -292,10 +332,12 @@ def _stage1_concall(doc_path: Path, ticker: str) -> dict:
             "doc_type": "concall",
             "file_hash": h,
             "extracted_at": datetime.now().isoformat(),
-            "guidance_items": validated,
+            "guidance_items": validated_guidance,
+            "catalysts": validated_cats,
+            "risks": validated_risks,
         }
         cache_file.write_text(json.dumps(result, indent=2), encoding="utf-8")
-        logger.info("[RESEARCHER] Stage1 concall: %d validated guidance items from %s", len(validated), doc_path.name)
+        logger.info("[RESEARCHER] Stage1 concall: %d validated guidance items from %s", len(validated_guidance), doc_path.name)
         return result
 
     except LLMError as e:
@@ -334,7 +376,7 @@ def _stage1_annual_report(doc_path: Path, ticker: str) -> dict:
         cache_file.write_text(json.dumps(result), encoding="utf-8")
         return result
 
-    prompt = _AR_EXTRACT_PROMPT.format(ar_text=text[:55000])
+    prompt = _AR_EXTRACT_PROMPT.replace("{ar_text}", text[:55000])
 
     try:
         data = gemini_generate_json(
@@ -401,10 +443,11 @@ def _stage2_synthesize(ticker: str, extractions: list[dict]) -> dict:
 
     # Trim to stay inside TPM limits
     ext_trimmed = json.dumps(extractions, indent=1)[:30000]
-    prompt = _STAGE2_PROMPT.format(
-        ticker=ticker,
-        is_financial="Yes" if is_financial else "No",
-        extractions_json=ext_trimmed,
+    prompt = (
+        _STAGE2_PROMPT
+        .replace("{ticker}", ticker)
+        .replace("{is_financial}", "Yes" if is_financial else "No")
+        .replace("{extractions_json}", ext_trimmed)
     )
 
     try:
@@ -456,17 +499,19 @@ def _delta_pct(guided: Optional[float], actual: Optional[float]) -> Optional[str
 
 def _assemble_cards(ticker: str, stage2: dict, docs_used: list[str]) -> dict:
     """
-    Convert Stage 2 raw JSON into the FINN card format.
-    Enforces integrity rules: no verdict without both sides, compute deltas in Python.
+    Format Stage 2 output into the 5 final research cards.
+    Enforces contract:
+    - Never emit a verdict without both guided and actual values
+    - Zero template prose; all bullets must be sourced
+    - Generates markdown content for smooth frontend rendering
     """
     raw = stage2.get("cards_raw", {})
-    limited_data = stage2.get("cards_raw", {}).get("limited_data", False)
-
+    limited_data = stage2.get("limited_data", False)
     provenance_base = {
         "docs_used": docs_used,
-        "model_used": "Gemini (reasoning)",
+        "model_used": stage2.get("model_used", "Gemini"),
         "generated_at": stage2.get("generated_at", datetime.now().isoformat()),
-        "status": "limited_data" if limited_data else "live",
+        "status": "live",
     }
 
     cards = []
@@ -474,12 +519,30 @@ def _assemble_cards(ticker: str, stage2: dict, docs_used: list[str]) -> dict:
     # ── Snapshot ──────────────────────────────────────────────────────────────
     snap_raw = raw.get("snapshot")
     if snap_raw:
+        lines = []
+        if snap_raw.get("business_summary"):
+            lines.append(f"**Business Overview**\n{snap_raw['business_summary']}\n")
+        if snap_raw.get("segments"):
+            lines.append("**Segment Revenue Mix**")
+            for s in snap_raw["segments"]:
+                share = f" ({s['revenue_share_pct']}%)" if s.get("revenue_share_pct") else ""
+                period = f" [{s.get('period')}]" if s.get("period") else ""
+                lines.append(f"- **{s.get('name', 'Segment')}**{share}{period}: {s.get('note', '')}")
+            lines.append("")
+        if snap_raw.get("key_metrics"):
+            lines.append("**Key Operating Metrics**")
+            for m in snap_raw["key_metrics"]:
+                unit = m.get("unit", "")
+                lines.append(f"- **{m.get('name')}**: {m.get('value')} {unit} ({m.get('period')}) — Source: {m.get('source_ref')}")
+        snap_content = "\n".join(lines).strip()
+
         cards.append({
             "card_type": "snapshot",
             "ticker": ticker,
             "company_name": ticker.replace(".NS", "").replace(".BO", ""),
             "generated_at": provenance_base["generated_at"],
             "data": {
+                "content": snap_content,
                 "business_summary": snap_raw.get("business_summary", ""),
                 "segments": snap_raw.get("segments", []),
                 "key_metrics": snap_raw.get("key_metrics", []),
@@ -490,37 +553,66 @@ def _assemble_cards(ticker: str, stage2: dict, docs_used: list[str]) -> dict:
     # ── Trajectory ────────────────────────────────────────────────────────────
     traj_raw = raw.get("trajectory", [])
     if traj_raw:
+        lines = []
+        for m in traj_raw:
+            lines.append(f"**{m.get('metric', 'Metric')} Trajectory**")
+            series_str = ", ".join([f"{pt.get('period')}: {pt.get('value')}" for pt in m.get("series", [])])
+            if series_str:
+                lines.append(f"- Historical: {series_str}")
+            if m.get("takeaway"):
+                lines.append(f"- Insight: {m['takeaway']}")
+            if m.get("source_ref"):
+                lines.append(f"- Source: {m['source_ref']}")
+            lines.append("")
+        traj_content = "\n".join(lines).strip()
+
         cards.append({
             "card_type": "trajectory",
             "ticker": ticker,
             "company_name": ticker.replace(".NS", "").replace(".BO", ""),
             "generated_at": provenance_base["generated_at"],
-            "data": {"series": traj_raw},
+            "data": {
+                "content": traj_content,
+                "series": traj_raw,
+            },
             "provenance": provenance_base,
         })
 
     # ── Guidance ──────────────────────────────────────────────────────────────
     guidance_raw = raw.get("guidance", [])
     if guidance_raw:
+        lines = []
+        for g in guidance_raw:
+            lines.append(f"- **{g.get('metric')}** ({g.get('horizon', 'Outlook')}): {g.get('guided_value', 'Target')}")
+            if g.get("verbatim_quote"):
+                lines.append(f"  Quote: \"{g['verbatim_quote']}\" ({g.get('speaker', 'Management')})")
+            if g.get("source_doc"):
+                lines.append(f"  Source: {g['source_doc']}")
+        guidance_content = "\n".join(lines).strip()
+
         cards.append({
             "card_type": "guidance",
             "ticker": ticker,
             "company_name": ticker.replace(".NS", "").replace(".BO", ""),
             "generated_at": provenance_base["generated_at"],
-            "data": {"items": guidance_raw},
+            "data": {
+                "content": guidance_content,
+                "items": guidance_raw,
+            },
             "provenance": provenance_base,
         })
 
     # ── Promised vs. Delivered ────────────────────────────────────────────────
     pvd_raw = raw.get("promised_vs_delivered", [])
     pvd_clean = []
+    commitments = []
+    lines = []
+
     for row in pvd_raw:
-        # Enforce: no verdict when actual is missing
         verdict = row.get("verdict", "insufficient_data")
         actual = row.get("actual_value")
         if actual is None and verdict not in ("pending", "insufficient_data"):
             verdict = "insufficient_data"
-        # Compute delta in Python
         delta = _delta_pct(
             _try_float(row.get("guided_value")),
             _try_float(actual),
@@ -535,6 +627,17 @@ def _assemble_cards(ticker: str, stage2: dict, docs_used: list[str]) -> dict:
             "delta_computed": delta or row.get("delta_computed"),
             "verdict": verdict,
         })
+        v_cap = verdict.capitalize() if verdict in ("met", "missed", "partial", "pending") else "Pending"
+        stmt = f"{row.get('quarter', '')} {row.get('metric', '')}: Guided \'{row.get('guided_quote', '')}\'"
+        note = f"Actual: {actual} ({row.get('actual_period', '')}) | Delta: {delta or row.get('delta_computed', 'N/A')} | Source: {row.get('source_doc', '')}"
+        commitments.append({
+            "statement": stmt,
+            "verdict": v_cap,
+            "note": note,
+        })
+        lines.append(f"- **[{v_cap}]** {stmt}\n  {note}")
+
+    pvd_content = "\n".join(lines).strip() if lines else "No past guidance vs delivered items tracked."
 
     cards.append({
         "card_type": "promised_vs_delivered",
@@ -542,6 +645,8 @@ def _assemble_cards(ticker: str, stage2: dict, docs_used: list[str]) -> dict:
         "company_name": ticker.replace(".NS", "").replace(".BO", ""),
         "generated_at": provenance_base["generated_at"],
         "data": {
+            "content": pvd_content,
+            "commitments": commitments,
             "rows": pvd_clean,
             "limited_data": limited_data,
         },
@@ -551,12 +656,22 @@ def _assemble_cards(ticker: str, stage2: dict, docs_used: list[str]) -> dict:
     # ── Bull / Bear ───────────────────────────────────────────────────────────
     bb_raw = raw.get("bull_bear", {})
     if bb_raw:
+        lines = []
+        lines.append("**Bull Case (Key Catalysts & Strengths)**")
+        for b in bb_raw.get("bull", []):
+            lines.append(f"- **{b.get('argument')}** — Source: {b.get('source_ref')}")
+        lines.append("\n**Bear Case (Key Risks & Headwinds)**")
+        for b in bb_raw.get("bear", []):
+            lines.append(f"- **{b.get('argument')}** — Source: {b.get('source_ref')}")
+        bb_content = "\n".join(lines).strip()
+
         cards.append({
             "card_type": "bull_bear",
             "ticker": ticker,
             "company_name": ticker.replace(".NS", "").replace(".BO", ""),
             "generated_at": provenance_base["generated_at"],
             "data": {
+                "content": bb_content,
                 "bull": bb_raw.get("bull", []),
                 "bear": bb_raw.get("bear", []),
             },
@@ -621,6 +736,23 @@ def build_research_cards(ticker: str, force: bool = False) -> dict:
         except Exception:
             pass
 
+    # If GEMINI_API_KEY is not set in this session, serve cache or return friendly unavailable
+    if not os.environ.get("GEMINI_API_KEY", "").strip():
+        if final_cache.exists():
+            try:
+                cached = json.loads(final_cache.read_text(encoding="utf-8"))
+                if cached.get("cards"):
+                    logger.info("[RESEARCHER] Returning cached cards for %s (no GEMINI_API_KEY in session)", ticker)
+                    return cached
+            except Exception:
+                pass
+        return {
+            "status": "temporarily_unavailable",
+            "reason": "AI research engine is temporarily unavailable. Please try again shortly.",
+            "ticker": ticker,
+            "cards": [],
+        }
+
     # ── Discover documents ────────────────────────────────────────────────────
     docs = discover_documents(ticker)
     if not docs:
@@ -638,7 +770,7 @@ def build_research_cards(ticker: str, force: bool = False) -> dict:
 
     for doc_path in docs:
         name_lower = doc_path.name.lower()
-        if any(k in name_lower for k in ("concall", "transcript", "earnings_call", "q1", "q2", "q3", "q4")):
+        if any(k in name_lower for k in ("concall", "transcript", "earnings_call", "analyst_call")) and not any(k in name_lower for k in ("financial", "result", "balance", "profit", "annual_report")):
             ext = _stage1_concall(doc_path, ticker)
             if ext.get("status") == "ok":
                 concall_count += 1

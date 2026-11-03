@@ -42,10 +42,10 @@ class Announcement(BaseModel):
     date: str
     attachment_url: Optional[str] = None
     news_id: Optional[str] = None
-    summary: Optional[str] = None  # AI one-liner
-    enrichment: Optional[dict] = None  # results card, bio, etc.
-    sub_items: Optional[list[dict]] = None  # threaded sub-announcements
-    thread_count: Optional[int] = None  # total items in thread
+    summary: Optional[str] = None
+    enrichment: Optional[dict] = None
+    sub_items: Optional[list[dict]] = None
+    thread_count: Optional[int] = None
 
 
 class DigestRequest(BaseModel):
@@ -54,7 +54,7 @@ class DigestRequest(BaseModel):
     start_date: Optional[str] = None
     end_date: Optional[str] = None
     tickers: Optional[list[str]] = None  # None = all portfolio
-    include_low: bool = False  # whether to include low-priority in response
+    include_low: bool = False
 
 
 class DigestResponse(BaseModel):
@@ -97,27 +97,8 @@ class AlertsResponse(BaseModel):
 # ── Research (Pull) ───────────────────────────────────────────────────────────
 
 class ResearchRequest(BaseModel):
-    ticker: str  # any NSE ticker, e.g. "RELIANCE.NS"
+    ticker: str  # e.g. "RELIANCE.NS"
     force_refresh: bool = False
-
-
-class GuidanceItem(BaseModel):
-    metric: str
-    statement: str
-    value: Optional[str] = None
-    timeframe: Optional[str] = None
-    speaker: Optional[str] = None
-    confidence: str  # "explicit" or "implied"
-    source_period: str  # which concall this came from
-
-
-class PromisingVsDelivered(BaseModel):
-    guidance_period: str
-    metric: str
-    promised: str
-    delivered: Optional[str] = None
-    verdict: Literal["met", "missed", "partial", "pending", "ambiguous"]
-    evidence: str  # brief explanation
 
 
 class ResearchCard(BaseModel):
@@ -127,7 +108,7 @@ class ResearchCard(BaseModel):
     ticker: str
     company_name: str
     generated_at: str
-    data: dict  # card-specific payload
+    data: dict
 
 
 class ResearchResponse(BaseModel):
@@ -135,23 +116,24 @@ class ResearchResponse(BaseModel):
     company_name: str
     generated_at: str
     cards: list[ResearchCard]
-    sources_used: list[str]  # list of document names used
+    sources_used: list[str]
+    status: Optional[str] = "ok"
 
 
-# ── Chat ──────────────────────────────────────────────────────────────────────
-
-class ChatMessage(BaseModel):
-    role: Literal["user", "assistant"]
-    content: str
-
-
-class ChatRequest(BaseModel):
-    messages: list[ChatMessage]
-    ticker: Optional[str] = None  # if set, load context for this ticker
-    context_type: Optional[str] = None  # "announcement", "research", etc.
+class PrimaryDocLink(BaseModel):
+    title: str
+    type: str  # "annual_report" | "concall_transcript" | "results_filing"
+    url: str
+    date: Optional[str] = None
+    year: Optional[str] = None
 
 
-class ChatResponse(BaseModel):
-    response: str
-    cards: Optional[list[dict]] = None  # structured cards in the response
-    sources: Optional[list[str]] = None
+class TickerOverviewResponse(BaseModel):
+    ticker: str
+    company_name: str
+    latest_results: Optional[dict] = None
+    price_volume: Optional[dict] = None
+    primary_documents: list[PrimaryDocLink] = []
+    recent_filings: list[dict] = []
+    has_deep_research: bool = False
+    generated_at: str

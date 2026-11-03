@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import {
   ChevronDown,
   ChevronRight,
-  MessageCircle,
+  ArrowRight,
   ExternalLink,
   Layers,
   FileCheck,
@@ -269,8 +269,8 @@ const ResultsTable: React.FC<{ enrichment: ResultsEnrichmentView }> = ({ enrichm
 
 const AnnouncementCard: React.FC<{
   item: AnnouncementView;
-  onAskFinn: (item: AnnouncementView) => void;
-}> = ({ item, onAskFinn }) => {
+  onOpenResearch: (ticker: string) => void;
+}> = ({ item, onOpenResearch }) => {
   const [threadOpen, setThreadOpen] = useState(false);
   const hasEnrichment = !!item.enrichment;
   const hasThread = !!(item.subItems && item.subItems.length > 0);
@@ -378,11 +378,11 @@ const AnnouncementCard: React.FC<{
         ) : <div />}
 
         <button
-          onClick={() => onAskFinn(item)}
-          className="flex items-center gap-1.5 text-xs font-semibold text-[#3B82F6] hover:text-white transition-colors py-0.5 px-2 rounded hover:bg-[#3B82F6]/10"
+          onClick={() => onOpenResearch(item.ticker)}
+          className="flex items-center gap-1.5 text-xs font-semibold text-[#38BDF8] hover:text-white transition-colors py-0.5 px-2.5 rounded hover:bg-[#38BDF8]/10"
         >
-          <MessageCircle size={13} />
-          Ask FINN
+          <span>Research</span>
+          <ArrowRight size={12} />
         </button>
       </div>
     </div>
@@ -566,8 +566,8 @@ const FeedScreen: React.FC = () => {
     }
   };
 
-  const handleAskFinn = (item: AnnouncementView) => {
-    navigate(`/chat?ticker=${item.ticker}&context=${encodeURIComponent(item.headline)}`);
+  const handleOpenResearch = (ticker: string) => {
+    navigate(`/research?ticker=${encodeURIComponent(ticker)}`);
   };
 
   const totalItems =
@@ -576,7 +576,7 @@ const FeedScreen: React.FC = () => {
     (digest?.low.length ?? 0);
 
   return (
-    <div className="min-h-screen bg-[#0F172A] max-w-[430px] mx-auto flex flex-col">
+    <div className="min-h-screen bg-[#0F172A] w-full flex flex-col">
       {/* Top bar */}
       <header className="sticky top-0 z-20 bg-[#0F172A]/95 backdrop-blur border-b border-[#1E293B] px-4 py-3 space-y-2">
         <div className="flex items-center justify-between">
@@ -699,7 +699,7 @@ const FeedScreen: React.FC = () => {
                     <AnnouncementCard
                       key={item.id}
                       item={item}
-                      onAskFinn={handleAskFinn}
+                      onOpenResearch={handleOpenResearch}
                     />
                   ))}
                 </div>
@@ -716,7 +716,7 @@ const FeedScreen: React.FC = () => {
                     <AnnouncementCard
                       key={item.id}
                       item={item}
-                      onAskFinn={handleAskFinn}
+                      onOpenResearch={handleOpenResearch}
                     />
                   ))}
                 </CollapsibleSection>
@@ -743,7 +743,7 @@ const FeedScreen: React.FC = () => {
                     <AnnouncementCard
                       key={item.id}
                       item={item}
-                      onAskFinn={handleAskFinn}
+                      onOpenResearch={handleOpenResearch}
                     />
                   ))}
                 </CollapsibleSection>

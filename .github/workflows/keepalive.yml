@@ -1,0 +1,30 @@
+name: Backend Keep-Alive
+
+on:
+  schedule:
+    # Run every 10 minutes to prevent Render free-tier instance from sleeping (spins down after 15m inactivity)
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+jobs:
+  ping:
+    name: Ping /health Endpoint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Render Backend
+        run: |
+          BACKEND="${{ vars.BACKEND_URL }}"
+          if [ -z "$BACKEND" ]; then
+            echo "BACKEND_URL variable is not set. Go to GitHub -> Settings -> Secrets and variables -> Actions -> Variables to configure it."
+            exit 0
+          fi
+          # Strip trailing slash if present
+          BACKEND="${BACKEND%/}"
+          echo "Pinging $BACKEND/health ..."
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" --max-time 15 "$BACKEND/health" || echo "failed")
+          echo "Response HTTP status: $STATUS"
+          if [ "$STATUS" -ge 200 ] && [ "$STATUS" -lt 400 ]; then
+            echo "Backend is alive and responsive."
+          else
+            echo "Warning: Backend responded with HTTP $STATUS (or timed out)."
+          fi

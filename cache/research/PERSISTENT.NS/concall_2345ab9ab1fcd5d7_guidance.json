@@ -1,0 +1,53 @@
+{
+  "status": "ok",
+  "doc": "PERSISTENT_Concall_Transcript_Q4_FY26.pdf",
+  "doc_type": "concall",
+  "file_hash": "2345ab9ab1fcd5d7",
+  "extracted_at": "2026-11-03T15:05:31.800780",
+  "guidance_items": [
+    {
+      "metric": "Revenue",
+      "direction": "grow",
+      "value": "2",
+      "unit": "USD",
+      "horizon": "FY27",
+      "verbatim_quote": "the $2 billion by FY27, that's a run rate. We are marching towards it steadily.",
+      "speaker": "Sandeep Kalra, Executive Director and Chief Executive Officer",
+      "confidence": "explicit"
+    },
+    {
+      "metric": "Revenue",
+      "direction": "grow",
+      "value": "500",
+      "unit": "USD",
+      "horizon": "Q4 FY27",
+      "verbatim_quote": "FY\u201927, Q4 exit is where we are looking at the run rate being in the range of $500 million or so.",
+      "speaker": "Sandeep Kalra, Executive Director and Chief Executive Officer",
+      "confidence": "explicit"
+    }
+  ],
+  "catalysts": [
+    {
+      "point": "AI adoption and platform offerings such as SASVA, iAURA, and GenAI Hub accelerating execution and GTM readiness",
+      "verbatim_quote": "We do expect the pace of adoption in both the tech companies and enterprises to accelerate significantly in the coming quarters, with tech companies leading the way.",
+      "speaker": "Sandeep Kalra, Executive Director and Chief Executive Officer"
+    },
+    {
+      "point": "Expansion of AI capabilities through partnerships with NVIDIA, Databricks, and digital platforms like DigitalOcean",
+      "verbatim_quote": "Building on our partnership with DigitalOcean, clients can now access Anthropic and OpenAI among other models and tools and build or consume agentic solutions through AI.",
+      "speaker": "Nitish Shrivastava, Chief Technology Officer - Engineering Hyper-Productivity"
+    }
+  ],
+  "risks": [
+    {
+      "point": "Macroeconomic risks from higher oil prices due to geopolitical tensions impacting inflation",
+      "verbatim_quote": "One, it does not directly affect us from the Middle East perspective because we have zero to very little exposure in Middle East. But as far as the bigger thing is concerned, if it goes on for more time, then obviously, you know, it is an issue because oil prices remaining higher for long will have an impact on inflation, etc.",
+      "speaker": "Sandeep Kalra, Executive Director and Chief Executive Officer"
+    },
+    {
+      "point": "Slower pace of POC or pilot to enterprise-wide adoption in regulated industries compared to tech sector",
+      "verbatim_quote": "Healthcare Life Sciences, BFSI, which are the other two segments for us, are regulated industries. It is picking up. Although I will say the POC or pilot to the enterprise-wide adoption, it is going slower than what would be there in a tech sector.",
+      "speaker": "Sandeep Kalra, Executive Director and Chief Executive Officer"
+    }
+  ]
+}

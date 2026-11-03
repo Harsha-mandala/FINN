@@ -1,4 +1,8 @@
 .env
+.env.*
+*.key
+cache/_llm_budget.json
+
 __pycache__/
 *.py[cod]
 *.pyo
@@ -17,5 +21,3 @@ frontend/.next/
 *.log
 .DS_Store
 Thumbs.db
-
-cache/_llm_budget.json

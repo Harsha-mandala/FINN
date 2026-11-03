@@ -1,0 +1,131 @@
+{
+  "status": "ok",
+  "doc": "PERSISTENT_Financial_Results_Q2_FY27.pdf",
+  "doc_type": "annual_report",
+  "file_hash": "332b82921b260e4d",
+  "extracted_at": "2026-11-03T15:05:44.081605",
+  "segment_mix": [
+    {
+      "segment": "Banking, Financial Services and Insurance (BFSI)",
+      "revenue_cr": 15714.77,
+      "revenue_pct": 33.7,
+      "period": "Quarter ended September 30, 2026"
+    },
+    {
+      "segment": "Healthcare & Life Sciences",
+      "revenue_cr": 10980.41,
+      "revenue_pct": 23.54,
+      "period": "Quarter ended September 30, 2026"
+    },
+    {
+      "segment": "Software, Hi-Tech and Emerging Industries",
+      "revenue_cr": 19943.86,
+      "revenue_pct": 42.76,
+      "period": "Quarter ended September 30, 2026"
+    }
+  ],
+  "financials": [
+    {
+      "period": "Quarter ended September 30, 2026",
+      "metric": "Revenue",
+      "value": 46639.04,
+      "unit": "INR crore"
+    },
+    {
+      "period": "Quarter ended September 30, 2026",
+      "metric": "EBITDA",
+      "value": 6579.26,
+      "unit": "INR crore"
+    },
+    {
+      "period": "Quarter ended September 30, 2026",
+      "metric": "PAT",
+      "value": 3515.14,
+      "unit": "INR crore"
+    },
+    {
+      "period": "Quarter ended September 30, 2026",
+      "metric": "Capex",
+      "value": 2467.57,
+      "unit": "INR crore"
+    },
+    {
+      "period": "Quarter ended June 30, 2026",
+      "metric": "Revenue",
+      "value": 43032.27,
+      "unit": "INR crore"
+    },
+    {
+      "period": "Quarter ended June 30, 2026",
+      "metric": "EBITDA",
+      "value": 7675.31,
+      "unit": "INR crore"
+    },
+    {
+      "period": "Quarter ended June 30, 2026",
+      "metric": "PAT",
+      "value": 4830.43,
+      "unit": "INR crore"
+    },
+    {
+      "period": "Quarter ended September 30, 2025",
+      "metric": "Revenue",
+      "value": 35807.2,
+      "unit": "INR crore"
+    },
+    {
+      "period": "Quarter ended September 30, 2025",
+      "metric": "EBITDA",
+      "value": 7348.58,
+      "unit": "INR crore"
+    },
+    {
+      "period": "Quarter ended September 30, 2025",
+      "metric": "PAT",
+      "value": 4714.7,
+      "unit": "INR crore"
+    },
+    {
+      "period": "Year ended March 31, 2026",
+      "metric": "Revenue",
+      "value": 147484.49,
+      "unit": "INR crore"
+    },
+    {
+      "period": "Year ended March 31, 2026",
+      "metric": "EBITDA",
+      "value": 29031.87,
+      "unit": "INR crore"
+    },
+    {
+      "period": "Year ended March 31, 2026",
+      "metric": "PAT",
+      "value": 18651.2,
+      "unit": "INR crore"
+    }
+  ],
+  "key_ratios": {
+    "ROE": null,
+    "ROCE": null,
+    "D/E": null,
+    "current ratio": null,
+    "interest coverage": null
+  },
+  "growth_drivers": [
+    "Proposed acquisition of 100% of the outstanding share capital of Nagarro SE, a global digital engineering and IT consulting company headquartered in Munich, Germany.",
+    "Acquisition of the business of Concise Systems O\u00dc through a Business Purchase Agreement by Persistent Systems Estonia O\u00dc.",
+    "Approval for availing long term Debt Financing by way of ECB, NCDs, and other similar instruments not exceeding USD 1,250 million.",
+    "Approval for raising funds through Foreign Currency Convertible Bonds (FCCB), Preferential Issue, or QIP not exceeding USD 450 million."
+  ],
+  "risks_and_challenges": [
+    "Exposure to foreign exchange fluctuations and hedging instrument impacts.",
+    "Potential debt and interest burdens associated with bridge financing facilities (EUR 1,400 million) and corporate guarantees for the Nagarro SE acquisition.",
+    "Regulatory advisory, due diligence, valuation, and other transaction-related costs impacting other expenses."
+  ],
+  "contingent_liabilities": [],
+  "business_segments": [
+    "Banking, Financial Services and Insurance (BFSI): Provides specialized digital engineering, technology, and consulting services tailored for banking, financial services, and insurance institutions.",
+    "Healthcare & Life Sciences: Delivers technology solutions, software product engineering, and digital transformation services for healthcare providers, medical technology, and life sciences companies.",
+    "Software, Hi-Tech and Emerging Industries: Focuses on product engineering, platform development, and advanced digital solutions for software companies, hi-tech enterprises, and emerging sectors."
+  ]
+}

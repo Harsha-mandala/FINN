@@ -1,0 +1,58 @@
+{
+  "status": "ok",
+  "doc": "PERSISTENT_Concall_Transcript_Q1_FY25.pdf",
+  "doc_type": "concall",
+  "file_hash": "edf2395b289dce30",
+  "extracted_at": "2026-11-03T15:05:18.170738",
+  "guidance_items": [
+    {
+      "metric": "Revenue",
+      "direction": "grow",
+      "value": "125",
+      "unit": "USD / Cr / x / bps / USD / other",
+      "horizon": "Annual basis",
+      "verbatim_quote": "This is a net new deal which will add roughly about $125 million plus on an annual basis and overall for the period of the contract it will be roughly about $650 million plus over 6.5 years.",
+      "speaker": "Sandeep Kalra, Executive Director and Chief Executive Officer",
+      "confidence": "explicit"
+    },
+    {
+      "metric": "Contract value",
+      "direction": "grow",
+      "value": "650",
+      "unit": "USD / Cr / x / bps / USD / other",
+      "horizon": "6.5 years",
+      "verbatim_quote": "This is a net new deal which will add roughly about $125 million plus on an annual basis and overall for the period of the contract it will be roughly about $650 million plus over 6.5 years.",
+      "speaker": "Sandeep Kalra, Executive Director and Chief Executive Officer",
+      "confidence": "explicit"
+    },
+    {
+      "metric": "European revenue share",
+      "direction": "target",
+      "value": "15",
+      "unit": "%",
+      "horizon": "other",
+      "verbatim_quote": "add to the European business, we live to our dream of having European business at 15% plus.",
+      "speaker": "Sandeep Kalra, Executive Director and Chief Executive Officer",
+      "confidence": "implied"
+    }
+  ],
+  "catalysts": [
+    {
+      "point": "Strategic long-term agreement signed with an existing US-based global technology leader adding annual and multi-year revenue.",
+      "verbatim_quote": "This is regarding a strategic, long-term agreement that we have signed with an existing global technology leader headquartered in the US, an existing big customer for us. So, let me first start with that announcement and the implication for us and then I'll dig deeper into the Nagarro transaction that we have announced. So, from this deal perspective, this is a net new deal which will add roughly about $125 million plus on an annual basis and overall for the period of the contract it will be roughly about $650 million plus over 6.5 years.",
+      "speaker": "Sandeep Kalra, Executive Director and Chief Executive Officer"
+    },
+    {
+      "point": "Complementary service lines such as ERP and SAP partnerships combined with Persistent's CX and digital engineering capabilities.",
+      "verbatim_quote": "Similarly, from an OpenAI perspective, they are one of the few organizations which are accredited resellers to OpenAI and they have a forward deployed engineering practice around OpenAI. So, from that perspective as well whether it is capabilities on ERP, which are important if you are trying to do end-to-end kind of transformation, and the complementarity that you will see in the next few slides, there is significant value in this.",
+      "speaker": "Sandeep Kalra, Executive Director and Chief Executive Officer"
+    }
+  ],
+  "risks": [
+    {
+      "point": "Potential integration challenges and execution risks associated with merging organizations, though mitigated by cultural alignment.",
+      "verbatim_quote": "Obviously, it will be a planned execution of integration over a period of time and usually these things have to slow roll. Usually these things will take time to create value but we are very confident of doing it the right way.",
+      "speaker": "Sandeep Kalra, Executive Director and Chief Executive Officer"
+    }
+  ]
+}

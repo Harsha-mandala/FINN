@@ -1,0 +1,145 @@
+{
+  "status": "ok",
+  "doc": "RELIANCE_Q2_FY25_Financial_Results.pdf",
+  "doc_type": "annual_report",
+  "file_hash": "7c1b0618fa7aeb2d",
+  "extracted_at": "2026-11-03T15:04:21.067616",
+  "segment_mix": [
+    {
+      "segment": "Oil to Chemicals (O2C)",
+      "revenue_cr": 231601.0,
+      "revenue_pct": 57.45,
+      "period": "30th Sep '26"
+    },
+    {
+      "segment": "Retail",
+      "revenue_cr": 91717.0,
+      "revenue_pct": 22.75,
+      "period": "30th Sep '26"
+    },
+    {
+      "segment": "Digital Services",
+      "revenue_cr": 48486.0,
+      "revenue_pct": 12.03,
+      "period": "30th Sep '26"
+    },
+    {
+      "segment": "Others",
+      "revenue_cr": 25317.0,
+      "revenue_pct": 6.28,
+      "period": "30th Sep '26"
+    },
+    {
+      "segment": "Oil and Gas",
+      "revenue_cr": 6020.0,
+      "revenue_pct": 1.49,
+      "period": "30th Sep '26"
+    }
+  ],
+  "financials": [
+    {
+      "period": "Q2 FY27 (30th Sep'26)",
+      "metric": "Revenue",
+      "value": 332861.0,
+      "unit": "INR crore"
+    },
+    {
+      "period": "Q2 FY27 (30th Sep'26)",
+      "metric": "EBITDA",
+      "value": 61224.0,
+      "unit": "INR crore"
+    },
+    {
+      "period": "Q2 FY27 (30th Sep'26)",
+      "metric": "PAT",
+      "value": 29550.0,
+      "unit": "INR crore"
+    },
+    {
+      "period": "Q2 FY27 (30th Sep'26)",
+      "metric": "Capex",
+      "value": 52813.0,
+      "unit": "INR crore"
+    },
+    {
+      "period": "Q1 FY27 (30th Jun'26)",
+      "metric": "Revenue",
+      "value": 311850.0,
+      "unit": "INR crore"
+    },
+    {
+      "period": "Q1 FY27 (30th Jun'26)",
+      "metric": "EBITDA",
+      "value": 51403.0,
+      "unit": "INR crore"
+    },
+    {
+      "period": "Q1 FY27 (30th Jun'26)",
+      "metric": "PAT",
+      "value": 23196.0,
+      "unit": "INR crore"
+    },
+    {
+      "period": "Q2 FY26 (30th Sep'25)",
+      "metric": "Revenue",
+      "value": 258898.0,
+      "unit": "INR crore"
+    },
+    {
+      "period": "Q2 FY26 (30th Sep'25)",
+      "metric": "EBITDA",
+      "value": 48480.0,
+      "unit": "INR crore"
+    },
+    {
+      "period": "Q2 FY26 (30th Sep'25)",
+      "metric": "PAT",
+      "value": 22092.0,
+      "unit": "INR crore"
+    },
+    {
+      "period": "Q2 FY26 (30th Sep'25)",
+      "metric": "Capex",
+      "value": 58074.0,
+      "unit": "INR crore"
+    },
+    {
+      "period": "FY26 (31st Mar'26)",
+      "metric": "Revenue",
+      "value": 1075675.0,
+      "unit": "INR crore"
+    },
+    {
+      "period": "FY26 (31st Mar'26)",
+      "metric": "EBITDA",
+      "value": 194047.0,
+      "unit": "INR crore"
+    },
+    {
+      "period": "FY26 (31st Mar'26)",
+      "metric": "PAT",
+      "value": 95754.0,
+      "unit": "INR crore"
+    }
+  ],
+  "key_ratios": {
+    "ROE": null,
+    "ROCE": null,
+    "D/E": 0.41,
+    "current_ratio": 1.13,
+    "interest_coverage": 5.55
+  },
+  "growth_drivers": [
+    "Initial Public Offer (IPO) of Jio Platforms Limited (JPL) raising gross proceeds of 30,188 crore via fresh issue of 27,00,00,000 equity shares.",
+    "Issuance of Listed Unsecured Redeemable Non-Convertible Debentures amounting to 12,000 crore (PPD Series Q) on a private placement basis."
+  ],
+  "risks_and_challenges": [],
+  "contingent_liabilities": [],
+  "business_segments": [
+    "The Oil to Chemicals segment includes refining, petrochemicals, fuel retailing, aviation fuel and bulk wholesale marketing, spanning transportation fuels, polymers, polyesters, and elastomers with deep integration assets.",
+    "The Oil and Gas segment includes exploration, development, and production of crude oil and natural gas.",
+    "The Retail segment includes consumer retail and a range of related services.",
+    "The Digital Services segment includes the provision of a range of digital services.",
+    "Other business segments which are not separately reportable have been grouped under the Others segment."
+  ]
+}
